@@ -4,8 +4,8 @@ from core import Paths, Cache, Debugger
 
 class Loader:
     @staticmethod
-    def separate_scanned_paths_by_types(paths_list: list[Path]) -> dict:
-        """Separates different types of path and returns them into a dict.
+    def separate_core_paths_by_types(paths_list: list[Path]) -> dict:
+        """Separates different types of path (files or dirs) and returns them into a dict.
 
         Args:
             paths_list (list[Path]): A list containing all the paths to separate.
@@ -34,10 +34,36 @@ class Loader:
         return res_dict
     
     
+    
     @staticmethod
-    def load(app_directory_path: Path) -> bool:
-        """Loads the general directory structure to the cache.
-        High-level met. implementing logs & specified dict keys.
+    def fill_cache_core_path_dict(
+        core_paths_dict_to_fill: dict,
+        separated_core_paths_list: list[Path]
+    ) -> bool:
+        """Used to fill one cache core paths dict based on the dict to fill
+        and a list that contains all the paths necessary to fill the dict.
+
+        Args:
+            core_paths_dict_to_fill (dict): A dict from Cache.CorePaths that needs to be filled.
+            separated_core_paths_list (list[Path]): A list that contains multiple paths.
+
+        Returns:
+            bool: True if the dictionnary if fully filled.
+        """
+        
+        for path in separated_core_paths_list:
+            path: Path
+            
+            if path.name in core_paths_dict_to_fill:
+                core_paths_dict_to_fill[path.name] = path
+                
+        return Cache.verify_dict_completeness(core_paths_dict_to_fill)
+    
+    
+    @staticmethod
+    def main(app_directory_path: Path) -> bool:
+        """Loads the general directory structure to the cache (CorePaths).
+        High-level method -> implementing logs & specified dict keys.
 
         Args:
             app_path (Path): The main app directory path.
@@ -46,34 +72,30 @@ class Loader:
             bool: True if everything if loaded, False if missing info.
         """
         
-        # Main verification
         if Paths.is_directory_path_valid(app_directory_path):
-            scanned_paths = Paths.scan_directory(app_directory_path, True)
-            separated_paths = Loader.separate_scanned_paths_by_types(scanned_paths)
+            # Scan the files/dirs inside the app directory path and separate them by type
+            core_paths = Paths.scan_directory(app_directory_path, True)
+            separated_core_paths = Loader.separate_core_paths_by_types(core_paths)
             
-            # Files dict linking
-            for file_path in separated_paths["files"]:
-                file_path: Path
-                if file_path.name in Cache.files:
-                    Cache.files[file_path.name] = file_path
-            files_completeness = Cache.verify_dict_completeness(Cache.files)
-            
-            # Directories dict linking
-            for directory_path in separated_paths["directories"]:
-                directory_path: Path
-                if directory_path.name in Cache.directories:
-                    Cache.directories[directory_path.name] = directory_path
-            directories_completeness = Cache.verify_dict_completeness(Cache.directories)
+            files_completeness = Loader.fill_cache_core_path_dict(
+                Cache.CorePaths.files,
+                separated_core_paths["files"]
+            )
+
+            directories_completeness = Loader.fill_cache_core_path_dict(
+                Cache.CorePaths.directories,
+                separated_core_paths["directories"]
+            )
                     
             # Verifies Cache dicts completeness
             if len(files_completeness) == 0 and len(directories_completeness) == 0:
                 return True
             
-            # Cache compliteness log
+            # Cache compliteness problem log
             Debugger.internal_log(
                 102,
-                f"Missing files: {files_completeness}",
-                f"Missing dirs: {directories_completeness}"
+                f"Missing directories: {directories_completeness}",
+                f"Missing files: {files_completeness}"
             )
         else:
             # Invalid app directory path

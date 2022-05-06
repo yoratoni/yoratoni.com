@@ -1,21 +1,21 @@
 class Cache:
-    # Cache accessed scanned directories
-    directories = {
-        "assets": None,
-        "models": None,
-        "static": None,
-        "css": None,
-        "js": None,
-        "sfb": None
-    }
+    class CorePaths:
+        # Cache accessed scanned directories
+        directories = {
+            "assets": None,
+            "models": None,
+            "static": None,
+            "css": None,
+            "js": None
+        }
 
-    # Cache accessed scanned files
-    files = {
-        "index.html": None,
-        "style.css": None,
-        "main.js": None
-    }
-    
+        # Cache accessed scanned files
+        files = {
+            "index.html": None,
+            "style.css": None,
+            "base.js": None
+        }
+        
     
     @staticmethod
     def verify_dict_completeness(dict_to_verify: dict) -> list[str]:
