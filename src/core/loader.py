@@ -35,16 +35,20 @@ class Loader:
     
     
     @staticmethod
-    def load(app_path: Path) -> bool:
-        """_summary_
+    def load(app_directory_path: Path) -> bool:
+        """Loads the general directory structure to the cache.
+        High-level met. implementing logs & specified dict keys.
 
         Args:
-            app_path (Path): _description_
+            app_path (Path): The main app directory path.
+
+        Returns:
+            bool: True if everything if loaded, False if missing info.
         """
         
         # Main verification
-        if Paths.is_directory_path_valid(app_path):
-            scanned_paths = Paths.scan_directory(app_path, True)
+        if Paths.is_directory_path_valid(app_directory_path):
+            scanned_paths = Paths.scan_directory(app_directory_path, True)
             separated_paths = Loader.separate_scanned_paths_by_types(scanned_paths)
             
             # Files dict linking
@@ -61,7 +65,7 @@ class Loader:
                     Cache.directories[directory_path.name] = directory_path
             directories_completeness = Cache.verify_dict_completeness(Cache.directories)
                     
-            # Verifies Cache structure dicts completeness
+            # Verifies Cache dicts completeness
             if len(files_completeness) == 0 and len(directories_completeness) == 0:
                 return True
             
@@ -72,7 +76,7 @@ class Loader:
                 f"Missing dirs: {directories_completeness}"
             )
         else:
-            print(app_path)
+            # Invalid app directory path
             Debugger.internal_log(101)
             
         return False
