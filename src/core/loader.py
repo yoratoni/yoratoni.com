@@ -2,6 +2,7 @@ from pathlib import Path
 
 from core import Paths, Cache, Debugger
 
+
 class Loader:
     @staticmethod
     def separate_core_paths_by_types(paths_list: list[Path]) -> dict:
@@ -61,7 +62,7 @@ class Loader:
     
     
     @staticmethod
-    def main(app_directory_path: Path) -> bool:
+    def load_cache(app_directory_path: Path) -> bool:
         """Loads the general directory structure to the cache (CorePaths).
         High-level method -> implementing logs & specified dict keys.
 

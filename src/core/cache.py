@@ -1,9 +1,15 @@
+from pathlib import Path
+
+
 class Cache:
     class CorePaths:
+        # Main app directory path (relative for better stability)
+        main_path = Path.joinpath(Path(__file__).parent.parent, "app")
+        
         # Cache accessed scanned directories
         directories = {
             "assets": None,
-            "models": None,
+            "pages": None,
             "static": None,
             "css": None,
             "js": None
@@ -13,7 +19,7 @@ class Cache:
         files = {
             "index.html": None,
             "style.css": None,
-            "base.js": None
+            "main.js": None
         }
         
     
