@@ -1,11 +1,10 @@
 import { Box, Container } from "@chakra-ui/react";
 import Head from "next/head";
 
-import Navbar from '../navbar';
+import Navbar from "../navbar";
 
 
-const Main = ({ children, router }) => {
-    return (
+const Main = ({ children, router }) => (
         <Box as="main" pb={8}>
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -18,8 +17,7 @@ const Main = ({ children, router }) => {
                 {children}
             </Container>
         </Box>
-    );
-};
+);
 
 
 export default Main;

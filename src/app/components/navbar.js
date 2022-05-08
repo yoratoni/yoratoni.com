@@ -1,5 +1,5 @@
-import NextLink from "next/link";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import NextLink from "next/link";
 import {
     Container,
     Box,
@@ -15,7 +15,7 @@ import {
     useColorModeValue
 } from "@chakra-ui/react";
 
-import ThemeToggleButton from './theme-toggle-button';
+import ThemeToggleButton from "./theme-toggle-button";
 import Logo from "./logo";
 
 
