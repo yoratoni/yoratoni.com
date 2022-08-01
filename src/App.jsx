@@ -1,11 +1,4 @@
-// import { Route, Routes, Link, Navigate } from "react-router-dom";
 import React from "react";
-
-// Pages
-// import Homepage from "./pages/Homepage";
-// import About from "./pages/About";
-// import Contact from "./pages/Contact";
-// import Error from "./pages/Error";
 
 // Main components
 import Content from "./components/layouts/Content";
