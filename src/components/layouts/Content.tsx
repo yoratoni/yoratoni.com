@@ -1,13 +1,13 @@
 import React from "react";
 import "./Content.css";
 
-import Canvas from "../Canvas";
+import CollatzCanvas from "../CollatzCanvas";
 
 const Content = () => {
     return (
         <div className="content">
-            <div id="canvas-container">
-                <Canvas />
+            <div id="main-canvas-container">
+                <CollatzCanvas />
             </div>
         </div>
     );
