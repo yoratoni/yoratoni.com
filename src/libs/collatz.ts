@@ -20,7 +20,13 @@ const cache = {
     maxSequenceSize: 16,    // Contains the biggest sequence of all (used for the size calculation)
     lastSequencesID: 0,     // Contains the last sequence ID (used to limit sequences)
     tempRecordID: 0,        // Used to record an ID temporarily before resetting a worker
-    IDsSignature: []        // An array containing the ID of each worker (reduce)
+
+    // An array containing the ID of each worker
+    // NOTE:
+    //      As workers are desynchronized, a worker with a shorter sequence
+    //      can have the same ID as the next one,
+    //      IDsSignature is used to skip IDs when they're already used
+    IDsSignature: []
 };
 
 
