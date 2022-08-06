@@ -1,11 +1,29 @@
-*, ::before, ::after {
+*,
+::before,
+::after {
     box-sizing: border-box;
     font-family: "Source Code Pro", monospace;
     margin: 0;
     padding: 0;
 }
 
+html {
+    /* Mobile 100vh fix */
+    height: -webkit-fill-available;
+}
+
 body {
     background-color: black;
     overflow: hidden;
+
+    /* Mobile 100vh fix */
+    min-height: 100vh;
+}
+
+/* Mobile 100vh fix */
+@supports (-webkit-touch-callout: none) {
+    body {
+        /* The hack for Safari */
+        min-height: -webkit-fill-available;
+    }
 }

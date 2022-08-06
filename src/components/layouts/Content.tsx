@@ -6,7 +6,7 @@ import CollatzCanvas from "../CollatzCanvas";
 const Content = () => {
     return (
         <div className="content">
-            <div id="main-canvas-container">
+            <div id="collatz-canvas-container">
                 <CollatzCanvas />
             </div>
         </div>

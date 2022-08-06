@@ -1,10 +1,20 @@
 declare global {
+    interface ICache {
+        longestSequence: number,
+        lastWorkerSequence: number,
+        tempRecordSequence: number,
+        sequenceSignatures: number[],
+        history: number[number[]],
+        lastWindowDims: number[]
+    }
+
+
     interface IWorker {
-        ID: number,
+        sequence: number,
         angle: number,
-        size: number,
         array: number[],
         index: number,
+        lineLength: number,
         coords: number[]
     }
 }
