@@ -15,7 +15,6 @@ const CollatzCanvas = () => {
      */
     const windowResized = () => {
         if (p5) {
-            collatz.getWindowDims();
             p5.resizeCanvas(window.innerWidth, window.innerHeight, true);
 
             // Re-initialize the collatz p5 workers
@@ -30,6 +29,9 @@ const CollatzCanvas = () => {
      * @returns A timer (canceled if resize not ended)
      */
     const debounce = (fn: P5ResizeFunction) => {
+        // Saves previous window dimensions
+        collatz.getWindowDims();
+
         let timer: number;
         return function (event: Event) {
             if (timer) {
