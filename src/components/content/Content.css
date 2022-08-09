@@ -1,0 +1,13 @@
+#content-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+}
+
+
+#content {
+    border: 1px solid red;
+    height: 64px;
+}

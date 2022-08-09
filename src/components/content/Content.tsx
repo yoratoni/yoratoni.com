@@ -4,8 +4,10 @@ import "./Content.css";
 
 const Content = () => {
     return (
-        <div className="content">
+        <div id="content-container">
+            <div id="content">
 
+            </div>
         </div>
     );
 };

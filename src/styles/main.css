@@ -8,22 +8,27 @@
 }
 
 html {
-    /* Mobile 100vh fix */
     height: -webkit-fill-available;
 }
 
 body {
     background-color: black;
-    overflow: hidden;
+
+    /* Hide scrollbar */
+    -ms-overflow-style: none; /* IE & Edge */
 
     /* Mobile 100vh fix */
     min-height: 100vh;
 }
 
+/* Hide scrollbar */
+body::-webkit-scrollbar {
+    display: none;
+}
+
 /* Mobile 100vh fix */
 @supports (-webkit-touch-callout: none) {
     body {
-        /* The hack for Safari */
-        min-height: -webkit-fill-available;
+      min-height: -webkit-fill-available;
     }
 }
