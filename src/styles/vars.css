@@ -1,0 +1,14 @@
+:root {
+    --background: #030E10;
+
+    /* Neo container */
+    --neo-container-border: #1F2627;
+    --neo-container-outline: #0B1213;
+    --neo-container-border-rad: 16px;
+    --neo-container-backdrop: blur(4px);
+    --neo-container-margin: 64px;
+}
+
+[data-theme='dark'] {
+
+}

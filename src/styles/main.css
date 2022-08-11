@@ -2,33 +2,21 @@
 ::before,
 ::after {
     box-sizing: border-box;
-    font-family: "Source Code Pro", monospace;
+    font-family: "MesloLGM NF", monospace;
     margin: 0;
     padding: 0;
 }
 
 html {
-    height: -webkit-fill-available;
+    overflow: hidden;
 }
 
 body {
-    background-color: black;
-
-    /* Hide scrollbar */
-    -ms-overflow-style: none; /* IE & Edge */
-
-    /* Mobile 100vh fix */
-    min-height: 100vh;
+    background-color: #030E10;
+    height: 100%;
 }
 
-/* Hide scrollbar */
-body::-webkit-scrollbar {
-    display: none;
-}
-
-/* Mobile 100vh fix */
-@supports (-webkit-touch-callout: none) {
-    body {
-      min-height: -webkit-fill-available;
-    }
+.data-theme {
+    /* Inherit for 100vh fix */
+    height: inherit;
 }

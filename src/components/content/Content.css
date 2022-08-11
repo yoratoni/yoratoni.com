@@ -1,13 +1,20 @@
-#content-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+.content-container {
     width: 100%;
-    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.content {
+    width: calc(100% - var(--neo-container-margin));
+    height: calc(100% - var(--neo-container-margin));
 
-#content {
-    border: 1px solid red;
-    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--neo-container-border);
+    border-radius: var(--neo-container-border-rad);
+    outline: 2px solid var(--neo-container-outline);
 }

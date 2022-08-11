@@ -1,7 +1,7 @@
 import React from "react";
 import "./Background.css";
 
-import * as logic from "../../libs/backgroundLogic";
+import * as logic from "./backgroundLogic";
 import Sketch from "react-p5";
 import p5Types from "p5";
 
@@ -16,6 +16,7 @@ const Background = () => {
     const windowResized = () => {
         if (p5) {
             p5.resizeCanvas(window.innerWidth, window.innerHeight, true);
+            logic.loadEvent(p5);
         }
     };
 
