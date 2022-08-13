@@ -17,4 +17,6 @@
     border: 1px solid var(--neo-container-border);
     border-radius: var(--neo-container-border-rad);
     outline: 2px solid var(--neo-container-outline);
+
+    /* backdrop-filter: blur(4px); */
 }

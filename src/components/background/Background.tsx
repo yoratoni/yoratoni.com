@@ -68,7 +68,6 @@ const Background = () => {
      */
     const draw = () => {
         if (p5) {
-            p5.background(10);
             logic.drawEvent(p5);
         }
     };
