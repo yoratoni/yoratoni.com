@@ -1,6 +1,15 @@
 import p5Types from "p5";
 
 
+/*
+    Note: The window should be more filled,
+    Dots are not enough to fill the screen,
+    a line linking each point is too much,
+    bad performances too as each point should have a complexity of O(1)
+*/
+
+
+
 /**
  * Main constant parameters of the visualization.
  */
