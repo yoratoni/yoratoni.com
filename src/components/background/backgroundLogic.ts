@@ -24,7 +24,7 @@ const parameters = {
 
     // Flow Field parameters
     flowFieldPointsBoxSize: 0.5,    // Size of the points box (percentage of window size)
-    flowFieldWeight: 4,             // The weight / thickness of each line
+    flowFieldWeight: 2,             // The weight / thickness of each line
     flowFieldMaxAngle: 16,          // The max angle for a Perlin noise point
     flowFieldDensity: 256,          // The density of points (number of points on screen)
     flowFieldAlpha: 64,             // The alpha of each line
