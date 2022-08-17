@@ -14,10 +14,11 @@ declare global {
         windowMid: number[],
         points: p5Types.Vector[],
         pointsBox: IP5_4Coords,
+        dynLineLength: number,
 
-        perfCheckFPSLimit: number,
         perfCheckFPSMeasure: number,
-        perfCheckCurrentStep: number
+        perfCheckCurrentStep: number,
+        perfCheckFPSGoal: number
     }
 }
 

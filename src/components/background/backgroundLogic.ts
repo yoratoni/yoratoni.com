@@ -24,16 +24,14 @@ const parameters = {
 
     // Flow Field parameters
     flowFieldPointsBoxSize: 0.5,    // Size of the points box (percentage of window size)
-    flowFieldWeight: 2,             // The weight / thickness of each line
+    flowFieldWeight: 1,             // The weight / thickness of each line
     flowFieldMaxAngle: 16,          // The max angle for a Perlin noise point
     flowFieldDensity: 256,          // The density of points (number of points on screen)
     flowFieldAlpha: 64,             // The alpha of each line
     flowFieldMult: 0.02,            // Multiply the perlin noise effect
 
     // Perf check
-    perfCheckSecurityBounds: 4,     // Adds security bounds to the dynamic perf check FPS measure
-    perfCheckSteps: 16,             // When cache.perfCheckMeasureStep == to this one, measure time
-    perfCheckInitialMeasure: 10     // Number of initial steps where the average FPS is measured
+    perfCheckSteps: 19,             // When cache.perfCheckMeasureStep == to this one, measure time
 };
 
 
@@ -52,16 +50,17 @@ const cache: IP5BackgroundCache = {
         y2: 0
     },
 
-    // Dynamic limit => FPS on the first frames
-    // It is calculated by the average measured FPS when perfCheckCurrentStep is below 0
-    perfCheckFPSLimit: 0,
+    // The dynamic length of each line based on the max value inside windowMid
+    dynLineLength: 0,
 
     // Contains the measure of the time for each frame in ms
     perfCheckFPSMeasure: 0,
 
-    // Time is measured when this var equals to the params one
-    // The absolute of this value should not be > to parameters.perfCheckSteps
-    perfCheckCurrentStep: -parameters.perfCheckInitialMeasure
+    // Time is measured when this var equals to the params perfCheckSteps var
+    perfCheckCurrentStep: 0,
+
+    // Measure the average FPS and set it as a performance goal
+    perfCheckFPSGoal: 0
 };
 
 
@@ -72,6 +71,20 @@ const cache: IP5BackgroundCache = {
 const setDefaultStyle = (p5: p5Types) => {
     p5.background(parameters.backgroundColor.hex);
     p5.translate(0, 0);
+
+    p5.strokeWeight(parameters.flowFieldWeight);
+    p5.stroke(
+        parameters.backgroundColor.r,
+        parameters.backgroundColor.g,
+        parameters.backgroundColor.b,
+        parameters.flowFieldAlpha
+    );
+
+    p5.fill(
+        parameters.backgroundColor.r,
+        parameters.backgroundColor.g,
+        parameters.backgroundColor.b,
+    );
 };
 
 
@@ -110,32 +123,27 @@ const recreateIfOutOfBounds = (p5: p5Types, i: number) => {
  * @param p5 The main p5 object
  */
 const perfCheckSystem = (p5: p5Types) => {
-    // Measure FPS on the first frames
-    if (cache.perfCheckCurrentStep < 0) {
-        cache.perfCheckFPSLimit += p5.frameRate();
-    }
-
-    // Calculate the average FPS
-    if (cache.perfCheckCurrentStep === 0) {
-        cache.perfCheckFPSLimit /= parameters.perfCheckInitialMeasure;
-    }
-
     if (cache.perfCheckCurrentStep >= parameters.perfCheckSteps) {
         cache.perfCheckFPSMeasure = p5.frameRate();
-        cache.perfCheckCurrentStep = 0;
+
+        // Calculate average FPS
+        cache.perfCheckFPSGoal += cache.perfCheckFPSMeasure;
+        cache.perfCheckFPSGoal /= 2;
 
         // If > to the FPS limit, add a new point
-        if (cache.perfCheckFPSMeasure > cache.perfCheckFPSLimit + parameters.perfCheckSecurityBounds) {
+        if (cache.perfCheckFPSMeasure > cache.perfCheckFPSGoal) {
             cache.points.push(createPointsBoxRandomPoint(p5, cache.pointsBox));
         }
 
-        // If <>> to the FPS limit, removes a point
-        if (cache.perfCheckFPSMeasure < cache.perfCheckFPSLimit) {
+        // If < to the FPS limit, removes a point
+        if (cache.perfCheckFPSMeasure < cache.perfCheckFPSGoal) {
             cache.points.pop();
         }
 
         console.log(cache.perfCheckFPSMeasure);
-        console.log(cache.perfCheckFPSLimit);
+        console.log(cache.perfCheckFPSGoal);
+
+        cache.perfCheckCurrentStep = 0;
     }
 
     // DEBUG ONLY
@@ -155,6 +163,12 @@ const loadEvent = (p5: p5Types) => {
     // Records window middle coordinates
     cache.windowMid[0] = window.innerWidth / 2;
     cache.windowMid[1] = window.innerHeight / 2;
+
+    // Calculate dynamic line length
+    cache.dynLineLength = Math.max(
+        window.innerWidth,
+        window.innerHeight
+    );
 
     const pointsBoxWidth = window.innerWidth * parameters.flowFieldPointsBoxSize;
     const pointsBoxHeight = window.innerHeight * parameters.flowFieldPointsBoxSize;
@@ -206,6 +220,7 @@ const drawEvent = (p5: p5Types) => {
             parameters.flowFieldMaxAngle
         );
 
+        // New Perlin vector
         cache.points[i].add(
             p5.createVector(Math.cos(angle), Math.sin(angle))
         );
@@ -214,13 +229,21 @@ const drawEvent = (p5: p5Types) => {
         recreateIfOutOfBounds(p5, i);
 
         // Draw the points as ellipses
-        p5.noStroke();
-        p5.fill(
-            parameters.backgroundColor.r,
-            parameters.backgroundColor.g,
-            parameters.backgroundColor.b,
+        p5.ellipse(cache.points[i].x, cache.points[i].y, parameters.flowFieldWeight + 1);
+
+        // Calculate current angle between MID & point
+        const lineAngle = Math.atan2(
+            cache.points[i].x - cache.windowMid[0],
+            cache.points[i].y - cache.windowMid[1]
         );
-        p5.ellipse(cache.points[i].x, cache.points[i].y, parameters.flowFieldWeight);
+
+        // Draw a line between MID & point based on the angle
+        p5.line(
+            cache.windowMid[0],
+            cache.windowMid[1],
+            cache.windowMid[0] + (cache.dynLineLength * Math.sin(lineAngle)),
+            cache.windowMid[1] + (cache.dynLineLength * Math.cos(lineAngle)),
+        );
     }
 
     // Perf check system
