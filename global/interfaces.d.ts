@@ -10,15 +10,19 @@ declare global {
     }
 
 
+    interface IP5_PerfCheck {
+        step: number,
+        avgFPS: number,
+        deviceFPS: number
+    }
+
+
     interface IP5BackgroundCache {
         windowMid: number[],
         points: p5Types.Vector[],
         pointsBox: IP5_4Coords,
         dynLineLength: number,
-
-        perfCheckFPSMeasure: number,
-        perfCheckCurrentStep: number,
-        perfCheckFPSGoal: number
+        perfCheck: IP5_PerfCheck
     }
 }
 
