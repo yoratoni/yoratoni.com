@@ -13,6 +13,7 @@ declare global {
     interface IP5_PerfCheck {
         step: number,
         avgFPS: number,
+        avgFPSArray: number[],
         deviceFPS: number
     }
 

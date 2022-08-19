@@ -8,15 +8,14 @@
 
 .content {
     width: calc(100% - var(--neo-container-margin));
-    height: calc(100% - var(--neo-container-margin));
+    height: 100%;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    /* border: 1px solid var(--neo-container-border); */
-    /* border-radius: var(--neo-container-border-rad); */
-    /* outline: 2px solid var(--neo-container-outline); */
+    border: 1px solid var(--neo-container-border);
+    outline: 2px solid var(--neo-container-outline);
 
-    /* backdrop-filter: blur(4px); */
+    backdrop-filter: blur(1px);
 }
