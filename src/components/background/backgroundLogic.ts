@@ -159,11 +159,11 @@ const perfCheckSystem = (p5: p5Types) => {
     cache.perfCheck.avgFPSArray[cache.perfCheck.step] = p5.frameRate();
 
     // DEBUG ONLY
-    p5.textSize(20);
-    p5.fill(255);
-    p5.text(`Points: ${cache.points.length}`, 50, 50);
-    p5.text(`Average FPS: ${cache.perfCheck.avgFPS}`, 50, 80);
-    p5.text(`Device FPS: ${cache.perfCheck.deviceFPS}`, 50, 110);
+    // p5.textSize(20);
+    // p5.fill(255);
+    // p5.text(`Points: ${cache.points.length}`, 50, 50);
+    // p5.text(`Average FPS: ${cache.perfCheck.avgFPS}`, 50, 80);
+    // p5.text(`Device FPS: ${cache.perfCheck.deviceFPS}`, 50, 110);
 
     cache.perfCheck.step++;
 };
@@ -245,7 +245,7 @@ const drawEvent = (p5: p5Types) => {
         recreateIfOutOfBounds(p5, i);
 
         // Draw the points as ellipses
-        p5.ellipse(cache.points[i].x, cache.points[i].y, parameters.flowField.weight + 2);
+        p5.ellipse(cache.points[i].x, cache.points[i].y, parameters.flowField.weight + 1);
 
         // Calculate current angle between MID & point
         const lineAngle = Math.atan2(
