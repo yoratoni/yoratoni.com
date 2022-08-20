@@ -7,7 +7,7 @@ import p5Types from "p5";
 const parameters = {
     // Main color of the background
     backgroundColor: {
-        hex: "#041315",
+        hex: "#021211",
         r: 190,
         g: 21,
         b: 51
@@ -17,10 +17,10 @@ const parameters = {
     flowField: {
         pointsBoxSize: 0.5,         // Size of the points box (percentage of window size)
         perlinMult: 0.02,           // Multiply the perlin noise effect
-        maxPoints: 256,             // Limits the total amount of points on a powerful device
+        maxPoints: 64,              // Limits the total amount of points on a powerful device
         maxAngle: 16,               // The max angle for a Perlin noise point
         density: 16,                // Default amount of points when loading the webpage
-        weight: 1,                  // The weight / thickness of each line (same +1 with ellipsis)
+        weight: 2,                  // The weight / thickness of each line / ellipsis
         alpha: 64                   // The alpha of each line
     },
 
@@ -82,7 +82,7 @@ const setDefaultStyle = (p5: p5Types) => {
     p5.fill(
         parameters.backgroundColor.r,
         parameters.backgroundColor.g,
-        parameters.backgroundColor.b,
+        parameters.backgroundColor.b
     );
 };
 
@@ -112,7 +112,9 @@ const recreateIfOutOfBounds = (p5: p5Types, i: number) => {
         (cache.points[i].y < cache.pointsBox.y1 || cache.points[i].y > cache.pointsBox.y2)
     ) {
         cache.points.splice(i, 1);
-        cache.points.push(createPointsBoxRandomPoint(p5, cache.pointsBox));
+        cache.points.push(
+            createPointsBoxRandomPoint(p5, cache.pointsBox)
+        );
     }
 };
 
@@ -138,25 +140,23 @@ const perfCheckSystem = (p5: p5Types) => {
         }
 
         // Update amount of points if inside the bound
-        if (
-            cache.points.length >= parameters.flowField.density
+        if (cache.perfCheck.avgFPS < cache.perfCheck.deviceFPS
+            && cache.points.length > parameters.flowField.density
+        ) {
+            cache.points.pop();
+        }
+
+        if (cache.perfCheck.avgFPS >= cache.perfCheck.deviceFPS
             && cache.points.length < parameters.flowField.maxPoints
         ) {
-            // Generate or delete X amount of points to increase animation speed
-            for (let i = 0; i < parameters.perfCheck.pointsPerCycle; i++) {
-                if (cache.perfCheck.avgFPS < cache.perfCheck.deviceFPS) {
-                    cache.points.pop();
-                } else {
-                    cache.points.push(createPointsBoxRandomPoint(p5, cache.pointsBox));
-                }
-            }
+            cache.points.push(createPointsBoxRandomPoint(p5, cache.pointsBox));
         }
 
         cache.perfCheck.step = 0;
     }
 
     // Average FPS array
-    cache.perfCheck.avgFPSArray[cache.perfCheck.step] = p5.frameRate();
+    cache.perfCheck.avgFPSArray[cache.perfCheck.step] = Math.floor(p5.frameRate());
 
     // DEBUG ONLY
     // p5.textSize(20);
@@ -164,6 +164,7 @@ const perfCheckSystem = (p5: p5Types) => {
     // p5.text(`Points: ${cache.points.length}`, 50, 50);
     // p5.text(`Average FPS: ${cache.perfCheck.avgFPS}`, 50, 80);
     // p5.text(`Device FPS: ${cache.perfCheck.deviceFPS}`, 50, 110);
+    // p5.text(`Average FPS Array: ${cache.perfCheck.avgFPSArray}`, 50, 140);
 
     cache.perfCheck.step++;
 };
@@ -211,6 +212,7 @@ const initEvent = (p5: p5Types) => {
     p5.colorMode(p5.RGB, 255);
     p5.angleMode(p5.DEGREES);
     p5.noiseDetail(2, 0.2);
+    p5.pixelDensity(1);
 
     setDefaultStyle(p5);
     loadEvent(p5);
@@ -248,18 +250,18 @@ const drawEvent = (p5: p5Types) => {
         p5.ellipse(cache.points[i].x, cache.points[i].y, parameters.flowField.weight + 1);
 
         // Calculate current angle between MID & point
-        const lineAngle = Math.atan2(
-            cache.points[i].x - cache.windowMid[0],
-            cache.points[i].y - cache.windowMid[1]
-        );
+        // const lineAngle = Math.atan2(
+        //     cache.points[i].x - cache.windowMid[0],
+        //     cache.points[i].y - cache.windowMid[1]
+        // );
 
         // Draw a line between MID & point based on the angle
-        p5.line(
-            cache.windowMid[0],
-            cache.windowMid[1],
-            cache.windowMid[0] + (cache.dynLineLength * Math.sin(lineAngle)),
-            cache.windowMid[1] + (cache.dynLineLength * Math.cos(lineAngle)),
-        );
+        // p5.line(
+        //     cache.windowMid[0],
+        //     cache.windowMid[1],
+        //     cache.windowMid[0] + (cache.dynLineLength * Math.sin(lineAngle)),
+        //     cache.windowMid[1] + (cache.dynLineLength * Math.cos(lineAngle)),
+        // );
     }
 
     // Perf check system

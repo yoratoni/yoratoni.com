@@ -1,27 +1,5 @@
 /*====== Google Font | Source Code Pro | 200 <=> 700 ======*/
-/* @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap");
 
-/*====== Nerd Fonts | Meslo LGM NF | ALL ======*/
-@font-face {
-    font-family: "MesloLGM NF Bold";
-    src: url("fonts/MesloLGM/MesloLGMNerdFo-Bold.woff2") format("woff2");
-    src: url("fonts/MesloLGM/MesloLGMNerdFo-Bold.eot?#iefix") format("embedded-opentype"),
-         url("fonts/MesloLGM/MesloLGMNerdFo-Bold.eot"),
-         url("fonts/MesloLGM/MesloLGMNerdFo-Bold.woff") format("woff"),
-         url("fonts/MesloLGM/MesloLGMNerdFo-Bold.ttf") format("truetype"),
-         url("fonts/MesloLGM/MesloLGMNerdFo-Bold.svg#MesloLGMNerdFo-Bold") format("svg");
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "MesloLGM NF";
-    src: url("fonts/MesloLGM/MesloLGMNer-Regular.woff2") format("woff2");
-    src: url("fonts/MesloLGM/MesloLGMNer-Regular.eot?#iefix") format("embedded-opentype"),
-         url("fonts/MesloLGM/MesloLGMNer-Regular.eot"),
-         url("fonts/MesloLGM/MesloLGMNer-Regular.woff") format("woff"),
-         url("fonts/MesloLGM/MesloLGMNer-Regular.ttf") format("truetype"),
-         url("fonts/MesloLGM/MesloLGMNer-Regular.svg#MesloLGMNer-Regular") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
+/*====== Google Font | Quicksand | 300 <=> 700 ======*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');

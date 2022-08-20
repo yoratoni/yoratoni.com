@@ -6,6 +6,9 @@ import Sketch from "react-p5";
 import p5Types from "p5";
 
 
+/**
+ * The main p5.js sketch used as the website background
+ */
 const Background = () => {
     const [p5, setP5] = React.useState<p5Types>();
 
