@@ -6,7 +6,12 @@
 }
 
 .navbar-background {
+    width: inherit;
     height: inherit;
+
+    position: absolute;
+    top: 0;
+    left: 0;
 
     background-image: url(../../assets/background.png);
     background-position: center;
@@ -16,36 +21,27 @@
 }
 
 .navbar-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: inherit;
     height: inherit;
-    padding-left: 1.6rem;
+    padding: var(--hr-space-l);
 
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-
-    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: space-between;
 }
 
 .navbar-title {
-    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-weight: 300;
 }
 
-.navbar-title > h1 {
-    font-size: 2rem;
-    font-weight: inherit;
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.navbar-title > h3 {
-    font-size: 1rem;
-    font-weight: inherit;
+.navbar-menu > h2 {
+    margin: var(--hr-space-m);
 }

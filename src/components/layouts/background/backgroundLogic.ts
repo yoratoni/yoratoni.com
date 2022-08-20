@@ -15,7 +15,7 @@ const parameters = {
 
     // Flow Field parameters
     flowField: {
-        pointsBoxSize: 0.5,         // Size of the points box (percentage of window size)
+        pointsBoxSize: 0.5,         // Size of the points box (percentage of canvas size)
         perlinMult: 0.02,           // Multiply the perlin noise effect
         maxPoints: 64,              // Limits the total amount of points on a powerful device
         maxAngle: 16,               // The max angle for a Perlin noise point
@@ -36,7 +36,7 @@ const parameters = {
  * Central cache of the visualization.
  */
 const cache: IP5BackgroundCache = {
-    windowMid: [0, 0],              // X & Y middle coordinates of the window
+    canvasMid: [0, 0],              // X & Y middle coordinates of the canvas
     points: [],                     // Contains all the current points
 
     // The dynamic coordinates of the points box (point bounds)
@@ -47,7 +47,7 @@ const cache: IP5BackgroundCache = {
         y2: 0
     },
 
-    // The dynamic length of each line based on the max value inside windowMid
+    // The dynamic length of each line based on the max value inside canvasMid
     dynLineLength: 0,
 
     // Perf Check system
@@ -171,28 +171,28 @@ const perfCheckSystem = (p5: p5Types) => {
 
 
 /**
- * A reload event called during the initialization and when the window is resized
+ * A reload event called during the initialization and when the canvas is resized
  * @param p5 The main p5 object
  */
 const loadEvent = (p5: p5Types) => {
-    // Records window middle coordinates
-    cache.windowMid[0] = window.innerWidth / 2;
-    cache.windowMid[1] = window.innerHeight / 2;
+    // Records canvas middle coordinates
+    cache.canvasMid[0] = p5.width / 2;
+    cache.canvasMid[1] = p5.height / 2;
 
     // Calculate dynamic line length
     cache.dynLineLength = Math.max(
-        window.innerWidth,
-        window.innerHeight
+        p5.width,
+        p5.height
     );
 
-    const pointsBoxWidth = window.innerWidth * parameters.flowField.pointsBoxSize;
-    const pointsBoxHeight = window.innerHeight * parameters.flowField.pointsBoxSize;
+    const pointsBoxWidth = p5.width * parameters.flowField.pointsBoxSize;
+    const pointsBoxHeight = p5.height * parameters.flowField.pointsBoxSize;
 
     // Records points box bounds
-    cache.pointsBox.x1 = cache.windowMid[0] - pointsBoxWidth;
-    cache.pointsBox.y1 = cache.windowMid[1] - pointsBoxHeight;
-    cache.pointsBox.x2 = cache.windowMid[0] + pointsBoxWidth;
-    cache.pointsBox.y2 = cache.windowMid[1] + pointsBoxHeight;
+    cache.pointsBox.x1 = cache.canvasMid[0] - pointsBoxWidth;
+    cache.pointsBox.y1 = cache.canvasMid[1] - pointsBoxHeight;
+    cache.pointsBox.x2 = cache.canvasMid[0] + pointsBoxWidth;
+    cache.pointsBox.y2 = cache.canvasMid[1] + pointsBoxHeight;
 
     // Clear the points array
     const pointsAmount = Math.max(cache.points.length, parameters.flowField.density);
@@ -251,16 +251,16 @@ const drawEvent = (p5: p5Types) => {
 
         // Calculate current angle between MID & point
         // const lineAngle = Math.atan2(
-        //     cache.points[i].x - cache.windowMid[0],
-        //     cache.points[i].y - cache.windowMid[1]
+        //     cache.points[i].x - cache.canvasMid[0],
+        //     cache.points[i].y - cache.canvasMid[1]
         // );
 
         // Draw a line between MID & point based on the angle
         // p5.line(
-        //     cache.windowMid[0],
-        //     cache.windowMid[1],
-        //     cache.windowMid[0] + (cache.dynLineLength * Math.sin(lineAngle)),
-        //     cache.windowMid[1] + (cache.dynLineLength * Math.cos(lineAngle)),
+        //     cache.canvasMid[0],
+        //     cache.canvasMid[1],
+        //     cache.canvasMid[0] + (cache.dynLineLength * Math.sin(lineAngle)),
+        //     cache.canvasMid[1] + (cache.dynLineLength * Math.cos(lineAngle)),
         // );
     }
 

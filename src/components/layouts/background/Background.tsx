@@ -18,14 +18,18 @@ const Background = () => {
      */
     const windowResized = () => {
         if (p5) {
-            p5.resizeCanvas(window.innerWidth, window.innerHeight, true);
+            p5.resizeCanvas(
+                p5.windowWidth,
+                p5.windowHeight,
+                true
+            );
             logic.loadEvent(p5);
         }
     };
 
 
     /**
-     * Used to detect the end of the resize event (>= 128)
+     * Used to detect the end of the resize event (>= 32)
      * @param fn Function called at the end of the event
      * @returns A timer (canceled if resize not ended)
      */
@@ -56,13 +60,19 @@ const Background = () => {
      * @param canvasParentRef A ref to the canvas HTML parent
      */
     const setup = (p5: p5Types, canvasParentRef: Element) => {
-        p5.createCanvas(window.innerWidth, window.innerHeight).parent(canvasParentRef);
-        setP5(p5);
+        if (p5) {
+            p5.createCanvas(
+                p5.windowWidth,
+                p5.windowHeight
+            ).parent(canvasParentRef);
 
-        // Disable FES (performance issues)
-        p5.disableFriendlyErrors = true;
+            setP5(p5);
 
-        logic.initEvent(p5);
+            // Disable FES (performance issues)
+            p5.disableFriendlyErrors = true;
+
+            logic.initEvent(p5);
+        }
     };
 
 

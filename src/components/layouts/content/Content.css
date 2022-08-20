@@ -1,5 +1,6 @@
-.content-container {
+.content {
     width: 100%;
-    min-height: 100%;
-    z-index: 999;
+    height: auto;
+    overflow: hidden;
+    z-index: 0;
 }

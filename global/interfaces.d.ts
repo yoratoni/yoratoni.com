@@ -19,7 +19,7 @@ declare global {
 
 
     interface IP5BackgroundCache {
-        windowMid: number[],
+        canvasMid: number[],
         points: p5Types.Vector[],
         pointsBox: IP5_4Coords,
         dynLineLength: number,

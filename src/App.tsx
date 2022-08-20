@@ -4,6 +4,7 @@ import React from "react";
 import "./styles/keyframes.css";
 import "./styles/vars.css";
 import "./styles/fonts.css";
+import "./styles/defaultStyles.css";
 import "./styles/main.css";
 
 // App layouts

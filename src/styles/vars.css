@@ -1,7 +1,20 @@
 :root {
-    --background: #021211;  /* Don't forget to also change it inside backgroundLogic */
+    /* MAIN VARS */
+    --hr-space-xxl: 0 2rem;
+    --hr-space-xl: 0 1.8rem;
+    --hr-space-l: 0 1.6rem;
+    --hr-space-m: 0 1.2rem;
 
-    --primary-red: #CA002A;
+    --left-sep-xxl: 3.2rem;
+    --left-sep-xl: 2.8rem;
+    --left-sep-l: 2.4rem;
+    --left-sep-m: 2rem;
+
+
+    /* COLORS */
+    --background: #021211;  /* Change inside backgroundLogic too */
+
+    --primary-red: #BE1533;
     --secondary-red: #83081D;
 
     --primary-green: #1D5D4D;

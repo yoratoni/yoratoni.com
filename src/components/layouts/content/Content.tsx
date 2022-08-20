@@ -4,6 +4,7 @@ import "./Content.css";
 
 // Components
 import Navbar from "../../navbar/Navbar";
+import Social from "../../social/Social";
 
 
 /**
@@ -11,8 +12,9 @@ import Navbar from "../../navbar/Navbar";
  */
 const Content = () => {
     return (
-        <div className="content-container">
+        <div className="content">
             <Navbar />
+            {/* <Social /> */}
         </div>
     );
 };

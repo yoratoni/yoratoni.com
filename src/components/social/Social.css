@@ -1,0 +1,16 @@
+.social {
+    width: 56px;
+    height: 196px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    border: 1px solid var(--primary-red);
+    border-radius: 8px;
+}
+
+.social > a {
+    color: white;
+}
