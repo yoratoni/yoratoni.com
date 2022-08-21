@@ -16,12 +16,8 @@ import Div100vh from "react-div-100vh";
 const App = () => {
     return (
         <Div100vh>
-            {/* <Background />
-            <Content /> */}
-
-            <div className="tex">
-
-            </div>
+            <Background />
+            <Content />
         </Div100vh>
     );
 };

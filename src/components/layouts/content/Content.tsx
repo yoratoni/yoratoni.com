@@ -1,5 +1,4 @@
 import React from "react";
-import "./Content.css";
 
 
 // Components
@@ -12,20 +11,20 @@ import Social from "../../social/Social";
  */
 const Content = () => {
     return (
-        <div className="content">
-            <header>
+        <div className="content tw-w-full tw-h-full tw-z-0">
+            <header className="tw-overflow-hidden tw-w-full tw-h-24">
                 <Navbar />
             </header>
 
-            <main>
+            <main className="tw-w-full tw-h-[calc(100%-96px)]">
 
             </main>
 
-            <footer>
+            <footer className="tw-w-full tw-h-0">
 
             </footer>
 
-            {/* <Social /> */}
+            <Social />
         </div>
     );
 };
