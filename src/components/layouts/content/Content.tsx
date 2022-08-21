@@ -13,7 +13,18 @@ import Social from "../../social/Social";
 const Content = () => {
     return (
         <div className="content">
-            <Navbar />
+            <header>
+                <Navbar />
+            </header>
+
+            <main>
+
+            </main>
+
+            <footer>
+
+            </footer>
+
             {/* <Social /> */}
         </div>
     );

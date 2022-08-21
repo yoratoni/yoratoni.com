@@ -1,10 +1,8 @@
 import React from "react";
 
 // General app styles
-import "./styles/keyframes.css";
 import "./styles/vars.css";
 import "./styles/fonts.css";
-import "./styles/defaultStyles.css";
 import "./styles/main.css";
 
 // App layouts

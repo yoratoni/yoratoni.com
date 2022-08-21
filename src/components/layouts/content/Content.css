@@ -1,6 +1,21 @@
 .content {
     width: 100%;
-    height: auto;
-    overflow: hidden;
+    height: 100%;
     z-index: 0;
+}
+
+.content > header {
+    overflow: hidden;
+    width: inherit;
+    height: 96px;
+}
+
+.content > main {
+    width: inherit;
+    height: calc(100% - 96px);
+}
+
+.content > footer {
+    width: inherit;
+    height: 0;
 }

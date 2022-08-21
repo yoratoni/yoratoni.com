@@ -87,7 +87,7 @@ const Background = () => {
 
 
     return (
-        <div id="background-container">
+        <div className="background-container">
             <Sketch setup={setup} draw={draw} />
         </div>
     );
