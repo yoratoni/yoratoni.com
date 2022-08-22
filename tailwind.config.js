@@ -1,7 +1,6 @@
 /* eslint-env node */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    prefix: "tw-",
     mode: "jit",
     purge: [
         "./public/**/*.html",

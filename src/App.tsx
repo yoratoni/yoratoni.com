@@ -7,18 +7,15 @@ import "./styles/main.css";
 
 // App layouts
 import Background from "./components/layouts/background/Background";
-import Content from "./components/layouts/content/Content";
-
-// Mobile 100vh fix
-import Div100vh from "react-div-100vh";
+import Content from "./components/layouts/Content";
 
 
 const App = () => {
     return (
-        <Div100vh>
+        <>
             <Background />
             <Content />
-        </Div100vh>
+        </>
     );
 };
 

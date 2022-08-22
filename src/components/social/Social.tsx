@@ -11,12 +11,11 @@ const Social = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        fontSize: "38px",
-        color: "primary"
+        fontSize: "38px"
     };
 
     return (
-        <div className="social">
+        <div className="w-14 h-48 flex items-center justify-around flex-col">
             <a href="https://github.com/yoratoni" rel="noreferrer" target="_blank">
                 <GitHubIcon sx={{ ...props }} />
             </a>
