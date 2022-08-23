@@ -1,0 +1,12 @@
+.banner__title {
+    font-size: 8vw;
+    letter-spacing: 6px;
+    font-weight: 200;
+    line-height: 1;
+}
+
+@media screen and (min-width: 1200px) {
+    .banner__title {
+        font-size: 96px;
+    }
+}

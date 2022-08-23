@@ -255,7 +255,7 @@ const drawEvent = (p5: p5Types) => {
         //     cache.points[i].y - cache.canvasMid[1]
         // );
 
-        // Draw a line between MID & point based on the angle
+        // // Draw a line between MID & point based on the angle
         // p5.line(
         //     cache.canvasMid[0],
         //     cache.canvasMid[1],
