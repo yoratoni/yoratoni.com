@@ -4,10 +4,11 @@ import React from "react";
 import "./styles/vars.css";
 import "./styles/fonts.css";
 import "./styles/main.css";
+import "./styles/rcc.css";
 
-// App layouts
-import Background from "./layouts/background/Background";
-import Content from "./layouts/Content";
+// App layers
+import Background from "./layers/background/Background";
+import Content from "./layers/Content";
 
 
 const App = () => {

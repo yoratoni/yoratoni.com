@@ -1,0 +1,22 @@
+.work__sectionTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--red-alpha-1);
+
+    padding: 4px 2rem;
+    font-size: 2rem;
+
+    z-index: 4;
+}
+
+.work__section {
+    margin-top: -1rem;
+    aspect-ratio: 1 / 1;
+
+    border: 1px solid var(--red-alpha-1);
+    outline: 1px solid var(--red-alpha-2);
+    outline-offset: 8px;
+}

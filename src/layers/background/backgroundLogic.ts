@@ -17,17 +17,16 @@ const parameters = {
     flowField: {
         pointsBoxSize: 0.5,         // Size of the points box (percentage of canvas size)
         perlinMult: 0.02,           // Multiply the perlin noise effect
-        maxPoints: 64,              // Limits the total amount of points on a powerful device
+        maxPoints: 18,              // Limits the total amount of points on a powerful device
         maxAngle: 16,               // The max angle for a Perlin noise point
-        density: 16,                // Default amount of points when loading the webpage
+        density: 12,                // Default amount of points when loading the webpage
         weight: 2,                  // The weight / thickness of each line / ellipsis
         alpha: 64                   // The alpha of each line
     },
 
     // Perf Check system parameters
     perfCheck: {
-        cycle: 16,                   // If cache.perfCheckMeasureStep == cycle, execute perfCheck()
-        pointsPerCycle: 2            // Used to spawn multiple points at each cycle (~2)
+        cycle: 16                   // If cache.perfCheckMeasureStep == cycle, execute perfCheck()
     }
 };
 
@@ -46,9 +45,6 @@ const cache: IP5BackgroundCache = {
         x2: 0,
         y2: 0
     },
-
-    // The dynamic length of each line based on the max value inside canvasMid
-    dynLineLength: 0,
 
     // Perf Check system
     perfCheck: {
@@ -179,12 +175,6 @@ const loadEvent = (p5: p5Types) => {
     cache.canvasMid[0] = p5.width / 2;
     cache.canvasMid[1] = p5.height / 2;
 
-    // Calculate dynamic line length
-    cache.dynLineLength = Math.max(
-        p5.width,
-        p5.height
-    );
-
     const pointsBoxWidth = p5.width * parameters.flowField.pointsBoxSize;
     const pointsBoxHeight = p5.height * parameters.flowField.pointsBoxSize;
 
@@ -249,19 +239,14 @@ const drawEvent = (p5: p5Types) => {
         // Draw the points as ellipses
         p5.ellipse(cache.points[i].x, cache.points[i].y, parameters.flowField.weight + 1);
 
-        // Calculate current angle between MID & point
-        // const lineAngle = Math.atan2(
-        //     cache.points[i].x - cache.canvasMid[0],
-        //     cache.points[i].y - cache.canvasMid[1]
-        // );
-
-        // // Draw a line between MID & point based on the angle
-        // p5.line(
-        //     cache.canvasMid[0],
-        //     cache.canvasMid[1],
-        //     cache.canvasMid[0] + (cache.dynLineLength * Math.sin(lineAngle)),
-        //     cache.canvasMid[1] + (cache.dynLineLength * Math.cos(lineAngle)),
-        // );
+        if (i > 0) {
+            p5.line(
+                cache.points[i-1].x,
+                cache.points[i-1].y,
+                cache.points[i].x,
+                cache.points[i].y,
+            );
+        }
     }
 
     // Perf check system

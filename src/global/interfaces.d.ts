@@ -22,7 +22,6 @@ declare global {
         canvasMid: number[],
         points: p5Types.Vector[],
         pointsBox: IP5_4Coords,
-        dynLineLength: number,
         perfCheck: IP5_PerfCheck
     }
 }

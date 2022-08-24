@@ -1,23 +1,14 @@
 :root {
     /* MAIN VARS */
-    --hr-space-xxl: 0 2rem;
-    --hr-space-xl: 0 1.8rem;
-    --hr-space-l: 0 1.6rem;
-    --hr-space-m: 0 1.2rem;
-
-    --left-sep-xxl: 3.2rem;
-    --left-sep-xl: 2.8rem;
-    --left-sep-l: 2.4rem;
-    --left-sep-m: 2rem;
+    --box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.5);
+    --main-border-rad: 10px;
 
     /* COLORS */
-    --background: #021211;  /* Change inside backgroundLogic too */
+    --background-main: #021211;  /* Change inside backgroundLogic too */
 
-    --primary-red: #BE1533;
-    --secondary-red: #83081D;
+    --background-alpha-1: rgba(2, 20, 19, 0.8);
+    --background-alpha-2: rgba(2, 20, 19, 0.64);
 
-    --primary-green: #1D5D4D;
-    --secondary-green: #07302C;
-
-    --white: #D1FBE3;
+    --red-alpha-1: rgba(190, 21, 51, 0.4);
+    --red-alpha-2: rgba(190, 21, 51, 0.3);
 }
