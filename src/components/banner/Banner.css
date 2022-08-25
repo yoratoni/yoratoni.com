@@ -16,10 +16,24 @@
 
 .banner__sectionContent {
     width: auto;
-    max-width: 32rem;
+    max-width: 36rem;
+
     margin: 0 1.4rem;
     padding: 1.6rem 1.6rem;
-    line-height: 1.2rem;
+
+    line-height: 1.4rem;
+}
+
+.banner__sectionContent > p {
+    font-weight: 300;
+}
+
+.banner__sectionContent > .banner__theArtOfCode {
+    margin: 1.25rem 0;
+
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .banner__justMe {

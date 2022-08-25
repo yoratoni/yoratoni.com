@@ -19,8 +19,7 @@ declare global {
 
 
     interface IReactSection {
-        title: string,
-        children: React.ReactNode
+        title: string
     }
 }
 

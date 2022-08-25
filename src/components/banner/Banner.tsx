@@ -7,14 +7,14 @@ const Banner = () => {
         <header className="banner__container">
             <h1 className="banner__name">ADRIEN BIBOLLET</h1>
 
-            <p className="my-8 text-base font-light tracking-wide">
+            <p className="my-8 text-lg font-light tracking-wide">
                 &#123; <br></br>
                 &nbsp; alias: &#34;Yoratoni&#34;, <br></br>
                 &nbsp; work: &#34;Frontend&#34;, <br></br>
                 &#125;
             </p>
 
-            <div className="rcc__section rcc__squareBck banner__sectionContent">
+            <div className="rcc__banner rcc__squareBck banner__sectionContent">
                 <div className="banner__justMe"></div>
 
                 <p>
@@ -22,7 +22,7 @@ const Banner = () => {
                     with a passion for what we call:
                 </p>
 
-                <p className="my-5 font-normal tracking-widest">
+                <p className="banner__theArtOfCode">
                     &#34;The Art of Code&#34;
                 </p>
 

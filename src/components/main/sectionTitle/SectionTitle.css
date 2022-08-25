@@ -1,0 +1,26 @@
+.sectionTitle {
+    width: 100%;
+    height: auto;
+
+    margin: 1rem 0;
+
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.sectionTitle__hr {
+    width: 80%;
+    height: 2px;
+
+    margin: 4rem auto;
+
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sectionTitle > h2 {
+    width: auto;
+    height: auto;
+
+    display: inline-block;
+    border-bottom: 4px solid darkslategrey;
+}
