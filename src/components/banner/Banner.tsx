@@ -4,26 +4,33 @@ import "./Banner.css";
 
 const Banner = () => {
     return (
-        <div className="flex items-center justify-center w-full h-full">
-            <div className="flex flex-col items-center justify-start w-full h-auto">
-                <h1 className="leading-tight banner__name">ADRIEN BIBOLLET</h1>
-                <p className="text-base font-normal tracking-widest">
-                    Aka. Yoratoni
+        <header className="banner__container">
+            <h1 className="banner__name">ADRIEN BIBOLLET</h1>
+
+            <p className="my-8 text-base font-light tracking-wide">
+                &#123; <br></br>
+                &nbsp; alias: &#34;Yoratoni&#34;, <br></br>
+                &nbsp; work: &#34;Frontend&#34;, <br></br>
+                &#125;
+            </p>
+
+            <div className="rcc__section rcc__squareBck banner__sectionContent">
+                <div className="banner__justMe"></div>
+
+                <p>
+                    Hey, I&apos;m a freelance frontend developer based in France
+                    with a passion for what we call:
                 </p>
 
-                <div className="w-auto max-w-xl rcc__section rcc__squareBck banner__quickWords">
-                    <div className="banner__justMe"></div>
+                <p className="my-5 font-normal tracking-widest">
+                    &#34;The Art of Code&#34;
+                </p>
 
-                    <p>For over a decade, I have studied and inscribed the sacred runes
-                        and performed the arcane rituals that breathe life into the realm of the internet.
-                    </p>
-
-                    <p>The web can sometimes be indistinguishable from magic,
-                        but I have the knowledge and patience required to make just about anything.
-                    </p>
-                </div>
+                <p>
+                    Using computers to create beautiful and unique designs is my primary goal.
+                </p>
             </div>
-        </div>
+        </header>
     );
 };
 

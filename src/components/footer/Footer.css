@@ -1,0 +1,25 @@
+.footer__container {
+    width: 100%;
+    margin: 2rem 0;
+    padding: 0 2rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.footer__contentContainer {
+    width: 100%;
+    max-width: 42rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer__contentContainer > p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+}

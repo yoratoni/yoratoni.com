@@ -1,24 +1,32 @@
+.banner__container {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .banner__name {
     font-size: 8vw;
     letter-spacing: 3px;
+    line-height: 0.75;
 }
 
-.banner__quickWords {
-    margin: 2rem 1.4rem 0 1.4rem;
-}
-
-.banner__quickWords > p {
-    width: 100%;
-    padding: 0 1rem 1.6rem 1rem;
-
-    font-size: 16px;
+.banner__sectionContent {
+    width: auto;
+    max-width: 32rem;
+    margin: 0 1.4rem;
+    padding: 1.6rem 1.6rem;
+    line-height: 1.2rem;
 }
 
 .banner__justMe {
-    width: 160px;
-    height: 160px;
+    width: calc(20% + 28px);
+    aspect-ratio: 1;
 
-    margin: 2rem 0 1.6rem 0;
+    margin-bottom: 1.6rem;
 
     background-image: url(../../assets/just_me.png);
     background-position: center;
@@ -35,5 +43,12 @@
 @media screen and (min-width: 1200px) {
     .banner__name {
         font-size: 96px;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .banner__container {
+        margin-top: 0.8rem;
+        height: 700px;
     }
 }

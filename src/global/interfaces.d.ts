@@ -1,4 +1,5 @@
 import p5Types from "p5";
+import React from "react";
 
 
 declare global {
@@ -10,19 +11,16 @@ declare global {
     }
 
 
-    interface IP5_PerfCheck {
-        step: number,
-        avgFPS: number,
-        avgFPSArray: number[],
-        deviceFPS: number
-    }
-
-
     interface IP5BackgroundCache {
         canvasMid: number[],
         points: p5Types.Vector[],
-        pointsBox: IP5_4Coords,
-        perfCheck: IP5_PerfCheck
+        pointsBox: IP5_4Coords
+    }
+
+
+    interface IReactSection {
+        title: string,
+        children: React.ReactNode
     }
 }
 

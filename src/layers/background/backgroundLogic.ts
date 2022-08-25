@@ -17,16 +17,10 @@ const parameters = {
     flowField: {
         pointsBoxSize: 0.5,         // Size of the points box (percentage of canvas size)
         perlinMult: 0.02,           // Multiply the perlin noise effect
-        maxPoints: 18,              // Limits the total amount of points on a powerful device
         maxAngle: 16,               // The max angle for a Perlin noise point
-        density: 12,                // Default amount of points when loading the webpage
+        density: 16,                // Default amount of points when loading the webpage
         weight: 2,                  // The weight / thickness of each line / ellipsis
         alpha: 64                   // The alpha of each line
-    },
-
-    // Perf Check system parameters
-    perfCheck: {
-        cycle: 16                   // If cache.perfCheckMeasureStep == cycle, execute perfCheck()
     }
 };
 
@@ -44,17 +38,6 @@ const cache: IP5BackgroundCache = {
         y1: 0,
         x2: 0,
         y2: 0
-    },
-
-    // Perf Check system
-    perfCheck: {
-        step: 0,                    // If step >= parameters.perfCheckCycle, execute perfCheck()
-        avgFPS: 0,                  // Contains the average FPS final value calculated from the array
-        avgFPSArray: [],            // Contains multiple FPS values used to calculate average
-
-        // Used to measure the default FPS of any device
-        // Allowing the canvas to match device performances
-        deviceFPS: -1
     }
 };
 
@@ -116,57 +99,6 @@ const recreateIfOutOfBounds = (p5: p5Types, i: number) => {
 
 
 /**
- * Removes or add points depending on the FPS
- * @param p5 The main p5 object
- */
-const perfCheckSystem = (p5: p5Types) => {
-    if (cache.perfCheck.step >= parameters.perfCheck.cycle) {
-        // Measure average FPS from array
-        cache.perfCheck.avgFPS = Math.round(
-            cache.perfCheck.avgFPSArray.reduce(
-                (a, b) => a+b
-            ) / parameters.perfCheck.cycle
-        );
-
-        // Measure the default FPS of the device (floored to nearest 10)
-        // Calculated from average array to avoid peak FPS to influence deviceFPS
-        const flooredAvgFPS = Math.floor(cache.perfCheck.avgFPS / 10) * 10;
-        if (flooredAvgFPS > cache.perfCheck.deviceFPS) {
-            cache.perfCheck.deviceFPS = flooredAvgFPS;
-        }
-
-        // Update amount of points if inside the bound
-        if (cache.perfCheck.avgFPS < cache.perfCheck.deviceFPS
-            && cache.points.length > parameters.flowField.density
-        ) {
-            cache.points.pop();
-        }
-
-        if (cache.perfCheck.avgFPS >= cache.perfCheck.deviceFPS
-            && cache.points.length < parameters.flowField.maxPoints
-        ) {
-            cache.points.push(createPointsBoxRandomPoint(p5, cache.pointsBox));
-        }
-
-        cache.perfCheck.step = 0;
-    }
-
-    // Average FPS array
-    cache.perfCheck.avgFPSArray[cache.perfCheck.step] = Math.floor(p5.frameRate());
-
-    // DEBUG ONLY
-    // p5.textSize(20);
-    // p5.fill(255);
-    // p5.text(`Points: ${cache.points.length}`, 50, 50);
-    // p5.text(`Average FPS: ${cache.perfCheck.avgFPS}`, 50, 80);
-    // p5.text(`Device FPS: ${cache.perfCheck.deviceFPS}`, 50, 110);
-    // p5.text(`Average FPS Array: ${cache.perfCheck.avgFPSArray}`, 50, 140);
-
-    cache.perfCheck.step++;
-};
-
-
-/**
  * A reload event called during the initialization and when the canvas is resized
  * @param p5 The main p5 object
  */
@@ -185,7 +117,7 @@ const loadEvent = (p5: p5Types) => {
     cache.pointsBox.y2 = cache.canvasMid[1] + pointsBoxHeight;
 
     // Clear the points array
-    const pointsAmount = Math.max(cache.points.length, parameters.flowField.density);
+    const pointsAmount = parameters.flowField.density;
     cache.points = [];
 
     for (let i = 0; i < pointsAmount; i++) {
@@ -248,9 +180,6 @@ const drawEvent = (p5: p5Types) => {
             );
         }
     }
-
-    // Perf check system
-    perfCheckSystem(p5);
 };
 
 

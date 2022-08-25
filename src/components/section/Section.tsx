@@ -2,14 +2,15 @@ import React from "react";
 import "./Section.css";
 
 
-const Section = () => {
+const Section = (props: IReactSection) => {
     return (
-        <div className="flex flex-col items-center justify-center w-full px-8 my-[8rem]">
-            <div className="rcc__squareBck work__sectionTitle">
-                <h1>Work</h1>
+        <div className="section__container">
+            <div className="rcc__squareBck section__title">
+                <h1>{props.title}</h1>
             </div>
 
-            <div className="w-full max-w-xl rcc__section rcc__squareBck work__section">
+            <div className="rcc__section rcc__squareBck section__contentContainer">
+                <div>{props.children}</div>
             </div>
         </div>
     );
