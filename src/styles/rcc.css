@@ -1,19 +1,9 @@
 /* RCC: Reusable CSS classes */
 /* Defined as BEM (rcc__elemPrecision) */
 
-.rcc__squareBck {
+.rcc__squareBackground {
     background-image: url(../assets/col_background.png);
     background-position: center;
     background-repeat: repeat;
     background-size: 48px;
-}
-
-.rcc__banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    box-shadow: var(--box-shadow);
-    border-radius: var(--main-border-rad);
 }

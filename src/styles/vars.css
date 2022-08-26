@@ -1,15 +1,9 @@
 :root {
     /* MAIN VARS */
-    --box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.5);
-    --main-border-rad: 10px;
-    --default-height: calc(100vh - 4rem);
+    --border: 10px;
+	--box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.5);
+    --app-height: calc(100vh - 4rem);
 
     /* COLORS */
-    --background-main: #021211;  /* Change inside backgroundLogic too */
-
-    --background-alpha-1: rgba(2, 20, 19, 0.8);
-    --background-alpha-2: rgba(2, 20, 19, 0.64);
-
-    --red-alpha-1: rgba(190, 21, 51, 0.4);
-    --red-alpha-2: rgba(190, 21, 51, 0.3);
+    --background: #021211;  /* Change inside backgroundLogic too */
 }

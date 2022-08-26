@@ -1,5 +1,4 @@
 import p5Types from "p5";
-import React from "react";
 
 
 declare global {
