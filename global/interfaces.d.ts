@@ -17,8 +17,8 @@ declare global {
     }
 
 
-    interface IReactSection {
-        title: string
+    interface PropsName {
+        name: string
     }
 }
 

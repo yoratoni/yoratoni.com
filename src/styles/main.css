@@ -8,6 +8,7 @@
     box-sizing: border-box;
     font-family: 'Source Code Pro', sans-serif;
     font-weight: 200;
+    color: white;
     margin: 0;
     padding: 0;
 }
@@ -19,5 +20,5 @@ body {
 }
 
 body {
-    background-color: var(--background-main);
+    background-color: var(--background);
 }

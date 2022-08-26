@@ -2,6 +2,7 @@
     /* MAIN VARS */
     --border: 10px;
 	--box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.5);
+    --navbar-height: 4rem;
     --app-height: calc(100vh - 4rem);
 
     /* COLORS */
