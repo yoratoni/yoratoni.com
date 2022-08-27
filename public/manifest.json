@@ -41,7 +41,7 @@
     ],
     "theme_color": "#000000",
     "background_color": "#021211",
-    "start_url": "https://www.yoratoni.com",
+    "start_url": "/",
     "scope": "/",
     "display": "browser"
 }

@@ -61,10 +61,12 @@ const Background = () => {
      */
     const setup = (p5: p5Types, canvasParentRef: Element) => {
         if (p5) {
-            p5.createCanvas(
-                p5.windowWidth,
-                p5.windowHeight
-            ).parent(canvasParentRef);
+            // Note: p5 originally creates a <main></main> tag as the parent
+            // It needs to be removed after it has been replaced by canvasParentRef
+            const canvas = p5.createCanvas(p5.windowWidth, p5.windowHeight);
+            const canvasOriginParent = canvas.parent();
+            canvas.parent(canvasParentRef);
+            canvasOriginParent.remove();
 
             setP5(p5);
 
