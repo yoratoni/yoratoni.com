@@ -1,0 +1,11 @@
+.main__container {
+    width: 100%;
+    max-width: var(--chakra-sizes-container-md);
+    min-height: calc(100vh - var(--chakra-space-16));
+
+    margin: var(--chakra-space-16) auto 0 auto;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}

@@ -1,14 +1,14 @@
 import React from "react";
 
-
-// Main components
-import Navbar from "../components/navbar/Navbar";
+import Navbar from "./navbar/Navbar";
+import Main from "./main/Main";
 
 
 const Content = () => {
     return (
         <>
             <Navbar />
+            <Main />
         </>
     );
 };

@@ -7,8 +7,8 @@ import "./styles/main.css";
 import "./styles/rcc.css";
 
 // App layers
-import Background from "./layers/background/Background";
-import Content from "./layers/Content";
+import Background from "./components/background/Background";
+import Content from "./components/content/Content";
 
 
 const App = () => {
