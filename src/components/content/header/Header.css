@@ -1,0 +1,87 @@
+.site__header {
+    width: 100%;
+    height: calc(100vh - var(--chakra-space-16));
+
+    padding: 0 2rem;
+
+    color: var(--chakra-colors-whiteAlpha-900);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site__headerContent {
+    width: 100%;
+
+    margin-bottom: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.site__headerName {
+    font-size: var(--heading-2xl);
+    font-weight: 600;
+
+    letter-spacing: var(--chakra-letterSpacings-widest);
+
+    text-align: center;
+    line-height: 1;
+}
+
+.site__headerSub {
+    color: var(--red-alpha-1);
+
+    font-size: var(--heading-md);
+    font-weight: 400;
+
+    line-height: 1;
+    word-break: keep-all;
+}
+
+.site__headerQuickWords {
+    width: 100%;
+    max-width: var(--chakra-sizes-container-sm);
+
+    margin: 2.6rem 0;
+    padding: var(--chakra-space-4);
+
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+
+    background-color: var(--chakra-colors-whiteAlpha-200);
+    box-shadow: var(--chakra-shadows-dark-lg);
+    backdrop-filter: blur(4px);
+
+    border-radius: var(--chakra-radii-lg);
+}
+
+.site__headerHomeIntro {
+    width: 100%;
+    max-width: 36rem;
+
+    margin: 0 auto 2rem auto;
+}
+
+.site__headerHomeIntro > p {
+    margin: 1.5rem 0;
+
+    font-weight: 200;
+
+    font-size: 1.125rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.site__headerHomeIntro > p:first-child {
+    margin-top: 0;
+}
+
+.site__headerHomeIntro span {
+    color: var(--red-alpha-1);
+    font-weight: 400;
+}

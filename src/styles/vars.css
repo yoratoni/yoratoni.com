@@ -4,7 +4,8 @@
     --red-alpha-1: #fa1d46;
     --red-alpha-2: #31121A;
 
-    --heading-md: clamp(18px, 2vw, 22px);
+    --heading-xs: clamp(13px, 3vw, 15px);
+    --heading-md: clamp(18px, 3vw, 22px);
     --heading-xl: clamp(28px, 6vw, 62px);
     --heading-2xl: clamp(18px, 8vw, 66px);
 

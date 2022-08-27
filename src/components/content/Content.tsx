@@ -1,14 +1,22 @@
 import React from "react";
+import "./Content.css";
 
 import Navbar from "./navbar/Navbar";
-import Main from "./main/Main";
+import Header from "./header/Header";
+import Footer from "./footer/Footer";
 
 
 const Content = () => {
     return (
         <>
             <Navbar />
-            <Main />
+
+            <div className="site__container">
+                <Header />
+
+
+                <Footer />
+            </div>
         </>
     );
 };
