@@ -4,7 +4,7 @@ import "./NavbarButton.css";
 
 const NavbarLink = (props: PropsName) => {
     return (
-        <div className="navbarButton__container">
+        <div className="navbar__button">
             <a href="/">{ props.name }</a>
         </div>
     );

@@ -1,8 +1,8 @@
-.navbarButton__container {
+.navbar__button {
     font-size: 16px;
 }
 
-.navbarButton__container > a {
+.navbar__button > a {
     transition-property: var(--chakra-transition-property-common);
     transition-duration: var(--chakra-transition-duration-fast);
     transition-timing-function: var(--chakra-transition-easing-ease-out);
@@ -20,6 +20,6 @@
     outline-offset: 2px;
 }
 
-.navbarButton__container > a:hover {
+.navbar__button > a:hover {
     text-decoration: underline;
 }

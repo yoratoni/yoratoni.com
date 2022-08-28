@@ -9,6 +9,9 @@
     --heading-xl: clamp(28px, 6vw, 62px);
     --heading-2xl: clamp(18px, 8vw, 66px);
 
+    --fontSize-xs: clamp(0.875rem, 0.75rem + 0.625vw, 1rem);
+    --fontSize-md: clamp(1rem, 0.875rem + 0.625vw, 1.125rem);
+
 
     /* Chakra Theme */
     --chakra-ring-inset: var(--chakra-empty, /*!*/ /*!*/);

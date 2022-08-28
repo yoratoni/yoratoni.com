@@ -7,7 +7,7 @@ import NavbarLink from "./NavbarButton/NavbarButton";
 
 const Navbar = () => {
     return (
-        <nav className="rcc__squareBackground navbar__container">
+        <nav className="rcc__squareBackground navbar">
             <div className="navbar__linksContainer">
                 <NavbarLink name="Work" />
                 <NavbarLink name="Art" />

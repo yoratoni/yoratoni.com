@@ -1,7 +1,8 @@
-.site__header {
+.header {
     width: 100%;
     height: calc(100vh - var(--chakra-space-16));
 
+    margin-bottom: 3rem;
     padding: 0 2rem;
 
     color: var(--chakra-colors-whiteAlpha-900);
@@ -9,20 +10,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.site__headerContent {
-    width: 100%;
-
-    margin-bottom: 3rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
 
-.site__headerName {
+.header__heading {
     font-size: var(--heading-2xl);
     font-weight: 600;
 
@@ -32,7 +23,7 @@
     line-height: 1;
 }
 
-.site__headerSub {
+.header__subheading {
     color: var(--red-alpha-1);
 
     font-size: var(--heading-md);
@@ -42,14 +33,14 @@
     word-break: keep-all;
 }
 
-.site__headerQuickWords {
+.header__quickWord {
     width: 100%;
     max-width: var(--chakra-sizes-container-sm);
 
     margin: 2.6rem 0;
     padding: var(--chakra-space-4);
 
-    font-size: 1rem;
+    font-size: var(--fontSize-xs);
     line-height: 1.5;
     text-align: center;
 
@@ -60,28 +51,27 @@
     border-radius: var(--chakra-radii-lg);
 }
 
-.site__headerHomeIntro {
+.header__homeIntro {
     width: 100%;
     max-width: 36rem;
 
     margin: 0 auto 2rem auto;
 }
 
-.site__headerHomeIntro > p {
+.header__homeIntro > p {
     margin: 1.5rem 0;
 
+    font-size: var(--fontSize-md);
     font-weight: 200;
-
-    font-size: 1.125rem;
     line-height: 1.5;
     text-align: justify;
 }
 
-.site__headerHomeIntro > p:first-child {
+.header__homeIntro > p:first-child {
     margin-top: 0;
 }
 
-.site__headerHomeIntro span {
+.header__homeIntro span {
     color: var(--red-alpha-1);
     font-weight: 400;
 }

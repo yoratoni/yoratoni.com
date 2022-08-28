@@ -4,9 +4,14 @@ import "./Footer.css";
 
 const Footer = () => {
     return (
-        <footer className="site__footer">
-            ©&nbsp;{new Date().getFullYear()}&nbsp;Adrien&nbsp;Bibollet.
-            All&nbsp;Rights&nbsp;Reserved.
+        <footer className="footer">
+
+            <p className="footer_copyrights">
+                ©&nbsp;{new Date().getFullYear()}&nbsp;Adrien&nbsp;Bibollet
+                <span>•</span>
+                <br></br>
+                All&nbsp;Rights&nbsp;Reserved.
+            </p>
         </footer>
     );
 };

@@ -1,4 +1,4 @@
-.site__footer {
+.footer {
     width: 100%;
 
     padding: 1rem;
@@ -11,6 +11,27 @@
     font-size: var(--heading-xs);
     font-weight: 400;
 
-    color: var(--chakra-colors-whiteAlpha-600);
+    color: var(--chakra-colors-whiteAlpha-700);
     opacity: 0.4;
+}
+
+.footer_copyrights > span {
+    margin: 0 0.4rem;
+
+    font-size: 16px;
+    line-height: 1;
+}
+
+.footer_copyrights > br {
+    display: none;
+}
+
+@media screen and (max-width: 386px) {
+    .footer_copyrights > span {
+        display: none;
+    }
+
+    .footer_copyrights > br {
+        display: block;
+    }
 }
