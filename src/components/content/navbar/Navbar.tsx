@@ -1,18 +1,17 @@
 import React from "react";
 import "./Navbar.css";
 
-// Components
-import NavbarLink from "./NavbarButton/NavbarButton";
+import Link from "../../others/link/Link";
 
 
 const Navbar = () => {
     return (
         <nav className="rcc__squareBackground navbar">
-            <div className="navbar__linksContainer">
-                <NavbarLink name="Work" />
-                <NavbarLink name="Art" />
-                <NavbarLink name="Contact" />
-                <NavbarLink name="About" />
+            <div className="navbar__container">
+                <Link otherStyle="" name="Work"    title="Work"    href="/" />
+                <Link otherStyle="" name="Art"     title="Art"     href="/" />
+                <Link otherStyle="" name="Contact" title="Contact" href="/" />
+                <Link otherStyle="" name="About"   title="About"   href="/" />
             </div>
         </nav>
     );

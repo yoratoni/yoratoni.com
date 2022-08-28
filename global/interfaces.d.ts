@@ -1,4 +1,5 @@
 import p5Types from "p5";
+import React from "react";
 
 
 declare global {
@@ -17,8 +18,13 @@ declare global {
     }
 
 
-    interface PropsName {
-        name: string
+    interface PropsLink {
+        children?: React.ReactNode,
+        otherStyle?: string,
+        name?: string | null,
+        title?: string,
+        href?: string,
+        target?: "_blank" | "_self" | "_parent" | "_top"
     }
 }
 

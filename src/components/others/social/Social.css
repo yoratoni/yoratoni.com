@@ -1,0 +1,19 @@
+.social {
+    width: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: inherit;
+    line-height: 1;
+}
+
+.social > svg {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.social > svg:hover {
+    color: blue;
+}
