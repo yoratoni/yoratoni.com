@@ -1,0 +1,24 @@
+.footer__scrollToTopContainer {
+    width: 100%;
+
+    padding: var(--ui-sizes-4) 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__scrollToTop {
+    padding: var(--ui-sizes-1);
+    color: var(--ui-colors-whiteAlpha-900);
+}
+
+.footer__scrollToTop:hover {
+    transform: var(--ui-transition-transform-md);
+    color: var(--red-alpha-1);
+}
+
+.footer__scrollToTop > svg {
+    transform: rotateZ(180deg);
+    font-size: var(--ui-sizes-16);
+}

@@ -7,6 +7,7 @@
 
     cursor: pointer;
 
+    font-weight: 400;
     text-decoration: none;
     text-underline-offset: 4px;
 
@@ -17,6 +18,8 @@
 }
 
 .link:hover {
-    color: var(--ui-colors-whiteAlpha-700);
+    color: var(--red-alpha-1);
+
+    font-weight: 500;
     text-decoration: underline;
 }

@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    height: calc(100vh - var(--ui-space-16));
+    height: calc(100vh - var(--ui-space-24));
 
     margin-bottom: 3rem;
     padding: 0 2rem;
@@ -13,9 +13,16 @@
     flex-direction: column;
 }
 
+.header__topAnimation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .header__heading {
     font-size: var(--heading-2xl);
-    font-weight: 600;
+    font-weight: 500;
 
     letter-spacing: var(--ui-letterSpacings-widest);
 

@@ -1,5 +1,9 @@
 import React from "react";
 
+
+// CSS Libs
+import "animate.css/animate.min.css";
+
 // General app styles
 import "./styles/vars.css";
 import "./styles/fonts.css";
