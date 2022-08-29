@@ -1,11 +1,11 @@
 .header {
     width: 100%;
-    height: calc(100vh - var(--chakra-space-16));
+    height: calc(100vh - var(--ui-space-16));
 
     margin-bottom: 3rem;
     padding: 0 2rem;
 
-    color: var(--chakra-colors-whiteAlpha-900);
+    color: var(--ui-colors-whiteAlpha-900);
 
     display: flex;
     align-items: center;
@@ -17,7 +17,7 @@
     font-size: var(--heading-2xl);
     font-weight: 600;
 
-    letter-spacing: var(--chakra-letterSpacings-widest);
+    letter-spacing: var(--ui-letterSpacings-widest);
 
     text-align: center;
     line-height: 1;
@@ -35,20 +35,20 @@
 
 .header__quickWord {
     width: 100%;
-    max-width: var(--chakra-sizes-container-sm);
+    max-width: var(--ui-sizes-container-sm);
 
     margin: 2.6rem 0;
-    padding: var(--chakra-space-4);
+    padding: var(--ui-space-4);
 
     font-size: var(--fontSize-xs);
     line-height: 1.5;
     text-align: center;
 
-    background-color: var(--chakra-colors-whiteAlpha-200);
-    box-shadow: var(--chakra-shadows-dark-lg);
+    background-color: var(--ui-colors-whiteAlpha-200);
+    box-shadow: var(--ui-shadows-dark-lg);
     backdrop-filter: blur(4px);
 
-    border-radius: var(--chakra-radii-lg);
+    border-radius: var(--ui-radii-lg);
 }
 
 .header__homeIntro {

@@ -7,14 +7,16 @@ import Link from "../link/Link";
 /**
  * Wrapper of the Link component.
  *
- * Note that otherStyle is passed to the Link and also to its wrapper div.
- * @param otherStyle A string containing other classes to apply custom style.
+ * Note that linkStyle is only passed to the Link.
+ * Allowing to pass CSS to the parent link element
+ *
+ * @param linkStyle A string containing other classes for link to apply custom style.
  * @param href Default href for the link.
  * @param title Title of the <a> tag -> hovering msg.
  */
 const Social = (
     {
-        otherStyle = "",
+        linkStyle = "custom-link",
         children = null,
         href = "/",
         title = ""
@@ -23,12 +25,12 @@ const Social = (
     return (
         <Link
             // Inherit otherStyle from wrapper component
-            otherStyle={otherStyle}
+            otherStyle={linkStyle}
             href={href}
             title={title}
             target="_blank"
         >
-            <div className={`social ${otherStyle}`}>
+            <div className="social">
                 {children}
             </div>
         </Link>

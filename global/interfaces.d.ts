@@ -21,6 +21,7 @@ declare global {
     interface PropsLink {
         children?: React.ReactNode,
         otherStyle?: string,
+        linkStyle?: string,
         name?: string | null,
         title?: string,
         href?: string,

@@ -1,6 +1,6 @@
 .background-container {
     width: 100%;
-    height: calc(100vh - var(--chakra-sizes-16));
+    height: calc(100vh - var(--ui-sizes-16));
 
     position: fixed;
     top: 4rem;

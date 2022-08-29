@@ -1,7 +1,7 @@
 .link {
-    transition-property: var(--chakra-transition-property-common);
-    transition-duration: var(--chakra-transition-duration-fast);
-    transition-timing-function: var(--chakra-transition-easing-ease-out);
+    transition-property: var(--ui-transition-property-common);
+    transition-duration: var(--ui-transition-duration-fast);
+    transition-timing-function: var(--ui-transition-easing-ease-out);
 
     padding: 0.5rem;
 
@@ -10,12 +10,13 @@
     text-decoration: none;
     text-underline-offset: 4px;
 
-    color: var(--chakra-colors-whiteAlpha-900);
+    color: var(--ui-colors-whiteAlpha-900);
 
     outline: 2px solid transparent;
     outline-offset: 2px;
 }
 
 .link:hover {
+    color: var(--ui-colors-whiteAlpha-700);
     text-decoration: underline;
 }

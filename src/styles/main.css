@@ -12,7 +12,7 @@
 
     border-width: 0;
     border-style: solid;
-    border-color: var(--chakra-colors-chakra-border-color);
+    border-color: var(--ui-colors-ui-border-color);
 
     word-wrap: break-word;
 

@@ -11,10 +11,10 @@
 
 .footer__container {
     width: 100%;
-    max-width: var(--chakra-sizes-xl);
+    max-width: var(--ui-sizes-xl);
     height: 100%;
 
-    padding: var(--chakra-sizes-6);
+    padding: var(--ui-sizes-6);
 
     display: flex;
     align-items: center;
@@ -23,15 +23,14 @@
 }
 
 .footer__socials {
-    width: 100%;
-    max-width: var(--chakra-sizes-64);
+    width: var(--ui-sizes-56);
     height: auto;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    font-size: 2.5rem;
+    font-size: 30px;
 }
 
 .footer__copyrights {
@@ -42,5 +41,5 @@
     font-size: var(--heading-xs);
     font-weight: 400;
 
-    color: var(--chakra-colors-whiteAlpha-400);
+    color: var(--ui-colors-whiteAlpha-400);
 }
