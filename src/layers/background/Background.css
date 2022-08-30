@@ -1,14 +1,14 @@
-.background-container {
+.background {
     width: 100%;
-    height: calc(100vh - var(--ui-sizes-16));
+    height: calc(100vh - var(--size-16));
 
     position: fixed;
-    top: 4rem;
+    top: var(--size-16);
     left: 0;
-
-    overflow: hidden;
     z-index: -1;
 
     /* Used to fill empty space when resizing the window */
     background-color: var(--background);
+
+    overflow: hidden;
 }

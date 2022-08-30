@@ -7,14 +7,15 @@ import "./Link.css";
  */
 const Link = (
     {
-        otherStyle = "",
         children = null,
+        otherStyle = "",
         href = "/",
         title = "",
         target = "_self",
         name = null
     }: PropsLink
 ) => {
+
     return (
         <a
             className={`link ${otherStyle}`}

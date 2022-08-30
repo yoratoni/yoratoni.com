@@ -1,27 +1,17 @@
 import React from "react";
 import "./Footer.css";
 
-import Link from "../../others/link/Link";
-import Social from "../../others/social/Social";
+import Social from "components/atoms/social/Social";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
-import ScrollToTop from "../../others/scrollToTop/ScrollToTop";
-
+import ScrollToTop from "components/atoms/scrollToTop/ScrollToTop";
 
 
 const Footer = () => {
     return (
         <footer className=" footer">
-            <Link
-                otherStyle="w-full flex items-center justify-center mb-4"
-                name="yoratoni.dev@gmail.com"
-                title="Email me"
-                href="mailto:yoratoni.dev@gmail.com"
-                target="_blank"
-            />
-
             <div className="footer__socials">
                 <Social
                     href="https://github.com/yoratoni"

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Background.css";
 
-import * as logic from "./backgroundLogic";
+import * as logic from "layers/background/backgroundLogic";
 import Sketch from "react-p5";
 import p5Types from "p5";
 
@@ -89,7 +89,7 @@ const Background = () => {
 
 
     return (
-        <div className="background-container">
+        <div className="background">
             <Sketch setup={setup} draw={draw} />
         </div>
     );

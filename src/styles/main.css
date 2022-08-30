@@ -7,19 +7,17 @@
 ::after {
     box-sizing: border-box;
 
-    font-family: "Roboto Mono", monospace;
-    font-weight: 200;
-
-    border-width: 0;
-    border-style: solid;
-    border-color: var(--ui-colors-ui-border-color);
-
-    -webkit-tap-highlight-color: transparent;
-
-    word-wrap: break-word;
-
     margin: 0;
     padding: 0;
+
+    font-family: "Roboto Mono", monospace;
+    font-size: 16px;
+    font-weight: 200;
+    word-wrap: break-word;
+
+    color: var(--color-white-900);
+
+    -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -29,6 +27,6 @@ body {
 }
 
 body {
-    background-color: var(--background);
     min-width: 320px;
+    background-color: var(--background);
 }
