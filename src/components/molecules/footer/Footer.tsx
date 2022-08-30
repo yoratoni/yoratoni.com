@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 
-import Social from "components/atoms/social/Social";
+import SocialButton from "components/atoms/socialButton/SocialButton";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -13,28 +13,30 @@ const Footer = () => {
     return (
         <footer className=" footer">
             <div className="footer__socials">
-                <Social
+                <SocialButton
                     href="https://github.com/yoratoni"
                     title="@yoratoni on GitHub"
-                ><GitHubIcon /></Social>
+                ><GitHubIcon /></SocialButton>
 
-                <Social
+                <SocialButton
                     href="https://www.linkedin.com/in/adrien-bibollet-555354225/"
                     title="Adrien Bibollet's resume on LinkedIn"
-                ><LinkedInIcon /></Social>
+                ><LinkedInIcon /></SocialButton>
 
-                <Social
+                <SocialButton
                     href="https://www.instagram.com/yoratoni"
                     title="@yoratoni on Instagram"
-                ><InstagramIcon /></Social>
+                ><InstagramIcon /></SocialButton>
 
-                <Social
+                <SocialButton
                     href="https://t.me/yoratoni"
                     title="@yoratoni on Telegram"
-                ><TelegramIcon /></Social>
+                ><TelegramIcon /></SocialButton>
             </div>
 
-            <ScrollToTop />
+            <div className="my-3">
+                <ScrollToTop />
+            </div>
 
             <p className="footer__copyrights">
                 ©&nbsp;{new Date().getFullYear()}&nbsp;Adrien&nbsp;Bibollet.

@@ -22,13 +22,13 @@ const Contact = () => {
                         <h2>Contact</h2>
                     </div>
 
-                    <Link
+                    {/* <Link
                         otherStyle="w-full flex items-center justify-center mb-4"
                         name="yoratoni.dev@gmail.com"
                         title="Email me"
                         href="mailto:yoratoni.dev@gmail.com"
                         target="_blank"
-                    />
+                    /> */}
                 </div>
             </AnimationOnScroll>
         </section>

@@ -1,8 +1,8 @@
 :root {
     /* Custom Vars */
     --background: #021211;  /* Change inside backgroundLogic too */
-    --primary-1: #fa1d46;
-    --primary-2: #421822;
+    --primary: #fa1d46;
+    --secondary: #421822;
 
 
     /* UI Library */
@@ -316,16 +316,13 @@
     --space-3-5: 0.875rem;
 
     --shadow-none: none;
-    --shadow-xs: 0 0 0 1px rgba(0, 0, 0, 0.05);
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    --shadow-outline: 0 0 0 3px rgba(66, 153, 225, 0.6);
-    --shadow-inner: inset 0 2px 4px 0 rgba(0,0,0,0.06);
-    --shadow-dark-lg: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px,rgba(0, 0, 0, 0.2) 0px 5px 10px,rgba(0, 0, 0, 0.4) 0px 15px 40px;
+    --shadow-xs: 0px 1px 4px 0px rgba(0, 0, 0, .12);
+    --shadow-sm: 0px 4px 8px 0px rgba(0, 0, 0, .16);
+    --shadow-md: 0px 6px 12px 0px rgba(0, 0, 0, .2);
+    --shadow-lg: 0px 8px 16px 0px rgba(0, 0, 0, 0.24);
+    --shadow-xl: 0px 12px 20px 0px rgba(0, 0, 0, 0.28);
+    --shadow-2xl: 0px 16px 24px 0px rgba(0, 0, 0, 0.32);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 
     --size-1: 0.25rem;
     --size-2: 0.5rem;
@@ -387,10 +384,10 @@
     --transi-property-dimensions: width,height;
     --transi-property-position: left,right,top,bottom;
     --transi-property-background: background-color,background-image,background-position;
-    --main-transition: all 0.24s cubic-bezier(0.644, 0.044, 0.354, 1);
     --transi-easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
     --transi-easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
     --transi-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --transi-easing-general: cubic-bezier(0.644, 0.044, 0.354, 1);
     --transi-duration-ultra-fast: 50ms;
     --transi-duration-faster: 100ms;
     --transi-duration-fast: 150ms;
@@ -399,6 +396,14 @@
     --transi-duration-slower: 400ms;
     --transi-duration-ultra-slow: 500ms;
     --transi-transform-md: translateY(-3px);
+
+    --transi-ultra-fast: all var(--transi-duration-ultra-fast) var(--transi-easing-general);
+    --transi-faster:     all var(--transi-duration-faster)     var(--transi-easing-general);
+    --transi-fast:       all var(--transi-duration-fast)       var(--transi-easing-general);
+    --transi-normal:     all var(--transi-duration-normal)     var(--transi-easing-general);
+    --transi-slow:       all var(--transi-duration-slow)       var(--transi-easing-general);
+    --transi-slower:     all var(--transi-duration-slower)     var(--transi-easing-general);
+    --transi-ultra-slow: all var(--transi-duration-ultra-slow) var(--transi-easing-general);
 
     --zIndex-hide: -1;
     --zIndex-auto: auto;

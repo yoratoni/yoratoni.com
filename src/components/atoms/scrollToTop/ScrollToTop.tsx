@@ -13,13 +13,9 @@ const ScrollToTop = () => {
     };
 
     return (
-        <div className="footer__scrollToTopContainer">
-            <button className="footer__scrollToTop">
-                <ExpandCircleDownIcon
-                    onClick={goToTop}
-                />
-            </button>
-        </div>
+        <button className="scrollToTop" onClick={goToTop} title="Scroll to top">
+            <ExpandCircleDownIcon />
+        </button>
     );
 };
 

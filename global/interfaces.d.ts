@@ -18,11 +18,19 @@ declare global {
     }
 
 
-    interface PropsLink {
+    interface PropsChildrenAndStyle {
         children?: React.ReactNode,
-        otherStyle?: string,
-        linkStyle?: string,
-        name?: string | null,
+        style?: string
+    }
+
+
+    interface PropsChildren {
+        children: React.ReactNode | null
+    }
+
+
+    interface PropsSocialButton {
+        children?: React.ReactNode,
         title?: string,
         href?: string,
         target?: "_blank" | "_self" | "_parent" | "_top"

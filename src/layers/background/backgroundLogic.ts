@@ -18,7 +18,7 @@ const parameters = {
         pointsBoxSize: 0.5,         // Size of the points box (percentage of canvas size)
         perlinMult: 0.02,           // Multiply the perlin noise effect
         maxAngle: 16,               // The max angle for a Perlin noise point
-        density: 12,                // Default amount of points when loading the webpage
+        density: 0,                 // Default amount of points when loading the webpage
         weight: 2,                  // The weight / thickness of each line / ellipsis
         alpha: 64                   // The alpha of each line
     }

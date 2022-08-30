@@ -1,21 +1,18 @@
 import React from "react";
 import "./Navbar.css";
 
-import Link from "components/atoms/link/Link";
+import SquareContainer from "components/atoms/squareContainer/SquareContainer";
 import NavButton from "components/atoms/navButton/NavButton";
 
 
 const Navbar = () => {
     return (
-        <nav className="rcc__squareBackground navbar">
-            <div className="navbar__container">
-                <NavButton></NavButton>
-
-                <Link otherStyle="" name="Work" title="Work" href="#" />
-                <Link otherStyle="" name="Art" title="Art" href="/" />
-                <Link otherStyle="" name="About" title="About" href="/" />
-                <Link otherStyle="" name="Contact" title="Contact" href="/" />
-            </div>
+        <nav className="navbar">
+            <SquareContainer style="">
+                <div className="navbar__container">
+                    <NavButton></NavButton>
+                </div>
+            </SquareContainer>
         </nav>
     );
 };

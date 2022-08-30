@@ -2,10 +2,10 @@ import React from "react";
 import "./SquareContainer.css";
 
 
-const SquareContainer = () => {
+const SquareContainer = (props: PropsChildrenAndStyle) => {
     return (
-        <div className="squareContainer">
-
+        <div className={`squareContainer ${props.style}`}>
+            {props.children}
         </div>
     );
 };

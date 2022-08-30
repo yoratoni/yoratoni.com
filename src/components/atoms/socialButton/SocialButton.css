@@ -1,17 +1,16 @@
-.scrollToTop {
+.socialButton {
     padding: var(--size-1);
     color: var(--color-white-900);
     transition: var(--transi-fast);
 }
 
 @media (hover: hover) {
-    .scrollToTop:hover {
+    .socialButton:hover {
         transform: var(--transi-transform-md);
         color: var(--primary);
     }
 }
 
-.scrollToTop > svg {
-    transform: rotateZ(180deg);
-    font-size: var(--size-16);
+.socialButton > svg {
+    font-size: var(--size-9);
 }
