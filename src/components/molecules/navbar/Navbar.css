@@ -1,28 +1,19 @@
 .navbar {
     width: 100%;
-    height: var(--ui-sizes-16);
-
+    height: var(--size-16);
     position: fixed;
     top: 0;
     left: 0;
-
     z-index: 99;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    box-shadow: var(--ui-shadows-xl);
+    box-shadow: var(--shadow-md);
 }
 
 .navbar__container {
     width: 100%;
-    max-width: var(--ui-sizes-xl);
+    max-width: var(--size-xl);
     height: 100%;
-
-    padding: var(--ui-sizes-6);
-
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: var(--size-6);
 }

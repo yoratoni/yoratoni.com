@@ -12,5 +12,6 @@
 }
 
 .socialButton > svg {
+    display: block;
     font-size: var(--size-9);
 }

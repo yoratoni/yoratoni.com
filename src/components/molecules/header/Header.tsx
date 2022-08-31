@@ -7,29 +7,33 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 const Header = () => {
     return (
         <header className="header">
-            <AnimationOnScroll animateIn="animate__fadeInDown" animateOnce={true}>
-                <div className="header__topAnimation">
-                    <hgroup className="pt-8">
-                        <p className="mb-3 header__subheading">Hi, my name is</p>
-                        <h1 className="header__heading">ADRIEN&nbsp;BIBOLLET</h1>
+            <AnimationOnScroll
+                animateIn="animate__fadeInDown"
+                animateOnce={true}
+            >
+                <hgroup>
+                    <p className="mb-3 header__subheading">Hi, my name is</p>
+                    <h1 className="header__heading">ADRIEN&nbsp;BIBOLLET</h1>
 
-                        <div className="flex items-center justify-center w-full mt-3 text-center">
-                            {/* Separates brackets to solve spacing symmetry issues */}
-                            <p className="header__subheading">
-                                <span className="mr-3 header__subheading">&#123;</span>
-                                alias:&nbsp;&quot;Yoratoni&quot;
-                                <span className="ml-[0.36rem] header__subheading">&#125;</span>
-                            </p>
-                        </div>
-                    </hgroup>
-
-                    <div className="header__quickWord">
-                        I&apos;m a frontend web developer based in France!
+                    <div className="flex items-center justify-center w-full mt-3 text-center">
+                        {/* Separates brackets to solve spacing symmetry issues */}
+                        <p className="header__subheading">
+                            <span className="mr-4 header__subheading">&#123;</span>
+                            alias:&nbsp;&quot;Yoratoni&quot;
+                            <span className="ml-[0.46rem] header__subheading">&#125;</span>
+                        </p>
                     </div>
-                </div>
+                </hgroup>
             </AnimationOnScroll>
 
-            <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true}>
+            <div className="header__quickWord">
+                I&apos;m a frontend web developer based in France!
+            </div>
+
+            <AnimationOnScroll
+                animateIn="animate__fadeInUp"
+                animateOnce={true}
+            >
                 <div className="header__homeIntro">
                     <p>
                         With a passion for art-focused programming,
@@ -43,6 +47,7 @@ const Header = () => {
                 </div>
             </AnimationOnScroll>
         </header>
+
     );
 };
 

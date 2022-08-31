@@ -13,7 +13,11 @@ const ScrollToTop = () => {
     };
 
     return (
-        <button className="scrollToTop" onClick={goToTop} title="Scroll to top">
+        <button
+            className="scrollToTop"
+            onClick={goToTop}
+            title="Scroll to top"
+        >
             <ExpandCircleDownIcon />
         </button>
     );

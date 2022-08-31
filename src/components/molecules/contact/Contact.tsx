@@ -2,7 +2,6 @@ import React from "react";
 import "./Contact.css";
 
 import { AnimationOnScroll } from "react-animation-on-scroll";
-import Link from "components/atoms/link/Link";
 
 
 const Contact = () => {
@@ -21,6 +20,9 @@ const Contact = () => {
                     <div className="contact__titleContainer">
                         <h2>Contact</h2>
                     </div>
+
+                    <h2>Contact</h2>
+                    <h2>Contact</h2>
 
                     {/* <Link
                         otherStyle="w-full flex items-center justify-center mb-4"

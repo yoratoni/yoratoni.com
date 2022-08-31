@@ -12,6 +12,7 @@
 }
 
 .scrollToTop > svg {
+    display: block;
     transform: rotateZ(180deg);
     font-size: var(--size-16);
 }

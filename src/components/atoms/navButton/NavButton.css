@@ -1,0 +1,18 @@
+.navButton {
+    font-size: var(--fontSize-md);
+    font-weight: 300;
+    color: var(--color-white-900);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    text-underline-offset: 5px;
+    transition: var(--transi-faster);
+}
+
+@media (hover: hover) {
+    .navButton:hover {
+        transform: var(--transi-transform-md);
+        font-weight: 500;
+        color: var(--primary);
+        text-decoration: underline;
+    }
+}

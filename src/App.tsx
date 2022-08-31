@@ -1,4 +1,5 @@
 import React from "react";
+import "styles/main.css";
 
 // CSS Libs
 import "animate.css/animate.min.css";

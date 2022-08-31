@@ -8,9 +8,12 @@ import NavButton from "components/atoms/navButton/NavButton";
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <SquareContainer style="">
+            <SquareContainer style="w-full h-full flex items-center justify-center">
                 <div className="navbar__container">
-                    <NavButton></NavButton>
+                    <NavButton sectionId="work" title="Work"/>
+                    <NavButton sectionId="art" title="Art"/>
+                    <NavButton sectionId="about" title="About"/>
+                    <NavButton sectionId="contact" title="Contact"/>
                 </div>
             </SquareContainer>
         </nav>

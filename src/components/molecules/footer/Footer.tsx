@@ -11,7 +11,7 @@ import ScrollToTop from "components/atoms/scrollToTop/ScrollToTop";
 
 const Footer = () => {
     return (
-        <footer className=" footer">
+        <footer className="footer">
             <div className="footer__socials">
                 <SocialButton
                     href="https://github.com/yoratoni"

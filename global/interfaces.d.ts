@@ -18,14 +18,23 @@ declare global {
     }
 
 
-    interface PropsChildrenAndStyle {
+    interface PropsContainer {
         children?: React.ReactNode,
         style?: string
     }
 
 
-    interface PropsChildren {
-        children: React.ReactNode | null
+    interface PropsNavButton {
+        title: string,
+        sectionId: string
+    }
+
+
+    interface PropsSection {
+        children?: React.ReactNode,
+        style?: string,
+        sectionId?: string,
+        title: string
     }
 
 

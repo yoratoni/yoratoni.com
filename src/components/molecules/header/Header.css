@@ -1,74 +1,53 @@
 .header {
     width: 100%;
-    height: calc(100vh - var(--ui-space-24));
-
-    margin-bottom: 3rem;
-    padding: 0 2rem;
-
-    color: var(--ui-colors-whiteAlpha-900);
-
+    height: calc(100vh - var(--space-48));
+    min-height: var(--size-container-sm);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
-
-.header__topAnimation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    color: var(--color-white-900);
 }
 
 .header__heading {
-    font-size: var(--heading-2xl);
+    font-size: var(--fontSize-fluid-big-heading);
     font-weight: 500;
-
-    letter-spacing: var(--ui-letterSpacings-widest);
-
-    text-align: center;
     line-height: 1;
+    letter-spacing: var(--letterSpacing-widest);
+    text-align: center;
 }
 
 .header__subheading {
-    color: var(--red-alpha-1);
-
-    font-size: var(--heading-md);
+    font-size: var(--fontSize-fluid-sub-heading);
     font-weight: 400;
-
     line-height: 1;
     word-break: keep-all;
+    color: var(--primary);
 }
 
 .header__quickWord {
-    width: 100%;
-    max-width: var(--ui-sizes-container-sm);
-
-    margin: 2.6rem 0;
-    padding: var(--ui-space-4);
-
-    font-size: var(--fontSize-xs);
+    width: fit-content;
+    margin: 2.6rem auto 0 auto;
+    padding: 1rem 1.6rem;
+    font-size: var(--fontSize-fluid-sub-sub-heading);
     line-height: 1.5;
+    background-color: var(--color-white-200);
+    border-radius: var(--radii-lg);
+    box-shadow: var(--shadow-md);
     text-align: center;
-
-    background-color: var(--ui-colors-whiteAlpha-200);
-    box-shadow: var(--ui-shadows-dark-lg);
     backdrop-filter: blur(4px);
-
-    border-radius: var(--ui-radii-lg);
 }
 
 .header__homeIntro {
     width: 100%;
-    max-width: 36rem;
-
-    margin: 0 auto 2rem auto;
+    max-width: var(--size-container-sm);
+    margin: 2.6rem auto 0 auto;
+    padding: 0 1rem 1rem 1rem;
 }
 
 .header__homeIntro > p {
     margin: 1.5rem 0;
-
-    font-size: var(--fontSize-md);
+    font-size: var(--fontSize-fluid-home-intro);
     font-weight: 200;
     line-height: 1.5;
     text-align: justify;
@@ -79,6 +58,6 @@
 }
 
 .header__homeIntro span {
-    color: var(--red-alpha-1);
     font-weight: 400;
+    color: var(--primary);
 }
