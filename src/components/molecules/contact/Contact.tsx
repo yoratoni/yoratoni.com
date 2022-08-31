@@ -13,8 +13,14 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 
 const Contact = () => {
     return (
-        <SectionContainer sectionId="contact" title="Contact">
-            <EmailButton />
+        <SectionContainer
+            sectionId="contact"
+            title="Contact"
+            style="h-[20vh] justify-end"
+        >
+            <div className="mt-3 mb-2">
+                <EmailButton />
+            </div>
 
             <div className="contact__socials">
                 <SocialButton

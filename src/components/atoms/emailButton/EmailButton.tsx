@@ -7,14 +7,16 @@ import SocialButton from "components/atoms/socialButton/SocialButton";
 
 const EmailButton = () => {
     return (
-        <div className="email-button">
-            
-            
-            <SocialButton
-                href="mailto:yoratoni.dev@gmail.com"
-                title="Email me"
-            ><EmailIcon /></SocialButton>
-        </div>
+        <a
+            className="email-button"
+            href="mailto:yoratoni.dev@gmail.com"
+            title="Email me"
+            target="__blank"
+            rel="noreferrer"
+        >
+            <EmailIcon />
+            <p>yoratoni.dev@gmail.com</p>
+        </a>
     );
 };
 
