@@ -12,7 +12,7 @@ const SocialButton = (
 ) => {
     return (
         <a
-            className="socialButton"
+            className="social-button"
             href={href}
             title={title}
             target={target}

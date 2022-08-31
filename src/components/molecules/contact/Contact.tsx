@@ -1,40 +1,43 @@
 import React from "react";
 import "./Contact.css";
 
-import { AnimationOnScroll } from "react-animation-on-scroll";
+import SectionContainer from "components/atoms/sectionContainer/SectionContainer";
+import SocialButton from "components/atoms/socialButton/SocialButton";
+import EmailButton from "components/atoms/emailButton/EmailButton";
+
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TelegramIcon from "@mui/icons-material/Telegram";
 
 
 const Contact = () => {
-    const animationDivStyle = {
-        width: "100%",
-        height: "auto",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-    };
-
     return (
-        <section className="contact__container" id="contact__section">
-            <AnimationOnScroll animateIn="animate__fadeInDown" animateOnce={true} style={animationDivStyle}>
-                <div className="contact">
-                    <div className="contact__titleContainer">
-                        <h2>Contact</h2>
-                    </div>
+        <SectionContainer sectionId="contact" title="Contact">
+            <EmailButton />
 
-                    <h2>Contact</h2>
-                    <h2>Contact</h2>
+            <div className="contact__socials">
+                <SocialButton
+                    href="https://github.com/yoratoni"
+                    title="@yoratoni on GitHub"
+                ><GitHubIcon /></SocialButton>
 
-                    {/* <Link
-                        otherStyle="w-full flex items-center justify-center mb-4"
-                        name="yoratoni.dev@gmail.com"
-                        title="Email me"
-                        href="mailto:yoratoni.dev@gmail.com"
-                        target="_blank"
-                    /> */}
-                </div>
-            </AnimationOnScroll>
-        </section>
+                <SocialButton
+                    href="https://www.linkedin.com/in/adrien-bibollet-555354225/"
+                    title="Adrien Bibollet's resume on LinkedIn"
+                ><LinkedInIcon /></SocialButton>
 
+                <SocialButton
+                    href="https://www.instagram.com/yoratoni"
+                    title="@yoratoni on Instagram"
+                ><InstagramIcon /></SocialButton>
+
+                <SocialButton
+                    href="https://t.me/yoratoni"
+                    title="@yoratoni on Telegram"
+                ><TelegramIcon /></SocialButton>
+            </div>
+        </SectionContainer>
     );
 };
 

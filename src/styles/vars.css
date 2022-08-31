@@ -2,7 +2,11 @@
     /* Custom Vars */
     --background: #021211;  /* Change inside backgroundLogic too */
     --primary: #fa1d46;
+    --primary-rgb: 250, 29, 70;
     --secondary: #421822;
+
+    --drop-shadow-sm: drop-shadow(0 0 4px rgba(var(--primary-rgb), 0.6));
+    --drop-shadow-base: drop-shadow(0 0 8px var(--primary));
 
 
     /* UI Library */
@@ -380,6 +384,8 @@
     --size-6xl: 72rem;
     --size-7xl: 80rem;
     --size-8xl: 90rem;
+
+    --size-container-2xs: 384px;
     --size-container-xs: 576px;
     --size-container-sm: 640px;
     --size-container-md: 768px;

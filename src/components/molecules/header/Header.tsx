@@ -24,17 +24,17 @@ const Header = () => {
                         </p>
                     </div>
                 </hgroup>
-            </AnimationOnScroll>
 
-            <div className="header__quickWord">
-                I&apos;m a frontend web developer based in France!
-            </div>
+                <div className="header__quick-word">
+                    I&apos;m a frontend web developer based in France!
+                </div>
+            </AnimationOnScroll>
 
             <AnimationOnScroll
                 animateIn="animate__fadeInUp"
                 animateOnce={true}
             >
-                <div className="header__homeIntro">
+                <div className="header__home-intro">
                     <p>
                         With a passion for art-focused programming,
                         my goal is to create unique and incredible projects.

@@ -1,7 +1,7 @@
 import React from "react";
 import "./ScrollToTop.css";
 
-import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
+import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 
 
 const ScrollToTop = () => {
@@ -12,13 +12,17 @@ const ScrollToTop = () => {
         });
     };
 
+    // React.useEffect(() => {
+    //     goToTop();
+    // }, []);
+
     return (
         <button
-            className="scrollToTop"
+            className="scroll-to-top"
             onClick={goToTop}
             title="Scroll to top"
         >
-            <ExpandCircleDownIcon />
+            <KeyboardDoubleArrowUpIcon />
         </button>
     );
 };

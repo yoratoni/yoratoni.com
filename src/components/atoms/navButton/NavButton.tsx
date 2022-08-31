@@ -14,7 +14,7 @@ const NavButton = (props: PropsNavButton) => {
 
     return (
         <button
-            className="navButton"
+            className="nav-button"
             title={props.title}
         >
             <Link to={props.sectionId} spy={true} smooth={true} style={LinkStyle}>

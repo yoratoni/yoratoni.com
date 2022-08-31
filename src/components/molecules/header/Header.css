@@ -25,7 +25,7 @@
     color: var(--primary);
 }
 
-.header__quickWord {
+.header__quick-word {
     width: fit-content;
     margin: 2.6rem auto 0 auto;
     padding: 1rem 1.6rem;
@@ -38,14 +38,14 @@
     backdrop-filter: blur(4px);
 }
 
-.header__homeIntro {
+.header__home-intro {
     width: 100%;
     max-width: var(--size-container-sm);
     margin: 2.6rem auto 0 auto;
     padding: 0 1rem 1rem 1rem;
 }
 
-.header__homeIntro > p {
+.header__home-intro > p {
     margin: 1.5rem 0;
     font-size: var(--fontSize-fluid-home-intro);
     font-weight: 200;
@@ -53,11 +53,11 @@
     text-align: justify;
 }
 
-.header__homeIntro > p:first-child {
+.header__home-intro > p:first-child {
     margin-top: 0;
 }
 
-.header__homeIntro span {
+.header__home-intro span {
     font-weight: 400;
     color: var(--primary);
 }

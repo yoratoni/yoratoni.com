@@ -16,8 +16,8 @@ const SectionContainer = (props: PropsSection) => {
     return (
         <section className={`section-container ${props.style || ""}`} id={props.sectionId}>
             <AnimationOnScroll
-                animateIn="animate__fadeInDown"
-                animateOnce={false}
+                animateIn="animate__fadeIn"
+                animateOnce={true}
                 style={animationDivStyle}
             >
                 <div className="section">

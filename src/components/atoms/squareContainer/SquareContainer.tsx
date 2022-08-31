@@ -4,7 +4,7 @@ import "./SquareContainer.css";
 
 const SquareContainer = (props: PropsContainer) => {
     return (
-        <div className={`squareContainer ${props.style}`}>
+        <div className={`square-container ${props.style || ""}`}>
             {props.children}
         </div>
     );

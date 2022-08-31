@@ -1,18 +1,18 @@
-.scrollToTop {
-    padding: var(--size-1);
+.scroll-to-top {
+    padding: 0.25rem;
     color: var(--color-white-900);
     transition: var(--transi-fast);
 }
 
 @media (hover: hover) {
-    .scrollToTop:hover {
+    .scroll-to-top:hover {
         transform: var(--transi-transform-md);
         color: var(--primary);
+        filter: var(--drop-shadow-base);
     }
 }
 
-.scrollToTop > svg {
+.scroll-to-top > svg {
     display: block;
-    transform: rotateZ(180deg);
-    font-size: var(--size-16);
+    font-size: var(--fontSize-7xl);
 }

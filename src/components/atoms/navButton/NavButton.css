@@ -1,4 +1,4 @@
-.navButton {
+.nav-button {
     font-size: var(--fontSize-md);
     font-weight: 300;
     color: var(--color-white-900);
@@ -9,10 +9,11 @@
 }
 
 @media (hover: hover) {
-    .navButton:hover {
+    .nav-button:hover {
         transform: var(--transi-transform-md);
         font-weight: 500;
         color: var(--primary);
+        filter: var(--drop-shadow-base);
         text-decoration: underline;
     }
 }
