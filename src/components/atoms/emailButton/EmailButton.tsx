@@ -2,7 +2,6 @@ import React from "react";
 import "./EmailButton.css";
 
 import EmailIcon from "@mui/icons-material/Email";
-import SocialButton from "components/atoms/socialButton/SocialButton";
 
 
 const EmailButton = () => {

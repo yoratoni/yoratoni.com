@@ -9,7 +9,7 @@
 }
 
 @media (hover: hover) {
-    .nav-button:hover {
+    .nav-button:hover a {
         transform: var(--transi-transform-md);
         font-weight: 500;
         color: var(--primary);

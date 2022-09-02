@@ -1,12 +1,16 @@
 .social-button {
-    padding: 0.25rem;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--color-white-900);
     transition: var(--transi-fast);
 }
 
 @media (hover: hover) {
-    .social-button:hover {
-        transform: var(--transi-transform-md);
+    .social-button:hover svg {
+        transform: var(--transform-md);
         color: var(--primary);
         filter: var(--drop-shadow-base);
     }

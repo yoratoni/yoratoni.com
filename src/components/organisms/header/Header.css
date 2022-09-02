@@ -6,6 +6,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 4rem;
+    padding: 0 1.25rem;
     color: var(--color-white-900);
 }
 
@@ -43,21 +45,4 @@
     max-width: var(--size-container-sm);
     margin: 2.6rem auto 0 auto;
     padding: 0 1rem 1rem 1rem;
-}
-
-.header__home-intro > p {
-    margin: 1.5rem 0;
-    font-size: var(--fontSize-fluid-home-intro);
-    font-weight: 200;
-    line-height: 1.5;
-    text-align: justify;
-}
-
-.header__home-intro > p:first-child {
-    margin-top: 0;
-}
-
-.header__home-intro span {
-    font-weight: 400;
-    color: var(--primary);
 }

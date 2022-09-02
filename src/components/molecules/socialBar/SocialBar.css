@@ -1,0 +1,22 @@
+.social-bar {
+    width: 100%;
+    max-width: var(--size-container-2xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+.social-bar__mail {
+    margin-bottom: 2rem;
+}
+
+.social-bar__li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    font-size: var(--fontSize-3xl);
+}

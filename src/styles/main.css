@@ -25,3 +25,24 @@ body {
     background-color: var(--background);
     -webkit-tap-highlight-color: transparent;
 }
+
+section p {
+    font-size: var(--fontSize-fluid-sm);
+}
+
+p {
+    margin-bottom: 2rem;
+    font-size: var(--fontSize-fluid-home-intro);
+    font-weight: 200;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+p > span {
+    font-weight: 500;
+    color: var(--primary);
+}

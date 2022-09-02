@@ -18,11 +18,12 @@
 
 .email-button > svg {
     margin-right: 0.6rem;
-    font-size: clamp(1.71rem, 1.62vw + 1.07rem, 2.37rem);;
+    font-size: var(--fontSize-4xl);
 }
 
 .email-button > p {
     padding-bottom: 4px;
-    font-size: clamp(0.75rem, 0.98vw + 0.61rem, 1rem);
+    font-size: 16px;
     font-weight: inherit;
+    border-bottom: 1px solid var(--primary);
 }

@@ -2,6 +2,7 @@ import React from "react";
 import "./SectionContainer.css";
 
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import SquareContainer from "components/atoms/squareContainer/SquareContainer";
 
 
 const SectionContainer = (props: PropsSection) => {
@@ -20,14 +21,19 @@ const SectionContainer = (props: PropsSection) => {
                 animateOnce={true}
                 style={animationDivStyle}
             >
-                <div className="section">
-                    <div className="section__title">
-                        <h2>{props.title}</h2>
+                <SquareContainer style="w-[inherit] h-auto">
+
+                    <div className="section">
+                        <div className="section__title">
+                            <h2>{props.title}</h2>
+                        </div>
+
+                        <div className="section__content">
+                            {props.children}
+                        </div>
                     </div>
-                    <div className="section__content">
-                        {props.children}
-                    </div>
-                </div>
+
+                </SquareContainer>
             </AnimationOnScroll>
         </section>
     );

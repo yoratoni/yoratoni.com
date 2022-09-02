@@ -1,7 +1,6 @@
 import React from "react";
-import "./Contact.css";
+import "./SocialBar.css";
 
-import SectionContainer from "components/atoms/sectionContainer/SectionContainer";
 import SocialButton from "components/atoms/socialButton/SocialButton";
 import EmailButton from "components/atoms/emailButton/EmailButton";
 
@@ -11,18 +10,14 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 
 
-const Contact = () => {
+const SocialBar = () => {
     return (
-        <SectionContainer
-            sectionId="contact"
-            title="Contact"
-            style="h-[20vh] justify-end"
-        >
-            <div className="mt-3 mb-2">
+        <div className="social-bar" id="contact">
+            <div className="social-bar__mail">
                 <EmailButton />
             </div>
 
-            <div className="contact__socials">
+            <div className="social-bar__li">
                 <SocialButton
                     href="https://github.com/yoratoni"
                     title="@yoratoni on GitHub"
@@ -43,9 +38,9 @@ const Contact = () => {
                     title="@yoratoni on Telegram"
                 ><TelegramIcon /></SocialButton>
             </div>
-        </SectionContainer>
+        </div>
     );
 };
 
 
-export default Contact;
+export default SocialBar;

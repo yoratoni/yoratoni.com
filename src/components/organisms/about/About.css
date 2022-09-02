@@ -1,0 +1,11 @@
+.about__picture {
+    width: 128px;
+    height: 128px;
+    margin-bottom: 1.6rem;
+    background-image: url("assets/just_me.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid white;
+    border-radius: var(--radii-full);
+}

@@ -5,8 +5,7 @@
     --primary-rgb: 250, 29, 70;
     --secondary: #421822;
 
-    --drop-shadow-sm: drop-shadow(0 0 4px rgba(var(--primary-rgb), 0.6));
-    --drop-shadow-base: drop-shadow(0 0 8px var(--primary));
+    --drop-shadow-base: drop-shadow(0 0 1px rgba(var(--primary-rgb), 0.4));
 
 
     /* UI Library */
@@ -392,6 +391,8 @@
     --size-container-lg: 1024px;
     --size-container-xl: 1280px;
 
+    --transform-md: translateY(-3px);
+
     --transi-property-common: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
     --transi-property-colors: background-color,border-color,color,fill,stroke;
     --transi-property-dimensions: width,height;
@@ -408,7 +409,6 @@
     --transi-duration-slow: 300ms;
     --transi-duration-slower: 400ms;
     --transi-duration-ultra-slow: 500ms;
-    --transi-transform-md: translateY(-3px);
 
     --transi-ultra-fast: all var(--transi-duration-ultra-fast) var(--transi-easing-general);
     --transi-faster:     all var(--transi-duration-faster)     var(--transi-easing-general);

@@ -1,9 +1,0 @@
-.contact__socials {
-    width: 100%;
-    max-width: var(--size-container-2xs);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: 1rem 0 1.5rem 0;
-    font-size: var(--fontSize-3xl);
-}

@@ -17,7 +17,12 @@ const NavButton = (props: PropsNavButton) => {
             className="nav-button"
             title={props.title}
         >
-            <Link to={props.sectionId} spy={true} smooth={true} style={LinkStyle}>
+            <Link
+                to={props.sectionId}
+                spy={true}
+                smooth={true}
+                style={LinkStyle}
+            >
                 {props.title}
             </Link>
         </button>
