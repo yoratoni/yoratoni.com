@@ -1,12 +1,12 @@
 import React from "react";
-import "./Experience.css";
+import "./Art.css";
 
 import SectionContainer from "components/molecules/sectionContainer/SectionContainer";
 
 
-const Experience = () => {
+const Art = () => {
     return (
-        <SectionContainer title="Where I've Worked" sectionId="experience">
+        <SectionContainer title="The Art of Code" sectionId="art">
             <p>Hello! My name is Brittany and I enjoy creating things that live on the internet.
                 My interest in web development started back in 2012 when I decided to try
                 editing custom Tumblr themes —
@@ -20,4 +20,4 @@ const Experience = () => {
 };
 
 
-export default Experience;
+export default Art;

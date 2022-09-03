@@ -32,12 +32,12 @@
     margin: 2.6rem auto 0 auto;
     padding: 1rem 1.6rem;
     font-size: var(--fontSize-fluid-sub-sub-heading);
+    font-weight: 300;
     line-height: 1.5;
-    background-color: var(--color-white-200);
+    background-color: var(--color-white-300);
     border-radius: var(--radii-lg);
     box-shadow: var(--shadow-md);
     text-align: center;
-    backdrop-filter: blur(4px);
 }
 
 .header__home-intro {

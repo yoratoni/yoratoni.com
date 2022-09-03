@@ -26,7 +26,7 @@ const Header = () => {
                 </hgroup>
 
                 <div className="header__quick-word">
-                    I&apos;m a frontend web developer based in France!
+                    I&apos;m a front-end web developer based in France!
                 </div>
             </AnimationOnScroll>
 
@@ -36,13 +36,12 @@ const Header = () => {
             >
                 <div className="header__home-intro">
                     <p>
-                        With a passion for art-focused programming,
-                        my goal is to create unique and incredible projects.
+                        With a passion for <span>art-focused programming</span>,
+                        my goal is to build incredible and innovative digital experiences.
                     </p>
                     <p>
-                        Sometimes on my own, sometimes for someone else,
-                        in any case, I want to create the most
-                        <span> amazing digital experiences</span>.
+                        I spend most of my free time in <span>building softwares</span> to
+                        fill up the missing parts of the Internet tech puzzle.
                     </p>
                 </div>
             </AnimationOnScroll>

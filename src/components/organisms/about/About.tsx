@@ -9,14 +9,56 @@ const About = () => {
         <SectionContainer title="About Me" sectionId="about">
             <picture className="about__picture"></picture>
 
-            <p>Hello! My name is Brittany and I enjoy creating things that live on the internet.
-                My interest in web development started back in 2012 when I decided to try
-                editing custom Tumblr themes —
+            <p className="about__text">
+                Hi! My name is Adrien and I&apos;m a french front-end developer with a passion for
+                creating <span>unique</span> designs and digital experiences
             </p>
 
-            <p>
-                I also <span>recently</span> launched a course that covers everything you need to zr,glk zerkgb zergrbvk, zg
+            <p className="about__text">
+                And thanks to the Internet, I discovered all the things that can be done with programming,
+                I spent most of my time working on a lot of <span>creative projects</span> in college..
             </p>
+
+            <p className="about__text">
+                Fast-forward to today, being a front-end developer is a dream,
+                I just love to create and design unique designs and interactive products.
+            </p>
+
+            <div className="about__skills about__list">
+                <h3>Techs</h3>
+                <div className="about__skills-layout">
+                    <div>
+                        <p><span>&raquo;</span> JavaScript (ES6+)</p>
+                        <p><span>&raquo;</span> React</p>
+                        <p><span>&raquo;</span> Node.js</p>
+                    </div>
+                    <div>
+                        <p><span>&raquo;</span> TypeScript</p>
+                        <p><span>&raquo;</span> Eleventy</p>
+                        <p><span>&raquo;</span> WordPress</p>
+                    </div>
+                </div>
+            </div>
+
+            <div className="about__list">
+                <h3>Bio</h3>
+                <p>
+                    <span>2001</span>
+                    Born in Annecy, France.
+                </p>
+                <p>
+                    <span>2019</span>
+                    Went to the university Savoie Mont-Blanc to obtain a B.S. in Computer Science.
+                </p>
+                <p>
+                    <span>2021</span>
+                    I dropped out &apos;cause I&apos;m a piece of shit.
+                </p>
+                <p>
+                    <span>2044</span>
+                    J&apos;suis sous Salvia depuis 2022, j&apos;vois plus rien mon reuf
+                </p>
+            </div>
         </SectionContainer>
     );
 };

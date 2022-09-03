@@ -9,3 +9,55 @@
     border: 1px solid white;
     border-radius: var(--radii-full);
 }
+
+.about__text {
+    text-indent: 1em;
+}
+
+
+.about__list {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+}
+
+.about__list p {
+    display: flex;
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+.about__list span {
+    margin-top: -2px;
+    margin-right: 1.25rem;
+    font-size: var(--fontSize-lg);
+}
+
+.about__skills {
+    width: 100%;
+    max-width: 430px;
+}
+
+.about__skills-layout {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about__skills-layout span {
+    margin-top: -5px;
+    margin-right: 0.7rem;
+    font-size: var(--fontSize-xl);
+}
+
+.about__skills-layout div:last-child {
+    margin-left: 1rem;
+}
+
+@media screen and (max-width: 380px) {
+    /* .about__skills-layout {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+    } */
+}

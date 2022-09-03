@@ -19,6 +19,7 @@ const SocialButton = (
             rel="noreferrer"
         >
             {children !== null && children}
+            <hr></hr>
         </a>
     );
 };
