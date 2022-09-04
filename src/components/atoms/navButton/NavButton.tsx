@@ -21,7 +21,9 @@ const NavButton = (props: PropsNavButton) => {
                 to={props.sectionId}
                 spy={true}
                 smooth={true}
+                isDynamic={true}
                 style={LinkStyle}
+                offset={-64}
             >
                 {props.title}
             </Link>

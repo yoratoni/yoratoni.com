@@ -9,6 +9,10 @@
     padding: 1rem;
 }
 
+.social-bar svg {
+    font-size: var(--fontSize-4xl);
+}
+
 .social-bar__mail {
     margin-bottom: 2rem;
 }

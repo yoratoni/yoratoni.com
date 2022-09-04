@@ -6,23 +6,13 @@ import SquareContainer from "components/atoms/squareContainer/SquareContainer";
 
 
 const SectionContainer = (props: PropsSection) => {
-    const animationDivStyle = {
-        width: "100%",
-        height: "auto",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-    };
-
     return (
         <section className={`section-container ${props.style || ""}`} id={props.sectionId}>
             <AnimationOnScroll
                 animateIn="animate__fadeIn"
                 animateOnce={true}
-                style={animationDivStyle}
             >
-                <SquareContainer style="w-[inherit] h-auto">
-
+                <SquareContainer style="w-[inherit] h-auto my-16">
                     <div className="section">
                         <div className="section__title">
                             <h2>{props.title}</h2>
@@ -32,7 +22,6 @@ const SectionContainer = (props: PropsSection) => {
                             {props.children}
                         </div>
                     </div>
-
                 </SquareContainer>
             </AnimationOnScroll>
         </section>

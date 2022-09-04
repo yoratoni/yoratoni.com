@@ -24,18 +24,18 @@ const About = () => {
                 I just love to create and design unique designs and interactive products.
             </p>
 
-            <div className="about__skills about__list">
-                <h3>Techs</h3>
+            <div className="about__skills">
+                <h3>Skills</h3>
                 <div className="about__skills-layout">
-                    <div>
-                        <p><span>&raquo;</span> JavaScript (ES6+)</p>
+                    <div className="about__list">
+                        <p><span>&raquo;</span> JavaScript&nbsp;(ES6+)</p>
+                        <p><span>&raquo;</span> TypeScript</p>
+                        <p><span>&raquo;</span> Python</p>
+                    </div>
+                    <div className="about__list">
                         <p><span>&raquo;</span> React</p>
                         <p><span>&raquo;</span> Node.js</p>
-                    </div>
-                    <div>
-                        <p><span>&raquo;</span> TypeScript</p>
-                        <p><span>&raquo;</span> Eleventy</p>
-                        <p><span>&raquo;</span> WordPress</p>
+                        <p><span>&raquo;</span> Solidity</p>
                     </div>
                 </div>
             </div>

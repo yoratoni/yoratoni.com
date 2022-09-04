@@ -5,8 +5,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: var(--color-white-900);
     transition: var(--transi-fast);
+    color: var(--color-white-900);
 }
 
 @media (hover: hover) {
@@ -19,7 +19,6 @@
 
 .social-button > svg {
     display: block;
-    font-size: var(--fontSize-4xl);
 }
 
 .social-button > hr {
