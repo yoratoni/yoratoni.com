@@ -8,6 +8,7 @@
     padding: 2rem 1.75rem;
     transition: var(--transi-normal);
     background-color: var(--background);
+    border: 1px solid rgba(var(--primary-rgb), 0.32);
     border-radius: var(--radii-lg);
     box-shadow: var(--shadow-md);
 }
@@ -18,8 +19,13 @@
 
 .project-element__top {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 2rem;
+}
+
+.project-element__icon {
+    margin-bottom: 6px;
 }
 
 .project-element__icon svg {
@@ -27,8 +33,11 @@
     font-size: var(--fontSize-5xl);
 }
 
-.project-element__link svg {
-    font-size: 10px;
+.project-element__links {
+    width: 100px;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .project-element__description p {

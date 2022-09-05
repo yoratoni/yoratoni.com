@@ -2,9 +2,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0.5rem;
+    transition: var(--transi-normal);
     font-weight: 300;
     color: var(--color-white-900);
-    transition: var(--transi-fast);
 }
 
 @media (hover: hover) {
@@ -16,12 +17,8 @@
     }
 }
 
-.email-button > svg {
-    margin-right: 0.6rem;
-    font-size: var(--fontSize-4xl);
-}
-
 .email-button > p {
+    margin-left: 0.6rem;
     padding-bottom: 4px;
     font-size: 16px;
     font-weight: inherit;

@@ -1,11 +1,13 @@
 .scroll-to-top {
-    margin-top: -2.4rem;
+    width: 70px;
+    height: 70px;
+    margin-top: -2.6rem;
     padding: 0.25rem;
+    transition: var(--transi-normal);
     color: var(--color-white-900);
     background-color: var(--background);
     border: 1px solid var(--primary);
     box-shadow: var(--shadow-md);
-    transition: var(--transi-fast);
 }
 
 @media (hover: hover) {
@@ -17,6 +19,6 @@
 }
 
 .scroll-to-top > svg {
-    display: block;
-    font-size: var(--fontSize-6xl);
+    width: 90%;
+    height: 90%;
 }

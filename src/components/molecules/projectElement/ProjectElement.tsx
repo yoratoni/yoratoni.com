@@ -1,9 +1,11 @@
 import React from "react";
 import "./ProjectElement.css";
 
+import LinkButton from "components/atoms/linkButton/LinkButton";
+
 import DescriptionIcon from "@mui/icons-material/Description";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import SocialButton from "components/atoms/socialButton/SocialButton";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 
 const ProjectElement = () => {
@@ -15,10 +17,14 @@ const ProjectElement = () => {
                         <DescriptionIcon />
                     </div>
 
-                    <div className="project-element__link">
-                        <SocialButton>
+                    <div className="project-element__links">
+                        <LinkButton>
+                            <GitHubIcon />
+                        </LinkButton>
+
+                        <LinkButton>
                             <OpenInNewIcon />
-                        </SocialButton>
+                        </LinkButton>
                     </div>
                 </div>
 

@@ -230,7 +230,7 @@
     --fontSize-fluid-home-intro: clamp(1rem, 0.875rem + 0.625vw, 1.125rem);
     --fontSize-fluid-copyrights: clamp(0.65rem, 0.6vw + 0.57rem, 0.89rem);
 
-    --fontSize-fluid-xs: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+    --fontSize-fluid-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
     --fontSize-fluid-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
     --fontSize-fluid-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
     --fontSize-fluid-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);

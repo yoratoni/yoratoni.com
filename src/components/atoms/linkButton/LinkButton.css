@@ -1,11 +1,12 @@
 .social-button {
-    width: 55px;
-    height: 55px;
+    height: inherit;
+    aspect-ratio: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    transition: var(--transi-fast);
+    padding: 0.5rem;
+    transition: var(--transi-normal);
     color: var(--color-white-900);
 }
 
@@ -18,13 +19,8 @@
 }
 
 .social-button > svg {
+    width: 100%;
+    height: 100%;
     display: block;
-}
-
-.social-button > hr {
-    width: 30%;
-    height: 1px;
-    margin-top: 8px;
-    background-color: var(--primary);
-    border: none;
+    transition: inherit;
 }

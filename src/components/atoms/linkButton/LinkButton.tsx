@@ -1,8 +1,8 @@
 import React from "react";
-import "./SocialButton.css";
+import "./LinkButton.css";
 
 
-const SocialButton = (
+const LinkButton = (
     {
         children = null,
         href = "/",
@@ -19,10 +19,9 @@ const SocialButton = (
             rel="noreferrer"
         >
             {children !== null && children}
-            <hr></hr>
         </a>
     );
 };
 
 
-export default SocialButton;
+export default LinkButton;

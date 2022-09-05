@@ -1,7 +1,7 @@
 import React from "react";
 import "./SocialBar.css";
 
-import SocialButton from "components/atoms/socialButton/SocialButton";
+import LinkButton from "components/atoms/linkButton/LinkButton";
 import EmailButton from "components/atoms/emailButton/EmailButton";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -18,25 +18,25 @@ const SocialBar = () => {
             </div>
 
             <div className="social-bar__li">
-                <SocialButton
+                <LinkButton
                     href="https://github.com/yoratoni"
                     title="@yoratoni on GitHub"
-                ><GitHubIcon /></SocialButton>
+                ><GitHubIcon /></LinkButton>
 
-                <SocialButton
+                <LinkButton
                     href="https://www.linkedin.com/in/adrien-bibollet-555354225/"
                     title="Adrien Bibollet's resume on LinkedIn"
-                ><LinkedInIcon /></SocialButton>
+                ><LinkedInIcon /></LinkButton>
 
-                <SocialButton
+                <LinkButton
                     href="https://www.instagram.com/yoratoni"
                     title="@yoratoni on Instagram"
-                ><InstagramIcon /></SocialButton>
+                ><InstagramIcon /></LinkButton>
 
-                <SocialButton
+                <LinkButton
                     href="https://t.me/yoratoni"
                     title="@yoratoni on Telegram"
-                ><TelegramIcon /></SocialButton>
+                ><TelegramIcon /></LinkButton>
             </div>
         </div>
     );

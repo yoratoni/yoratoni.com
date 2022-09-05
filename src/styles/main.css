@@ -28,14 +28,11 @@ body {
 
 p {
     margin-bottom: 2rem;
-    font-size: var(--fontSize-fluid-home-intro);
+
+    font-size: 1rem;
     font-weight: 200;
     line-height: 1.5;
     text-align: justify;
-}
-
-section p {
-    font-size: var(--fontSize-fluid-sm);
 }
 
 p:last-child {
