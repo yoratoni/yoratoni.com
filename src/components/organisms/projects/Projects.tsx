@@ -18,7 +18,7 @@ const Projects = () => {
     return (
         <SectionContainer title="My Projects" sectionId="projects">
             <ul className="projects__grid">
-                {/* {Array.from({ length: 10 }, (_, i) => <span key={i}>PUTE JUIVE</span>)} */}
+                {/* {Array.from({ length: 10 }, (_, i) => <span key={i}>Yo bro</span>)} */}
 
                 <ProjectCard
                     title="dfsv"
