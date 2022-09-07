@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: 8rem 0;
     color: var(--color-white-900);
 }
 

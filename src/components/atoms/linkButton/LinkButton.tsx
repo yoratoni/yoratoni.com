@@ -8,7 +8,7 @@ const LinkButton = (
         href = "/",
         title = "",
         target = "_blank",
-    }: PropsSocialButton
+    }: IsPropsSocialButton
 ) => {
     return (
         <a

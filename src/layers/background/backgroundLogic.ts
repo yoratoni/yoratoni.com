@@ -6,8 +6,8 @@ import p5Types from "p5";
  */
 const parameters = {
     // Main color of the background
-    backgroundColor: {
-        hex: "#021211",
+    backgroundColor: "#021211",
+    primaryColor: {
         r: 190,
         g: 21,
         b: 51
@@ -18,7 +18,7 @@ const parameters = {
         pointsBoxSize: 0.5,         // Size of the points box (percentage of canvas size)
         perlinMult: 0.02,           // Multiply the perlin noise effect
         maxAngle: 16,               // The max angle for a Perlin noise point
-        density: 0,                 // Default amount of points when loading the webpage
+        density: 16,                // Default amount of points when loading the webpage
         weight: 2,                  // The weight / thickness of each line / ellipsis
         alpha: 64                   // The alpha of each line
     }
@@ -28,7 +28,7 @@ const parameters = {
 /**
  * Central cache of the visualization.
  */
-const cache: IP5BackgroundCache = {
+const cache: IsP5BackgroundCache = {
     canvasMid: [0, 0],              // X & Y middle coordinates of the canvas
     points: [],                     // Contains all the current points
 
@@ -47,21 +47,21 @@ const cache: IP5BackgroundCache = {
  * @param p5 The main p5 object
  */
 const setDefaultStyle = (p5: p5Types) => {
-    p5.background(parameters.backgroundColor.hex);
+    p5.background(parameters.backgroundColor);
     p5.translate(0, 0);
 
     p5.strokeWeight(parameters.flowField.weight);
     p5.stroke(
-        parameters.backgroundColor.r,
-        parameters.backgroundColor.g,
-        parameters.backgroundColor.b,
+        parameters.primaryColor.r,
+        parameters.primaryColor.g,
+        parameters.primaryColor.b,
         parameters.flowField.alpha
     );
 
     p5.fill(
-        parameters.backgroundColor.r,
-        parameters.backgroundColor.g,
-        parameters.backgroundColor.b
+        parameters.primaryColor.r,
+        parameters.primaryColor.g,
+        parameters.primaryColor.b
     );
 };
 
@@ -72,7 +72,7 @@ const setDefaultStyle = (p5: p5Types) => {
  * @param pointsBox The points box represents the bounds where the points can spawn (x1/y1 & x2/y2)
  * @returns A p5 Vector
  */
-const createPointsBoxRandomPoint = (p5: p5Types, pointsBox: IP5_4Coords) => {
+const createPointsBoxRandomPoint = (p5: p5Types, pointsBox: IsP5_4Coords) => {
     return p5.createVector(
         p5.random(pointsBox.x1, pointsBox.x2),
         p5.random(pointsBox.y1, pointsBox.y2)

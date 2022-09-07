@@ -2,7 +2,7 @@ import React from "react";
 import "./SquareContainer.css";
 
 
-const SquareContainer = (props: PropsContainer) => {
+const SquareContainer = (props: IsPropsContainer) => {
     return (
         <div className={`square-container ${props.style || ""}`}>
             {props.children}

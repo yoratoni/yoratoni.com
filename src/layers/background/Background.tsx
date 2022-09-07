@@ -33,7 +33,7 @@ const Background = () => {
      * @param fn Function called at the end of the event
      * @returns A timer (canceled if resize not ended)
      */
-    const debounce = (fn: P5ResizeFunction) => {
+    const debounce = (fn: IsP5ResizeFunction) => {
         let timer: number;
         return function (event: Event) {
             if (timer) {

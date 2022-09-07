@@ -2,7 +2,9 @@ import p5Types from "p5";
 
 
 declare global {
-    type P5ResizeFunction = (p5: p5Types) => void;
+    type IsP5ResizeFunction = (p5: p5Types) => void;
+
+    type IsProjectCardsArray = PropsProjectCard[];
 }
 
 

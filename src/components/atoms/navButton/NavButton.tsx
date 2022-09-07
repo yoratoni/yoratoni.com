@@ -4,7 +4,7 @@ import "./NavButton.css";
 import { Link } from "react-scroll";
 
 
-const NavButton = (props: PropsNavButton) => {
+const NavButton = (props: IsPropsNavButton) => {
     const LinkStyle = {
         width: "100%",
         height: "100%",

@@ -34,8 +34,8 @@
     font-size: var(--fontSize-fluid-sub-sub-heading);
     font-weight: 300;
     line-height: 1.5;
-    background-color: var(--color-white-300);
-    border-radius: var(--radii-lg);
+    background-color: var(--background);
+    border: 1px solid var(--primary);
     box-shadow: var(--shadow-md);
     text-align: center;
 }

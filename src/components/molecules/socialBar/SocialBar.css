@@ -1,11 +1,15 @@
-.social-bar {
+.social-bar__container {
     width: 100%;
     max-width: var(--size-container-2xs);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 1rem 0;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.social-bar {
     padding: 1rem;
 }
 
@@ -22,6 +26,5 @@
     height: 55px;
     display: flex;
     justify-content: space-between;
-    padding: 0 0.5rem;
     font-size: var(--fontSize-3xl);
 }

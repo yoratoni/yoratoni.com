@@ -6,7 +6,7 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const Header = () => {
     return (
-        <header className="header">
+        <header className="header" id="home">
             <AnimationOnScroll
                 animateIn="animate__fadeInDown"
                 animateOnce={true}

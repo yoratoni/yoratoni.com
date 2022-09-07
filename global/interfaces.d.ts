@@ -3,7 +3,7 @@ import React from "react";
 
 
 declare global {
-    interface IP5_4Coords {
+    interface IsP5_4Coords {
         x1: number,
         y1: number,
         x2: number,
@@ -11,26 +11,26 @@ declare global {
     }
 
 
-    interface IP5BackgroundCache {
+    interface IsP5BackgroundCache {
         canvasMid: number[],
         points: p5Types.Vector[],
         pointsBox: IP5_4Coords
     }
 
 
-    interface PropsContainer {
+    interface IsPropsContainer {
         children?: React.ReactNode,
         style?: string
     }
 
 
-    interface PropsNavButton {
+    interface IsPropsNavButton {
         title: string,
         sectionId: string
     }
 
 
-    interface PropsSection {
+    interface IsPropsSection {
         children?: React.ReactNode,
         style?: string,
         sectionId?: string,
@@ -38,11 +38,20 @@ declare global {
     }
 
 
-    interface PropsSocialButton {
+    interface IsPropsSocialButton {
         children?: React.ReactNode,
         title?: string,
         href?: string,
         target?: "_blank" | "_self" | "_parent" | "_top"
+    }
+
+
+    interface IsPropsProjectCard {
+        github?: string,
+        live?: string,
+        title: string,
+        description: string,
+        techs: string[]
     }
 }
 

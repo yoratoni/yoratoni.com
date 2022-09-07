@@ -1,14 +1,15 @@
-.navbar {
+.navbar__container {
     width: 100%;
     height: var(--size-16);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 99;
+    border-bottom: 1px solid var(--secondary);
     box-shadow: var(--shadow-md);
 }
 
-.navbar__container {
+.navbar {
     width: 100%;
     max-width: var(--size-container-xs);
     height: 100%;

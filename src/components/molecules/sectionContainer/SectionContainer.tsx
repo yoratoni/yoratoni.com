@@ -5,7 +5,7 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 import SquareContainer from "components/atoms/squareContainer/SquareContainer";
 
 
-const SectionContainer = (props: PropsSection) => {
+const SectionContainer = (props: IsPropsSection) => {
     return (
         <section className={`section-container ${props.style || ""}`} id={props.sectionId}>
             <AnimationOnScroll
