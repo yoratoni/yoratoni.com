@@ -6,8 +6,8 @@
     transition: var(--transi-normal);
     font-weight: 300;
     color: var(--color-white-900);
-    background-color: rgba(var(--background-rgb), 0.5);
-    border: 1px solid var(--primary);
+    background-color: var(--background-sec);
+    border: 1px solid var(--secondary);
     box-shadow: var(--shadow-md);
 }
 
@@ -16,7 +16,7 @@
         transform: var(--transform-md);
         font-weight: 500;
         color: var(--primary);
-        filter: var(--drop-shadow-base);
+        filter: var(--drop-shadow);
     }
 }
 

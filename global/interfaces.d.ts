@@ -26,7 +26,8 @@ declare global {
 
     interface IsPropsNavButton {
         title: string,
-        sectionId: string
+        sectionId: string,
+        offset?: number
     }
 
 
@@ -46,7 +47,7 @@ declare global {
     }
 
 
-    interface IsPropsProjectCard {
+    interface IsPropsProjectCardData {
         github?: string,
         live?: string,
         title: string,

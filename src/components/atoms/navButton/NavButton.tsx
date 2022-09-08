@@ -12,6 +12,11 @@ const NavButton = (props: IsPropsNavButton) => {
         display: "inline-block"
     };
 
+    let offset = -48;
+    if (props.offset) {
+        offset = props.offset;
+    }
+
     return (
         <button
             className="nav-button"
@@ -23,7 +28,7 @@ const NavButton = (props: IsPropsNavButton) => {
                 smooth={true}
                 isDynamic={true}
                 style={LinkStyle}
-                offset={-64}
+                offset={offset}
             >
                 {props.title}
             </Link>

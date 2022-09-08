@@ -3,28 +3,16 @@ import "./Projects.css";
 
 import SectionContainer from "components/molecules/sectionContainer/SectionContainer";
 import ProjectCard from "components/molecules/projectCard/ProjectCard";
+import ProjectCardDataArray from "database/database";
 
 
 const Projects = () => {
-    const test = {
-        github: "/",
-        live: "/",
-        title: "test",
-        description: "TEST",
-        techs: [ "Python", "Solidity", "Your sister" ]
-    };
-
+    const projectCards = ProjectCardDataArray.map((projectCardData, i) => <ProjectCard {...projectCardData} key={i} />);
 
     return (
         <SectionContainer title="My Projects" sectionId="projects">
             <ul className="projects__grid">
-                {/* {Array.from({ length: 10 }, (_, i) => <span key={i}>Yo bro</span>)} */}
-
-                <ProjectCard
-                    title="dfsv"
-                    description=""
-                    techs={["pute", "pute", "pute"]}
-                />
+                {projectCards}
             </ul>
         </SectionContainer>
     );

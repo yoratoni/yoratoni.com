@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <footer>
             <SquareContainer
-                style="border-t pb-6 border-[color:var(--primary)] flex flex-col items-center justify-center px-5"
+                style="border-t-4 pb-6 border-[color:var(--secondary)] flex flex-col items-center justify-center px-5"
             >
                 <ScrollToTop />
                 <SocialBar />

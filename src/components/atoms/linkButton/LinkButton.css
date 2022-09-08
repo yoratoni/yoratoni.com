@@ -8,8 +8,8 @@
     padding: 0.5rem;
     transition: var(--transi-normal);
     color: var(--color-white-900);
-    background-color: rgba(var(--background-rgb), 0.5);
-    border: 1px solid var(--primary);
+    background-color: var(--background-sec);
+    border: 1px solid var(--secondary);
     box-shadow: var(--shadow-md);
 }
 
@@ -17,7 +17,7 @@
     .social-button:hover {
         transform: var(--transform-md);
         color: var(--primary);
-        filter: var(--drop-shadow-base);
+        filter: var(--drop-shadow);
     }
 }
 

@@ -7,10 +7,6 @@
     gap: 2rem;
 }
 
-.projects__grid:not(:last-child) {
-    margin-bottom: 2rem;
-}
-
 @media (max-width: 1080px) {
     .projects__grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

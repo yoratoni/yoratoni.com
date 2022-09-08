@@ -8,11 +8,11 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 
-const ProjectCard = (props: IsPropsProjectCard) => {
+const ProjectCard = (props: IsPropsProjectCardData) => {
     const listTechs = props.techs.map((tech, i) => <li key={i}>{tech}</li>);
 
     return (
-        <div className="project-card">
+        <li className="project-card">
             <header>
                 <div className="project-card__top">
                     <div className="project-card__icon">
@@ -50,7 +50,7 @@ const ProjectCard = (props: IsPropsProjectCard) => {
                     {listTechs}
                 </ul>
             </footer>
-        </div>
+        </li>
     );
 };
 

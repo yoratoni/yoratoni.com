@@ -14,7 +14,7 @@
     .scroll-to-top:hover {
         transform: var(--transform-md);
         color: var(--primary);
-        filter: var(--drop-shadow-base);
+        filter: var(--drop-shadow);
     }
 }
 

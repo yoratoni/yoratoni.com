@@ -2,11 +2,17 @@
     /* Custom Vars */
     --background: #021211;  /* Change inside backgroundLogic too */
     --background-rgb: 2, 18, 17;
+    --background-sec: rgba(4, 30, 29, 0.6);
+    --background-quick_words: rgba(5, 35, 34, 0.7);
+
     --primary: #fa1d46;
     --primary-rgb: 250, 29, 70;
-    --secondary: #7b3d4c;
+    --secondary: rgba(250, 29, 70, 0.4);
 
-    --drop-shadow-base: drop-shadow(0 0 1px rgba(var(--primary-rgb), 0.4));
+    --nav-height: 4rem;
+
+    --radii: 8px;
+    --drop-shadow: drop-shadow(0 0 1px rgba(var(--primary-rgb), 0.4));
 
 
     /* UI Library */
