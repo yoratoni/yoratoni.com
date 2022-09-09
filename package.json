@@ -2,7 +2,8 @@
     "name": "portfolio",
     "version": "1.0.1",
     "license": "MIT",
-    "author": "Yoratoni <yoratoni.dev@gmail.com> (https://yoratoni.com/)",
+    "author": "Yoratoni <yoratoni.dev@gmail.com>",
+    "homepage": "https://yoratoni.com",
     "private": true,
     "dependencies": {
         "@emotion/react": "^11.10.0",
