@@ -1,8 +1,8 @@
 import React from "react";
-import "./LinkButton.css";
+import "./TextButton.css";
 
 
-const LinkButton = (
+const TextButton = (
     {
         children = null,
         href = "/",
@@ -12,7 +12,7 @@ const LinkButton = (
 ) => {
     return (
         <a
-            className="link-button"
+            className="text-button"
             href={href}
             title={title}
             target={target}
@@ -24,4 +24,4 @@ const LinkButton = (
 };
 
 
-export default LinkButton;
+export default TextButton;

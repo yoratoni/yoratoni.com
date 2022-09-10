@@ -30,7 +30,12 @@ const NavButton = (props: IsPropsNavButton) => {
                 style={LinkStyle}
                 offset={offset}
             >
-                {props.title}
+                <p className="nav-button__prev">
+                    {props.prev !== null && props.prev}
+                </p>
+                <p className="nav-button__title">
+                    {props.title}
+                </p>
             </Link>
         </button>
     );

@@ -6,7 +6,7 @@ import SectionContainer from "components/molecules/sectionContainer/SectionConta
 
 const About = () => {
     return (
-        <SectionContainer title="About Me" sectionId="about">
+        <SectionContainer title="ABOUT ME" sectionId="about">
             <picture className="about__picture"></picture>
 
             <p className="about__text">

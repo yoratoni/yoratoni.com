@@ -21,7 +21,7 @@
 
 .header__subheading {
     font-size: var(--fontSize-fluid-sub-heading);
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1;
     word-break: keep-all;
     color: var(--primary);
@@ -31,10 +31,8 @@
     width: fit-content;
     margin: 2.6rem auto 0 auto;
     padding: 1rem 1.6rem;
-    font-size: var(--fontSize-fluid-sub-sub-heading);
-    font-weight: 300;
     line-height: 1.5;
-    background-color: var(--background-quick_words);
+    background-color: var(--background-quick-words);
     border-radius: var(--radii);
     box-shadow: var(--shadow-md);
     text-align: center;

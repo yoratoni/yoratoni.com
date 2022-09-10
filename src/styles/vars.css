@@ -2,8 +2,10 @@
     /* Custom Vars */
     --background: #021211;  /* Change inside backgroundLogic too */
     --background-rgb: 2, 18, 17;
-    --background-sec: rgba(4, 30, 29, 0.6);
-    --background-quick_words: rgba(5, 35, 34, 0.7);
+    --background-sec: rgba(2, 16, 16, 0.4);
+
+    --background-footer: rgb(1, 11, 11);
+    --background-quick-words: rgba(5, 35, 34, 0.7);
 
     --primary: #fa1d46;
     --primary-rgb: 250, 29, 70;

@@ -10,7 +10,7 @@ const Projects = () => {
     const projectCards = ProjectCardDataArray.map((projectCardData, i) => <ProjectCard {...projectCardData} key={i} />);
 
     return (
-        <SectionContainer title="My Projects" sectionId="projects">
+        <SectionContainer title="MY PROJECTS" sectionId="projects">
             <ul className="projects__grid">
                 {projectCards}
             </ul>

@@ -2,9 +2,9 @@ import React from "react";
 
 import Navbar from "components/organisms/navbar/Navbar";
 import Header from "components/organisms/header/Header";
-
 import Projects from "components/organisms/projects/Projects";
 import About from "components/organisms/about/About";
+import Contact from "components/organisms/contact/Contact";
 import Footer from "components/organisms/footer/Footer";
 
 
@@ -17,6 +17,7 @@ const Content = () => {
                 <Header />
                 <Projects />
                 <About />
+                <Contact />
             </div>
 
             <Footer />

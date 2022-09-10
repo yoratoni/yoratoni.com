@@ -27,7 +27,8 @@ declare global {
     interface IsPropsNavButton {
         title: string,
         sectionId: string,
-        offset?: number
+        offset?: number,
+        prev?: string
     }
 
 
@@ -39,7 +40,7 @@ declare global {
     }
 
 
-    interface IsPropsSocialButton {
+    interface IsPropsButton {
         children?: React.ReactNode,
         title?: string,
         href?: string,

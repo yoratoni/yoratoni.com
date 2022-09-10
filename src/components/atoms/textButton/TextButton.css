@@ -1,18 +1,19 @@
-.email-button {
+.text-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem 2rem;
+    padding: 0.8rem 2rem;
     transition: var(--transi-normal);
     font-weight: 300;
     color: var(--color-white-900);
     background-color: var(--background-sec);
     border: 1px solid var(--secondary);
+    border-radius: var(--radii);
     box-shadow: var(--shadow-md);
 }
 
 @media (hover: hover) {
-    .email-button:hover {
+    .text-button:hover {
         transform: var(--transform-md);
         font-weight: 500;
         color: var(--primary);
@@ -20,7 +21,7 @@
     }
 }
 
-.email-button > p {
+.text-button > p {
     margin-left: 0.6rem;
     padding-bottom: 4px;
     font-size: 16px;

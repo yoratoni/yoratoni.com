@@ -1,26 +1,31 @@
 import React from "react";
 import "./Footer.css";
 
-import SquareContainer from "components/atoms/squareContainer/SquareContainer";
 import ScrollToTop from "components/atoms/scrollToTop/ScrollToTop";
-import SocialBar from "components/molecules/socialBar/SocialBar";
+import NavButton from "components/atoms/navButton/NavButton";
 
 
 const Footer = () => {
     return (
-        <footer>
-            <SquareContainer
-                style="border-t-4 pb-6 border-[color:var(--secondary)] flex flex-col items-center justify-center px-5"
-            >
-                <ScrollToTop />
-                <SocialBar />
+        <footer className="footer">
+            <ScrollToTop />
 
-                <p className="footer__copyrights">
-                    <span>©&nbsp;</span>{new Date().getFullYear()}&nbsp;ADRIEN&nbsp;BIBOLLET.
-                    <br></br>
-                    Built&nbsp;From&nbsp;Scratch.
-                </p>
-            </SquareContainer>
+            <div className="footer__navigation">
+                <hr></hr>
+                <div className="footer__navigation-bar">
+                    <NavButton sectionId="home" title="HOME" offset={-96} />
+                    <NavButton sectionId="projects" title="PROJECTS" />
+                    <NavButton sectionId="about" title="ABOUT" />
+                    <NavButton sectionId="contact" title="CONTACT" />
+                </div>
+                <hr></hr>
+            </div>
+
+            <p className="footer__copyrights">
+                <span>©&nbsp;</span>{new Date().getFullYear()}&nbsp;Adrien&nbsp;Bibollet.
+                <br></br>
+                All&nbsp;Rights&nbsp;Reserved.
+            </p>
         </footer>
     );
 };

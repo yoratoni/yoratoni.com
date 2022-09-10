@@ -12,7 +12,7 @@ const Header = () => {
                 animateOnce={true}
             >
                 <hgroup>
-                    <p className="mb-3 header__subheading">Hi, my name is</p>
+                    <p className="mb-2 header__subheading">Hi, my name is</p>
                     <h1 className="header__heading">ADRIEN&nbsp;BIBOLLET</h1>
 
                     <div className="flex items-center justify-center w-full mt-3 text-center">
@@ -36,12 +36,12 @@ const Header = () => {
             >
                 <div className="header__home-intro">
                     <p>
-                        With a passion for <span>art-focused programming</span>,
-                        my goal is to build incredible and innovative digital experiences.
+                        With a passion for <span>art-focused designing</span>,
+                        my goal is to create unique and incredible digital experiences.
                     </p>
                     <p>
-                        I spend most of my free time in <span>building softwares</span> to
-                        fill up the missing parts of the Internet tech puzzle.
+                        I spend most of my free time in <span>building solutions </span>
+                        for the missing pieces of the Internet puzzle.
                     </p>
                 </div>
             </AnimationOnScroll>

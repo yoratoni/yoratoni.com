@@ -12,7 +12,7 @@
 .section {
     width: inherit;
     display: block;
-    border-top: 4px solid var(--secondary);
+    border-top: 2px solid var(--primary);
     border-radius: var(--radii);
     box-shadow: var(--shadow-2xl);
 }
@@ -28,13 +28,12 @@
 
 .section__title > h2 {
     padding: 0.5rem 1.25rem;
-    font-size: var(--fontSize-fluid-sub-heading);
-    font-weight: 400;
+    font-size: 1.25rem;
     line-height: 1;
     word-break: keep-all;
-    color: var(--primary);
     background-color: var(--background);
     border: 1px solid var(--primary);
+    letter-spacing: 1px;
 }
 
 .section__content {

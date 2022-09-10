@@ -6,7 +6,7 @@
     transition: var(--transi-normal);
     color: var(--color-white-900);
     background-color: var(--background);
-    border: 1px solid var(--primary);
+    border: 3px solid var(--secondary);
     box-shadow: var(--shadow-md);
 }
 

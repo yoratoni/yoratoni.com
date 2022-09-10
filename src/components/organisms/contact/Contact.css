@@ -1,0 +1,24 @@
+.contact {
+    width: 100%;
+    max-width: var(--size-container-2xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contact__mail {
+    margin-bottom: 2rem;
+}
+
+.contact__on-the-web {
+    width: 100%;
+}
+
+.contact__on-the-web-links {
+    margin-top: 1.4rem;
+}
+
+.contact__on-the-web-links:not(:last-child) {
+    margin-bottom: 5rem;
+}

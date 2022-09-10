@@ -14,7 +14,7 @@
 .navbar {
     width: 100%;
     max-width: var(--size-container-xs);
-    height: 100%;
+    height: var(--nav-height);
     display: flex;
     align-items: center;
     justify-content: space-between;
