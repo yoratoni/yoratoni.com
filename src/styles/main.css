@@ -2,12 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    color-scheme: dark;
+}
+
 *,
 ::before,
 ::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 html,
@@ -18,34 +23,8 @@ body {
 
 body {
     min-width: 320px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: Inter, sans-serif;
     background-color: var(--background);
     -webkit-tap-highlight-color: transparent;
-}
-
-p {
-    margin-bottom: 1.4rem;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.5;
-    text-align: justify;
-}
-
-p:last-child {
-    margin-bottom: 0;
-}
-
-p > span {
-    font-weight: 500;
-    color: var(--primary);
-}
-
-h3 {
-    margin-bottom: 1.25rem;
-    font-size: var(--fontSize-xl);
-    font-weight: 400;
-    text-decoration: underline;
-    text-underline-offset: 7px;
-    text-decoration-thickness: 3px;
-    text-decoration-color: #525252;
+    -webkit-font-smoothing: antialiased;
 }

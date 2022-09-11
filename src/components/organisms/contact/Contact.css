@@ -5,9 +5,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 0 2rem;
 }
 
 .contact__mail {
+    width: 100%;
     margin-bottom: 2rem;
 }
 
@@ -19,6 +21,6 @@
     margin-top: 1.4rem;
 }
 
-.contact__on-the-web-links:not(:last-child) {
-    margin-bottom: 5rem;
+.contact__on-the-web-links a:not(:last-child) {
+    margin-bottom: 1rem;
 }

@@ -25,8 +25,10 @@ const Header = () => {
                     </div>
                 </hgroup>
 
-                <div className="header__quick-word">
-                    I&apos;m a front-end web developer based in France!
+                <div className="mt-10">
+                    <div className="header__quick-word">
+                        I&apos;m a front-end web developer based in France!
+                    </div>
                 </div>
             </AnimationOnScroll>
 

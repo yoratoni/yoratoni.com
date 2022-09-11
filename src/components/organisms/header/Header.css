@@ -1,14 +1,14 @@
 .header {
     width: 100%;
-    height: calc(100vh - var(--space-48));
+    height: calc(100vh - var(--space-32));
     min-height: var(--size-container-sm);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin-bottom: 4rem;
-    padding: 0 1.25rem;
-    color: var(--color-white-900);
+    padding: 0 1.5rem;
+    color: var(--color-white-800);
 }
 
 .header__heading {
@@ -29,10 +29,10 @@
 
 .header__quick-word {
     width: fit-content;
-    margin: 2.6rem auto 0 auto;
+    margin: 0 auto;
     padding: 1rem 1.6rem;
     line-height: 1.5;
-    background-color: var(--background-quick-words);
+    background-color: var(--background-light);
     border-radius: var(--radii);
     box-shadow: var(--shadow-md);
     text-align: center;

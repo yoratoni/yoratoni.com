@@ -6,7 +6,7 @@
     justify-content: center;
     flex-direction: column;
     padding: 0.5rem;
-    transition: var(--transi-normal);
+    transition: var(--transi-fast);
     color: var(--color-white-900);
 }
 

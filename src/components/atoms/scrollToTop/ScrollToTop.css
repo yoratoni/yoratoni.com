@@ -3,7 +3,7 @@
     height: 70px;
     margin-top: -2.6rem;
     padding: 0.25rem;
-    transition: var(--transi-normal);
+    transition: var(--transi-fast);
     color: var(--color-white-900);
     background-color: var(--background);
     border: 3px solid var(--secondary);

@@ -1,14 +1,11 @@
 .background {
     width: 100%;
     height: calc(100vh - var(--size-16));
-
-    position: fixed;
+    position: absolute;
     top: var(--size-16);
     left: 0;
     z-index: -1;
-
-    /* Used to fill empty space when resizing the window */
     background-color: var(--background);
-
+    border: 1px solid red;
     overflow: hidden;
 }

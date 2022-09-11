@@ -1,4 +1,5 @@
 import React from "react";
+import "./Content.css";
 
 import Navbar from "components/organisms/navbar/Navbar";
 import Header from "components/organisms/header/Header";
@@ -11,16 +12,18 @@ import Footer from "components/organisms/footer/Footer";
 const Content = () => {
     return (
         <>
-            <Navbar />
+            <div className=" h-[200vh]"></div>
 
-            <div className="flex flex-col items-start justify-center w-full max-w-3xl px-5 py-8 mx-auto mt-16">
+            {/* <Navbar />
+
+            <div className="content">
                 <Header />
                 <Projects />
                 <About />
                 <Contact />
             </div>
 
-            <Footer />
+            <Footer /> */}
         </>
     );
 };

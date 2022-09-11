@@ -40,23 +40,14 @@ const About = () => {
                 </div>
             </div>
 
-            <div className="about__list">
+            <div className="about__list about__bio">
                 <h3>Bio</h3>
                 <p>
                     <span>2001</span>
                     Born in Annecy, France.
                 </p>
                 <p>
-                    <span>2019</span>
-                    Went to the university Savoie Mont-Blanc to obtain a B.S. in Computer Science.
-                </p>
-                <p>
-                    <span>2021</span>
-                    I dropped out &apos;cause I&apos;m a piece of shit.
-                </p>
-                <p>
-                    <span>2044</span>
-                    J&apos;suis sous Salvia depuis 2022, j&apos;vois plus rien mon reuf
+                    <span>2002</span>
                 </p>
             </div>
         </SectionContainer>

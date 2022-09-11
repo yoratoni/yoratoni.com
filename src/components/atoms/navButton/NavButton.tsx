@@ -12,7 +12,7 @@ const NavButton = (props: IsPropsNavButton) => {
         display: "inline-block"
     };
 
-    let offset = -48;
+    let offset = -128;
     if (props.offset) {
         offset = props.offset;
     }

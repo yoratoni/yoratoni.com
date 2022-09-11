@@ -2,7 +2,6 @@ import React from "react";
 import "./Contact.css";
 
 import SectionContainer from "components/molecules/sectionContainer/SectionContainer";
-import LinkButton from "components/atoms/linkButton/LinkButton";
 import TextButton from "components/atoms/textButton/TextButton";
 
 import EmailIcon from "@mui/icons-material/Email";
@@ -35,7 +34,7 @@ const Contact = () => {
                             title="Email me"
                         >
                             <GitHubIcon />
-                            <p>@yoratoni on Github</p>
+                            <p>Github</p>
                         </TextButton>
 
                         <TextButton

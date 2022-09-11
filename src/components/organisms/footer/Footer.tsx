@@ -22,7 +22,7 @@ const Footer = () => {
             </div>
 
             <p className="footer__copyrights">
-                <span>©&nbsp;</span>{new Date().getFullYear()}&nbsp;Adrien&nbsp;Bibollet.
+                ©{new Date().getFullYear()}&nbsp;Adrien&nbsp;Bibollet.
                 <br></br>
                 All&nbsp;Rights&nbsp;Reserved.
             </p>
