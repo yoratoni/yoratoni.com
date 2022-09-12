@@ -1,11 +1,7 @@
 .background {
     width: 100%;
-    height: calc(100vh - var(--size-16));
-    position: absolute;
-    top: var(--size-16);
-    left: 0;
+    height: 100vh;
     z-index: -1;
-    background-color: var(--background);
-    border: 1px solid red;
-    overflow: hidden;
+    outline: 1px solid red;
+    outline-offset: -8px;
 }

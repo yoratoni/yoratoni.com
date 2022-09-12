@@ -1,4 +1,4 @@
-const ProjectCardDataArray: IsProjectCardDataArray = [
+const ProjectCardDataArray = [
     {
         github: "/",
         live: "/",
