@@ -15,16 +15,12 @@
     user-select: none;
 }
 
-html,
 body {
     max-width: 100%;
+    min-height: -webkit-fill-available;
     min-height: 100vh;
-}
-
-body {
-    min-width: 320px;
     font-family: 'Roboto', sans-serif;
+    background-color: #DEFDFD;
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
-    overflow: hidden;
 }

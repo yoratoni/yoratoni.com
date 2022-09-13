@@ -56,7 +56,6 @@ const setDefaultStyle = (p5: p5Types) => {
  */
 const drawEvent = (p5: p5Types) => {
     setDefaultStyle(p5);
-
 };
 
 
