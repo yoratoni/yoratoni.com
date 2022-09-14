@@ -15,12 +15,16 @@
     user-select: none;
 }
 
+html, body {
+    min-height: -webkit-fill-available;
+}
+
 body {
     max-width: 100%;
     min-height: -webkit-fill-available;
     min-height: 100vh;
-    font-family: 'Roboto', sans-serif;
-    background-color: #DEFDFD;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--website-background);
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
 }

@@ -1,7 +1,7 @@
 :root {
     /* Custom Vars */
-    --background: #010014;  /* Change inside backgroundLogic too */
-    --background-rgb: 1, 0, 20;
+    --parallax-background: #DEFDFD;
+    --website-background: #19263D;
 
 
     /* UI Library */

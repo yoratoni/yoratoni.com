@@ -11,7 +11,6 @@ import "styles/main.css";
 
 // App layers
 import Background from "layers/background/Background";
-import Canvas from "layers/canvas/Canvas";
 import Content from "layers/content/Content";
 
 
@@ -19,7 +18,6 @@ const App = () => {
     return (
         <>
             <Background />
-            <Canvas />
             <Content />
         </>
     );
