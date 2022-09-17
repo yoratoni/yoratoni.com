@@ -3,6 +3,19 @@
     --parallax-background: #DEFDFD;
     --website-background: #19263D;
 
+    --parallax-shadow: 0 1px 0 #ccc,
+        0 2px 0 #c9c9c9,
+        0 3px 0 #bbb,
+        0 4px 0 #b9b9b9,
+        0 5px 0 #aaa,
+        0 6px 1px rgba(0, 0, 0, 0.1),
+        0 0 5px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.3),
+        0 3px 5px rgba(0, 0, 0, 0.2),
+        0 5px 10px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.2),
+        0 20px 20px rgba(0, 0, 0, 0.15);
+
 
     /* UI Library */
     --blur-none: 0;
@@ -277,7 +290,10 @@
     --radii-3xl: 1.5rem;
     --radii-full: 9999px;
 
-    --ring-inset: var(--ui-empty, /*!*/ /*!*/);
+    --ring-inset: var(--ui-empty,
+            /*!*/
+            /*!*/
+        );
     --ring-offset-width: 0px;
     --ring-offset-color: #fff;
     --ring-color: rgba(66, 153, 225, 0.6);
@@ -389,11 +405,11 @@
 
     --transform-md: translateY(-3px);
 
-    --transi-property-common: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
-    --transi-property-colors: background-color,border-color,color,fill,stroke;
-    --transi-property-dimensions: width,height;
-    --transi-property-position: left,right,top,bottom;
-    --transi-property-background: background-color,background-image,background-position;
+    --transi-property-common: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    --transi-property-colors: background-color, border-color, color, fill, stroke;
+    --transi-property-dimensions: width, height;
+    --transi-property-position: left, right, top, bottom;
+    --transi-property-background: background-color, background-image, background-position;
     --transi-easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
     --transi-easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
     --transi-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
@@ -407,11 +423,11 @@
     --transi-duration-ultra-slow: 500ms;
 
     --transi-ultra-fast: all var(--transi-duration-ultra-fast) var(--transi-easing-general);
-    --transi-faster:     all var(--transi-duration-faster)     var(--transi-easing-general);
-    --transi-fast:       all var(--transi-duration-fast)       var(--transi-easing-general);
-    --transi-normal:     all var(--transi-duration-normal)     var(--transi-easing-general);
-    --transi-slow:       all var(--transi-duration-slow)       var(--transi-easing-general);
-    --transi-slower:     all var(--transi-duration-slower)     var(--transi-easing-general);
+    --transi-faster: all var(--transi-duration-faster) var(--transi-easing-general);
+    --transi-fast: all var(--transi-duration-fast) var(--transi-easing-general);
+    --transi-normal: all var(--transi-duration-normal) var(--transi-easing-general);
+    --transi-slow: all var(--transi-duration-slow) var(--transi-easing-general);
+    --transi-slower: all var(--transi-duration-slower) var(--transi-easing-general);
     --transi-ultra-slow: all var(--transi-duration-ultra-slow) var(--transi-easing-general);
 
     --zIndex-hide: -1;
