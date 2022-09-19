@@ -1,4 +1,6 @@
-const ProjectCardDataArray = [
+export const ProjectVersion = "VERSION 22 0919";
+
+export const ProjectCardDataArray = [
     {
         github: "/",
         live: "/",
@@ -42,5 +44,3 @@ const ProjectCardDataArray = [
         techs: ["Python", "Solidity", "React"]
     },
 ];
-
-export default ProjectCardDataArray;

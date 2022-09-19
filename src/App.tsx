@@ -6,6 +6,7 @@ import "animate.css/animate.min.css";
 
 // General app styles
 import "styles/fonts.css";
+import "styles/library.css";
 import "styles/vars.css";
 import "styles/main.css";
 
