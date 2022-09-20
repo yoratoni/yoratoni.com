@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 
+import ThemeButton from "components/molecules/themeButton/ThemeButton";
 import Navbar from "components/organisms/navbar/Navbar";
 
 
@@ -8,6 +9,7 @@ const Header = () => {
     return (
         <header className="header">
             <Navbar />
+            <ThemeButton />
 
             <div className="header__heading-container">
                 <div className="header__heading">

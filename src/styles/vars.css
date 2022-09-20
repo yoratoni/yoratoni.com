@@ -3,24 +3,34 @@
 
 [data-theme="light"] {
     /* Light theme vars */
-    --website-background: #E5D8C1;
-    --invert-theme-filter: invert(1);
+    --website-background: #E6D9C2;
+    --parallax-backdrop-filter: invert(1);
 
     --header-background-gradient: linear-gradient(180deg,
-            rgba(255, 255, 255, 0.7) 0%,
-            rgba(255, 255, 255, 0.7) 60%,
-            rgba(255, 255, 255, 0.6) 85%,
-            rgba(255, 255, 255, 0) 98%);
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0.5) 60%,
+            rgba(255, 255, 255, 0.2) 85%,
+            rgba(0, 0, 0, 0) 98%);
+
+    --color-w-b: black;
+    --color-b6-w5: var(--color-white-100);
+    --color-w6-b7: var(--color-black-700);
+    --color-w8-b9: var(--color-black-900);
 }
 
 [data-theme="dark"] {
     /* Dark theme vars */
     --website-background: #19263D;
-    --invert-theme-filter: none;
+    --parallax-backdrop-filter: none;
 
     --header-background-gradient: linear-gradient(180deg,
-            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0.7) 0%,
             rgba(0, 0, 0, 0.5) 60%,
-            rgba(0, 0, 0, 0.1) 85%,
+            rgba(0, 0, 0, 0.3) 85%,
             rgba(0, 0, 0, 0) 98%);
+
+    --color-w-b: white;
+    --color-b6-w5: var(--color-black-600);
+    --color-w6-b7: var(--color-white-600);
+    --color-w8-b9: var(--color-white-800);
 }

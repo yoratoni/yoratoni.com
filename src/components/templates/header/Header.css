@@ -7,7 +7,7 @@
     flex-direction: column;
     position: relative;
     background: var(--header-background-gradient);
-    backdrop-filter: var(--invert-theme-filter);
+    backdrop-filter: var(--parallax-backdrop-filter);
 }
 
 .header__heading-container {
@@ -24,10 +24,9 @@
     align-items: center;
     flex-direction: column;
     padding: 0.8rem 1.4rem;
-    color: white;
-    border-top: 2px solid var(--color-white-600);
-    border-bottom: 2px solid var(--color-white-600);
-    filter: var(--invert-theme-filter);
+    color: var(--color-w-b);
+    border-top: 2px solid var(--color-w6-b7);
+    border-bottom: 2px solid var(--color-w6-b7);
 }
 
 .header__heading > h1 {
@@ -45,7 +44,6 @@
     justify-content: space-around;
     flex-direction: column;
     padding: 0 4rem 0.5rem 4rem;
-    filter: var(--invert-theme-filter);
 }
 
 .header__subheading-line {
@@ -57,9 +55,9 @@
 
 .header__subheading-line > p {
     font-size: clamp(20px, 3vw, 26px);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 2;
-    color: var(--color-white-800);
+    color: var(--color-w8-b9);
 }
 
 .header__subheading-line > p:first-child, p:last-child {
