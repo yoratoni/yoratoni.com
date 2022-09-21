@@ -1,19 +1,19 @@
 .background {
     width: 100%;
-    min-width: 320px;
-    height: 100vh;
+    height: 300vh;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
+    background-color: var(--website-background);
     overflow-x: hidden;
 }
 
-.background-layer-container {
+.background-parallax-container {
     width: inherit;
-    height: inherit;
+    height: 100vh;
     position: relative;
-    background-color: var(--parallax-background);
+    background-color: #DEFDFD;
 }
 
 .background-layer {

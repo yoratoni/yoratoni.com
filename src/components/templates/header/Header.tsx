@@ -1,10 +1,14 @@
 import React from "react";
 import "./Header.css";
 
+import Navbar from "components/organisms/navbar/Navbar";
+
 
 const Header = () => {
     return (
         <header className="header">
+            <Navbar />
+
             <div className="header__heading-container">
                 <div className="header__heading">
                     <h1>ADRIEN</h1>

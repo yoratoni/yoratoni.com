@@ -1,12 +1,26 @@
-:root {
-    /* Main vars */
-    --parallax-background: #DEFDFD;
+/* :root {
+} */
 
+[data-theme="light"] {
     /* Light theme vars */
-    --website-background: #FF0000;
+    --website-background: #E5D8C1;
+    --invert-theme-filter: invert(1);
+
+    --header-background-gradient: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.7) 0%,
+            rgba(255, 255, 255, 0.7) 60%,
+            rgba(255, 255, 255, 0.6) 85%,
+            rgba(255, 255, 255, 0) 98%);
 }
 
 [data-theme="dark"] {
     /* Dark theme vars */
     --website-background: #19263D;
+    --invert-theme-filter: none;
+
+    --header-background-gradient: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0.5) 60%,
+            rgba(0, 0, 0, 0.1) 85%,
+            rgba(0, 0, 0, 0) 98%);
 }

@@ -5,7 +5,7 @@ import "./Background.css";
 const Background = () => {
     return (
         <div className="background">
-            <div className="background-layer-container">
+            <div className="background-parallax-container">
                 <div className="background-layer layer-1"></div>
                 <div className="background-layer layer-2"></div>
                 <div className="background-layer layer-3"></div>
@@ -14,7 +14,6 @@ const Background = () => {
                 <div className="background-layer layer-6"></div>
                 <div className="background-layer layer-7"></div>
             </div>
-
         </div>
     );
 };

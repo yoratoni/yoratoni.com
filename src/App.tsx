@@ -11,16 +11,21 @@ import "styles/vars.css";
 import "styles/main.css";
 
 // App layers
-import Background from "layers/background/Background";
-import Content from "layers/content/Content";
+import Header from "components/templates/header/Header";
+import Background from "components/templates/background/Background";
+
+// Theme provider (react context) wrapper
+import ThemeContext from "components/atoms/themeContext/ThemeContext";
 
 
 const App = () => {
+    const { theme } = React.useContext(ThemeContext);
+
     return (
-        <>
+        <div className="app" data-theme={theme}>
             <Background />
-            <Content />
-        </>
+            <Header />
+        </div>
     );
 };
 
