@@ -12,7 +12,6 @@ const Background = () => {
                 <div className="background-layer layer-4"></div>
                 <div className="background-layer layer-5"></div>
                 <div className="background-layer layer-6"></div>
-                <div className="background-layer layer-7"></div>
             </div>
         </div>
     );
