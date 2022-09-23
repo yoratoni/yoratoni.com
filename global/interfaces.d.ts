@@ -11,12 +11,21 @@ declare global {
         switchTheme: { (): void } | null
     }
 
-    interface IsNamed {
+    interface IsHyperlink {
         name?: string,
-        title?: string
+        title?: string,
+        href?: string,
+        hrefLang?: string,
+        target?: "_blank" | "_parent" | "_self" | "_top"
     }
 
-    interface IsHyperlink extends IsNamed {
+    interface IsIconButton extends IsWithChildren {
+        title?: string
+        onClick?: React.MouseEventHandler<HTMLButtonElement>
+    }
+
+    interface IsIconHyperlink extends IsWithChildren {
+        title?: string,
         href?: string,
         hrefLang?: string,
         target?: "_blank" | "_parent" | "_self" | "_top"

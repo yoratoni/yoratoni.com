@@ -1,0 +1,17 @@
+.icon-button {
+    padding: 0.2rem;
+    transition: var(--hover-transition);
+    font-size: 2rem;
+    line-height: 0;
+    color: var(--text-color);
+}
+
+@media (hover: hover) {
+    .icon-button:hover {
+        color: var(--hover-color);
+    }
+}
+
+.icon-button > svg {
+    font-size: inherit;
+}

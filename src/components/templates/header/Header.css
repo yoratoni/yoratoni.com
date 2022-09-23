@@ -1,11 +1,92 @@
 .header {
     width: 100%;
     height: 100vh;
+    min-height: var(--size-container-sm);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     position: relative;
-    background: var(--header-background-gradient);
-    backdrop-filter: var(--parallax-backdrop-filter);
+    transition: var(--theme-transition);
+    color: var(--text-color);
+    background-color: var(--header-background);
 }
+
+.header hr {
+    height: 1px;
+    flex-grow: 1;
+    flex-basis: 0;
+    background-color: var(--border-color);
+    border: none;
+}
+
+.header__parallax-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: var(--theme-transition);
+    filter: var(--header-parallax-backdrop);
+}
+
+.header__heading-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    text-shadow: var(--text-shadow);
+}
+
+.header__heading-container > h2 {
+    font-size: clamp(14px, 4vw, 22px);
+    font-weight: 400;
+    line-height: 1;
+}
+
+.header__heading {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__heading > h1 {
+    padding: 0 0.4em;
+    font-size: clamp(34px, 10vw, 80px);
+    font-weight: 400;
+    line-height: 1.1;
+    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+}
+
+.header__intro-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__intro-container > hr {
+    min-width: 2rem;
+}
+
+.header__intro {
+    max-width: var(--size-container-2xs);
+    padding: 0.4rem 1.4rem;
+    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+}
+
+.header__intro > p {
+    font-size: 1rem;
+    color: var(--color-white-700);
+    text-align: justify;
+}
+
+/* .header__social-bar-container {
+    position: absolute;
+    bottom: 8rem;
+} */

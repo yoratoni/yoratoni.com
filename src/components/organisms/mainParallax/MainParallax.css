@@ -1,22 +1,12 @@
-.background {
+.main-parallax {
     width: 100%;
-    height: 300vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-color: var(--website-background);
+    height: inherit;
+    position: relative;
+    background-color: #DEFDFD;
     overflow-x: hidden;
 }
 
-.background-parallax-container {
-    width: inherit;
-    height: 100vh;
-    position: relative;
-    background-color: #DEFDFD;
-}
-
-.background-layer {
+.main-parallax__layer {
     height: 100%;
     aspect-ratio: calc((16 / 9) * 4);
     position: absolute;
@@ -33,37 +23,37 @@
 }
 
 
-.background .layer-1 {
+.main-parallax .main-parallax__layer-1 {
     background-image: url("assets/background/fallback/06_Forest.png");
     background-image: url("assets/background/06_Forest.webp");
     animation-duration: 45s;
 }
 
-.background .layer-2 {
+.main-parallax .main-parallax__layer-2 {
     background-image: url("assets/background/fallback/05_Forest.png");
     background-image: url("assets/background/05_Forest.webp");
     animation-duration: 40s;
 }
 
-.background .layer-3 {
+.main-parallax .main-parallax__layer-3 {
     background-image: url("assets/background/fallback/04_Forest.png");
     background-image: url("assets/background/04_Forest.webp");
     animation-duration: 30s;
 }
 
-.background .layer-4 {
+.main-parallax .main-parallax__layer-4 {
     background-image: url("assets/background/fallback/02_Forest.png");
     background-image: url("assets/background/03_Particles.webp");
     animation-duration: 15s;
 }
 
-.background .layer-5 {
+.main-parallax .main-parallax__layer-5 {
     background-image: url("assets/background/fallback/02_Forest.png");
     background-image: url("assets/background/02_Forest.webp");
     animation-duration: 20s;
 }
 
-.background .layer-6 {
+.main-parallax .main-parallax__layer-6 {
     background-image: url("assets/background/fallback/01_Particles.png");
     background-image: url("assets/background/01_Particles.webp");
     animation-duration: 10s;
