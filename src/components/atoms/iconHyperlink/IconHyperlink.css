@@ -1,7 +1,7 @@
 .icon-hyperlink {
     padding: 0 0.2rem;
     transition: var(--hover-transition);
-    font-size: 1.6rem;
+    font-size: inherit;
     line-height: 0;
     color: var(--text-color);
 }

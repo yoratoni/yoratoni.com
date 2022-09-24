@@ -2,7 +2,7 @@
     padding: 0 0.2rem;
     transition: var(--hover-transition);
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 400;
     color: var(--text-color);
     letter-spacing: 1px;
 }

@@ -15,7 +15,7 @@ const Header = () => {
 
             <Navbar />
 
-            <div className="header__heading-container">
+            <div className="header__heading-container animate__animated animate__fadeInDown">
                 <div className="header__heading">
                     <hr />
                     <h1>ADRIEN&nbsp;BIBOLLET</h1>
@@ -24,7 +24,7 @@ const Header = () => {
                 <h2>FREELANCE FRONT-END DEVELOPER</h2>
             </div>
 
-            <div className="header__intro-container">
+            <div className="header__intro-container animate__animated animate__fadeInUp">
                 <hr />
                 <div className="header__intro">
                     <p>
@@ -37,7 +37,7 @@ const Header = () => {
             </div>
 
             <div className="header__social-bar-container">
-                {/* <SocialBar /> */}
+                <SocialBar />
             </div>
         </header>
     );
