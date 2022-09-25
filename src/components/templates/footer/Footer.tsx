@@ -3,8 +3,9 @@ import "./Footer.css";
 
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 import IconButton from "components/atoms/iconButton/IconButton";
-
 import Navbar from "components/organisms/navbar/Navbar";
+import SocialBar from "components/organisms/socialBar/SocialBar";
+
 
 const Footer = () => {
     const scrollToTop = () => {
@@ -30,7 +31,13 @@ const Footer = () => {
                 <hr />
             </div>
 
-            <Navbar />
+            <div className="footer__navbar-container">
+                <Navbar />
+            </div>
+
+            <div className="footer__social-bar-container">
+                <SocialBar />
+            </div>
 
             <div className="footer__credits-container">
                 <p>© Copyright {new Date().getFullYear()} Adrien Bibollet.</p>

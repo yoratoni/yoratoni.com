@@ -6,7 +6,7 @@ import Hyperlink from "components/atoms/hyperlink/Hyperlink";
 
 const Navbar = () => {
     return (
-        <nav className="navbar animate__animated animate__fadeInDown">
+        <nav className="navbar">
             <hr />
             <div className="navbar__links-container">
                 <Hyperlink
