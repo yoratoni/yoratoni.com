@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 
-import MainParallax from "components/molecules/mainParallax/MainParallax";
+import MainParallax from "components/atoms/mainParallax/MainParallax";
 import SocialBar from "components/molecules/socialBar/SocialBar";
 
 // import ThemeButton from "components/molecules/themeButton/ThemeButton";

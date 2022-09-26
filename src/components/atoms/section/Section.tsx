@@ -5,7 +5,7 @@ import "./Section.css";
 const Section = ({
     children = null,
     className = ""
-}: IsChildAndClass) => {
+}: IsWithChildAndClass) => {
     return (
         <section
             className={`section ${className}`}

@@ -1,7 +1,8 @@
 import React from "react";
 import "./Main.css";
 
-import Section from "components/molecules/section/Section";
+import ProjectCard from "components/atoms/projectCard/ProjectCard";
+import Section from "components/atoms/section/Section";
 
 
 const Main = () => {
@@ -16,7 +17,7 @@ const Main = () => {
 
                 <div className="main__section-description-container">
                     <hr />
-                    <p>Me, myself and I</p>
+                    <p>Me, myself and I.</p>
                     <hr />
                 </div>
 
@@ -29,13 +30,13 @@ const Main = () => {
             <Section className="main__section">
                 <div className="main__section-title-container">
                     <hr />
-                    <h2>Works</h2>
+                    <h2>Work</h2>
                     <hr />
                 </div>
 
                 <div className="main__section-description-container">
                     <hr />
-                    <p>Some things I&apos;ve built for my clients</p>
+                    <p>Some things I&apos;ve built for my clients.</p>
                     <hr />
                 </div>
             </Section>
@@ -49,8 +50,14 @@ const Main = () => {
 
                 <div className="main__section-description-container">
                     <hr />
-                    <p>Here&apos;s some personal projects that I work on during my free time</p>
+                    <p>Some projects I work on during my free time.</p>
                     <hr />
+                </div>
+
+                <div className="main__section-card-container">
+                    <ProjectCard>pute</ProjectCard>
+                    <ProjectCard>pute</ProjectCard>
+                    <ProjectCard>pute</ProjectCard>
                 </div>
             </Section>
         </main>

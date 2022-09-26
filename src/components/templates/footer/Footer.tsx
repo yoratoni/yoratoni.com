@@ -32,11 +32,15 @@ const Footer = () => {
             <div className="footer__social-bar-container">
                 <p>CONTACT ME</p>
                 <SocialBar />
-                <p>(INBOX ALWAYS OPEN)</p>
+                <p>
+                    Don&apos;t hesitate whether you&apos;re looking to work with me,
+                    if you have a question about my work or if you just want to have a conversation.
+                </p>
             </div>
 
             <div className="footer__credits-container">
                 <p>© Copyright {new Date().getFullYear()} Adrien Bibollet.</p>
+                <p>Parallax background by Digital Moons.</p>
             </div>
         </footer>
     );

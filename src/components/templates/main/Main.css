@@ -68,3 +68,11 @@
 .main__section-paragraph-container p:last-child {
     margin-bottom: 0;
 }
+
+.main__section-card-container .project-card:first-child {
+    margin-top: 4rem;
+}
+
+.main__section-card-container .project-card {
+    margin-top: 2rem;
+}

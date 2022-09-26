@@ -6,7 +6,7 @@ declare global {
         children: React.ReactNode;
     }
 
-    interface IsChildAndClass extends IsWithChildren {
+    interface IsWithChildAndClass extends IsWithChildren {
         className?: string
     }
 

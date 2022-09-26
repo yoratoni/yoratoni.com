@@ -3,3 +3,11 @@ export const appThemes = {
     light: "light",
     dark: "dark"
 };
+
+export const WorkCardArray = {
+
+};
+
+export const PersonalProjectCardArray = {
+
+};
