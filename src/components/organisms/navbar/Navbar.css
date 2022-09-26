@@ -8,6 +8,7 @@
 
 .navbar > hr {
     min-width: 1.8rem;
+    background-color: var(--border-color);
 }
 
 .navbar__links-container {
@@ -18,8 +19,6 @@
     justify-content: space-between;
     padding: 0.2rem 1.2em;
     color: var(--text-color);
-    border-right: 1px solid var(--border-color);
-    border-left: 1px solid var(--border-color);
 }
 
 .navbar__links-container > p {

@@ -12,7 +12,10 @@
     --header-parallax-backdrop: grayscale(100%);
     --header-background: var(--color-white-600);
 
-    --border-color: rgba(0, 0, 0, 0.6);
+    --border-color: rgba(0, 0, 0, 0.5);
+    --border-sec-color: rgba(0, 0, 0, 0.3);
+
+
     --hover-color: #494949;
     --text-color: black;
     --text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
@@ -26,7 +29,9 @@
     --header-parallax-backdrop: brightness(30%);
     --header-background: none;
 
-    --border-color: rgba(255, 255, 255, 0.4);
+    --border-color: rgba(255, 255, 255, 0.3);
+    --border-sec-color: rgba(255, 255, 255, 0.2);
+
     --hover-color: #a0a0a0;
     --text-color: white;
     --text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);

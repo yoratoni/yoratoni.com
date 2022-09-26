@@ -19,7 +19,6 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer__scroll-to-top-button-container">
-                <hr />
                 <div className="footer_scroll-to-top-button">
                     <IconButton
                         title="Scroll to top"
@@ -28,7 +27,6 @@ const Footer = () => {
                         <KeyboardDoubleArrowUpIcon />
                     </IconButton>
                 </div>
-                <hr />
             </div>
 
             <div className="footer__navbar-container">

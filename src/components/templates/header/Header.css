@@ -33,7 +33,7 @@
 
 .header__navbar-container {
     width: 100%;
-    animation-duration: 1200ms;
+    animation-duration: 1400ms;
 }
 
 .header__central-container {
@@ -45,18 +45,9 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-shadow: var(--text-shadow);
     animation-duration: 1200ms;
-}
-
-.header__heading-container > h2 {
-    padding: 0 0.6em;
-    font-size: clamp(14px, 4vw, 22px);
-    font-weight: 400;
-    line-height: 1;
-    border-right: 1px solid var(--border-color);
-    border-left: 1px solid var(--border-color);
 }
 
 .header__heading {
@@ -64,16 +55,38 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.6rem;
 }
 
-.header__heading > h1 {
-    padding: 0 0.4em;
-    font-size: clamp(34px, 10vw, 80px);
+.header__heading > hr {
+    margin-top: -1em;
+}
+
+.header__heading-central {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header__heading-central > h1 {
+    padding: 0 0.3em 0 0.36em;
+    font-size: clamp(36px, 11vw, 80px);
     font-weight: 400;
-    line-height: 1.1;
-    border-right: 1px solid var(--border-color);
-    border-left: 1px solid var(--border-color);
+    line-height: 1.2;
+}
+
+.header__subheading {
+    width: 92%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__subheading > h2 {
+    padding: 0 0.8em;
+    font-size: clamp(16px, 4vw, 22px);
+    font-weight: 400;
+    line-height: 1;
+    word-break: keep-all;
 }
 
 .header__intro-container {
@@ -81,27 +94,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 2rem;
     animation-duration: 1200ms;
-}
-
-.header__intro-container > hr {
-    min-width: 2rem;
 }
 
 .header__intro {
     max-width: var(--size-container-2xs);
-    padding: 0.4rem 1.4rem;
+    padding: 0.4rem 1.4em;
     border-right: 1px solid var(--border-color);
     border-left: 1px solid var(--border-color);
 }
 
 .header__intro > p {
-    font-size: 1rem;
+    font-size: clamp(14px, 3vw, 16px);
     color: var(--color-white-700);
     text-align: justify;
 }
 
 .header__social-bar-container {
-    margin-bottom: 4rem;
-    animation-duration: 3s;
+    margin-bottom: 5rem;
+    animation-duration: 1200ms;
 }

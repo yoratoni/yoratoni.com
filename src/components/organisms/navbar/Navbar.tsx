@@ -25,8 +25,8 @@ const Navbar = () => {
                 <p>|</p>
                 <Hyperlink
                     href="./"
-                    title="Contact"
-                    name="CONTACT"
+                    title="Projects"
+                    name="PROJECTS"
                 />
             </div>
             <hr />

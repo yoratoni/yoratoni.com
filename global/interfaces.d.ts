@@ -6,6 +6,10 @@ declare global {
         children: React.ReactNode;
     }
 
+    interface IsChildAndClass extends IsWithChildren {
+        className?: string
+    }
+
     interface IsThemeContext {
         theme: string
         switchTheme: { (): void } | null

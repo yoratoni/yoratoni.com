@@ -23,14 +23,20 @@ const Header = () => {
                 <div className="header__heading-container animate__animated animate__fadeInDown">
                     <div className="header__heading">
                         <hr />
-                        <h1>ADRIEN&nbsp;BIBOLLET</h1>
+                        <div className="header__heading-central">
+                            <h1>ADRIEN&nbsp;BIBOLLET</h1>
+
+                            <div className="header__subheading">
+                                <hr />
+                                <h2>FREELANCE FRONT-END DEVELOPER</h2>
+                                <hr />
+                            </div>
+                        </div>
                         <hr />
                     </div>
-                    <h2>FREELANCE FRONT-END DEVELOPER</h2>
                 </div>
 
                 <div className="header__intro-container animate__animated animate__fadeInUp">
-                    <hr />
                     <div className="header__intro">
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -38,13 +44,12 @@ const Header = () => {
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         </p>
                     </div>
-                    <hr />
                 </div>
             </div>
 
             {/* <ThemeButton /> */}
 
-            <div className="header__social-bar-container animate__animated animate__fadeIn">
+            <div className="header__social-bar-container animate__animated animate__fadeInUp">
                 <SocialBar />
             </div>
         </header>
