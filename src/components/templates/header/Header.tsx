@@ -1,9 +1,8 @@
 import React from "react";
 import "./Header.css";
 
-import MainParallax from "components/organisms/mainParallax/MainParallax";
-import Navbar from "components/organisms/navbar/Navbar";
-import SocialBar from "components/organisms/socialBar/SocialBar";
+import MainParallax from "components/molecules/mainParallax/MainParallax";
+import SocialBar from "components/molecules/socialBar/SocialBar";
 
 // import ThemeButton from "components/molecules/themeButton/ThemeButton";
 
@@ -13,10 +12,6 @@ const Header = () => {
         <header className="header">
             <div className="header__parallax-container">
                 <MainParallax />
-            </div>
-
-            <div className="header__navbar-container animate__animated animate__fadeInDown">
-                <Navbar />
             </div>
 
             <div className="header__central-container">

@@ -1,10 +1,10 @@
 import React from "react";
 import "./Footer.css";
 
+import SocialBar from "components/molecules/socialBar/SocialBar";
+
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 import IconButton from "components/atoms/iconButton/IconButton";
-import Navbar from "components/organisms/navbar/Navbar";
-import SocialBar from "components/organisms/socialBar/SocialBar";
 
 
 const Footer = () => {
@@ -29,12 +29,10 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="footer__navbar-container">
-                <Navbar />
-            </div>
-
             <div className="footer__social-bar-container">
+                <p>CONTACT ME</p>
                 <SocialBar />
+                <p>(INBOX ALWAYS OPEN)</p>
             </div>
 
             <div className="footer__credits-container">
