@@ -1,6 +1,5 @@
 :root {
-    --theme-transition: filter 300ms linear,
-        background-color 300ms linear;
+    --theme-transition: filter 300ms linear, background-color 300ms linear;
     --hover-transition: color 100ms linear;
 }
 

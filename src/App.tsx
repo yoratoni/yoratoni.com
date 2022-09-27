@@ -11,12 +11,12 @@ import "styles/vars.css";
 import "styles/main.css";
 
 // App parts
-import Header from "components/templates/header/Header";
-import Main from "components/templates/main/Main";
-import Footer from "components/templates/footer/Footer";
+import Header from "components/organisms/header/Header";
+import Main from "components/organisms/main/Main";
+import Footer from "components/organisms/footer/Footer";
 
 // Theme provider (react context) wrapper
-import ThemeContext from "components/atoms/themeContext/ThemeContext";
+import ThemeContext from "components/theme/themeContext/ThemeContext";
 
 
 const App = () => {
