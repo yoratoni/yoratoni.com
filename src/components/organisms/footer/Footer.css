@@ -19,6 +19,7 @@
     transition: all var(--transi-duration-normal);
     color: var(--color-white-800);
     border-bottom: 1px solid transparent;
+    cursor: pointer;
 }
 
 @media (hover: hover) {
