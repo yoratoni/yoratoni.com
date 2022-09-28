@@ -1,0 +1,11 @@
+.main {
+    margin-top: 8rem;
+}
+
+.main__available {
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-weight: 700;
+    border: 1px solid var(--border-color);
+    letter-spacing: 1px;
+}

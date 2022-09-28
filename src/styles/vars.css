@@ -1,34 +1,12 @@
 :root {
+    --website-background: #070A10;
+    --header-parallax-backdrop: brightness(30%);
+
+    --hover-color: rgba(255, 255, 255, 0.3);
+    --border-color: rgba(255, 255, 255, 0.4);
+
+    --text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+
     --theme-transition: filter 300ms linear, background-color 300ms linear;
     --hover-transition: color 100ms linear;
-}
-
-[data-theme="light"] {
-    /* Light theme vars */
-    --website-background: #8B8B8B;
-    --parallax-backdrop-filter: invert(1);
-
-    --header-parallax-backdrop: grayscale(100%);
-    --header-background: var(--color-white-600);
-
-    --border-color: rgba(0, 0, 0, 0.5);
-
-    --hover-color: #494949;
-    --text-color: black;
-    --text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-}
-
-[data-theme="dark"] {
-    /* Dark theme vars */
-    --website-background: #070A10;
-    --parallax-backdrop-filter: none;
-
-    --header-parallax-backdrop: brightness(30%);
-    --header-background: none;
-
-    --border-color: rgba(255, 255, 255, 0.3);
-
-    --hover-color: #a0a0a0;
-    --text-color: white;
-    --text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
 }

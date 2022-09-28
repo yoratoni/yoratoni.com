@@ -15,15 +15,10 @@ import Header from "components/organisms/header/Header";
 import Main from "components/organisms/main/Main";
 import Footer from "components/organisms/footer/Footer";
 
-// Theme provider (react context) wrapper
-import ThemeContext from "components/theme/themeContext/ThemeContext";
-
 
 const App = () => {
-    const { theme } = React.useContext(ThemeContext);
-
     return (
-        <div className="app" data-theme={theme}>
+        <div className="app">
             <Header />
             <Main />
             <Footer />
