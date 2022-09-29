@@ -18,7 +18,7 @@
     border: none;
 }
 
-.separator__heading {
+.separator .separator__heading {
     padding: 0 0.4em;
     font-size: 32px;
     line-height: 0.3;
@@ -26,10 +26,10 @@
     color: white;
 }
 
-.separator__subheading {
+.separator .separator__subheading {
     max-width: var(--container-2xs);
     padding: 0 0.7em;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1;
     color: var(--color-white-700);
     border-right: 1px solid var(--border-color);

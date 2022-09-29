@@ -3,6 +3,7 @@
     height: inherit;
     position: relative;
     background-color: #DEFDFD;
+    filter: var(--header-parallax-filter);
     overflow-x: hidden;
 }
 

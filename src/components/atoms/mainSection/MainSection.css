@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    animation-duration: 55s;
 }
 
 .main-section__content {
@@ -19,8 +20,8 @@
 
 .main-section__content > p {
     margin-top: 1rem;
-    font-size: clamp(14px, 4vw, 18px);
-    color: var(--color-white-800);
+    font-size: var(--text-size);
+    color: white;
     text-align: center;
 }
 

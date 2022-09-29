@@ -3,7 +3,6 @@ import "./Header.css";
 
 import HeaderParallax from "components/atoms/headerParallax/HeaderParallax";
 import MainHeading from "components/atoms/mainHeading/MainHeading";
-import Separator from "components/atoms/separator/Separator";
 
 
 const Header = () => {
@@ -14,21 +13,16 @@ const Header = () => {
             </div>
 
             <div className="header__content">
-                <Separator subheading="<header> </header>" />
-
-                <div className="header__central">
+                <div className="header__central animate__animated animate__fadeIn">
                     <MainHeading />
 
-                    <div className="header__central-intro">
+                    <div className="header__central-intro animate__animated animate__fadeInUp">
                         <p>
-                            I&apos;m also an artist, a designer
-                            with a passion for art-focused programming, i&apos;m
-                            here to create incredible digital experiences.
+                            Hi, I&apos;m a freelance web developer based in France
+                            with a passion for art-focused programming and web designing.
                         </p>
                     </div>
                 </div>
-
-                <hr />
             </div>
         </header>
     );

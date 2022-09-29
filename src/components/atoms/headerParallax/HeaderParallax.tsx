@@ -4,7 +4,7 @@ import "./HeaderParallax.css";
 
 const HeaderParallax = () => {
     return (
-        <div className="header-parallax">
+        <div className="header-parallax animate__animated animate__fadeIn">
             <div className="header-parallax__layer header-parallax__layer-1"></div>
             <div className="header-parallax__layer header-parallax__layer-2"></div>
             <div className="header-parallax__layer header-parallax__layer-3"></div>

@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    animation-duration: 2s;
 }
 
 .main-heading hr {
@@ -21,7 +22,7 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    margin: 0 calc(clamp(36px, 11vw, 80px) * 0.4);
+    margin: 0 calc(var(--heading-size) * 0.4);
 }
 
 .main-heading__flex {
@@ -33,7 +34,8 @@
 }
 
 .main-heading__heading {
-    font-size: clamp(36px, 11vw, 80px);
+    font-size: var(--heading-size);
+    font-weight: 600;
     line-height: 0.7;
     text-shadow: var(--text-shadow);
     color: white;
@@ -41,7 +43,8 @@
 
 .main-heading__subheading {
     padding: 0 0.6em;
-    font-size: clamp(15px, 4.2vw, 26px);
+    font-size: var(--subheading-size);
+    font-weight: 400;
     line-height: 1;
     text-shadow: var(--text-shadow);
     color: white;

@@ -1,0 +1,57 @@
+.about-me {
+    width: 100%;
+}
+
+.about-me a {
+    transition: all var(--transi-duration-normal);
+    word-break: keep-all;
+    color: white;
+    border-bottom: 1px solid var(--color-white-500);
+    cursor: pointer;
+}
+
+@media (hover: hover) {
+    .about-me a:hover {
+        border-bottom: 1px solid var(--color-white-800);
+    }
+}
+
+.about-me p {
+    text-align: justify;
+    text-indent: 1em;
+}
+
+.about-me p:not(:first-child) {
+    margin-top: 1.6rem;
+}
+
+.about-me__skills p {
+    margin-top: 1.6rem;
+    text-indent: 0;
+}
+
+.about-me__skills ul {
+    display: grid;
+    gap: 0, 1rem;
+    margin-top: 1.4rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    list-style: none;
+}
+
+.about-me__skills li {
+    margin-bottom: 1.4rem;
+}
+
+.about-me__skills li {
+    position: relative;
+    padding-left: 1.4rem;
+    font-size: var(--text-size);
+    color: white;
+}
+
+.about-me__skills li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    font-size: var(--text-size);
+}
