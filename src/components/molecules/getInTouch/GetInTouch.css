@@ -1,5 +1,6 @@
 .get-in-touch {
     width: 100%;
+    max-width: var(--container-sm);
     display: flex;
     align-items: center;
     flex-direction: column;

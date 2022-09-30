@@ -12,7 +12,8 @@
     user-select: none;
 }
 
-html, body {
+html,
+body {
     color-scheme: dark;
     min-height: -webkit-fill-available;
 }
@@ -32,4 +33,11 @@ body {
     z-index: 0;
     transition: var(--theme-transition);
     background-color: var(--website-background);
+}
+
+.projects-grid {
+    display: grid;
+    gap: 1.6rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    list-style: none;
 }

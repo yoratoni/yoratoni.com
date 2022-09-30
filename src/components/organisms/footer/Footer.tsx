@@ -11,7 +11,7 @@ const Footer = () => {
         <AnimationOnScroll animateIn="animate__fadeIn" duration={1.4} animateOnce={true}>
             <footer className="footer">
                 <ScrollToTop />
-                <Separator subheading="<footer> </footer>" />
+                <Separator subheading="" />
 
                 <div className="footer__content">
                     <div className="footer__copyrights-credits">

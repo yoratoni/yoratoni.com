@@ -30,6 +30,7 @@
     align-items: center;
     flex-direction: column;
     padding: 2rem 0;
+    background-color: var(--color-black-500);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     outline: 1px solid var(--border-color);

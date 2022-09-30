@@ -19,6 +19,16 @@ declare global {
     interface IsMainSection extends IsSeparator {
         children: React.ReactNode;
     }
+
+    interface IsProjectCard {
+        sourceCodeLink: string | null,
+        externalLink: string | null,
+        title: string,
+        description: string,
+        techStack: string[]
+    }
+
+    type IsProjectCardData = IsProjectCard[];
 }
 
 

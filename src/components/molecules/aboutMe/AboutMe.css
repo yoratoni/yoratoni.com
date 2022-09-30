@@ -1,5 +1,6 @@
 .about-me {
     width: 100%;
+    max-width: var(--container-sm);
 }
 
 .about-me a {

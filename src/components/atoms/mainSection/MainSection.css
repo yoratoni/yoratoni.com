@@ -8,7 +8,7 @@
 
 .main-section__content {
     width: 100%;
-    max-width: var(--container-sm);
+    max-width: var(--container-lg);
     min-height: var(--container-xs);
     display: flex;
     align-items: center;

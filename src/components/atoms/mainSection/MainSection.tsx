@@ -11,7 +11,7 @@ const MainSection = ({
     children = null
 }: IsMainSection) => {
     return (
-        <AnimationOnScroll animateIn="animate__fadeIn" duration={1.4} animateOnce={true}>
+        <AnimationOnScroll animateIn="animate__fadeIn" duration={1.4} animateOnce={false} style={{ opacity: 0.01 }}>
             <section className="main-section">
                 <Separator heading={heading} subheading={subheading} />
                 <div className="main-section__content">
