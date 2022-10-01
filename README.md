@@ -14,13 +14,11 @@
 </p>
 
 ## About this website
-So, it's technically my first real website, and I decided to use a complex path instead of just building
+It's technically my first real website ! So I decided to use a complex path instead of just building
 a simple website, I started by using a Debian 11 VPS hosted with Hostinger, where I configured everything
-without any control panel, the DNS custom zone (Bind9 / named) part was really funny, it took me "only" 5 days
-to understand how it works .. and 5 more to make it work lol. And for the front-end, just some React with
-animate.css and Typescript.
+without any control panel (don't ask me why..), and the DNS custom zone (Bind9 / named) part was really funny, it took me "only" a week to understand how it works .. and another to make it work.. And for the front-end, just some React with animate.css and Typescript.
 
 ## But why ?
-Because it gave me some practice, actually, a lot of practice, something like 100 commits just a basic website.
+Because it gave me some practice, actually, a lot of practice, something like 100 commits for just a basic website.
 I wanted everything to be perfect, it is not, yet. But this website will evolute at the
 same time as my career.
