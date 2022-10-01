@@ -1,3 +1,7 @@
 :root {
+    --primary-color: #070A10;
 
+    --heading-size: clamp(34px, 10vw, 80px);
+    --subheading-size: clamp(20px, 4vw, 26px);
+    --text-size: clamp(14px, 4vw, 18px);
 }

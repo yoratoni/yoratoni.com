@@ -10,13 +10,14 @@ import "styles/library.css";
 import "styles/vars.css";
 import "styles/main.css";
 
-// App parts
+// App components
+import LoadingScreen from "components/atoms/loadingScreen/LoadingScreen";
 import AppParallax from "components/atoms/appParallax/AppParallax";
 
 
 const App = () => {
     return (
-        <div className="app">
+        <main className="app">
             <div className="app__background">
                 <AppParallax />
             </div>
@@ -24,7 +25,9 @@ const App = () => {
             <div className="app__overlay">
 
             </div>
-        </div>
+
+            {/* <LoadingScreen /> */}
+        </main>
     );
 };
 
