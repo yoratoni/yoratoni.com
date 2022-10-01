@@ -22,7 +22,6 @@ body {
     min-height: -webkit-fill-available;
     min-height: 100vh;
     -webkit-tap-highlight-color: transparent;
-    overflow: hidden;
 }
 
 .app {
@@ -30,7 +29,8 @@ body {
     min-width: 320px;
     height: 100vh;
     position: relative;
-    z-index: 0;
+    z-index: var(--zIndex-base);
+    background-color: var(--background-color);
 }
 
 .app__background {
@@ -43,10 +43,10 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
-    flex-direction: column;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: var(--zIndex-docked);
 }

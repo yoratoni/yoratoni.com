@@ -1,0 +1,17 @@
+.header {
+    width: 100%;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--zIndex-overlay);
+    padding: 1rem 1.8rem;
+    color: #DEFDFD;
+    background-color: var(--background-color);
+    box-shadow: 0 0 10px var(--background-color);
+}
+
+.header > a {
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+}

@@ -3,21 +3,16 @@ import React from "react";
 
 declare global {
     interface IsWithChildren {
-        children: React.ReactNode;
+        children: React.ReactNode
     }
 
-    interface IsThemeContext {
-        theme: string
-        switchTheme: { (): void } | null
+    interface IsParallax {
+        speed: number
     }
 
-    interface IsSeparator {
-        heading?: string | null,
-        subheading?: string | null
-    }
-
-    interface IsMainSection extends IsSeparator {
-        children: React.ReactNode;
+    interface IsScrollContext {
+        scroll: number,
+        applyScroll: { (): void } | null
     }
 
     interface IsProjectCard {

@@ -10,8 +10,10 @@ import "styles/library.css";
 import "styles/vars.css";
 import "styles/main.css";
 
+// Libs
+import ReactScrollWheelHandler from "react-scroll-wheel-handler";
+
 // App components
-import LoadingScreen from "components/atoms/loadingScreen/LoadingScreen";
 import AppParallax from "components/atoms/appParallax/AppParallax";
 
 
@@ -19,14 +21,19 @@ const App = () => {
     return (
         <main className="app">
             <div className="app__background">
-                <AppParallax />
+                <AppParallax speed={500}/>
             </div>
 
-            <div className="app__overlay">
+            <ReactScrollWheelHandler
+                upHandler={(e) => console.log("scroll up")}
+                downHandler={(e) => console.log("scroll down")}
+                disableSwipeWithMouse={true}
+                timeout={256}
+            >
+                <div className="app__overlay">
 
-            </div>
-
-            {/* <LoadingScreen /> */}
+                </div>
+            </ReactScrollWheelHandler>
         </main>
     );
 };
