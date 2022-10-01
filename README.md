@@ -1,5 +1,5 @@
 <div align="center" >
-  <img alt="Logo" src="https://github.com/yoratoni/yoratoni.com/blob/main/public/assets/apple-touch-icon.png" width="100" />
+  <img alt="Logo" src="https://github.com/yoratoni/yoratoni.com/blob/main/public/apple-touch-icon.png" width="100" />
 </div>
 <h1 align="center">
   yoratoni.com - v1
