@@ -11,17 +11,19 @@ import "styles/vars.css";
 import "styles/main.css";
 
 // App parts
-import Header from "components/organisms/header/Header";
-import Main from "components/organisms/main/Main";
-import Footer from "components/organisms/footer/Footer";
+import AppParallax from "components/atoms/appParallax/AppParallax";
 
 
 const App = () => {
     return (
         <div className="app">
-            <Header />
-            <Main />
-            <Footer />
+            <div className="app__background">
+                <AppParallax />
+            </div>
+
+            <div className="app__overlay">
+
+            </div>
         </div>
     );
 };

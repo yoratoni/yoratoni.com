@@ -1,13 +1,13 @@
-.header-parallax {
+.app-parallax {
     width: 100%;
     height: inherit;
     position: relative;
     background-color: #DEFDFD;
-    filter: var(--header-parallax-filter);
+    filter: brightness(30%);
     overflow-x: hidden;
 }
 
-.header-parallax__layer {
+.app-parallax__layer {
     height: 100%;
     aspect-ratio: calc((16 / 9) * 4);
     position: absolute;
@@ -23,7 +23,7 @@
     animation-iteration-count: infinite;
 }
 
-.header-parallax .header-parallax__layer-1 {
+.app-parallax .app-parallax__layer-1 {
     background-image: url("assets/background/mid-res/fallback/05.png");
     background-image: url("assets/background/mid-res/05.webp");
     background-image: image-set(
@@ -37,7 +37,7 @@
     animation-duration: 60s;
 }
 
-.header-parallax .header-parallax__layer-2 {
+.app-parallax .app-parallax__layer-2 {
     background-image: url("assets/background/mid-res/fallback/04.png");
     background-image: url("assets/background/mid-res/04.webp");
     background-image: image-set(
@@ -51,7 +51,7 @@
     animation-duration: 50s;
 }
 
-.header-parallax .header-parallax__layer-3 {
+.app-parallax .app-parallax__layer-3 {
     background-image: url("assets/background/mid-res/fallback/03.png");
     background-image: url("assets/background/mid-res/03.webp");
     background-image: image-set(
@@ -65,7 +65,7 @@
     animation-duration: 40s;
 }
 
-.header-parallax .header-parallax__layer-4 {
+.app-parallax .app-parallax__layer-4 {
     background-image: url("assets/background/mid-res/fallback/02.png");
     background-image: url("assets/background/mid-res/02.webp");
     background-image: image-set(
@@ -79,7 +79,7 @@
     animation-duration: 30s;
 }
 
-.header-parallax .header-parallax__layer-5 {
+.app-parallax .app-parallax__layer-5 {
     background-image: url("assets/background/mid-res/fallback/01.png");
     background-image: url("assets/background/mid-res/01.webp");
     background-image: image-set(

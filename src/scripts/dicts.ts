@@ -2,7 +2,7 @@ export const workCardData: IsProjectCardData = [
     {
         sourceCodeLink: "https://github.com/yoratoni/nfts-generator",
         externalLink: null,
-        title: "This Website",
+        title: "My Portfolio",
         description: `Yeah, it seems a bit strange but believe me when I say that I built this website
         entirely from scratch, even the VPS is entirely configured by hand, it was pretty .. funny.`,
         techStack: ["Bind9", "Apache", "React", "Typescript"]
