@@ -6,8 +6,24 @@ declare global {
         children: React.ReactNode
     }
 
-    interface IsParallax {
-        speed: number
+    type IsParallaxInstructionType = "previous" | "next" | "standby"
+    type IsAnimationPhase = "accelerate" | "decelerate"
+
+    interface IsParallaxInstruction {
+        instruction: "previous" | "next" | "standby"
+    }
+
+    interface IsParallaxDirectionStyle {
+        left: "auto" | "0",
+        right: "auto" | "0",
+        animationName: "slidePrev" | "slideNext",
+        backgroundPosition: "left" | "right"
+    }
+
+    interface IsParallaxDict {
+        directionStyle: IsParallaxDirectionStyle,
+        speedArray: number[],
+        localInstruction: "previous" | "next" | "standby"
     }
 
     interface IsScrollContext {
