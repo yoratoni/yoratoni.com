@@ -20,7 +20,7 @@ const AppParallax = ({
     };
 
     const parameters = {
-        intervalValue: 8,
+        intervalValue: 10,
         maxSpeed: 50,
         defaultSpeed: 1,
         speedModifier: 1,
