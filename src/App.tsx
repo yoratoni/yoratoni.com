@@ -29,7 +29,7 @@ const App = () => {
                 timeout={256}
             >
                 <div className="app__background">
-                    <AppParallax instruction={parallaxInstruction} />
+                    <AppParallax animation={parallaxInstruction} />
                 </div>
 
                 <div className="app__overlay">

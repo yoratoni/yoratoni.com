@@ -16,10 +16,10 @@
     aspect-ratio: calc((16 / 9) * 4);
     position: absolute;
     top: 0;
+    left: 0;
+    background-position: left;
     background-size: auto 100%;
     background-repeat: repeat-x;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
 }
 
 .app-parallax .app-parallax__layer-1 {

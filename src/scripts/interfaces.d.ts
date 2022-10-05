@@ -2,35 +2,33 @@ import React from "react";
 
 
 declare global {
+    /* Generic */
     interface IsWithChildren {
         children: React.ReactNode
     }
 
-    type IsParallaxInstructionType = "previous" | "next" | "standby"
-    type IsAnimationPhase = "accelerate" | "decelerate"
 
-    interface IsParallaxInstruction {
-        instruction: "previous" | "next" | "standby"
+    /* Animation frame */
+    interface IsAnimationFrameCallback {
+        (deltaTime: number): void
     }
 
-    interface IsParallaxDirectionStyle {
-        left: "auto" | "0",
-        right: "auto" | "0",
-        animationName: "slidePrev" | "slideNext",
-        backgroundPosition: "left" | "right"
+
+    /* Parallax */
+    type IsParallaxInstructionType = "previous" | "next" | "standby";
+
+    interface IsParallaxInstruction {
+        animation: "previous" | "next" | "standby"
     }
 
     interface IsParallaxDict {
-        directionStyle: IsParallaxDirectionStyle,
-        speedArray: number[],
-        localInstruction: "previous" | "next" | "standby"
+        parallaxWidth: number | undefined | null,
+        xArray: number[],
+        localAnimation: "previous" | "next" | "standby"
     }
 
-    interface IsScrollContext {
-        scroll: number,
-        applyScroll: { (): void } | null
-    }
 
+    /* Project cards */
     interface IsProjectCard {
         sourceCodeLink: string | null,
         externalLink: string | null,
