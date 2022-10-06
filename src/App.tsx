@@ -23,8 +23,8 @@ const App = () => {
     return (
         <main className="app">
             <ReactScrollWheelHandler
-                upHandler={(e) => setParallaxInstruction("next")}
-                downHandler={(e) => setParallaxInstruction("previous")}
+                upHandler={(e) => setParallaxInstruction("previous")}
+                downHandler={(e) => setParallaxInstruction("next")}
                 disableSwipeWithMouse={true}
                 timeout={256}
             >

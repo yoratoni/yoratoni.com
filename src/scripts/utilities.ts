@@ -5,9 +5,13 @@ import React from "react";
  * Custom hook for the JS "requestAnimationFrame" function.
  * Replaces setInterval for animations to obtain a consistent
  * framerate on any browser.
+ * @param dependencies A list of dependencies for the useEffect.
  * @param callback Called when the update of animation frame can be called.
  */
-export const useAnimationFrame = (callback: IsAnimationFrameCallback) => {
+export const useAnimationFrame = (
+    dependencies: IsAnimationDependency[],
+    callback: IsAnimationFrameCallback
+) => {
     const requestRef = React.useRef<number>(0);
     const previousTimeRef = React.useRef<number>(0);
 
@@ -24,5 +28,5 @@ export const useAnimationFrame = (callback: IsAnimationFrameCallback) => {
     React.useEffect(() => {
         requestRef.current = requestAnimationFrame(animate);
         return () => cancelAnimationFrame(requestRef.current);
-    }, []);
+    }, [...dependencies]);
 };

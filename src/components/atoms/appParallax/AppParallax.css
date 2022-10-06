@@ -5,10 +5,10 @@
     background-color: #DEFDFD;
     filter: brightness(50%);
     overflow-x: hidden;
-    animation-name: appears;
+    /* animation-name: appears;
     animation-timing-function: cubic-bezier(1, 0, 0.75, 0.5);
     animation-iteration-count: 1;
-    animation-duration: 3s;
+    animation-duration: 3s; */
 }
 
 .app-parallax__layer {
@@ -23,17 +23,6 @@
 }
 
 .app-parallax .app-parallax__layer-1 {
-    background-image: url("assets/background/mid-res/fallback/05.png");
-    background-image: url("assets/background/mid-res/05.webp");
-    background-image: image-set(url("assets/background/low-res/fallback/05.png") 2x,
-            url("assets/background/mid-res/fallback/05.png") 1.5x,
-            url("assets/background/high-res/fallback/05.png") 1x);
-    background-image: image-set(url("assets/background/low-res/05.webp") 2x,
-            url("assets/background/mid-res/05.webp") 1.5x,
-            url("assets/background/high-res/05.webp") 1x);
-}
-
-.app-parallax .app-parallax__layer-2 {
     background-image: url("assets/background/mid-res/fallback/04.png");
     background-image: url("assets/background/mid-res/04.webp");
     background-image: image-set(url("assets/background/low-res/fallback/04.png") 2x,
@@ -44,7 +33,7 @@
             url("assets/background/high-res/04.webp") 1x);
 }
 
-.app-parallax .app-parallax__layer-3 {
+.app-parallax .app-parallax__layer-2 {
     background-image: url("assets/background/mid-res/fallback/03.png");
     background-image: url("assets/background/mid-res/03.webp");
     background-image: image-set(url("assets/background/low-res/fallback/03.png") 2x,
@@ -55,7 +44,7 @@
             url("assets/background/high-res/03.webp") 1x);
 }
 
-.app-parallax .app-parallax__layer-4 {
+.app-parallax .app-parallax__layer-3 {
     background-image: url("assets/background/mid-res/fallback/02.png");
     background-image: url("assets/background/mid-res/02.webp");
     background-image: image-set(url("assets/background/low-res/fallback/02.png") 2x,
@@ -66,7 +55,7 @@
             url("assets/background/high-res/02.webp") 1x);
 }
 
-.app-parallax .app-parallax__layer-5 {
+.app-parallax .app-parallax__layer-4 {
     background-image: url("assets/background/mid-res/fallback/01.png");
     background-image: url("assets/background/mid-res/01.webp");
     background-image: image-set(url("assets/background/low-res/fallback/01.png") 2x,
