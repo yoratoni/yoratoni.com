@@ -1,55 +1,56 @@
 import React from "react";
 import "./AppParallax.css";
 
-import { useAnimationFrame } from "scripts/utilities";
+import { useWindowDimensions, useAnimationFrame } from "scripts/utilities";
+
+
+/*
+    ISSUES & NOTES:
+    - Solving the zoom problem (miscalculation of the parallax size)
+    - 100vh problem on mobile, check multiple solving methods
+*/
 
 
 const AppParallax = ({
     animation
 }: IsParallaxInstruction) => {
-    const directionStylePrev: IsParallaxDirectionStyle = {
-        left: "auto",
-        right: "0",
-        backgroundPosition: "right"
-    };
-
-    const directionStyleNext: IsParallaxDirectionStyle = {
-        left: "0",
-        right: "auto",
-        backgroundPosition: "left"
-    };
-
     const parallaxWidthRef = React.useRef<HTMLDivElement | null>(null);
 
     const parameters = {
         maxSpeed: 32,
-        defaultSpeed: 1,
+        defaultSpeed: 10,
         xArray: [0, 0, 0, 0]
     };
 
+    const windowDimensions = useWindowDimensions();
+
     const [parallaxDict, setParallaxDict] = React.useState<IsParallaxDict>({
-        directionSpeedFactor: 1,            // Can be -1 or 1, multiplying the speed for direction
-        directionStyle: directionStyleNext, // Current direction CSS styling applied to layer divs
-        parallaxWidth: 0,                   // The total width of the parallax (window width x4)
-        xArray: parameters.xArray,          // Contains the x position of each layer (=translateX)
-        localAnimation: "standby"           // Local instruction with reset to standby when done
+        directionSpeedFactor: 1,        // 1 if the parallax is in "next" mode
+        parallaxWidth: 0,               // The total width of the parallax (dynamically calculated)
+        parallaxOneWidth: 0,            // The width of only one layer based on the height
+        parallaxRepeat: 0,              // The number of times that the parallax is repeated
+        xArray: parameters.xArray,      // Contains the x position of each layer (=translateX)
+        localAnimation: "standby"       // Local instruction with reset to standby when done
     });
 
 
     React.useEffect(() => {
         const handleResize = () => {
-            const parallaxWidthBoundingRect = parallaxWidthRef.current?.getBoundingClientRect();
+            const tempParallaxOneWidth = Math.round(windowDimensions.height * (16/9));
+            const tempParallaxRepeat = Math.ceil((windowDimensions.width / tempParallaxOneWidth) + 1);
 
             setParallaxDict(prevState => ({
                 ...prevState,
-                parallaxWidth: parallaxWidthBoundingRect?.width
+                parallaxWidth: tempParallaxRepeat * tempParallaxOneWidth,
+                parallaxOneWidth: tempParallaxOneWidth,
+                parallaxRepeat: tempParallaxRepeat
             }));
         };
 
         window.addEventListener("resize", handleResize);
         handleResize();
         return () => window.removeEventListener("resize", handleResize);
-    }, [parallaxWidthRef]);
+    }, [windowDimensions, parallaxWidthRef]);
 
 
     // Change local animation based on the animation var
@@ -57,20 +58,16 @@ const AppParallax = ({
     // Also changes the default styling of the parallax
     React.useEffect(() => {
         if (animation !== "standby") {
-            let tempDirectionStyle = directionStyleNext;
             let tempDirectionSpeedFactor: IsDirectionSpeedFactor = 1;
 
             if (animation === "previous") {
-                tempDirectionStyle = directionStylePrev;
                 tempDirectionSpeedFactor = -1;
             }
 
             setParallaxDict(prevState => ({
                 ...prevState,
                 directionSpeedFactor: tempDirectionSpeedFactor,
-                directionStyle: tempDirectionStyle,
-                localAnimation: animation,
-                xArray: parameters.xArray
+                localAnimation: animation
             }));
         }
     }, [animation]);
@@ -78,57 +75,76 @@ const AppParallax = ({
 
     // Main loop
     useAnimationFrame(
-        [
-            parallaxDict.directionSpeedFactor,
-            parallaxDict.directionStyle,
-            parallaxDict.parallaxWidth
-        ],
         () => {
+            const tempXArray = parallaxDict.xArray;
 
             if (parallaxDict.parallaxWidth) {
-                const layerQuarter = parallaxDict.parallaxWidth / 4;
-                const tempSpeed = parameters.defaultSpeed * parallaxDict.directionSpeedFactor;
 
-                for (let i = 0; i < parallaxDict.xArray.length; i++) {
-                    parallaxDict.xArray[i] -= tempSpeed + i * parallaxDict.directionSpeedFactor;
+                for (let i = 0; i < tempXArray.length; i++) {
+                    tempXArray[i] -= (parameters.defaultSpeed) * parallaxDict.directionSpeedFactor;
 
-                    if (Math.abs(parallaxDict.xArray[i]) > layerQuarter) {
-                        parallaxDict.xArray[i] = 0;
+                    // X coordinate should be between -parallaxDict.parallaxOneWidth && 0
+                    if (-tempXArray[i] > parallaxDict.parallaxOneWidth || tempXArray[i] > 0) {
+                        if (parallaxDict.directionSpeedFactor === 1) {
+                            tempXArray[i] = 0;
+                        } else {
+                            tempXArray[i] = -parallaxDict.parallaxOneWidth;
+                        }
                     }
                 }
             }
 
             setParallaxDict(prevState => ({
-                ...prevState
+                ...prevState,
+                xArray: tempXArray
             }));
-        }
+        },
+        [
+            parallaxDict.directionSpeedFactor,
+            parallaxDict.parallaxWidth
+        ]
     );
 
 
     return (
         <div className="app-parallax">
             <div className="app-parallax__layer app-parallax__layer-1" ref={parallaxWidthRef}
-                style={{transform: `translateX(${parallaxDict.xArray[0]}px)`, ...parallaxDict.directionStyle}}
+                style={{
+                    transform: `translateX(${parallaxDict.xArray[3]}px)`,
+                    width: `${parallaxDict.parallaxWidth}px`
+                }}
             ></div>
 
             <div className="app-parallax__layer app-parallax__layer-2"
-                style={{transform: `translateX(${parallaxDict.xArray[1]}px)`, ...parallaxDict.directionStyle}}
+                style={{
+                    transform: `translateX(${parallaxDict.xArray[3]}px)`,
+                    width: `${parallaxDict.parallaxWidth}px`
+                }}
             ></div>
 
             <div className="app-parallax__layer app-parallax__layer-3"
-                style={{transform: `translateX(${parallaxDict.xArray[2]}px)`, ...parallaxDict.directionStyle}}
+                style={{
+                    transform: `translateX(${parallaxDict.xArray[3]}px)`,
+                    width: `${parallaxDict.parallaxWidth}px`
+                }}
             ></div>
 
             <div className="app-parallax__layer app-parallax__layer-4"
-                style={{transform: `translateX(${parallaxDict.xArray[3]}px)`, ...parallaxDict.directionStyle}}
+                style={{
+                    transform: `translateX(${parallaxDict.xArray[3]}px)`,
+                    width: `${parallaxDict.parallaxWidth}px`
+                }}
             ></div>
 
-            <div className="absolute font-bold text-black top-6 left-6">
-                {parallaxDict.xArray[0]} <br></br>
-                {parallaxDict.xArray[1]} <br></br>
-                {parallaxDict.xArray[2]} <br></br>
-                {parallaxDict.xArray[3]} <br></br>
-                {parallaxDict.parallaxWidth}
+            <div className="absolute p-4 font-bold text-black bg-white top-6 left-6">
+                Layer 1: {parallaxDict.xArray[0]} <br></br>
+                Layer 2: {parallaxDict.xArray[1]} <br></br>
+                Layer 3: {parallaxDict.xArray[2]} <br></br>
+                Layer 4: {parallaxDict.xArray[3]} <br></br>
+                Window: {windowDimensions.width}px / {windowDimensions.height}px <br></br>
+                Parallax Repeat: {parallaxDict.parallaxRepeat}x <br></br>
+                One layer width: {parallaxDict.parallaxOneWidth}px <br></br>
+                Parallax Width: {parallaxDict.parallaxWidth}px
             </div>
         </div>
     );
@@ -136,60 +152,3 @@ const AppParallax = ({
 
 
 export default AppParallax;
-
-// if (animationPhase === "accelerate") {
-//     if (speed < parameters.maxSpeed) {
-//         speed += parameters.speedModifier;
-//     } else {
-//         animationPhase = "decelerate";
-//         speed = parameters.maxSpeed;
-//     }
-// }
-
-// if (animationPhase === "decelerate") {
-//     if (speed > parameters.defaultSpeed) {
-//         speed -= parameters.speedModifier;
-//     } else {
-//         animationPhase = "accelerate";
-//         speed = parameters.defaultSpeed;
-//     }
-// }
-
-// const tempXArray = parameters.xArray.map(
-//     layerX => Math.round(layerX + speed)
-// );
-
-// console.log(tempXArray);
-
-// setParallaxDict(prevState => ({...prevState, xArray: tempXArray}));
-
-// if (speed === parameters.defaultSpeed) {
-//     clearInterval(animInterval.current);
-// }
-
-// // Main loop
-// React.useEffect(() => {
-//     animIntervalRef.current = setInterval(() => {
-//         if (parallaxDict.parallaxWidth) {
-//             const layerQuarter = parallaxDict.parallaxWidth / 4;
-
-//             for (let i = 0; i < parallaxDict.xArray.length; i++) {
-//                 parallaxDict.xArray[i] -= parameters.defaultSpeed;
-
-//                 if (Math.abs(parallaxDict.xArray[i]) > layerQuarter) {
-//                     parallaxDict.xArray[i] = 0;
-//                 }
-//             }
-//         }
-
-//         setParallaxDict(prevState => ({
-//             ...prevState,
-//             localAnimation: animation
-//         }));
-//     }, parameters.intervalValue);
-
-//     return () => clearInterval(animIntervalRef.current);
-// }, [
-//     parallaxDict.parallaxWidth,
-//     parallaxDict.xArray
-// ]);

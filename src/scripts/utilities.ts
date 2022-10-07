@@ -1,16 +1,45 @@
 import React from "react";
 
 
+const getWindowDimensions = () => {
+    const { innerWidth: width, innerHeight: height } = window;
+
+    return {
+        width,
+        height
+    };
+};
+
+/**
+ * Custom hook to get the dimensions of the window.
+ * @returns An object containing the width & the height of the window.
+ */
+export const useWindowDimensions = () => {
+    const [windowDimensions, setWindowDimensions] = React.useState(getWindowDimensions());
+
+    React.useEffect(() => {
+        const handleResize = () => {
+            setWindowDimensions(getWindowDimensions());
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    return windowDimensions;
+};
+
+
 /**
  * Custom hook for the JS "requestAnimationFrame" function.
  * Replaces setInterval for animations to obtain a consistent
  * framerate on any browser.
- * @param dependencies A list of dependencies for the useEffect.
  * @param callback Called when the update of animation frame can be called.
+ * @param dependencies A list of dependencies for the useEffect.
  */
 export const useAnimationFrame = (
-    dependencies: IsAnimationDependency[],
-    callback: IsAnimationFrameCallback
+    callback: IsAnimationFrameCallback,
+    dependencies: IsAnimationDependency[]
 ) => {
     const requestRef = React.useRef<number>(0);
     const previousTimeRef = React.useRef<number>(0);

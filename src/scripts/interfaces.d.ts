@@ -7,6 +7,11 @@ declare global {
         children: React.ReactNode
     }
 
+    interface IsDimensions {
+        width: number,
+        height: number
+    }
+
 
     /* Parallax */
     type IsParallaxInstructionType = "previous" | "next" | "standby";
@@ -16,16 +21,11 @@ declare global {
         animation: "previous" | "next" | "standby"
     }
 
-    interface IsParallaxDirectionStyle {
-        left: "auto" | "0",
-        right: "auto" | "0",
-        backgroundPosition: "left" | "right"
-    }
-
     interface IsParallaxDict {
         directionSpeedFactor: -1 | 1,
-        directionStyle: IsParallaxDirectionStyle,
-        parallaxWidth: number | undefined | null,
+        parallaxWidth: number,
+        parallaxOneWidth: number,
+        parallaxRepeat: number,
         xArray: number[],
         localAnimation: "previous" | "next" | "standby"
     }
@@ -33,7 +33,6 @@ declare global {
 
     /* Animation frame */
     type IsAnimationDependency = number | null | undefined |
-    IsParallaxDirectionStyle |
     IsDirectionSpeedFactor;
 
     interface IsAnimationFrameCallback {

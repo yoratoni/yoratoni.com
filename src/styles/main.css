@@ -34,7 +34,7 @@ body {
 
 .app__background {
     width: 100%;
-    height: 100%;
+    height: 100%;  /* 100vh for parallax testing */
     display: flex;
     align-items: center;
     justify-content: center;
