@@ -18,18 +18,30 @@ import AppParallax from "components/atoms/appParallax/AppParallax";
 
 
 const App = () => {
-    const [parallaxInstruction, setParallaxInstruction] = React.useState<IsParallaxInstructionType>("standby");
+    // Returns a direction speed factor of the parallax (-1 or 1),
+    const [parallaxDirection, setParallaxDirection] = React.useState<IsDirectionSpeedFactor>(1);
+    const [parallaxAnimate, setParallaxAnimate] = React.useState<boolean>(false);
+
+    const upHandler = () => {
+        setParallaxDirection(1);
+        setParallaxAnimate(true);
+    };
+
+    const downHandler = () => {
+        setParallaxDirection(-1);
+        setParallaxAnimate(true);
+    };
 
     return (
         <main className="app">
             <ReactScrollWheelHandler
-                upHandler={(e) => setParallaxInstruction("previous")}
-                downHandler={(e) => setParallaxInstruction("next")}
+                upHandler={() => upHandler()}
+                downHandler={() => downHandler()}
                 disableSwipeWithMouse={true}
                 timeout={256}
             >
                 <div className="app__background">
-                    <AppParallax animation={parallaxInstruction} />
+                    <AppParallax direction={parallaxDirection} animate={parallaxAnimate} />
                 </div>
 
                 <div className="app__overlay">

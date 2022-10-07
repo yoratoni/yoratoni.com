@@ -14,25 +14,24 @@ declare global {
 
 
     /* Parallax */
-    type IsParallaxInstructionType = "previous" | "next" | "standby";
     type IsDirectionSpeedFactor = -1 | 1;
 
-    interface IsParallaxInstruction {
-        animation: "previous" | "next" | "standby"
+    interface IsParallax {
+        direction: IsDirectionSpeedFactor,
+        animate: boolean
     }
 
     interface IsParallaxDict {
-        directionSpeedFactor: -1 | 1,
-        parallaxWidth: number,
-        parallaxOneWidth: number,
-        parallaxRepeat: number,
-        xArray: number[],
-        localAnimation: "previous" | "next" | "standby"
+        width: number,
+        oneImageWidth: number,
+        imageRepeated: number,
+        localAnimate: boolean,
+        xArray: number[]
     }
 
 
     /* Animation frame */
-    type IsAnimationDependency = number | null | undefined |
+    type IsAnimationDependency = number | null | undefined | boolean
     IsDirectionSpeedFactor;
 
     interface IsAnimationFrameCallback {
