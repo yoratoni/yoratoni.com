@@ -40,8 +40,11 @@ const App = () => {
         <main className="app">
             <ReactScrollWheelHandler
                 upHandler={() => upHandler()}
+                rightHandler={() => downHandler()}
                 downHandler={() => downHandler()}
+                leftHandler={() => upHandler()}
                 disableSwipeWithMouse={true}
+                preventScroll={true}
                 timeout={256}
             >
                 <div className="app__background">

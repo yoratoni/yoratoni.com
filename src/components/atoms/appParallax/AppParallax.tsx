@@ -1,14 +1,16 @@
 import React from "react";
 import "./AppParallax.css";
 
-import { useWindowDimensions, useAnimationFrame } from "scripts/utilities";
+import {
+    useWindowDimensions,
+    preventOverscrollBehavior,
+    useAnimationFrame
+} from "scripts/utilities";
 
 
 /*
     ISSUES & NOTES:
     - Solving the zoom problem (miscalculation of the parallax size)
-    - 100vh problem on mobile, check multiple solving methods
-    - Adding acceleration & deceleration system
 */
 
 
@@ -20,8 +22,9 @@ const AppParallax = ({
 
     const parameters = {
         defaultSpeed: 1,
-        speedModifier: 1,
-        maxSpeed: 32,
+        speedModifier: 4,
+        maxSpeed: 64,
+        originalImageWidth: 1920,
         xArray: [0, 0, 0, 0]
     };
 
@@ -37,10 +40,14 @@ const AppParallax = ({
     });
 
 
+    // Prevents overscroll behavior (refresh on scroll up) for Chrome >= 56
+    preventOverscrollBehavior();
+
+
     // animIndex used as a dependency to launch the animation (launchAnimation = true),
     // launchAnimation is, then, resetting to false at the end of the animation,
     // creating a cooldown where the animation can be launched only if the previous anim
-    // is finished (false state reset).
+    // is finished (false state reset)
     React.useEffect(() => {
         if (animIndex !== -1 && !parallaxDict.launchAnimation) {
             setParallaxDict(prevState => ({
@@ -96,8 +103,10 @@ const AppParallax = ({
             }
 
             if (parallaxDict.width) {
+                const constantSpeedFactor = parallaxDict.oneImageWidth / parameters.originalImageWidth;
+
                 for (let i = 0; i < tempXArray.length; i++) {
-                    tempXArray[i] += (tempSpeed + i) * direction;
+                    tempXArray[i] += Math.round(tempSpeed * constantSpeedFactor * direction);
 
                     // X coordinate should be between 0 && parallaxDict.parallaxOneWidth
                     if (tempXArray[i] < 0 || tempXArray[i] > parallaxDict.oneImageWidth) {
@@ -126,7 +135,9 @@ const AppParallax = ({
 
 
     return (
-        <div className="app-parallax">
+        <div className="app-parallax"
+            style={{height: windowDimensions.height - 1}}
+        >
             <div className="app-parallax__layer app-parallax__layer-1" ref={parallaxWidthRef}
                 style={{
                     transform: `translateX(-${parallaxDict.xArray[0]}px)`,
@@ -155,7 +166,7 @@ const AppParallax = ({
                 }}
             ></div>
 
-            <div className="absolute p-4 font-bold text-black bg-white top-6 left-6">
+            {/* <div className="absolute p-4 font-bold text-black bg-white top-6 left-6">
                 Layer 1: {parallaxDict.xArray[0]} <br></br>
                 Layer 2: {parallaxDict.xArray[1]} <br></br>
                 Layer 3: {parallaxDict.xArray[2]} <br></br>
@@ -166,7 +177,7 @@ const AppParallax = ({
                 Parallax Width: {parallaxDict.width}px <br></br>
                 One layer width: {parallaxDict.oneImageWidth}px <br></br>
                 Window: {windowDimensions.width}px / {windowDimensions.height}px
-            </div>
+            </div> */}
         </div>
     );
 };

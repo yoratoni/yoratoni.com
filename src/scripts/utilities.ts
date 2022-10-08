@@ -1,20 +1,20 @@
 import React from "react";
 
 
-const getWindowDimensions = () => {
-    const { innerWidth: width, innerHeight: height } = window;
-
-    return {
-        width,
-        height
-    };
-};
-
 /**
  * Custom hook to get the dimensions of the window.
  * @returns An object containing the width & the height of the window.
  */
 export const useWindowDimensions = () => {
+    const getWindowDimensions = () => {
+        const { innerWidth: width, innerHeight: height } = window;
+
+        return {
+            width,
+            height
+        };
+    };
+
     const [windowDimensions, setWindowDimensions] = React.useState(getWindowDimensions());
 
     React.useEffect(() => {
@@ -27,6 +27,26 @@ export const useWindowDimensions = () => {
     }, []);
 
     return windowDimensions;
+};
+
+
+/**
+ * Prevents overscroll behavior (refresh on scroll up) for Chrome >= 56.
+ */
+export const preventOverscrollBehavior = () => {
+    const touchHandler = (e: Event) => {
+        e.preventDefault();
+    };
+
+    React.useEffect(() => {
+        document.addEventListener("touchstart", touchHandler, {passive: false});
+        document.addEventListener("touchmove", touchHandler, {passive: false});
+
+        return () => {
+            window.removeEventListener("touchstart", touchHandler);
+            window.removeEventListener("touchmove", touchHandler);
+        };
+    }, []);
 };
 
 
