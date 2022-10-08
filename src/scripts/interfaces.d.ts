@@ -18,14 +18,15 @@ declare global {
 
     interface IsParallax {
         direction: IsDirectionSpeedFactor,
-        animate: boolean
+        animIndex: number
     }
 
     interface IsParallaxDict {
         width: number,
         oneImageWidth: number,
         imageRepeated: number,
-        localAnimate: boolean,
+        launchAnimation: boolean,
+        speed: number,
         xArray: number[]
     }
 
