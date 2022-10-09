@@ -13,6 +13,12 @@ declare global {
     }
 
 
+    /* Overlay */
+    interface IsAppOverlay {
+        pageNumber: number
+    }
+
+
     /* Parallax */
     type IsDirectionSpeedFactor = -1 | 1;
 
