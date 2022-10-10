@@ -7,6 +7,7 @@ import SelectAllIcon from "@mui/icons-material/SelectAll";
 const Navbar = () => {
     return (
         <nav className="navbar">
+            
         </nav>
     );
 };
