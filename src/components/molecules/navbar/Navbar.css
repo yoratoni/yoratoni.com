@@ -1,0 +1,3 @@
+.navbar button:not(:last-child) {
+    margin-right: 0.8rem;
+}

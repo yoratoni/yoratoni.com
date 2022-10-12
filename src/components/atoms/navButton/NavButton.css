@@ -1,0 +1,21 @@
+.nav-button {
+    transition: var(--transi-normal);
+    color: var(--border-color);
+}
+
+.nav-button > svg {
+    margin: 0.4rem;
+    transform: rotate(45deg);
+    font-size: 2.4rem;
+    color: inherit;
+}
+
+.nav-button__active {
+    color: white !important;
+}
+
+@media (hover: hover) {
+    .nav-button:hover {
+        color: var(--hover-color);
+    }
+}

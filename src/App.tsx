@@ -14,8 +14,8 @@ import "styles/main.css";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
 // App components
-import AppParallax from "components/molecules/appParallax/AppParallax";
-import AppOverlay from "components/molecules/appOverlay/AppOverlay";
+import AppParallax from "components/organisms/appParallax/AppParallax";
+import AppOverlay from "components/organisms/appOverlay/AppOverlay";
 
 
 const App = () => {

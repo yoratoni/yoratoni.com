@@ -1,7 +1,7 @@
 import React from "react";
 import "./AppOverlay.css";
 
-import Navbar from "components/atoms/navbar/Navbar";
+import Navbar from "components/molecules/navbar/Navbar";
 
 
 const AppOverlay = ({

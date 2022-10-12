@@ -1,6 +1,7 @@
 :root {
     --background-color: #0B111B;
     --border-color: rgba(255, 255, 255, 0.4);
+    --hover-color: rgba(255, 255, 255, 0.7);
 
     --heading-size: clamp(34px, 10vw, 80px);
     --subheading-size: clamp(20px, 4vw, 26px);

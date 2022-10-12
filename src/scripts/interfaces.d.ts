@@ -12,6 +12,10 @@ declare global {
         height: number
     }
 
+    interface IsButtonActive {
+        state: "active" | null
+    }
+
 
     /* Overlay */
     interface IsAppOverlay {
