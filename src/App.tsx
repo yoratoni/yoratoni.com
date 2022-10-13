@@ -12,65 +12,47 @@ import "styles/main.css";
 
 // Libs
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
+import { globalParameters } from "scripts/dicts";
+
+// Contexts
+import { pageNumberContext } from "scripts/contexts";
 
 // App components
-import AppParallax from "components/organisms/appParallax/AppParallax";
+import BackgroundWrapper from "components/organisms/backgroundWrapper/BackgroundWrapper";
 import AppOverlay from "components/organisms/appOverlay/AppOverlay";
 
 
 const App = () => {
-    // Returns a direction speed factor of the parallax (-1 or 1),
-    const [parallaxDirection, setParallaxDirection] = React.useState<IsDirectionSpeedFactor>(1);
-
-    // An index incrementing at every scroll to launch the animation even
-    // when the scrolling is in the same direction
-    const [parallaxAnimIndex, setParallaxAnimIndex] = React.useState<number>(-1);
-
-    // The number of the current app page and the max page number (included)
-    const [pageNumber, setPageNumber] = React.useState<number>(0);
-    const maxPageNumber = 4;
+    const [pageNumber, setPageNumber] = React.useState(0);
 
     const upHandler = () => {
-        setParallaxDirection(1);
-        setParallaxAnimIndex(index => index + 1);
-
-        if (pageNumber < maxPageNumber) {
-            setPageNumber(number => number + 1);
-        } else {
-            setPageNumber(0);
+        if (pageNumber > 0) {
+            setPageNumber(pageNumber => pageNumber - 1);
         }
     };
 
     const downHandler = () => {
-        setParallaxDirection(-1);
-        setParallaxAnimIndex(index => index + 1);
-
-        if (pageNumber > 0) {
-            setPageNumber(number => number - 1);
-        } else {
-            setPageNumber(maxPageNumber);
+        if (pageNumber < globalParameters.appPages - 1) {
+            setPageNumber(pageNumber => pageNumber + 1);
         }
     };
 
     return (
         <main className="app">
-            <ReactScrollWheelHandler
-                upHandler={() => upHandler()}
-                rightHandler={() => downHandler()}
-                downHandler={() => downHandler()}
-                leftHandler={() => upHandler()}
-                disableSwipeWithMouse={true}
-                preventScroll={true}
-                timeout={256}
-            >
-                <div className="app__parallax-container">
-                    <AppParallax direction={parallaxDirection} animIndex={parallaxAnimIndex} />
-                </div>
-
-                <div className="app__overlay-container">
-                    <AppOverlay pageNumber={pageNumber}/>
-                </div>
-            </ReactScrollWheelHandler>
+            <pageNumberContext.Provider value={{pageNumber, setPageNumber}}>
+                <ReactScrollWheelHandler
+                    upHandler={() => upHandler()}
+                    rightHandler={() => upHandler()}
+                    downHandler={() => downHandler()}
+                    leftHandler={() => downHandler()}
+                    disableSwipeWithMouse={true}
+                    preventScroll={true}
+                    timeout={256}
+                >
+                    <BackgroundWrapper />
+                    <AppOverlay />
+                </ReactScrollWheelHandler>
+            </pageNumberContext.Provider>
         </main>
     );
 };

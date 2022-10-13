@@ -4,10 +4,14 @@
     display: flex;
     justify-content: center;
     position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: var(--zIndex-docked);
     overflow-x: hidden;
 }
 
 .app-overlay__navbar-container {
     position: absolute;
-    bottom: 3rem;
+    bottom: 2.8rem;
 }

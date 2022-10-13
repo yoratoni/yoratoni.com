@@ -4,9 +4,7 @@ import "./AppOverlay.css";
 import Navbar from "components/molecules/navbar/Navbar";
 
 
-const AppOverlay = ({
-    pageNumber
-}: IsAppOverlay) => {
+const AppOverlay = () => {
     return (
         <div className="app-overlay">
 

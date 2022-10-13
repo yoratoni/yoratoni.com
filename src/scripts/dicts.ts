@@ -1,3 +1,8 @@
+export const globalParameters = {
+    appPages: 4,            // The number of pages used for the app pages context (4 => from 0 to 3)
+};
+
+
 export const workCardData: IsProjectCardData = [
     {
         sourceCodeLink: "https://github.com/yoratoni/nfts-generator",
