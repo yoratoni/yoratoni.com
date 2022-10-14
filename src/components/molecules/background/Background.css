@@ -1,0 +1,75 @@
+.background {
+    width: 100%;
+    position: relative;
+    background-color: #DEFDFD;
+    /* animation-name: appears;
+    animation-timing-function: cubic-bezier(1, 0, 0.75, 0.5);
+    animation-iteration-count: 1;
+    animation-duration: 3s; */
+    filter: brightness(50%);
+    overflow-x: hidden;
+}
+
+.background__layer {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+}
+
+.background .background__layer-1 {
+    background-image: url("assets/background/mid-res/fallback/04.png");
+    background-image: url("assets/background/mid-res/04.webp");
+    background-image: image-set(url("assets/background/low-res/fallback/04.png") 2x,
+            url("assets/background/mid-res/fallback/04.png") 1.5x,
+            url("assets/background/high-res/fallback/04.png") 1x);
+    background-image: image-set(url("assets/background/low-res/04.webp") 2x,
+            url("assets/background/mid-res/04.webp") 1.5x,
+            url("assets/background/high-res/04.webp") 1x);
+}
+
+.background .background__layer-2 {
+    background-image: url("assets/background/mid-res/fallback/03.png");
+    background-image: url("assets/background/mid-res/03.webp");
+    background-image: image-set(url("assets/background/low-res/fallback/03.png") 2x,
+            url("assets/background/mid-res/fallback/03.png") 1.5x,
+            url("assets/background/high-res/fallback/03.png") 1x);
+    background-image: image-set(url("assets/background/low-res/03.webp") 2x,
+            url("assets/background/mid-res/03.webp") 1.5x,
+            url("assets/background/high-res/03.webp") 1x);
+}
+
+.background .background__layer-3 {
+    background-image: url("assets/background/mid-res/fallback/02.png");
+    background-image: url("assets/background/mid-res/02.webp");
+    background-image: image-set(url("assets/background/low-res/fallback/02.png") 2x,
+            url("assets/background/mid-res/fallback/02.png") 1.5x,
+            url("assets/background/high-res/fallback/02.png") 1x);
+    background-image: image-set(url("assets/background/low-res/02.webp") 2x,
+            url("assets/background/mid-res/02.webp") 1.5x,
+            url("assets/background/high-res/02.webp") 1x);
+}
+
+.background .background__layer-4 {
+    background-image: url("assets/background/mid-res/fallback/01.png");
+    background-image: url("assets/background/mid-res/01.webp");
+    background-image: image-set(url("assets/background/low-res/fallback/01.png") 2x,
+            url("assets/background/mid-res/fallback/01.png") 1.5x,
+            url("assets/background/high-res/fallback/01.png") 1x);
+    background-image: image-set(url("assets/background/low-res/01.webp") 2x,
+            url("assets/background/mid-res/01.webp") 1.5x,
+            url("assets/background/high-res/01.webp") 1x);
+}
+
+@keyframes appears {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
