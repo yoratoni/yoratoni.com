@@ -31,26 +31,6 @@ export const useWindowDimensions = () => {
 
 
 /**
- * Prevents overscroll behavior (refresh on scroll up) for Chrome >= 56.
- */
-export const preventOverscrollBehavior = () => {
-    const touchHandler = (e: Event) => {
-        e.preventDefault();
-    };
-
-    React.useEffect(() => {
-        document.addEventListener("touchstart", touchHandler, {passive: false});
-        document.addEventListener("touchmove", touchHandler, {passive: false});
-
-        return () => {
-            window.removeEventListener("touchstart", touchHandler);
-            window.removeEventListener("touchmove", touchHandler);
-        };
-    }, []);
-};
-
-
-/**
  * Custom hook for the JS "requestAnimationFrame" function.
  * Replaces setInterval for animations to obtain a consistent
  * framerate on any browser.

@@ -3,7 +3,6 @@ import "./Background.css";
 
 import {
     useWindowDimensions,
-    preventOverscrollBehavior,
     useAnimationFrame
 } from "scripts/utilities";
 
@@ -41,10 +40,6 @@ const Background = ({
         speed: parameters.defaultSpeed, // Current speed of the bck (used during the animation)
         xArray: parameters.xArray       // Contains the x position of each layer (=translateX)
     });
-
-
-    // Prevents overscroll behavior (refresh on scroll up) for Chrome >= 56
-    preventOverscrollBehavior();
 
 
     // animIndex used as a dependency to launch the animation (launchAnimation = true),
