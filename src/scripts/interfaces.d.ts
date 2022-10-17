@@ -28,16 +28,14 @@ declare global {
         animIndex: number;
     }
 
-    type isBckAnimationState = "BCK_ANIM_STATE::START" |
-    "BCK_ANIM_STATE::CONTINUE" |
-    "BCK_ANIM_STATE::STOP";
+    type isBckAnimationState = "BCK_ANIM_STATE::START" | "BCK_ANIM_STATE::STOP";
 
     interface IsBackgroundDict {
         width: number;
         oneImageWidth: number;
         imageRepeated: number;
         animationState: isBckAnimationState;
-        animationX: number;
+        animationCurrX: number;
         speed: number;
         xArray: number[];
     }

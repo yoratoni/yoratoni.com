@@ -39,7 +39,6 @@ const Navbar = () => {
             tempButtonStatesArray[i] = defValue;
         }
 
-        console.log(tempButtonStatesArray);
         setButtonStatesArray(tempButtonStatesArray);
     }, [pageNumber]);
 
