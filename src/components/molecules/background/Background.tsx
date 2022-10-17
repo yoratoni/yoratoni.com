@@ -7,8 +7,6 @@ import {
 } from "scripts/utilities";
 
 
-import { pageNumberContext } from "scripts/contexts";
-
 /*
     ISSUES & NOTES:
     - Solving the zoom problem (miscalculation of the background size)
@@ -19,7 +17,6 @@ const Background = ({
     direction,
     animIndex
 }: IsBackground) => {
-    const {pageNumber} = React.useContext(pageNumberContext);
     const backgroundWidthRef = React.useRef<HTMLDivElement | null>(null);
     const windowDimensions = useWindowDimensions();
 
@@ -33,12 +30,13 @@ const Background = ({
     };
 
     const [backgroundDict, setBackgroundDict] = React.useState<IsBackgroundDict>({
-        width: 0,                       // The total width of the bck (dynamically calculated)
-        oneImageWidth: 0,               // The width of only one bck image based on the height
-        imageRepeated: 0,               // The number of times that the bck is repeated
-        launchAnimation: false,         // If true, launch the scrolling animation (resets to false)
-        speed: parameters.defaultSpeed, // Current speed of the bck (used during the animation)
-        xArray: parameters.xArray       // Contains the x position of each layer (=translateX)
+        width: 0,                               // The total width of the bck (dynamically calculated)
+        oneImageWidth: 0,                       // The width of only one bck image based on the height
+        imageRepeated: 0,                       // The number of times that the bck is repeated
+        animationState: "BCK_ANIM_STATE::STOP", // Launch the scrolling animation
+        animationX: 0,                          // Used to measure the animation duration
+        speed: parameters.defaultSpeed,         // Current speed of the bck (used during the animation)
+        xArray: parameters.xArray               // Contains the x position of each layer (=translateX)
     });
 
 
@@ -47,10 +45,10 @@ const Background = ({
     // creating a cooldown where the animation can be launched only if the previous anim
     // is finished (false state reset)
     React.useEffect(() => {
-        if (animIndex !== -1 && !backgroundDict.launchAnimation) {
+        if (animIndex !== -1 && backgroundDict.animationState !== "BCK_ANIM_STATE::START") {
             setBackgroundDict(prevState => ({
                 ...prevState,
-                launchAnimation: true
+                animationState: "BCK_ANIM_STATE::START"
             }));
         }
     }, [animIndex]);
@@ -78,22 +76,43 @@ const Background = ({
     // Main loop
     useAnimationFrame(
         () => {
-            const constantSpeedFactor = backgroundDict.oneImageWidth / parameters.originalImageWidth;
+            const constantSpeedFactor = 1;
             const tempXArray = backgroundDict.xArray;
+            const tempAnimationX = tempXArray[0];  // Only based on first layer X
             let tempSpeed = backgroundDict.speed;
 
-            if (backgroundDict.launchAnimation) {
+            if (backgroundDict.animationState === "BCK_ANIM_STATE::START") {
+                // Saves current parallax X coordinate
+                // And launch the second part of the animation
+                setBackgroundDict(prevState => ({
+                    ...prevState,
+                    animationState: "BCK_ANIM_STATE::CONTINUE",
+                    animationX: tempAnimationX
+                }));
+            } else if (backgroundDict.animationState === "BCK_ANIM_STATE::CONTINUE") {
+                // Acceleration and waiting for the animation to travel animationX + windowWidth
+                // before going to third part of the animation
                 if (tempSpeed < parameters.maxSpeed) {
                     tempSpeed += parameters.speedModifier;
                 } else {
                     tempSpeed = parameters.maxSpeed;
 
-                    setBackgroundDict(prevState => ({
-                        ...prevState,
-                        launchAnimation: false
-                    }));
+                    // Left to right => (animationX + windowWidth) % oneImageWidth
+                    // to supports the reset to 0 (infinite movement effect)
+                    if (direction === 1 &&
+                        tempAnimationX >= (
+                            backgroundDict.animationX + windowDimensions.width
+                        ) % backgroundDict.oneImageWidth
+                    ) {
+                        setBackgroundDict(prevState => ({
+                            ...prevState,
+                            animationState: "BCK_ANIM_STATE::STOP",
+                            animationX: 0
+                        }));
+                    }
                 }
             } else {
+                // Deceleration part
                 if (tempSpeed > parameters.defaultSpeed) {
                     tempSpeed -= parameters.speedModifier;
                 } else {
@@ -121,7 +140,7 @@ const Background = ({
             }));
         },
         [
-            backgroundDict.launchAnimation,
+            backgroundDict.animationState,
             backgroundDict.width,
             backgroundDict.speed,
             direction
@@ -166,12 +185,12 @@ const Background = ({
                 Layer 2: {backgroundDict.xArray[1]} <br></br>
                 Layer 3: {backgroundDict.xArray[2]} <br></br>
                 Layer 4: {backgroundDict.xArray[3]} <br></br>
-                Anim Index: {animIndex} <br></br>
-                Page Number: {pageNumber} <br></br>
-                Background Speed: {backgroundDict.speed} <br></br>
-                Background Repeat: {backgroundDict.imageRepeated}x <br></br>
-                Background Width: {backgroundDict.width}px <br></br>
-                One layer width: {backgroundDict.oneImageWidth}px <br></br>
+                Bck Speed: {backgroundDict.speed} <br></br>
+                Bck Anim Curr X: {backgroundDict.animationX} <br></br>
+                Bck Anim State: {backgroundDict.animationState} <br></br>
+                {/* Bck Repeat: {backgroundDict.imageRepeated}x <br></br> */}
+                Bck Width: {backgroundDict.width}px <br></br>
+                One image width: {backgroundDict.oneImageWidth}px <br></br>
                 Window: {windowDimensions.width}px / {windowDimensions.height}px
             </div>
         </div>

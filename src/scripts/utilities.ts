@@ -31,6 +31,23 @@ export const useWindowDimensions = () => {
 
 
 /**
+ * Clamps a middle value within a range of values between
+ * a defined minimum bound and a maximum bound.
+ * @param num The number to clamp.
+ * @param min Minimal limit.
+ * @param max Maximal limit.
+ * @returns The clamped *num* between *min* and *max*.
+ */
+export const clampNumber = (num: number, min: number, max: number) => {
+    return num <= min
+        ? min
+        : num >= max
+            ? max
+            : num;
+};
+
+
+/**
  * Custom hook for the JS "requestAnimationFrame" function.
  * Replaces setInterval for animations to obtain a consistent
  * framerate on any browser.

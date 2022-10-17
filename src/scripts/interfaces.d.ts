@@ -12,10 +12,6 @@ declare global {
         height: number;
     }
 
-    interface IsButtonActive {
-        state: "active" | null;
-    }
-
 
     /* Page Number Context */
     interface IsPageNumberContext {
@@ -32,19 +28,24 @@ declare global {
         animIndex: number;
     }
 
+    type isBckAnimationState = "BCK_ANIM_STATE::START" |
+    "BCK_ANIM_STATE::CONTINUE" |
+    "BCK_ANIM_STATE::STOP";
+
     interface IsBackgroundDict {
         width: number;
         oneImageWidth: number;
         imageRepeated: number;
-        launchAnimation: boolean;
+        animationState: isBckAnimationState;
+        animationX: number;
         speed: number;
         xArray: number[];
     }
 
 
     /* Animation frame */
-    type IsAnimationDependency = number | null | undefined | boolean
-    | IsDirectionSpeedFactor;
+    type IsAnimationDependency = number | null | undefined | boolean |
+    IsDirectionSpeedFactor | isBckAnimationState;
 
     interface IsAnimationFrameCallback {
         (deltaTime: number): void;
