@@ -89,15 +89,19 @@
             }
         ],
         "linebreak-style": [
-            "error",
+            "warn",
             "windows"
         ],
         "quotes": [
-            "error",
+            "warn",
             "double"
         ],
         "semi": [
-            "error",
+            "warn",
+            "always"
+        ],
+        "object-curly-spacing": [
+            "warn",
             "always"
         ]
     }

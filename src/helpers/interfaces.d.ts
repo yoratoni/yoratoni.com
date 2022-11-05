@@ -19,6 +19,10 @@ declare global {
         setPageNumber: React.Dispatch<React.SetStateAction<number>>;
     }
 
+    /* Page */
+    interface IsPage {
+        pageNumber: number;
+    }
 
     /* Background */
     type IsDirectionSpeedFactor = -1 | 1;

@@ -2,16 +2,21 @@
     margin-right: 0.6rem;
 }
 
-
 .navbar__button {
     transition: var(--transi-normal);
     color: var(--border-color);
 }
 
-.navbar__button > svg {
+.navbar__button-content {
+    display: flex;
+    flex-direction: column;
     margin: 0.4rem;
+}
+
+.navbar__button-content > svg {
+    margin: 0.4rem 0.6rem;
     transform: rotate(45deg);
-    font-size: 2.6rem;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
     color: inherit;
 }
 

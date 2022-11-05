@@ -4,7 +4,7 @@ import "./Background.css";
 import {
     useWindowDimensions,
     useAnimationFrame
-} from "scripts/utilities";
+} from "helpers/utilities";
 
 
 /*
@@ -36,7 +36,6 @@ const Background = ({
         speed: parameters.defaultSpeed,         // Current speed of the bck (used during the animation)
         xArray: parameters.xArray               // Contains the x position of each layer (=translateX)
     });
-
 
     // animIndex used as a dependency to launch the animation (launchAnimation = true),
     // launchAnimation is, then, resetting to false at the end of the animation,
@@ -140,7 +139,7 @@ const Background = ({
 
     return (
         <div className="background"
-            style={{height: windowDimensions.height - 1}}
+            style={{ height: windowDimensions.height - 1 }}
         >
             <div className="background__layer background__layer-1" ref={backgroundWidthRef}
                 style={{

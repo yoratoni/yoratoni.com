@@ -1,12 +1,12 @@
 import React from "react";
 import "./BackgroundWrapper.css";
 
-import Background from "components/molecules/background/Background";
-import { pageNumberContext } from "scripts/contexts";
+import Background from "components/background/Background";
+import { pageNumberContext } from "helpers/contexts";
 
 
 const BackgroundWrapper = () => {
-    const {pageNumber} = React.useContext(pageNumberContext);
+    const { pageNumber } = React.useContext(pageNumberContext);
 
     const [prevPageNumber, setPrevPageNumber] = React.useState(-1);
 

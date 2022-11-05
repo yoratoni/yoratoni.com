@@ -2,12 +2,12 @@ import React from "react";
 import "./Navbar.css";
 
 import SelectAllIcon from "@mui/icons-material/SelectAll";
-import { globalParameters } from "scripts/dicts";
-import { pageNumberContext } from "scripts/contexts";
+import { globalParameters } from "helpers/dicts";
+import { pageNumberContext } from "helpers/contexts";
 
 
 const Navbar = () => {
-    const {pageNumber, setPageNumber} = React.useContext(pageNumberContext);
+    const { pageNumber, setPageNumber } = React.useContext(pageNumberContext);
 
     const [buttonStatesArray, setButtonStatesArray] = React.useState<boolean[]>(
         Array(globalParameters.appPages).fill(false)
@@ -45,14 +45,17 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
-            {Array.from({length: globalParameters.appPages}, (_, i) =>
+            {Array.from({ length: globalParameters.appPages }, (_, i) =>
                 <button
                     className={`navbar__button ${buttonStatesArray[i] ? "navbar__button-active" : ""}`}
                     onClick={getButtonIndex}
                     data-index={i}
                     key={i}
                 >
-                    <SelectAllIcon />
+                    <div className="navbar__button-content">
+                        <SelectAllIcon />
+                        {globalParameters.pageNames[i]}
+                    </div>
                 </button>
             )}
         </nav>
