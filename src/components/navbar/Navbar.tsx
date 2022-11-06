@@ -25,7 +25,6 @@ const Navbar = () => {
         }
     };
 
-
     React.useEffect(() => {
         const tempButtonStatesArray = [...buttonStatesArray];
 
@@ -42,22 +41,23 @@ const Navbar = () => {
         setButtonStatesArray(tempButtonStatesArray);
     }, [pageNumber]);
 
-
     return (
         <nav className="navbar">
-            {Array.from({ length: globalParameters.appPages }, (_, i) =>
-                <button
-                    className={`navbar__button ${buttonStatesArray[i] ? "navbar__button-active" : ""}`}
-                    onClick={getButtonIndex}
-                    data-index={i}
-                    key={i}
-                >
-                    <div className="navbar__button-content">
-                        <SelectAllIcon />
-                        {globalParameters.pageNames[i]}
-                    </div>
-                </button>
-            )}
+            <div className="navbar__buttons">
+                {Array.from({ length: globalParameters.appPages }, (_, i) =>
+                    <button
+                        className={`navbar__button ${buttonStatesArray[i] ? "navbar__button-active" : ""}`}
+                        onClick={getButtonIndex}
+                        data-index={i}
+                        key={i}
+                    >
+                        <div className="navbar__button-content">
+                            <SelectAllIcon />
+                            {globalParameters.pageNames[i]}
+                        </div>
+                    </button>
+                )}
+            </div>
         </nav>
     );
 };
