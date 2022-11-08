@@ -5,7 +5,7 @@ import "./Home.css";
 
 const Home = () => {
     return (
-        <div className="pages__container animate__animated animate__fadeIn animate__fast">
+        <div className="pages__container">
             <main className="pages__main">
                 <header className="pages__header">
                     <h1 className="pages__header-title">

@@ -12,21 +12,13 @@
     overflow: hidden;
 }
 
-.app-overlay__page-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    z-index: var(--zIndex-dropdown);
-}
-
 .app-overlay__page {
     width: 100%;
     height: 100%;
+    z-index: var(--zIndex-dropdown);
 }
 
-.app-overlay__navbar-container {
+.app-overlay__navbar {
     width: 100%;
     z-index: var(--zIndex-sticky);
 }

@@ -14,29 +14,41 @@ const AppOverlay = () => {
     const { pageNumber } = React.useContext(pageNumberContext);
 
     const getCurrentPage = () => {
+        let pageComponent;
+
         switch (pageNumber) {
             case 0:
-                return <Home />;
+                pageComponent = <Home />;
+                break;
             case 1:
-                return <Work />;
+                pageComponent = <Work />;
+                break;
             case 2:
-                return <About />;
+                pageComponent = <About />;
+                break;
             case 3:
-                return <Contact />;
+                pageComponent = <Contact />;
+                break;
             default:
-                return <Home />;
+                pageComponent = <Home />;
         }
+
+        // Trick: randomize the key to force a re-render triggering the animation
+        return (
+            <div
+                key={Math.random()}
+                className="app-overlay__page animate__animated animate__fadeIn animate__fast"
+            >
+                {pageComponent}
+            </div>
+        );
     };
 
     return (
         <div className="app-overlay">
-            <div className="app-overlay__page-container">
-                <div className="app-overlay__page">
-                    {getCurrentPage()}
-                </div>
-            </div>
+            {getCurrentPage()}
 
-            <div className="app-overlay__navbar-container">
+            <div className="app-overlay__navbar">
                 <Navbar />
             </div>
         </div>
