@@ -16,7 +16,7 @@
 }
 
 .navbar__button {
-    transition: var(--transi-normal);
+    transition: var(--transi-faster);
     color: var(--border-color);
 }
 
