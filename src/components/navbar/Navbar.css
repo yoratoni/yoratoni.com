@@ -27,9 +27,9 @@
 }
 
 .navbar__button-content > svg {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
     transform: rotate(45deg);
-    font-size: var(--icon-xl);
+    font-size: var(--icon-lg);
     color: inherit;
 }
 

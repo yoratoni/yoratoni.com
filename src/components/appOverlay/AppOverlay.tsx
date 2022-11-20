@@ -4,10 +4,11 @@ import "./AppOverlay.css";
 import { pageNumberContext } from "helpers/contexts";
 
 import Navbar from "components/navbar/Navbar";
-import Home from "components/pages/home/Home";
-import About from "components/pages/about/About";
-import Contact from "components/pages/contact/Contact";
-import Work from "components/pages/work/Work";
+
+import Home from "pages/home/Home";
+import About from "pages/about/About";
+import Contact from "pages/contact/Contact";
+import Work from "pages/work/Work";
 
 
 const AppOverlay = () => {
@@ -48,7 +49,7 @@ const AppOverlay = () => {
         <div className="app-overlay">
             {getCurrentPage()}
 
-            <div className="app-overlay__navbar">
+            <div className="app-overlay__bar">
                 <Navbar />
             </div>
         </div>

@@ -2,6 +2,15 @@ import React from "react";
 
 
 declare global {
+    /* Modules */
+    module "*.png";
+    module "*.jpg";
+    module "*.jpeg";
+    module "*.gif";
+    module "*.svg";
+    module "*.webp";
+    module "*.bmp";
+
     /* Generic */
     interface IsWithChildren {
         children: React.ReactNode;
@@ -11,7 +20,6 @@ declare global {
         width: number;
         height: number;
     }
-
 
     /* Page Number Context */
     interface IsPageNumberContext {
@@ -44,7 +52,6 @@ declare global {
         xArray: number[];
     }
 
-
     /* Animation frame */
     type IsAnimationDependency = number | null | undefined | boolean |
     IsDirectionSpeedFactor | isBckAnimationState;
@@ -52,7 +59,6 @@ declare global {
     interface IsAnimationFrameCallback {
         (deltaTime: number): void;
     }
-
 
     /* Project cards */
     interface IsProjectCard {

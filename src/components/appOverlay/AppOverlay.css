@@ -18,7 +18,7 @@
     z-index: var(--zIndex-dropdown);
 }
 
-.app-overlay__navbar {
+.app-overlay__bar {
     width: 100%;
     z-index: var(--zIndex-sticky);
 }

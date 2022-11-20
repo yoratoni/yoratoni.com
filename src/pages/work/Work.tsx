@@ -1,17 +1,18 @@
 import React from "react";
-import "./About.css";
+import "pages/Pages.css";
+import "./Work.css";
 
 
-const About = () => {
+const Work = () => {
     return (
         <div className="pages__container">
             <main className="pages__main">
                 <header className="pages__header">
                     <h1 className="pages__header-title">
-                    adrien bibollet 3
+                    adrien bibollet 2
                     </h1>
                     <h3 className="pages__header-subtitle">
-                        &#91;full stack web developer 3&#93;
+                        &#91;full stack web developer 2&#93;
                     </h3>
                 </header>
             </main>
@@ -20,4 +21,4 @@ const About = () => {
 };
 
 
-export default About;
+export default Work;

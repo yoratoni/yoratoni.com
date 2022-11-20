@@ -1,4 +1,5 @@
 import React from "react";
+import "pages/Pages.css";
 import "./Contact.css";
 
 
