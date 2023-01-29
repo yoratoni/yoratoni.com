@@ -21,7 +21,11 @@ const Work = () => {
                 </h3>
             </header>
 
-            <Cards />
+            <div className="pages__content-container">
+                <div className="pages__content">
+
+                </div>
+            </div>
         </div>
     );
 };
