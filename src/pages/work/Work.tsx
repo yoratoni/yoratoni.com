@@ -3,19 +3,25 @@ import "pages/Pages.css";
 import "./Work.css";
 
 
+import Cards from "components/cards/Cards";
+
+
 const Work = () => {
     return (
         <div className="pages__container">
-            <main className="pages__main">
-                <header className="pages__header">
-                    <h1 className="pages__header-title">
-                    adrien bibollet 2
-                    </h1>
-                    <h3 className="pages__header-subtitle">
-                        &#91;full stack web developer 2&#93;
-                    </h3>
-                </header>
-            </main>
+            <header className="pages__header">
+                <h3 className="pages__header-subtitle">
+                    Here&apos;s some of my
+                </h3>
+                <h1 className="pages__header-title">
+                    PROJECTS
+                </h1>
+                <h3 className="pages__header-subtitle">
+                    &gt; The most interesting ones &lt;
+                </h3>
+            </header>
+
+            <Cards />
         </div>
     );
 };

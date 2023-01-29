@@ -1,0 +1,14 @@
+.home__just-me {
+    width: 50%;
+    max-width: 6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+}
+
+.home__icon {
+    width: 50%;
+    max-width: 6rem;
+    padding: 1rem 1rem 0.85rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+}

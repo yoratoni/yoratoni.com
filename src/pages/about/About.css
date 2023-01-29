@@ -1,0 +1,22 @@
+.pages__content {
+    justify-content: flex-start;
+    overflow-y: hidden;
+}
+
+.pages__content-text {
+    max-width: 42rem;
+    height: min-content;
+    margin: 0 auto;
+    padding: 0 1.4rem;
+}
+
+.pages__content-text p {
+    margin-top: 2rem;
+}
+
+.pages__content-text p {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+    text-align: left;
+    text-indent: 1em;
+}

@@ -17,6 +17,7 @@
 html,
 body {
     color-scheme: dark;
+    min-width: 380px;
     min-height: -webkit-fill-available;
 }
 

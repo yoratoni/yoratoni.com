@@ -65,11 +65,12 @@ declare global {
         sourceCodeLink: string | null;
         externalLink: string | null;
         title: string;
+        fullDescription: string;
         description: string;
         techStack: string[];
     }
 
-    type IsProjectCardData = IsProjectCard[];
+    type IsProjectCards = IsProjectCard[];
 }
 
 

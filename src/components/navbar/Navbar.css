@@ -3,7 +3,10 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: clamp(2rem, 3vh, 3rem);
+    padding: 1.3rem 0 1rem 0;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-top: 1px solid var(--border-color);
+    box-shadow: var(--div-box-shadow);
 }
 
 .navbar__buttons {
@@ -12,10 +15,11 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 3rem;
 }
 
 .navbar__button {
+    width: 2rem;
     transition: var(--transi-faster);
     color: var(--border-color);
 }
@@ -24,12 +28,13 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-size: var(--font-size-sm);
 }
 
 .navbar__button-content > svg {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.3rem;
     transform: rotate(45deg);
-    font-size: var(--icon-lg);
+    font-size: var(--icon-md);
     color: inherit;
 }
 

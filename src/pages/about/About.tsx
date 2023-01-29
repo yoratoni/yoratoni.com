@@ -6,16 +6,59 @@ import "./About.css";
 const About = () => {
     return (
         <div className="pages__container">
-            <main className="pages__main">
-                <header className="pages__header">
-                    <h1 className="pages__header-title">
-                    adrien bibollet 3
-                    </h1>
-                    <h3 className="pages__header-subtitle">
-                        &#91;full stack web developer 3&#93;
-                    </h3>
-                </header>
-            </main>
+            <header className="pages__header">
+                <h3 className="pages__header-subtitle">
+                    Just a little bit info
+                </h3>
+                <h1 className="pages__header-title">
+                    ABOUT ME
+                </h1>
+                <h3 className="pages__header-subtitle">
+                    &gt; More than a web developer &lt;
+                </h3>
+            </header>
+
+            <div className="pages__content-container">
+                <div className="pages__content">
+                    <div className="pages__content-text">
+                        <p>
+                            My interest in programming started when I was 13 years old, <br />
+                            I was working on some small electronic projects in my garage,
+                            after some time, I wanted to do more but I didn&apos;t have
+                            enough tools to build bigger things
+                            (trying to make my own Fansworth Fusor.. I was a bit crazy back then).
+                        </p>
+
+                        <p>
+                            That&apos;s when I discovered the world of programming
+                            by watching some videos,
+                            I started to understand that it could allow me to create
+                            anything I wanted even without any real budget or tools.
+                        </p>
+
+                        <p>
+                            I started to learn programming by myself with a game engine called
+                            Game Maker 6, I was able to create some small games and share
+                            them with my friends, after a bit, I became pretty good at it.
+                        </p>
+
+                        <p>
+                            It followed by a few years of learning and experimenting with
+                            different programming languages and frameworks, dreaming about
+                            creating my own video games, but I was always missing something,
+                            probably professional experience and a real project to work on.
+                        </p>
+
+                        <p>
+                            In 2022, I decided to take the plunge and started a new career as a
+                            web developer, allowing me to combine my passion for programming
+                            and my interest in the web.
+                            I was able to find a job as a web developer in a new company
+                            and I&apos;m currently working on a big project with my colleagues.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

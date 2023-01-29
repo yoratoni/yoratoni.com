@@ -6,16 +6,17 @@ import "./Home.css";
 const Home = () => {
     return (
         <div className="pages__container">
-            <main className="pages__main">
-                <header className="pages__header">
-                    <h1 className="pages__header-title">
-                    ADRIEN BIBOLLET
-                    </h1>
-                    <h3 className="pages__header-subtitle">
-                        &#91;full stack web developer&#93;
-                    </h3>
-                </header>
-            </main>
+            <header className="pages__header">
+                <h3 className="pages__header-subtitle">
+                    Hi there!
+                </h3>
+                <h1 className="pages__header-title">
+                    I&apos;M ADRIEN
+                </h1>
+                <h3 className="pages__header-subtitle">
+                    &gt; Full stack web developer &lt;
+                </h3>
+            </header>
         </div>
     );
 };

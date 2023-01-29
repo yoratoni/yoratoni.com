@@ -6,16 +6,23 @@ import "./Contact.css";
 const Contact = () => {
     return (
         <div className="pages__container">
-            <main className="pages__main">
-                <header className="pages__header">
-                    <h1 className="pages__header-title">
-                    adrien bibollet 4
-                    </h1>
-                    <h3 className="pages__header-subtitle">
-                        &#91;full stack web developer 4&#93;
-                    </h3>
-                </header>
-            </main>
+            <header className="pages__header">
+                <h3 className="pages__header-subtitle">
+                    You have an idea?
+                </h3>
+                <h1 className="pages__header-title">
+                    CONTACT ME
+                </h1>
+                <h3 className="pages__header-subtitle">
+                    &gt; Get in touch!  &lt;
+                </h3>
+            </header>
+
+            <div className="pages__content-container">
+                <div className="pages__content">
+
+                </div>
+            </div>
         </div>
     );
 };

@@ -5,40 +5,44 @@ export const globalParameters = {
         "work",
         "about",
         "contact"
-    ]
+    ],
+    slideshowProperties: {
+        duration: 5000,             // The duration of the slideshow in milliseconds
+        transitionDuration: 1000,   // The transition duration of the slideshow in milliseconds
+        infinite: true,             // If the slideshow is infinite or not
+        indicators: true,           // If the slideshow indicators are displayed or not
+        arrows: true,               // If the slideshow arrows are displayed or not
+        pauseOnHover: false         // If the slideshow is paused on hover or not
+    }
 };
 
 
-export const workCardData: IsProjectCardData = [
+export const CardsData: IsProjectCards = [
     {
-        sourceCodeLink: "https://github.com/yoratoni/nfts-generator",
+        sourceCodeLink: "https://github.com/yoratoni/yoratoni.com",
         externalLink: null,
-        title: "My Portfolio",
-        description: `Yeah, it seems a bit strange but believe me when I say that I built this website
-        entirely from scratch, even the VPS is entirely configured by hand, it was pretty .. funny.`,
+        title: "THE PORTFOLIO",
+        description: "",
+        fullDescription: `I wanted to make a really unique portfolio website.
+        The hardest part of this project was to build an app-like experience,
+        with an animated parallax background.`,
         techStack: ["Bind9", "Apache", "React", "Typescript"]
     },
     {
         sourceCodeLink: "https://github.com/yoratoni/nfts-generator",
         externalLink: null,
-        title: "NFTs Generator",
-        description: `An advanced NFTs generator used by a project that needed some pretty advanced parameter
+        title: "NFTS GENERATOR",
+        description: "",
+        fullDescription: `An advanced NFTs generator used by a project that needed some pretty advanced parameter
         controls, it also needed a lot of optimizations and an IPFS metadata generator.`,
         techStack: ["Python", "xxHash", "Colorama"]
     },
     {
-        sourceCodeLink: "https://github.com/yoratoni/clua",
-        externalLink: null,
-        title: "Clua (IN PROGRESS)",
-        description: `A superset programming language of Lua 5.3 inspired by the compiler of the Typescript
-        superset, I do that mainly for fun but also because Lua is pretty fast but I don't like the syntax.`,
-        techStack: ["Python", "A lot of homemade libs"]
-    },
-    {
         sourceCodeLink: "https://github.com/yoratoni/huawei-router-sms-forwarding",
         externalLink: null,
-        title: "Huawei SMS forwarding",
-        description: `A python CLI program that allows you to forward SMS received by your Huawei 4G router
+        title: "HUAWEI SMS FORWARDING",
+        description: "",
+        fullDescription: `A python CLI program that allows you to forward SMS received by your Huawei 4G router
         to a phone number. As I'm using my router's phone number, it makes my life easier.`,
         techStack: ["Python", "Huawei LTE API"]
     },

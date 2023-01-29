@@ -38,7 +38,7 @@ const AppOverlay = () => {
         return (
             <div
                 key={Math.random()}
-                className="app-overlay__page animate__animated animate__fadeIn animate__fast"
+                className="app-overlay__page animate__animated animate__fadeIn"
             >
                 {pageComponent}
             </div>
