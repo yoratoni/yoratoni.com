@@ -17,8 +17,11 @@
 html,
 body {
     color-scheme: dark;
+    width: 100%;
     min-width: 380px;
+    height: 100%;
     min-height: -webkit-fill-available;
+    margin: 0;
 }
 
 body {

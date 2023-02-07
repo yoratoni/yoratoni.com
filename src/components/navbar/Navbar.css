@@ -3,10 +3,9 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 1.3rem 0 1rem 0;
-    background-color: rgba(0, 0, 0, 0.15);
-    border-top: 1px solid var(--border-color);
-    box-shadow: var(--div-box-shadow);
+    padding: 2.4rem 0 1rem 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.24) 36%);
 }
 
 .navbar__buttons {

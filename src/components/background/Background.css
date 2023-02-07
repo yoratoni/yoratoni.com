@@ -3,10 +3,10 @@
     position: relative;
     background-color: #DEFDFD;
     filter: brightness(50%);
-    /* animation-name: appears;
+    animation-name: appears;
     animation-timing-function: cubic-bezier(1, 0, 0.75, 0.5);
-    animation-iteration-count: 1; */
-    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
     overflow-x: hidden;
 }
 
@@ -66,7 +66,7 @@
 
 @keyframes appears {
     from {
-        opacity: 0;
+        opacity: 0.01;
     }
 
     to {
