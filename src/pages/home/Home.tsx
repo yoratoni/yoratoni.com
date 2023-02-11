@@ -23,6 +23,12 @@ const Home = () => {
                     </h3>
                 </div>
             </header>
+
+            <div className="home__text">
+                <p>&gt; Scroll on PC &lt;</p>
+                <p>&gt; Swipe on mobile &lt;</p>
+                <p>&gt; Background by Digital Moons &lt;</p>
+            </div>
         </div>
     );
 };

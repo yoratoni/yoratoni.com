@@ -1,0 +1,10 @@
+.work__card-container {
+    width: 100%;
+    max-width: 1024px;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    padding: 2rem;
+    grid-template-columns: repeat(3, minmax(64px, 1fr));
+    grid-gap: min(2rem, 5vw);
+}

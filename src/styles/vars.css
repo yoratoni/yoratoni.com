@@ -9,6 +9,7 @@
         rgba(0, 0, 0, 0.19) 0 8px 12px,
         rgba(0, 0, 0, 0.23) 0 4px 6px;
 
+    --font-size-xs: clamp(0.76rem, 0.29vw + 0.6rem, 1.1rem);
     --font-size-sm: clamp(0.86rem, 0.39vw + 0.7rem, 1.2rem);
     --font-size-base: clamp(1rem, 0.82vw + 0.8rem, 1.19rem);
     --font-size-md: clamp(1.25rem, 1.45vw + 0.89rem, 1.58rem);

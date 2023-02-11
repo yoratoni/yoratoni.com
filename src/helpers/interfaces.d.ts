@@ -60,17 +60,16 @@ declare global {
         (deltaTime: number): void;
     }
 
-    /* Project cards */
-    interface IsProjectCard {
-        sourceCodeLink: string | null;
-        externalLink: string | null;
+    /* Cards */
+    interface IsCard {
         title: string;
-        fullDescription: string;
         description: string;
-        techStack: string[];
+        logo: string;
+        techStack?: string[];
+        sourceCodeLink?: string | null;
+        externalLink?: string | null;
+        cardColor?: string;
     }
-
-    type IsProjectCards = IsProjectCard[];
 }
 
 

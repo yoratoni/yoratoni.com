@@ -1,14 +1,10 @@
-.home__just-me {
-    width: 50%;
-    max-width: 6rem;
-    border: 1px solid var(--border-color);
-    border-radius: 0.5rem;
+.home__text {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
 }
 
-.home__icon {
-    width: 50%;
-    max-width: 6rem;
-    padding: 1rem 1rem 0.85rem 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 0.5rem;
+.home__text > p {
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.5);
 }

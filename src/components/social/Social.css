@@ -5,7 +5,7 @@
     justify-content: center;
     position: absolute;
     top: 0;
-    margin-top: 0.8rem;
+    /* margin-top: 0.2rem; */
     padding: 1rem 0;
     background-color: var(--div-background-color);
     box-shadow: var(--div-box-shadow);
@@ -17,6 +17,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 4px;
     padding: 0 3rem;
 }
 

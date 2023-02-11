@@ -46,6 +46,7 @@ const App = () => {
                     downHandler={() => downHandler()}
                     leftHandler={() => downHandler()}
                     disableSwipeWithMouse={true}
+                    disableKeyboard={true}
                     preventScroll={true}
                     timeout={256}
                 >

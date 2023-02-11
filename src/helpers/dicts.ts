@@ -17,33 +17,33 @@ export const globalParameters = {
 };
 
 
-export const CardsData: IsProjectCards = [
-    {
-        sourceCodeLink: "https://github.com/yoratoni/yoratoni.com",
-        externalLink: null,
-        title: "THE PORTFOLIO",
-        description: "",
-        fullDescription: `I wanted to make a really unique portfolio website.
-        The hardest part of this project was to build an app-like experience,
-        with an animated parallax background.`,
-        techStack: ["Bind9", "Apache", "React", "Typescript"]
-    },
-    {
-        sourceCodeLink: "https://github.com/yoratoni/nfts-generator",
-        externalLink: null,
-        title: "NFTS GENERATOR",
-        description: "",
-        fullDescription: `An advanced NFTs generator used by a project that needed some pretty advanced parameter
-        controls, it also needed a lot of optimizations and an IPFS metadata generator.`,
-        techStack: ["Python", "xxHash", "Colorama"]
-    },
-    {
-        sourceCodeLink: "https://github.com/yoratoni/huawei-router-sms-forwarding",
-        externalLink: null,
-        title: "HUAWEI SMS FORWARDING",
-        description: "",
-        fullDescription: `A python CLI program that allows you to forward SMS received by your Huawei 4G router
-        to a phone number. As I'm using my router's phone number, it makes my life easier.`,
-        techStack: ["Python", "Huawei LTE API"]
-    },
-];
+// export const CardsData: IsProjectCards = [
+//     {
+//         sourceCodeLink: "https://github.com/yoratoni/yoratoni.com",
+//         externalLink: null,
+//         title: "THE PORTFOLIO",
+//         description: "",
+//         fullDescription: `I wanted to make a really unique portfolio website.
+//         The hardest part of this project was to build an app-like experience,
+//         with an animated parallax background.`,
+//         techStack: ["Bind9", "Apache", "React", "Typescript"]
+//     },
+//     {
+//         sourceCodeLink: "https://github.com/yoratoni/nfts-generator",
+//         externalLink: null,
+//         title: "NFTS GENERATOR",
+//         description: "",
+//         fullDescription: `An advanced NFTs generator used by a project that needed some pretty advanced parameter
+//         controls, it also needed a lot of optimizations and an IPFS metadata generator.`,
+//         techStack: ["Python", "xxHash", "Colorama"]
+//     },
+//     {
+//         sourceCodeLink: "https://github.com/yoratoni/huawei-router-sms-forwarding",
+//         externalLink: null,
+//         title: "HUAWEI SMS FORWARDING",
+//         description: "",
+//         fullDescription: `A python CLI program that allows you to forward SMS received by your Huawei 4G router
+//         to a phone number. As I'm using my router's phone number, it makes my life easier.`,
+//         techStack: ["Python", "Huawei LTE API"]
+//     },
+// ];
