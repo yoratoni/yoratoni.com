@@ -1,5 +1,7 @@
 import React from "react";
 
+import * as MuiIcons from "@mui/icons-material";
+
 
 declare global {
     /* Modules */
@@ -63,12 +65,30 @@ declare global {
     /* Cards */
     interface IsCard {
         title: string;
-        description: string;
-        logo: string;
+        icon: string;
         techStack?: string[];
-        sourceCodeLink?: string | null;
-        externalLink?: string | null;
-        cardColor?: string;
+    }
+
+    /* Card Name Context */
+    interface IsCardNameContext {
+        cardName: string;
+        setCardName: React.Dispatch<React.SetStateAction<string>>;
+    }
+
+    /* Icons */
+    interface IconProps {
+        icon?: keyof typeof MuiIcons;
+    }
+
+    /* Card Popup Content */
+    interface IsCardPopupContent {
+        title: string;
+        description: string;
+        techStack: string[];
+        links: {
+            github: string;
+            live: string;
+        };
     }
 }
 

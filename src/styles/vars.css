@@ -18,6 +18,7 @@
     --font-size-xxl: clamp(2.44rem, 5.69vw + 1.02rem, 4.5rem);
 
     --icon-sm: clamp(1.56rem, 2.38vw + 0.97rem, 2.11rem);
+    --icon-md-sec: clamp(1.4rem, 3.74vw + 1.02rem, 2.4rem);
     --icon-md: clamp(2.2rem, 3.74vw + 1.02rem, 2.4rem);
     --icon-lg: clamp(2.6rem, 4vw, 3rem);
     --icon-xl: clamp(2.4rem, 4vw, 3.6rem);

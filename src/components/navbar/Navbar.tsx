@@ -3,11 +3,11 @@ import "./Navbar.css";
 
 import SelectAllIcon from "@mui/icons-material/SelectAll";
 import { globalParameters } from "helpers/dicts";
-import { pageNumberContext } from "helpers/contexts";
+import { PageNumberContext } from "helpers/contexts";
 
 
 const Navbar = () => {
-    const { pageNumber, setPageNumber } = React.useContext(pageNumberContext);
+    const { pageNumber, setPageNumber } = React.useContext(PageNumberContext);
 
     const [buttonStatesArray, setButtonStatesArray] = React.useState<boolean[]>(
         Array(globalParameters.appPages).fill(false)

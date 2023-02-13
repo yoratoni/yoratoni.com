@@ -15,7 +15,7 @@ import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import { globalParameters } from "helpers/dicts";
 
 // Contexts
-import { pageNumberContext } from "helpers/contexts";
+import { PageNumberContext } from "helpers/contexts";
 
 // App components
 import BackgroundWrapper from "components/backgroundWrapper/BackgroundWrapper";
@@ -39,7 +39,7 @@ const App = () => {
 
     return (
         <main className="app">
-            <pageNumberContext.Provider value={{ pageNumber, setPageNumber }}>
+            <PageNumberContext.Provider value={{ pageNumber, setPageNumber }}>
                 <ReactScrollWheelHandler
                     upHandler={() => upHandler()}
                     rightHandler={() => upHandler()}
@@ -53,7 +53,7 @@ const App = () => {
                     <BackgroundWrapper />
                     <AppOverlay />
                 </ReactScrollWheelHandler>
-            </pageNumberContext.Provider>
+            </PageNumberContext.Provider>
         </main>
     );
 };

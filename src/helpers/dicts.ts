@@ -17,6 +17,19 @@ export const globalParameters = {
 };
 
 
+export const cardsData: IsCardPopupContent[] = [
+    {
+        title: "Mdisk Project",
+        description: "",
+        techStack: [],
+        links: {
+            github: "",
+            live: ""
+        }
+    }
+];
+
+
 // export const CardsData: IsProjectCards = [
 //     {
 //         sourceCodeLink: "https://github.com/yoratoni/yoratoni.com",

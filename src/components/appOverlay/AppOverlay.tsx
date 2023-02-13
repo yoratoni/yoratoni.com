@@ -1,7 +1,7 @@
 import React from "react";
 import "./AppOverlay.css";
 
-import { pageNumberContext } from "helpers/contexts";
+import { PageNumberContext } from "helpers/contexts";
 
 import Navbar from "components/navbar/Navbar";
 
@@ -12,7 +12,7 @@ import Work from "pages/work/Work";
 
 
 const AppOverlay = () => {
-    const { pageNumber } = React.useContext(pageNumberContext);
+    const { pageNumber } = React.useContext(PageNumberContext);
 
     const getCurrentPage = () => {
         let pageComponent;

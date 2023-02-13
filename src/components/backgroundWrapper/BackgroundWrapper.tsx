@@ -2,11 +2,11 @@ import React from "react";
 import "./BackgroundWrapper.css";
 
 import Background from "components/background/Background";
-import { pageNumberContext } from "helpers/contexts";
+import { PageNumberContext } from "helpers/contexts";
 
 
 const BackgroundWrapper = () => {
-    const { pageNumber } = React.useContext(pageNumberContext);
+    const { pageNumber } = React.useContext(PageNumberContext);
 
     const [prevPageNumber, setPrevPageNumber] = React.useState(-1);
 
