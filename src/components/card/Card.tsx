@@ -47,7 +47,7 @@ const Card = ({
 
                                 {index !== techStack.length - 1 && (
                                     <span className="card__tech-stack-item-separator">
-                                    &nbsp;|&nbsp;
+                                        &nbsp;|&nbsp;
                                     </span>
                                 )}
                             </div>

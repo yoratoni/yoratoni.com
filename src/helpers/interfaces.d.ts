@@ -80,11 +80,12 @@ declare global {
         icon?: keyof typeof MuiIcons;
     }
 
-    /* Card Popup Content */
-    interface IsCardPopupContent {
+    /* Card Content */
+    interface IsCardContent {
         title: string;
         description: string;
         techStack: string[];
+        icon: string;
         links: {
             github: string;
             live: string;

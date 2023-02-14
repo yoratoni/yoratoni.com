@@ -17,16 +17,48 @@ export const globalParameters = {
 };
 
 
-export const cardsData: IsCardPopupContent[] = [
+export const cardsData: IsCardContent[] = [
     {
         title: "Mdisk Project",
         description: "",
-        techStack: [],
+        techStack: ["NodeJS", "TS"],
+        icon: "Album",
         links: {
             github: "",
             live: ""
         }
-    }
+    },
+    {
+        title: "Dumb Websites",
+        description: "Test 2",
+        techStack: ["React", "CSS", "TS"],
+        icon: "Category",
+        links: {
+            github: "christine",
+            live: ""
+        }
+    },
+    {
+        title: "Parallax Effect",
+        description: "",
+        techStack: ["React", "CSS", "TS"],
+        icon: "Collections",
+        links: {
+            github: "",
+            live: ""
+        }
+    },
+    {
+        title: "Huawei Forwarder",
+        description: `A python CLI program that allows you to forward SMS received by your Huawei 4G router
+                      to a phone number. As I'm using my router's phone number, it makes my life easier.`,
+        techStack: ["Python", "Huawei API"],
+        icon: "Router",
+        links: {
+            github: "",
+            live: ""
+        }
+    },
 ];
 
 

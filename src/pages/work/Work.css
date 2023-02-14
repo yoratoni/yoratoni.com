@@ -9,15 +9,96 @@
     grid-gap: min(2rem, 5vw);
 }
 
+.work__card-hidden {
+    transition: visibility 0s 250ms, opacity 250ms linear;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.work__card-visible {
+    transition: opacity 250ms linear;
+    visibility: visible;
+    opacity: 1;
+}
+
 .work__card-popup {
-    width: 16rem;
-    max-width: 1024px;
-    height: 3rem;
+    width: calc(100% - 4rem);;
+    max-width: 960px;
+    height: calc(100% - 4rem);;
     position: absolute;
     z-index: var(--zIndex-toast);
     margin-top: 2rem;
     background-color: rgba(0, 0, 0, 0.4);
     border: 1px solid var(--border-color);
+    border-radius: 0.2rem;
 }
 
-/* calc(100% - 4rem); */
+.work__card-popup-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.work__card-popup-header-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.work__card-popup-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.6em;
+    cursor: pointer;
+}
+
+.work__card-popup-icon > svg {
+    font-size: 1.6rem;
+}
+
+.work__card-popup-title {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.work__card-popup-close {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.4rem;
+    cursor: pointer;
+}
+
+.work__card-popup-close > svg {
+    font-size: 1.6rem;
+}
+
+.work__card-popup-content {
+    width: 100%;
+    height: calc(100% - 2.9rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0.6rem;
+}
+
+.work__card-popup-description {
+    width: 100%;
+    max-width: 680px;
+    font-size: var(--font-size-sm);
+}
+
+.work__card-popup-tech-stack {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: var(--font-size-sm);
+}
