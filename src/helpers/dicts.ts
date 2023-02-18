@@ -20,31 +20,34 @@ export const globalParameters = {
 export const cardsData: IsCardContent[] = [
     {
         title: "Mdisk Project",
-        description: "",
+        description: `An extractor that I made for the game Beyond Good & Evil, I made it entirely
+        in Typescript which is pretty rare and required a lot of skills.`,
         techStack: ["NodeJS", "TS"],
         icon: "Album",
         links: {
-            github: "",
+            github: "https://github.com/yoratoni/Mdisk",
             live: ""
         }
     },
     {
         title: "Dumb Websites",
-        description: "Test 2",
+        description: `A collection of dumb website I made for fun, they are all hosted on my server,
+                      It's a good way to improve my skills even if it's not really useful.`,
         techStack: ["React", "CSS", "TS"],
         icon: "Category",
         links: {
-            github: "christine",
+            github: "#",
             live: ""
         }
     },
     {
         title: "Parallax Effect",
-        description: "",
+        description: `The Parallax effect used by this website, it took me a lot of time to make it work
+                      properly as it needed to be optimized and compatible with all browsers.`,
         techStack: ["React", "CSS", "TS"],
         icon: "Collections",
         links: {
-            github: "",
+            github: "https://github.com/yoratoni/yoratoni.com/tree/main/src/components/background",
             live: ""
         }
     },
@@ -55,7 +58,7 @@ export const cardsData: IsCardContent[] = [
         techStack: ["Python", "Huawei API"],
         icon: "Router",
         links: {
-            github: "",
+            github: "https://github.com/yoratoni/huawei-router-sms-forwarding",
             live: ""
         }
     },

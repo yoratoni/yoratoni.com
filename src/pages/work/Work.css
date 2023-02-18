@@ -77,7 +77,9 @@
 }
 
 .work__card-popup-close > svg {
+    transition: var(--transi-faster);
     font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .work__card-popup-content {
@@ -93,12 +95,44 @@
 .work__card-popup-description {
     width: 100%;
     max-width: 680px;
-    font-size: var(--font-size-sm);
+    margin-top: -1rem;
+    font-size: var(--font-size-work-card);
+}
+
+.work__card-popup-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.5rem;
 }
 
 .work__card-popup-tech-stack {
-    width: 100%;
     display: flex;
     justify-content: center;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
+}
+
+.work__card-popup-button {
+    transition: var(--transi-faster);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.work__card-popup-button-disabled {
+    cursor: default;
+    pointer-events: none;
+}
+
+.work__card-popup-button-disabled > svg {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+@media (hover: hover) {
+    .work__card-popup-close:hover > svg {
+        color: white;
+    }
+
+    .work__card-popup-button:hover > svg {
+        color: white;
+    }
 }

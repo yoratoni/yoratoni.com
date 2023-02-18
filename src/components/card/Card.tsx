@@ -42,13 +42,11 @@ const Card = ({
                 <div className="card__tech-stack-container">
                     <div className="card__tech-stack">
                         {techStack.map((tech, index) => (
-                            <div className="card__tech-stack-item" key={index}>
+                            <div key={index}>
                                 {tech}
 
                                 {index !== techStack.length - 1 && (
-                                    <span className="card__tech-stack-item-separator">
-                                        &nbsp;|&nbsp;
-                                    </span>
+                                    <span>&nbsp;|&nbsp;</span>
                                 )}
                             </div>
                         ))}
