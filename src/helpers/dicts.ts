@@ -21,7 +21,7 @@ export const cardsData: IsCardContent[] = [
     {
         title: "Mdisk Project",
         description: `An extractor that I made for the game Beyond Good & Evil, I made it entirely
-        in Typescript which is pretty rare and required a lot of skills.`,
+        in Typescript which is pretty rare and requires a lot of skills.`,
         techStack: ["NodeJS", "TS"],
         icon: "Album",
         links: {

@@ -5,7 +5,6 @@
     justify-content: center;
     position: absolute;
     top: 0;
-    /* margin-top: 0.2rem; */
     padding: 1rem 0;
     background-color: var(--div-background-color);
     box-shadow: var(--div-box-shadow);
@@ -24,7 +23,7 @@
 .social__button {
     width: 2rem;
     transition: var(--transi-faster);
-    color: rgba(255, 255, 255, 0.94);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .social__button-content {

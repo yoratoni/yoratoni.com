@@ -1,9 +1,11 @@
 .navbar {
     width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 2.4rem 0 1rem 0;
+    padding: 0 0 1rem 0;
+    padding-top: clamp(1rem, 20vh, 2.4rem);
     background: rgb(0, 0, 0);
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.24) 36%);
 }
@@ -11,6 +13,7 @@
 .navbar__buttons {
     width: 100%;
     max-width: 28rem;
+    height: inherit;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -18,12 +21,15 @@
 }
 
 .navbar__button {
-    width: 2rem;
+    width: 3rem;
+    height: inherit;
     transition: var(--transi-faster);
     color: var(--border-color);
 }
 
 .navbar__button-content {
+    width: inherit;
+    height: inherit;
     display: flex;
     align-items: center;
     flex-direction: column;
