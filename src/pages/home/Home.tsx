@@ -10,7 +10,7 @@ const Home = () => {
         <div className="pages__container">
             <Social />
 
-            <header className="pages__header">
+            <header className="pages__header home__header">
                 <div className="pages__header-content">
                     <h3 className="pages__header-subtitle">
                     Hi there!

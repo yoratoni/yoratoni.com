@@ -1,3 +1,7 @@
+.home__header {
+    margin-bottom: 0;
+}
+
 .home__text {
     position: absolute;
     bottom: 0;

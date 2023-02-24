@@ -73,7 +73,26 @@
 }
 
 @media (max-height: 800px), (max-width: 768px) {
-    .card__tech-stack {
+    .card__tech-stack-container {
+        display: none;
+    }
+}
+
+@media (max-height: 660px) {
+    .card__content {
+        justify-content: center;
+    }
+
+    .card__title-container {
+        justify-content: center;
+        margin-top: 0;
+    }
+
+    .card__title {
+        margin-bottom: 0;
+    }
+
+    .card__logo-container {
         display: none;
     }
 }
