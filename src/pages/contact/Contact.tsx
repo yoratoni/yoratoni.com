@@ -15,8 +15,8 @@ const Contact = () => {
                 <h1 className="pages__header-title">
                     CONTACT ME
                 </h1>
-                <h3 className="pages__header-subtitle">
-                    &gt; Get in touch!  &lt;
+                <h3 className="pages__header-subtitle contact__status">
+                    &gt; UNAVAILABLE  &lt;
                 </h3>
             </header>
 
