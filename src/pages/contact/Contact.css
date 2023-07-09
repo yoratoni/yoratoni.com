@@ -42,7 +42,7 @@
 .contact__email-link {
     padding: 0.6rem 1rem;
     transition: var(--transi-faster);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-md);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.8);
     text-align: center;

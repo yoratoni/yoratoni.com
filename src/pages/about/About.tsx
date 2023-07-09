@@ -30,10 +30,9 @@ const About = () => {
                                         passionate about cryptocurrencies, game and software development.
                                         <br/>
                                         <br/>
-                                        Never really interested in the traditional school system,
-                                        I decided to learn development by myself. I&apos;ve been
-                                        working on several projects in a lot of different fields.
-                                        Still working on my own projects from time to time.
+                                        I&apos;m currently working as a fullstack developer at <b>Alias</b>,
+                                        mainly using <b>React</b>, <b>Node.js</b>, <b>Typescript</b>, <b>NextJS</b>,
+                                        <b>Hardhat</b>, <b>Tailwind</b> and a lot of other technologies as well.
                                     </p>
                                 </div>
                             </div>

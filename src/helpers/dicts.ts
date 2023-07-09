@@ -19,6 +19,17 @@ export const globalParameters = {
 
 export const cardsData: IsCardContent[] = [
     {
+        title: "Cybearl",
+        description: `A project with an old friend of mine, Cybearl is the head quarter of our projects,
+        including Genesis, a crypto trading bot that we are currently working on.`,
+        techStack: ["Next", "TS", "Tailwind"],
+        icon: "Psychology",
+        links: {
+            github: "https://github.com/cybearl",
+            live: "www.cybearl.com"
+        }
+    },
+    {
         title: "Mdisk Project",
         description: `An extractor that I made for the game Beyond Good & Evil, I made it entirely
         in Typescript which is pretty rare and requires a lot of skills.`,
@@ -26,17 +37,6 @@ export const cardsData: IsCardContent[] = [
         icon: "Album",
         links: {
             github: "https://github.com/yoratoni/Mdisk",
-            live: ""
-        }
-    },
-    {
-        title: "Dumb Websites",
-        description: `A collection of dumb website I made for fun, they are all hosted on my server,
-                      It's a good way to improve my skills even if it's not really useful.`,
-        techStack: ["React", "CSS", "TS"],
-        icon: "Category",
-        links: {
-            github: "#",
             live: ""
         }
     },
@@ -63,35 +63,3 @@ export const cardsData: IsCardContent[] = [
         }
     },
 ];
-
-
-// export const CardsData: IsProjectCards = [
-//     {
-//         sourceCodeLink: "https://github.com/yoratoni/yoratoni.com",
-//         externalLink: null,
-//         title: "THE PORTFOLIO",
-//         description: "",
-//         fullDescription: `I wanted to make a really unique portfolio website.
-//         The hardest part of this project was to build an app-like experience,
-//         with an animated parallax background.`,
-//         techStack: ["Bind9", "Apache", "React", "Typescript"]
-//     },
-//     {
-//         sourceCodeLink: "https://github.com/yoratoni/nfts-generator",
-//         externalLink: null,
-//         title: "NFTS GENERATOR",
-//         description: "",
-//         fullDescription: `An advanced NFTs generator used by a project that needed some pretty advanced parameter
-//         controls, it also needed a lot of optimizations and an IPFS metadata generator.`,
-//         techStack: ["Python", "xxHash", "Colorama"]
-//     },
-//     {
-//         sourceCodeLink: "https://github.com/yoratoni/huawei-router-sms-forwarding",
-//         externalLink: null,
-//         title: "HUAWEI SMS FORWARDING",
-//         description: "",
-//         fullDescription: `A python CLI program that allows you to forward SMS received by your Huawei 4G router
-//         to a phone number. As I'm using my router's phone number, it makes my life easier.`,
-//         techStack: ["Python", "Huawei LTE API"]
-//     },
-// ];

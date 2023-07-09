@@ -2,14 +2,10 @@ import React from "react";
 import "pages/Pages.css";
 import "./Home.css";
 
-import Social from "components/social/Social";
-
 
 const Home = () => {
     return (
         <div className="pages__container">
-            <Social />
-
             <header className="pages__header home__header">
                 <div className="pages__header-content">
                     <h3 className="pages__header-subtitle">

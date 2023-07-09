@@ -7,7 +7,9 @@ const IconComp: React.FC<IconProps> = ({ icon }) => {
     const Icon = icon && MuiIcons[icon];
 
     return (
-        <>{Icon && <Icon />}</>
+        <>
+            {Icon && <Icon />}
+        </>
     );
 };
 
