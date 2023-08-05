@@ -1,13 +1,21 @@
-/* eslint-env node */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    mode: "jit",
     content: [
-        "./public/**/*.html",
-        "./src/**/*.{js,jsx,ts,tsx}"
+        "./src/**/*.{ts,tsx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            screens: {
+                "xs": "320px"
+            },
+            height: {
+                screen: [
+                    "100vh /* fallback for Opera, IE and etc. */", "100dvh"
+                ],
+            }
+        },
     },
-    plugins: [],
+    plugins: [
+        require("tailwind-scrollbar")
+    ]
 };
