@@ -1,23 +1,17 @@
-import React from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Background.css";
 
 import {
-    useWindowDimensions,
-    useAnimationFrame
-} from "helpers/utilities";
-
-
-/*
-    ISSUES & NOTES:
-    - Solving the zoom problem (miscalculation of the background size)
-*/
+    useAnimationFrame,
+    useWindowDimensions
+} from "@/helpers/utilities";
 
 
 const Background = ({
     direction,
     animIndex
 }: IsBackground) => {
-    const backgroundWidthRef = React.useRef<HTMLDivElement | null>(null);
+    const backgroundWidthRef = useRef<HTMLDivElement | null>(null);
     const windowDimensions = useWindowDimensions();
 
     const parameters = {
@@ -27,7 +21,7 @@ const Background = ({
         xArray: [0, 0, 0, 0]
     };
 
-    const [backgroundDict, setBackgroundDict] = React.useState<IsBackgroundDict>({
+    const [backgroundDict, setBackgroundDict] = useState<IsBackgroundDict>({
         width: 0,                               // The total width of the bck (dynamically calculated)
         oneImageWidth: 0,                       // The width of only one bck image based on the height
         imageRepeated: 0,                       // The number of times that the bck is repeated
@@ -41,7 +35,7 @@ const Background = ({
     // launchAnimation is, then, resetting to false at the end of the animation,
     // creating a cooldown where the animation can be launched only if the previous anim
     // is finished (false state reset)
-    React.useEffect(() => {
+    useEffect(() => {
         if (animIndex !== -1 && backgroundDict.animationState !== "BCK_ANIM_STATE::START") {
             setBackgroundDict(prevState => ({
                 ...prevState,
@@ -51,9 +45,9 @@ const Background = ({
     }, [animIndex]);
 
 
-    React.useEffect(() => {
+    useEffect(() => {
         const handleResize = () => {
-            const tempOneImageWidth = Math.round(windowDimensions.height * (16/9));
+            const tempOneImageWidth = Math.round(windowDimensions.height * (16 / 9));
             const tempImageRepeated = Math.ceil((windowDimensions.width / tempOneImageWidth) + 1);
 
             setBackgroundDict(prevState => ({

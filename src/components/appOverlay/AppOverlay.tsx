@@ -1,18 +1,16 @@
-import React from "react";
+import { useContext } from "react";
+
 import "./AppOverlay.css";
-
-import { PageNumberContext } from "helpers/contexts";
-
-import Navbar from "components/navbar/Navbar";
-
-import Home from "pages/home/Home";
-import About from "pages/about/About";
-import Contact from "pages/contact/Contact";
-import Work from "pages/work/Work";
+import Navbar from "@/components/navbar/Navbar";
+import { PageNumberContext } from "@/helpers/contexts";
+import About from "@/pages/about/About";
+import Contact from "@/pages/contact/Contact";
+import Home from "@/pages/home/Home";
+import Work from "@/pages/work/Work";
 
 
 const AppOverlay = () => {
-    const { pageNumber } = React.useContext(PageNumberContext);
+    const { pageNumber } = useContext(PageNumberContext);
 
     const getCurrentPage = () => {
         let pageComponent;
@@ -37,7 +35,7 @@ const AppOverlay = () => {
         // Trick: randomize the key to force a re-render triggering the animation
         return (
             <div
-                key={Math.random()}
+                key={Math.round(Math.random() * 1000)}
                 className="app-overlay__page animate__animated animate__fadeIn"
             >
                 {pageComponent}

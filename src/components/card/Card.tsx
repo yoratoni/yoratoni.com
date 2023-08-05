@@ -1,8 +1,8 @@
-import React from "react";
+import { useContext } from "react";
 import "./Card.css";
 
-import IconComp from "components/iconComp/IconComp";
-import { cardNameContext } from "helpers/contexts";
+import IconComp from "@/components/iconComp/IconComp";
+import { cardNameContext } from "@/helpers/contexts";
 
 
 const Card = ({
@@ -10,7 +10,7 @@ const Card = ({
     icon,
     techStack = []
 }: IsCard) => {
-    const { setCardName } = React.useContext(cardNameContext);
+    const { setCardName } = useContext(cardNameContext);
 
     const updateCardName = (e: React.MouseEvent<HTMLButtonElement>) => {
         const cardName = e.currentTarget.getElementsByClassName("card__title")[0]?.innerHTML;

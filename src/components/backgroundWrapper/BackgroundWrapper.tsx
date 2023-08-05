@@ -1,24 +1,24 @@
-import React from "react";
+import { useContext, useEffect, useState } from "react";
 import "./BackgroundWrapper.css";
 
-import Background from "components/background/Background";
-import { PageNumberContext } from "helpers/contexts";
+import Background from "@/components/background/Background";
+import { PageNumberContext } from "@/helpers/contexts";
 
 
 const BackgroundWrapper = () => {
-    const { pageNumber } = React.useContext(PageNumberContext);
+    const { pageNumber } = useContext(PageNumberContext);
 
-    const [prevPageNumber, setPrevPageNumber] = React.useState(-1);
+    const [prevPageNumber, setPrevPageNumber] = useState(-1);
 
     // Returns a direction speed factor of the parallax (-1 or 1),
-    const [direction, setDirection] = React.useState<IsDirectionSpeedFactor>(1);
+    const [direction, setDirection] = useState<IsDirectionSpeedFactor>(1);
 
     // An index incrementing at every scroll to launch the animation even
     // when the scrolling is in the same direction
-    const [animIndex, setAnimIndex] = React.useState(-1);
+    const [animIndex, setAnimIndex] = useState(-1);
 
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (prevPageNumber !== -1) {
             if (pageNumber > prevPageNumber) {
                 setDirection(1);

@@ -1,15 +1,15 @@
-import React from "react";
+import SelectAllIcon from "@mui/icons-material/SelectAll";
+import { useContext, useEffect, useState } from "react";
 import "./Navbar.css";
 
-import SelectAllIcon from "@mui/icons-material/SelectAll";
-import { globalParameters } from "helpers/dicts";
-import { PageNumberContext } from "helpers/contexts";
+import { PageNumberContext } from "@/helpers/contexts";
+import { globalParameters } from "@/helpers/dicts";
 
 
 const Navbar = () => {
-    const { pageNumber, setPageNumber } = React.useContext(PageNumberContext);
+    const { pageNumber, setPageNumber } = useContext(PageNumberContext);
 
-    const [buttonStatesArray, setButtonStatesArray] = React.useState<boolean[]>(
+    const [buttonStatesArray, setButtonStatesArray] = useState<boolean[]>(
         Array(globalParameters.appPages).fill(false)
     );
 
@@ -25,7 +25,7 @@ const Navbar = () => {
         }
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         const tempButtonStatesArray = [...buttonStatesArray];
 
         for (let i = 0; i < globalParameters.appPages; i++) {

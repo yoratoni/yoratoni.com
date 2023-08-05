@@ -1,29 +1,19 @@
-import React from "react";
-import "styles/main.css";
-
-// CSS Libs
+import { useState } from "react";
+import "@/styles/main.css";
 import "animate.css/animate.min.css";
-
-// General app styles
-import "styles/fonts.css";
-import "styles/library.css";
-import "styles/vars.css";
-import "styles/main.css";
-
-// Libs
+import "@/styles/fonts.css";
+import "@/styles/library.css";
+import "@/styles/vars.css";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
-import { globalParameters } from "helpers/dicts";
 
-// Contexts
-import { PageNumberContext } from "helpers/contexts";
-
-// App components
-import BackgroundWrapper from "components/backgroundWrapper/BackgroundWrapper";
-import AppOverlay from "components/appOverlay/AppOverlay";
+import AppOverlay from "@/components/appOverlay/AppOverlay";
+import BackgroundWrapper from "@/components/backgroundWrapper/BackgroundWrapper";
+import { PageNumberContext } from "@/helpers/contexts";
+import { globalParameters } from "@/helpers/dicts";
 
 
 const App = () => {
-    const [pageNumber, setPageNumber] = React.useState(0);
+    const [pageNumber, setPageNumber] = useState(0);
 
     const upHandler = () => {
         if (pageNumber > 0) {

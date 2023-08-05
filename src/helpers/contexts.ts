@@ -1,10 +1,12 @@
-import React from "react";
+import { createContext } from "react";
 
 
-export const PageNumberContext = React.createContext<IsPageNumberContext>({
-    pageNumber: 0, setPageNumber: () => undefined
+export const PageNumberContext = createContext<IsPageNumberContext>({
+    pageNumber: 0,
+    setPageNumber: () => undefined
 });
 
-export const cardNameContext = React.createContext<IsCardNameContext>({
-    cardName: "", setCardName: () => undefined
+export const cardNameContext = createContext<IsCardNameContext>({
+    cardName: "",
+    setCardName: () => undefined
 });
