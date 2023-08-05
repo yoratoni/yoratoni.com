@@ -1,0 +1,31 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out main branch
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Installing SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: "unnecessary"
+
+      - name: Adding SSH key to known hosts
+        run: ssh-keyscan -p ${{ secrets.PORT }} ${{ secrets.HOST }}  >> ~/.ssh/known_hosts
+
+      - name: Building the React app
+        run: yarn install && yarn build
+
+      - name: Sending built app to server
+        run: rsync -avz -e 'ssh -p 29979' --delete ./build/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.TARGET_DIRECTORY }}
