@@ -1,11 +1,10 @@
-import React from "react";
-import "pages/Pages.css";
+import "@/pages/Pages.css";
 import "./Contact.css";
 
-import Social from "components/social/Social";
+import Social from "@/components/social/Social";
 
 
-const Contact = () => {
+export default function Contact() {
     return (
         <div className="pages__container">
             <header className="pages__header">
@@ -48,7 +47,4 @@ const Contact = () => {
             </div>
         </div>
     );
-};
-
-
-export default Contact;
+}

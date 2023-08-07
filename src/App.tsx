@@ -12,7 +12,7 @@ import { PageNumberContext } from "@/helpers/contexts";
 import { globalParameters } from "@/helpers/dicts";
 
 
-const App = () => {
+export default function App() {
     const [pageNumber, setPageNumber] = useState(0);
 
     const upHandler = () => {
@@ -46,7 +46,4 @@ const App = () => {
             </PageNumberContext.Provider>
         </main>
     );
-};
-
-
-export default App;
+}

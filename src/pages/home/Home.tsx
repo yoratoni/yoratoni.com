@@ -1,9 +1,9 @@
 import React from "react";
-import "pages/Pages.css";
+import "@/pages/Pages.css";
 import "./Home.css";
 
 
-const Home = () => {
+export default function Home() {
     return (
         <div className="pages__container">
             <header className="pages__header home__header">
@@ -27,7 +27,4 @@ const Home = () => {
             </div>
         </div>
     );
-};
-
-
-export default Home;
+}

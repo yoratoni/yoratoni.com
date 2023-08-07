@@ -21,47 +21,47 @@
 }
 
 .background .background__layer-1 {
-    background-image: url("assets/background/mid-res/fallback/04.png");
-    background-image: url("assets/background/mid-res/04.webp");
-    background-image: image-set(url("assets/background/low-res/fallback/04.png") 2x,
-            url("assets/background/mid-res/fallback/04.png") 1.5x,
-            url("assets/background/high-res/fallback/04.png") 1x);
-    background-image: image-set(url("assets/background/low-res/04.webp") 2x,
-            url("assets/background/mid-res/04.webp") 1.5x,
-            url("assets/background/high-res/04.webp") 1x);
+    background-image: url("@/assets/background/mid-res/fallback/04.png");
+    background-image: url("@/assets/background/mid-res/04.webp");
+    background-image: image-set(url("@/assets/background/low-res/fallback/04.png") 2x,
+            url("@/assets/background/mid-res/fallback/04.png") 1.5x,
+            url("@/assets/background/high-res/fallback/04.png") 1x);
+    background-image: image-set(url("@/assets/background/low-res/04.webp") 2x,
+            url("@/assets/background/mid-res/04.webp") 1.5x,
+            url("@/assets/background/high-res/04.webp") 1x);
 }
 
 .background .background__layer-2 {
-    background-image: url("assets/background/mid-res/fallback/03.png");
-    background-image: url("assets/background/mid-res/03.webp");
-    background-image: image-set(url("assets/background/low-res/fallback/03.png") 2x,
-            url("assets/background/mid-res/fallback/03.png") 1.5x,
-            url("assets/background/high-res/fallback/03.png") 1x);
-    background-image: image-set(url("assets/background/low-res/03.webp") 2x,
-            url("assets/background/mid-res/03.webp") 1.5x,
-            url("assets/background/high-res/03.webp") 1x);
+    background-image: url("@/assets/background/mid-res/fallback/03.png");
+    background-image: url("@/assets/background/mid-res/03.webp");
+    background-image: image-set(url("@/assets/background/low-res/fallback/03.png") 2x,
+            url("@/assets/background/mid-res/fallback/03.png") 1.5x,
+            url("@/assets/background/high-res/fallback/03.png") 1x);
+    background-image: image-set(url("@/assets/background/low-res/03.webp") 2x,
+            url("@/assets/background/mid-res/03.webp") 1.5x,
+            url("@/assets/background/high-res/03.webp") 1x);
 }
 
 .background .background__layer-3 {
-    background-image: url("assets/background/mid-res/fallback/02.png");
-    background-image: url("assets/background/mid-res/02.webp");
-    background-image: image-set(url("assets/background/low-res/fallback/02.png") 2x,
-            url("assets/background/mid-res/fallback/02.png") 1.5x,
-            url("assets/background/high-res/fallback/02.png") 1x);
-    background-image: image-set(url("assets/background/low-res/02.webp") 2x,
-            url("assets/background/mid-res/02.webp") 1.5x,
-            url("assets/background/high-res/02.webp") 1x);
+    background-image: url("@/assets/background/mid-res/fallback/02.png");
+    background-image: url("@/assets/background/mid-res/02.webp");
+    background-image: image-set(url("@/assets/background/low-res/fallback/02.png") 2x,
+            url("@/assets/background/mid-res/fallback/02.png") 1.5x,
+            url("@/assets/background/high-res/fallback/02.png") 1x);
+    background-image: image-set(url("@/assets/background/low-res/02.webp") 2x,
+            url("@/assets/background/mid-res/02.webp") 1.5x,
+            url("@/assets/background/high-res/02.webp") 1x);
 }
 
 .background .background__layer-4 {
-    background-image: url("assets/background/mid-res/fallback/01.png");
-    background-image: url("assets/background/mid-res/01.webp");
-    background-image: image-set(url("assets/background/low-res/fallback/01.png") 2x,
-            url("assets/background/mid-res/fallback/01.png") 1.5x,
-            url("assets/background/high-res/fallback/01.png") 1x);
-    background-image: image-set(url("assets/background/low-res/01.webp") 2x,
-            url("assets/background/mid-res/01.webp") 1.5x,
-            url("assets/background/high-res/01.webp") 1x);
+    background-image: url("@/assets/background/mid-res/fallback/01.png");
+    background-image: url("@/assets/background/mid-res/01.webp");
+    background-image: image-set(url("@/assets/background/low-res/fallback/01.png") 2x,
+            url("@/assets/background/mid-res/fallback/01.png") 1.5x,
+            url("@/assets/background/high-res/fallback/01.png") 1x);
+    background-image: image-set(url("@/assets/background/low-res/01.webp") 2x,
+            url("@/assets/background/mid-res/01.webp") 1.5x,
+            url("@/assets/background/high-res/01.webp") 1x);
 }
 
 @keyframes appears {

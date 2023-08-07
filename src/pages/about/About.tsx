@@ -1,9 +1,9 @@
 import React from "react";
-import "pages/Pages.css";
+import "@/pages/Pages.css";
 import "./About.css";
 
 
-const About = () => {
+export default function About() {
     return (
         <div className="pages__container">
             <header className="pages__header">
@@ -28,8 +28,8 @@ const About = () => {
                                         Hi! I&apos;m a web developer from Toulouse, France.
                                         Not only in the web development field, I&apos;m also
                                         passionate about cryptocurrencies, game and software development.
-                                        <br/>
-                                        <br/>
+                                        <br />
+                                        <br />
                                         I&apos;m currently working as a fullstack developer at <b>Alias</b>,
                                         mainly using <b>React</b>, <b>Node.js</b>, <b>Typescript</b>, <b>NextJS</b>,
                                         <b>Hardhat</b>, <b>Tailwind</b> and a lot of other technologies as well.
@@ -42,7 +42,4 @@ const About = () => {
             </div>
         </div>
     );
-};
-
-
-export default About;
+}

@@ -1,23 +1,23 @@
-import React from "react";
-import "pages/Pages.css";
+import CloseIcon from "@mui/icons-material/Close";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import { useEffect, useRef, useState } from "react";
+import "@/pages/Pages.css";
 import "./Work.css";
 
-import Card from "components/card/Card";
-import { cardNameContext } from "helpers/contexts";
-import CloseIcon from "@mui/icons-material/Close";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import IconComp from "components/iconComp/IconComp";
-import { cardsData } from "helpers/dicts";
+import Card from "@/components/card/Card";
+import IconComp from "@/components/iconComp/IconComp";
+import { cardNameContext } from "@/helpers/contexts";
+import { cardsData } from "@/helpers/dicts";
 
 
-const Work = () => {
-    const [cardName, setCardName] = React.useState<string>("");
+export default function Work() {
+    const [cardName, setCardName] = useState<string>("");
 
-    const cardRef = React.useRef<HTMLDivElement>(null);
+    const cardRef = useRef<HTMLDivElement>(null);
 
-    const [isCardOpen, setIsCardOpen] = React.useState<boolean>(false);
-    const [cardContent, setCardContent] = React.useState<IsCardContent>({
+    const [isCardOpen, setIsCardOpen] = useState<boolean>(false);
+    const [cardContent, setCardContent] = useState<IsCardContent>({
         title: "",
         description: "",
         techStack: [],
@@ -28,7 +28,7 @@ const Work = () => {
         }
     });
 
-    React.useEffect(() => {
+    useEffect(() => {
         const checkIfClickedOutside = (e: MouseEvent) => {
             if (isCardOpen && cardRef.current !== null && !cardRef.current.contains(e.target as Node)) {
                 closeCardPopup();
@@ -42,7 +42,7 @@ const Work = () => {
         };
     }, [isCardOpen]);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const cardData = cardsData.find((card) => card.title === cardName);
 
         if (cardData !== undefined) {
@@ -89,16 +89,15 @@ const Work = () => {
                     <cardNameContext.Provider value={{ cardName, setCardName }}>
                         <div
                             ref={cardRef}
-                            className={`work__card-popup ${
-                                (cardName === undefined || cardName === "") ?
-                                    "work__card-hidden":
-                                    "work__card-visible"
+                            className={`work__card-popup ${(cardName === undefined || cardName === "") ?
+                                "work__card-hidden" :
+                                "work__card-visible"
                             }`}
                         >
                             <div className="work__card-popup-header">
                                 <div className="work__card-popup-header-left">
                                     <div className="work__card-popup-icon">
-                                        <IconComp icon={cardContent.icon as IconProps["icon"]}/>
+                                        <IconComp icon={cardContent.icon as IconProps["icon"]} />
                                     </div>
 
                                     <h1 className="work__card-popup-title">
@@ -110,7 +109,7 @@ const Work = () => {
                                     className="work__card-popup-close"
                                     onClick={closeCardPopup}
                                 >
-                                    <CloseIcon/>
+                                    <CloseIcon />
                                 </button>
                             </div>
 
@@ -123,14 +122,13 @@ const Work = () => {
 
                                 <div className="work__card-popup-footer">
                                     <a
-                                        className={`work__card-popup-button ${
-                                            (cardContent.links.live === "" ? "work__card-popup-button-disabled" : "")
+                                        className={`work__card-popup-button ${(cardContent.links.live === "" ? "work__card-popup-button-disabled" : "")
                                         }`}
                                         href={cardContent.links.live}
                                         target="_blank"
                                         rel="noreferrer noopener"
                                     >
-                                        <OpenInNewIcon/>
+                                        <OpenInNewIcon />
                                     </a>
 
                                     <div className="work__card-popup-tech-stack">
@@ -151,17 +149,16 @@ const Work = () => {
                                         target="_blank"
                                         rel="noreferrer noopener"
                                     >
-                                        <GitHubIcon/>
+                                        <GitHubIcon />
                                     </a>
                                 </div>
                             </div>
                         </div>
 
                         <div
-                            className={`work__card-container ${
-                                (cardName === undefined || cardName === "") ?
-                                    "work__card-visible":
-                                    "work__card-hidden"
+                            className={`work__card-container ${(cardName === undefined || cardName === "") ?
+                                "work__card-visible" :
+                                "work__card-hidden"
                             }`}
                         >
                             {
@@ -188,7 +185,4 @@ const Work = () => {
             </div>
         </div>
     );
-};
-
-
-export default Work;
+}
