@@ -1,16 +1,15 @@
-import { useEffect, useRef, useState } from "react";
-import "./Background.css";
+import { useContext, useEffect, useRef, useState } from "react";
+import "@/styles/background.css";
 
-import {
-    useAnimationFrame,
-    useWindowDimensions
-} from "@/helpers/utilities";
+import { PageNumberContext } from "@/components/Contexts/PageNumber";
+import useAnimationFrame from "@/hooks/useAnimationFrame";
+import useWindowDimensions from "@/hooks/useWindowDimensions";
+import NsBackground from "@/types/background";
 
 
-const Background = ({
-    direction,
-    animIndex
-}: IsBackground) => {
+const Background = () => {
+    const { pageNumber } = useContext(PageNumberContext);
+
     const backgroundWidthRef = useRef<HTMLDivElement | null>(null);
     const windowDimensions = useWindowDimensions();
 
@@ -21,36 +20,61 @@ const Background = ({
         xArray: [0, 0, 0, 0]
     };
 
-    const [backgroundDict, setBackgroundDict] = useState<IsBackgroundDict>({
-        width: 0,                               // The total width of the bck (dynamically calculated)
-        oneImageWidth: 0,                       // The width of only one bck image based on the height
-        imageRepeated: 0,                       // The number of times that the bck is repeated
-        animationState: "BCK_ANIM_STATE::STOP", // Launch the scrolling animation
-        animationCurrX: 0,                      // Contains the current X of the animation
-        speed: parameters.defaultSpeed,         // Current speed of the bck (used during the animation)
-        xArray: parameters.xArray               // Contains the x position of each layer (=translateX)
+    const [backgroundObj, setBackgroundObj] = useState<NsBackground.backgroundObj>({
+        width: 0,                                   // The total width of the bck (dynamically calculated)
+        oneImageWidth: 0,                           // The width of only one bck image based on the height
+        imageRepeated: 0,                           // The number of times that the bck is repeated
+        animationState: "BCK_ANIM_STATE::STOP",     // Launch the scrolling animation
+        animationCurrX: 0,                          // Contains the current X of the animation
+        speed: parameters.defaultSpeed,             // Current speed of the bck (used during the animation)
+        xArray: parameters.xArray                   // Contains the x position of each layer (=translateX)
     });
+
+    const [prevPageNumber, setPrevPageNumber] = useState(-1);
+
+    // Returns a direction speed factor of the parallax (-1 or 1),
+    const [direction, setDirection] = useState<-1 | 1>(1);
+
+    // An index incrementing at every scroll to launch the animation even
+    // when the scrolling is in the same direction
+    const [animIndex, setAnimIndex] = useState(-1);
+
+    // Based on the page number from the context, the direction is set
+    // to 1 or -1, allowing to know if the scrolling is going up or down
+    useEffect(() => {
+        if (prevPageNumber !== -1) {
+            if (pageNumber > prevPageNumber) {
+                setDirection(1);
+            } else {
+                setDirection(-1);
+            }
+
+            setAnimIndex(animIndex => animIndex + 1);
+            setPrevPageNumber(pageNumber);
+        } else {
+            setPrevPageNumber(0);
+        }
+    }, [pageNumber]);
 
     // animIndex used as a dependency to launch the animation (launchAnimation = true),
     // launchAnimation is, then, resetting to false at the end of the animation,
     // creating a cooldown where the animation can be launched only if the previous anim
     // is finished (false state reset)
     useEffect(() => {
-        if (animIndex !== -1 && backgroundDict.animationState !== "BCK_ANIM_STATE::START") {
-            setBackgroundDict(prevState => ({
+        if (animIndex !== -1 && backgroundObj.animationState !== "BCK_ANIM_STATE::START") {
+            setBackgroundObj(prevState => ({
                 ...prevState,
                 animationState: "BCK_ANIM_STATE::START"
             }));
         }
     }, [animIndex]);
 
-
     useEffect(() => {
         const handleResize = () => {
             const tempOneImageWidth = Math.round(windowDimensions.height * (16 / 9));
             const tempImageRepeated = Math.ceil((windowDimensions.width / tempOneImageWidth) + 1);
 
-            setBackgroundDict(prevState => ({
+            setBackgroundObj(prevState => ({
                 ...prevState,
                 width: tempImageRepeated * tempOneImageWidth,
                 oneImageWidth: tempOneImageWidth,
@@ -63,23 +87,22 @@ const Background = ({
         return () => window.removeEventListener("resize", handleResize);
     }, [windowDimensions, backgroundWidthRef]);
 
-
     // Main loop
     useAnimationFrame(
         () => {
-            const tempXArray = backgroundDict.xArray;
-            let tempAnimationCurrX = backgroundDict.animationCurrX;
-            let tempSpeed = backgroundDict.speed;
+            const tempXArray = backgroundObj.xArray;
+            let tempAnimationCurrX = backgroundObj.animationCurrX;
+            let tempSpeed = backgroundObj.speed;
 
             for (let i = 0; i < tempXArray.length; i++) {
                 tempXArray[i] += Math.round((tempSpeed + i) * direction);
 
-                // X coordinate should be between 0 && backgroundDict.oneImageWidth
-                if (tempXArray[i] < 0 || tempXArray[i] > backgroundDict.oneImageWidth) {
+                // X coordinate should be between 0 && backgroundObj.oneImageWidth
+                if (tempXArray[i] < 0 || tempXArray[i] > backgroundObj.oneImageWidth) {
                     if (direction === 1) {
                         tempXArray[i] = 0;
                     } else {
-                        tempXArray[i] = backgroundDict.oneImageWidth;
+                        tempXArray[i] = backgroundObj.oneImageWidth;
                     }
                 }
             }
@@ -87,7 +110,7 @@ const Background = ({
             // Do the same thing as tempXArray[0] but do not return to 0
             // Allowing to check if the parallax traveled X pixels without
             // having to use a modulo
-            if (backgroundDict.animationState !== "BCK_ANIM_STATE::STOP") {
+            if (backgroundObj.animationState !== "BCK_ANIM_STATE::STOP") {
                 tempAnimationCurrX += Math.round(tempSpeed * direction);
             } else {
                 tempAnimationCurrX = 0;
@@ -96,12 +119,12 @@ const Background = ({
             // Controls the 2 phases of the animation
             // START: from default to max speed, then, wait for parallax to travel window width
             // STOP: decelerate from max to default speed
-            if (backgroundDict.animationState === "BCK_ANIM_STATE::START") {
+            if (backgroundObj.animationState === "BCK_ANIM_STATE::START") {
                 if (tempSpeed < parameters.maxSpeed) {
                     tempSpeed += parameters.speedModifier;
                 } else {
                     if (Math.abs(tempAnimationCurrX) > windowDimensions.width) {
-                        setBackgroundDict(prevState => ({
+                        setBackgroundObj(prevState => ({
                             ...prevState,
                             animationState: "BCK_ANIM_STATE::STOP"
                         }));
@@ -115,67 +138,52 @@ const Background = ({
                 }
             }
 
-            setBackgroundDict(prevState => ({
+            setBackgroundObj(prevState => ({
                 ...prevState,
                 speed: tempSpeed,
                 xArray: tempXArray,
                 animationCurrX: tempAnimationCurrX
             }));
         }, [
-            backgroundDict.animationState,
-            backgroundDict.animationCurrX,
-            backgroundDict.width,
-            backgroundDict.speed,
+            backgroundObj.animationState,
+            backgroundObj.animationCurrX,
+            backgroundObj.width,
+            backgroundObj.speed,
             direction
         ]
     );
 
-
     return (
-        <div className="background"
+        <div className="w-full relative bg-[#DEFDFD] brightness-50 animate-[appears] background"
             style={{ height: windowDimensions.height - 1 }}
         >
             <div className="background__layer background__layer-1" ref={backgroundWidthRef}
                 style={{
-                    transform: `translateX(-${backgroundDict.xArray[0]}px)`,
-                    width: `${backgroundDict.width}px`
+                    transform: `translateX(-${backgroundObj.xArray[0]}px)`,
+                    width: `${backgroundObj.width}px`
                 }}
             ></div>
 
             <div className="background__layer background__layer-2"
                 style={{
-                    transform: `translateX(-${backgroundDict.xArray[1]}px)`,
-                    width: `${backgroundDict.width}px`
+                    transform: `translateX(-${backgroundObj.xArray[1]}px)`,
+                    width: `${backgroundObj.width}px`
                 }}
             ></div>
 
             <div className="background__layer background__layer-3"
                 style={{
-                    transform: `translateX(-${backgroundDict.xArray[2]}px)`,
-                    width: `${backgroundDict.width}px`
+                    transform: `translateX(-${backgroundObj.xArray[2]}px)`,
+                    width: `${backgroundObj.width}px`
                 }}
             ></div>
 
             <div className="background__layer background__layer-4"
                 style={{
-                    transform: `translateX(-${backgroundDict.xArray[3]}px)`,
-                    width: `${backgroundDict.width}px`
+                    transform: `translateX(-${backgroundObj.xArray[3]}px)`,
+                    width: `${backgroundObj.width}px`
                 }}
             ></div>
-
-            {/* <div className="absolute p-4 font-bold text-black bg-white top-6 left-6">
-                Layer 0: {backgroundDict.xArray[0]} <br></br>
-                Layer 1: {backgroundDict.xArray[1]} <br></br>
-                Layer 2: {backgroundDict.xArray[2]} <br></br>
-                Layer 3: {backgroundDict.xArray[3]} <br></br>
-                Bck Speed: {backgroundDict.speed} <br></br>
-                Bck Anim X: {backgroundDict.animationCurrX} <br></br>
-                Bck Anim State: {backgroundDict.animationState} <br></br>
-                Bck Repeat: {backgroundDict.imageRepeated}x <br></br>
-                Bck Width: {backgroundDict.width}px <br></br>
-                One image width: {backgroundDict.oneImageWidth}px <br></br>
-                Window: {windowDimensions.width}px / {windowDimensions.height}px
-            </div> */}
         </div>
     );
 };
