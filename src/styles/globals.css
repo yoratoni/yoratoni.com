@@ -28,9 +28,3 @@ body {
     overscroll-behavior-y: contain;
     -webkit-tap-highlight-color: transparent;
 }
-
-.app {
-    position: relative;
-    z-index: var(--zIndex-base);
-    background-color: var(--background-color);
-}

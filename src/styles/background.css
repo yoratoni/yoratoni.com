@@ -1,8 +1,4 @@
 .background {
-    width: 100%;
-    position: relative;
-    background-color: #DEFDFD;
-    filter: brightness(50%);
     animation-name: appears;
     animation-timing-function: cubic-bezier(1, 0, 0.75, 0.5);
     animation-iteration-count: 1;
