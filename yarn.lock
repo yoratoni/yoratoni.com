@@ -1161,6 +1161,11 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
+"@babylonjs/core@^6.16.0":
+  version "6.16.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/core/-/core-6.16.0.tgz#5595bdd0be390553ffd1677720b9ec364fc27393"
+  integrity sha512-x7ec/BkadwwouQ+foeDuewYPrpDmiZb37PLfkVegx5F9vrK2vlGULLECzv0AOWOkjfVoguYG3icQSGRPLxghsQ==
+
 "@bcoe/v8-coverage@^0.2.3":
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"

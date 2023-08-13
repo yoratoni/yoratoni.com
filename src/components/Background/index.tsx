@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import "@/styles/background.css";
 
 import { PageNumberContext } from "@/components/Contexts/PageNumber";
+import config from "@/configs/main.config";
 import useAnimationFrame from "@/hooks/useAnimationFrame";
 import useWindowDimensions from "@/hooks/useWindowDimensions";
 import NsBackground from "@/types/background";
@@ -17,7 +18,7 @@ const Background = () => {
         defaultSpeed: 1,
         speedModifier: 8,
         maxSpeed: 128,
-        xArray: [0, 0, 0, 0]
+        xArray: Array(config.numberOfImagesForParallax).fill(0)
     };
 
     const [backgroundObj, setBackgroundObj] = useState<NsBackground.backgroundObj>({
@@ -154,7 +155,7 @@ const Background = () => {
     );
 
     return (
-        <div className="w-full relative bg-[#DEFDFD] brightness-50 animate-[appears] background"
+        <div className="w-full relative bg-[#DEFDFD] brightness-50 background overflow-x-hidden outline-none"
             style={{ height: windowDimensions.height - 1 }}
         >
             <div className="background__layer background__layer-1" ref={backgroundWidthRef}
@@ -162,28 +163,35 @@ const Background = () => {
                     transform: `translateX(-${backgroundObj.xArray[0]}px)`,
                     width: `${backgroundObj.width}px`
                 }}
-            ></div>
+            />
 
             <div className="background__layer background__layer-2"
                 style={{
                     transform: `translateX(-${backgroundObj.xArray[1]}px)`,
                     width: `${backgroundObj.width}px`
                 }}
-            ></div>
+            />
 
             <div className="background__layer background__layer-3"
                 style={{
                     transform: `translateX(-${backgroundObj.xArray[2]}px)`,
                     width: `${backgroundObj.width}px`
                 }}
-            ></div>
+            />
 
             <div className="background__layer background__layer-4"
                 style={{
                     transform: `translateX(-${backgroundObj.xArray[3]}px)`,
                     width: `${backgroundObj.width}px`
                 }}
-            ></div>
+            />
+
+            <div className="background__layer background__layer-5"
+                style={{
+                    transform: `translateX(-${backgroundObj.xArray[4]}px)`,
+                    width: `${backgroundObj.width}px`
+                }}
+            />
         </div>
     );
 };

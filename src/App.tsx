@@ -8,6 +8,7 @@ import Background from "@/components/Background";
 import { PageNumberContext } from "@/components/Contexts/PageNumber";
 import Layout from "@/components/Layout";
 import config from "@/configs/main.config";
+import Home from "@/pages/Home";
 
 
 export default function App() {
@@ -25,6 +26,15 @@ export default function App() {
         }
     };
 
+    const getCurrentPage = () => {
+        switch (pageNumber) {
+            case 0:
+                return <Home />;
+            default:
+                return <Home />;
+        }
+    };
+
     return (
         <main className="relative z-0 bg-[#0B111B]">
             <ReactScrollWheelHandler
@@ -36,16 +46,12 @@ export default function App() {
                 disableKeyboard={true}
                 preventScroll={true}
                 timeout={256}
+                className="outline-none"
             >
                 <Background />
 
                 <Layout>
-                    <h1 className="text-6xl font-bold text-center">
-                        YORATONI
-                    </h1>
-                    <p>
-                        _website under construction_
-                    </p>
+                    {getCurrentPage()}
                 </Layout>
             </ReactScrollWheelHandler>
         </main>
