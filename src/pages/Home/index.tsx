@@ -1,10 +1,10 @@
-import Babylon from "@/components/Babylon";
+import Scene from "@/components/Scene";
 
 
 export default function Home() {
     return (
-        <div className="w-full h-full">
-            <Babylon />
+        <div className="relative w-full h-full max-w-full max-h-full overflow-hidden">
+            <Scene />
         </div>
     );
 }

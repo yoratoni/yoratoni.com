@@ -14,17 +14,9 @@ import Home from "@/pages/Home";
 export default function App() {
     const { pageNumber, setPageNumber } = useContext(PageNumberContext);
 
-    const upHandler = () => {
-        if (pageNumber > 0) {
-            setPageNumber(pageNumber => pageNumber - 1);
-        }
-    };
-
-    const downHandler = () => {
-        if (pageNumber < config.numberOfPages - 1) {
-            setPageNumber(pageNumber => pageNumber + 1);
-        }
-    };
+    // Scroll handlers
+    const upHandler = () => pageNumber > 0 && setPageNumber(prev => prev - 1);
+    const downHandler = () => (pageNumber < config.numberOfPages - 1) && setPageNumber(prev => prev + 1);
 
     const getCurrentPage = () => {
         switch (pageNumber) {
