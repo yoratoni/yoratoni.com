@@ -8,20 +8,22 @@ import Background from "@/components/Background";
 import { PageNumberContext } from "@/components/Contexts/PageNumber";
 import Layout from "@/components/Layout";
 import config from "@/configs/main.config";
+import Home from "@/pages/Home";
 
 
 export default function App() {
     const { pageNumber, setPageNumber } = useContext(PageNumberContext);
 
-    const upHandler = () => {
-        if (pageNumber > 0) {
-            setPageNumber(pageNumber => pageNumber - 1);
-        }
-    };
+    // Scroll handlers
+    const upHandler = () => pageNumber > 0 && setPageNumber(prev => prev - 1);
+    const downHandler = () => (pageNumber < config.numberOfPages - 1) && setPageNumber(prev => prev + 1);
 
-    const downHandler = () => {
-        if (pageNumber < config.numberOfPages - 1) {
-            setPageNumber(pageNumber => pageNumber + 1);
+    const getCurrentPage = () => {
+        switch (pageNumber) {
+            case 0:
+                return <Home />;
+            default:
+                return <Home />;
         }
     };
 
@@ -36,16 +38,12 @@ export default function App() {
                 disableKeyboard={true}
                 preventScroll={true}
                 timeout={256}
+                className="outline-none"
             >
                 <Background />
 
                 <Layout>
-                    <h1 className="text-6xl font-bold text-center">
-                        YORATONI
-                    </h1>
-                    <p>
-                        _website under construction_
-                    </p>
+                    {getCurrentPage()}
                 </Layout>
             </ReactScrollWheelHandler>
         </main>

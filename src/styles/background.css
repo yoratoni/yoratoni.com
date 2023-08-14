@@ -3,7 +3,6 @@
     animation-timing-function: cubic-bezier(1, 0, 0.75, 0.5);
     animation-iteration-count: 1;
     animation-duration: 1s;
-    overflow-x: hidden;
 }
 
 .background__layer {
@@ -14,51 +13,142 @@
     background-position: center;
     background-size: auto 100%;
     background-repeat: repeat-x;
+    outline: none;
 }
 
-.background .background__layer-1 {
-    background-image: url("@/assets/background/mid-res/fallback/04.png");
-    background-image: url("@/assets/background/mid-res/04.webp");
-    background-image: image-set(url("@/assets/background/low-res/fallback/04.png") 2x,
-            url("@/assets/background/mid-res/fallback/04.png") 1.5x,
-            url("@/assets/background/high-res/fallback/04.png") 1x);
-    background-image: image-set(url("@/assets/background/low-res/04.webp") 2x,
-            url("@/assets/background/mid-res/04.webp") 1.5x,
-            url("@/assets/background/high-res/04.webp") 1x);
+/*
+    Image sizes:
+    - High-res: 1920x1080
+    - Mid-res: 1280x720
+    - Low-res: 720x405
+ */
+
+@media (min-width: 1920px) {
+    .background__layer-1 {
+        background-image: url("@/assets/background/high-res/fallback/04.png");
+
+        @supports (background-image: url("@/assets/background/high-res/04.webp")) {
+            background-image: url("@/assets/background/high-res/04.webp");
+        }
+    }
+
+    .background__layer-2 {
+        background-image: url("@/assets/background/high-res/fallback/03.png");
+
+        @supports (background-image: url("@/assets/background/high-res/03.webp")) {
+            background-image: url("@/assets/background/high-res/03.webp");
+        }
+    }
+
+    .background__layer-3 {
+        background-image: url("@/assets/background/high-res/fallback/02.png");
+
+        @supports (background-image: url("@/assets/background/high-res/02.webp")) {
+            background-image: url("@/assets/background/high-res/02.webp");
+        }
+    }
+
+    .background__layer-4 {
+        background-image: url("@/assets/background/high-res/fallback/01.png");
+
+        @supports (background-image: url("@/assets/background/high-res/01.webp")) {
+            background-image: url("@/assets/background/high-res/01.webp");
+        }
+    }
+
+    .background__layer-5 {
+        background-image: url("@/assets/background/high-res/fallback/00.png");
+
+        @supports (background-image: url("@/assets/background/high-res/00.webp")) {
+            background-image: url("@/assets/background/high-res/00.webp");
+        }
+    }
 }
 
-.background .background__layer-2 {
-    background-image: url("@/assets/background/mid-res/fallback/03.png");
-    background-image: url("@/assets/background/mid-res/03.webp");
-    background-image: image-set(url("@/assets/background/low-res/fallback/03.png") 2x,
-            url("@/assets/background/mid-res/fallback/03.png") 1.5x,
-            url("@/assets/background/high-res/fallback/03.png") 1x);
-    background-image: image-set(url("@/assets/background/low-res/03.webp") 2x,
-            url("@/assets/background/mid-res/03.webp") 1.5x,
-            url("@/assets/background/high-res/03.webp") 1x);
+@media (max-width: 1919px) and (min-width: 1280px) {
+    .background__layer-1 {
+        background-image: url("@/assets/background/mid-res/fallback/04.png");
+
+        @supports (background-image: url("@/assets/background/mid-res/04.webp")) {
+            background-image: url("@/assets/background/mid-res/04.webp");
+        }
+    }
+
+    .background__layer-2 {
+        background-image: url("@/assets/background/mid-res/fallback/03.png");
+
+        @supports (background-image: url("@/assets/background/mid-res/03.webp")) {
+            background-image: url("@/assets/background/mid-res/03.webp");
+        }
+    }
+
+    .background__layer-3 {
+        background-image: url("@/assets/background/mid-res/fallback/02.png");
+
+        @supports (background-image: url("@/assets/background/mid-res/02.webp")) {
+            background-image: url("@/assets/background/mid-res/02.webp");
+        }
+    }
+
+    .background__layer-4 {
+        background-image: url("@/assets/background/mid-res/fallback/01.png");
+
+        @supports (background-image: url("@/assets/background/mid-res/01.webp")) {
+            background-image: url("@/assets/background/mid-res/01.webp");
+        }
+    }
+
+    .background__layer-5 {
+        background-image: url("@/assets/background/mid-res/fallback/00.png");
+
+        @supports (background-image: url("@/assets/background/mid-res/00.webp")) {
+            background-image: url("@/assets/background/mid-res/00.webp");
+        }
+    }
 }
 
-.background .background__layer-3 {
-    background-image: url("@/assets/background/mid-res/fallback/02.png");
-    background-image: url("@/assets/background/mid-res/02.webp");
-    background-image: image-set(url("@/assets/background/low-res/fallback/02.png") 2x,
-            url("@/assets/background/mid-res/fallback/02.png") 1.5x,
-            url("@/assets/background/high-res/fallback/02.png") 1x);
-    background-image: image-set(url("@/assets/background/low-res/02.webp") 2x,
-            url("@/assets/background/mid-res/02.webp") 1.5x,
-            url("@/assets/background/high-res/02.webp") 1x);
+@media (max-width: 1279px) {
+    .background__layer-1 {
+        background-image: url("@/assets/background/low-res/fallback/04.png");
+
+        @supports (background-image: url("@/assets/background/low-res/04.webp")) {
+            background-image: url("@/assets/background/low-res/04.webp");
+        }
+    }
+
+    .background__layer-2 {
+        background-image: url("@/assets/background/low-res/fallback/03.png");
+
+        @supports (background-image: url("@/assets/background/low-res/03.webp")) {
+            background-image: url("@/assets/background/low-res/03.webp");
+        }
+    }
+
+    .background__layer-3 {
+        background-image: url("@/assets/background/low-res/fallback/02.png");
+
+        @supports (background-image: url("@/assets/background/low-res/02.webp")) {
+            background-image: url("@/assets/background/low-res/02.webp");
+        }
+    }
+
+    .background__layer-4 {
+        background-image: url("@/assets/background/low-res/fallback/01.png");
+
+        @supports (background-image: url("@/assets/background/low-res/01.webp")) {
+            background-image: url("@/assets/background/low-res/01.webp");
+        }
+    }
+
+    .background__layer-5 {
+        background-image: url("@/assets/background/low-res/fallback/00.png");
+
+        @supports (background-image: url("@/assets/background/low-res/00.webp")) {
+            background-image: url("@/assets/background/low-res/00.webp");
+        }
+    }
 }
 
-.background .background__layer-4 {
-    background-image: url("@/assets/background/mid-res/fallback/01.png");
-    background-image: url("@/assets/background/mid-res/01.webp");
-    background-image: image-set(url("@/assets/background/low-res/fallback/01.png") 2x,
-            url("@/assets/background/mid-res/fallback/01.png") 1.5x,
-            url("@/assets/background/high-res/fallback/01.png") 1x);
-    background-image: image-set(url("@/assets/background/low-res/01.webp") 2x,
-            url("@/assets/background/mid-res/01.webp") 1.5x,
-            url("@/assets/background/high-res/01.webp") 1x);
-}
 
 @keyframes appears {
     from {
