@@ -1,29 +1,27 @@
-import { Canvas, useLoader } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useState } from "react";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import StatsImpl from "stats.js";
+
+import Mesh from "@/components/Mesh";
+import config from "@/configs/main.config";
 
 
 export default function Scene() {
-    const [meshRotation, setMeshRotation] = useState<[number, number, number]>([0, 0, 0]);
+    const Stats = () => {
+        const [stats] = useState(() => new StatsImpl());
 
-    const parameters = {
-        scale: 0.2,
+        useEffect(() => {
+            stats.showPanel(0);
+            document.body.appendChild(stats.dom);
+            return () => document.body.removeChild(stats.dom) as unknown as void;
+        }, []);
+
+        return useFrame(state => {
+            stats.begin();
+            state.gl.render(state.scene, state.camera);
+            stats.end();
+        }, 1);
     };
-
-    // Models
-    const gltf = useLoader(GLTFLoader, "models/crystals/scene.gltf");
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setMeshRotation(meshRotation => [
-                meshRotation[0] + 0.01,
-                meshRotation[1] + 0.01,
-                meshRotation[2] + 0.01,
-            ]);
-        }, 10);
-
-        return () => clearInterval(interval);
-    }, []);
 
     return (
         <div className="w-full h-full max-h-full overflow-hidden">
@@ -31,13 +29,13 @@ export default function Scene() {
                 <ambientLight intensity={0.1} />
                 <directionalLight color="white" position={[0, 0, 5]} />
 
-                <mesh
-                    rotation={[0, 1.45, 0]}
-                    scale={[parameters.scale, parameters.scale, parameters.scale]}
-                >
-                    <primitive object={gltf.scene} />
-                    <meshStandardMaterial />
-                </mesh>
+                <Mesh
+                    gltfPath="models/planet/scene.gltf"
+                    scale={[1.5, 1.5, 1.5]}
+                    rotation={[0.4, 0, 0]}
+                />
+
+                {config.three.showStats && <Stats />}
             </Canvas>
         </div>
     );
