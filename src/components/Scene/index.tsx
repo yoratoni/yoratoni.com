@@ -30,7 +30,7 @@ export default function Scene() {
                 <directionalLight color="white" position={[0, 0, 5]} />
 
                 <Mesh
-                    gltfPath="models/planet/scene.gltf"
+                    gltfPath="assets/models/planet/scene.gltf"
                     scale={[1.5, 1.5, 1.5]}
                     rotation={[0.4, 0, 0]}
                 />
