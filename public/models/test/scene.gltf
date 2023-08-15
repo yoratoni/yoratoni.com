@@ -1,0 +1,347 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 9127,
+      "max": [
+        0.0728176087141037,
+        5.055617809295654,
+        0.6942620873451233
+      ],
+      "min": [
+        -0.06955914944410324,
+        -0.10305730253458023,
+        -0.7183125615119934
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 109524,
+      "componentType": 5126,
+      "count": 9127,
+      "max": [
+        1.0,
+        0.9999998807907104,
+        0.9999997615814209
+      ],
+      "min": [
+        -1.0,
+        -0.9999951124191284,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 9127,
+      "max": [
+        0.9999650120735168,
+        0.9999964833259583,
+        0.9999998211860657,
+        1.0
+      ],
+      "min": [
+        -0.9998489618301392,
+        -1.0,
+        -0.999980092048645,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 9127,
+      "max": [
+        0.9959301948547363,
+        0.9975618720054626
+      ],
+      "min": [
+        0.0024414374493062496,
+        0.011365294456481934
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 73016,
+      "componentType": 5126,
+      "count": 9127,
+      "max": [
+        0.9959301948547363,
+        0.9975618720054626
+      ],
+      "min": [
+        0.0024414374493062496,
+        0.011365294456481934
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 146032,
+      "componentType": 5126,
+      "count": 9127,
+      "max": [
+        0.9959301948547363,
+        0.9975618720054626
+      ],
+      "min": [
+        0.0024414374493062496,
+        0.011365294456481934
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 219048,
+      "componentType": 5126,
+      "count": 9127,
+      "max": [
+        0.9959301948547363,
+        0.9975618720054626
+      ],
+      "min": [
+        0.0024414374493062496,
+        0.011365294456481934
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 50832,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Daniel GoE (https://sketchfab.com/Goee)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/sword1-crystal-732d384417864007a400a2335888498c",
+      "title": "Sword#1 Crystal  | 💎🔮💠"
+    },
+    "generator": "Sketchfab-15.31.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 203328,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 292064,
+      "byteOffset": 203328,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 219048,
+      "byteOffset": 495392,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 146032,
+      "byteOffset": 714440,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 860472,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/WACH_LP_001_baseColor.png"
+    },
+    {
+      "uri": "textures/WACH_LP_001_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/WACH_LP_001_emissive.png"
+    },
+    {
+      "uri": "textures/WACH_LP_001_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissiveTexture": {
+        "index": 2
+      },
+      "name": "WACH_LP_001",
+      "normalTexture": {
+        "index": 3
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "sword#1_WACH_LP_001_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5,
+            "TEXCOORD_3": 6
+          },
+          "indices": 7,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "0a6535c0b9b046a999d666328ea4071c.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        99.63965606689453,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        99.63965606689425,
+        -7.522584915721636e-06,
+        0.0,
+        0.0,
+        7.522584915721636e-06,
+        99.63965606689425,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "sword#1"
+    },
+    {
+      "mesh": 0,
+      "name": "sword#1_WACH_LP_001_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    }
+  ]
+}

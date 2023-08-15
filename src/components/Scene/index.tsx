@@ -1,9 +1,17 @@
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useLoader } from "@react-three/fiber";
 import { useEffect, useState } from "react";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 
 export default function Scene() {
     const [meshRotation, setMeshRotation] = useState<[number, number, number]>([0, 0, 0]);
+
+    const parameters = {
+        scale: 0.2,
+    };
+
+    // Models
+    const gltf = useLoader(GLTFLoader, "models/crystals/scene.gltf");
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -23,8 +31,11 @@ export default function Scene() {
                 <ambientLight intensity={0.1} />
                 <directionalLight color="white" position={[0, 0, 5]} />
 
-                <mesh rotation={meshRotation}>
-                    <boxGeometry />
+                <mesh
+                    rotation={[0, 1.45, 0]}
+                    scale={[parameters.scale, parameters.scale, parameters.scale]}
+                >
+                    <primitive object={gltf.scene} />
                     <meshStandardMaterial />
                 </mesh>
             </Canvas>

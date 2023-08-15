@@ -15,10 +15,12 @@ const Background = () => {
     const windowDimensions = useWindowDimensions();
 
     const parameters = {
-        defaultSpeed: 1,
-        speedModifier: 8,
-        maxSpeed: 128,
-        xArray: Array(config.numberOfImagesForParallax).fill(0)
+        defaultSpeed: 1,                                            // Default speed of the bck
+        speedModifier: 8,                                           // Speed modifier of the bck
+        contentHeightSpeedModifier: 800,                            // Based on a default height, create a factor to keep the same speed on every screen
+        minContentHeightSpeedFactor: 0.2,                           // Minimum factor to keep the same speed on every screen
+        maxSpeed: 128,                                              // Max speed of the bck
+        xArray: Array(config.numberOfImagesForParallax).fill(0)     // Contains the x position of each layer (=translateX)
     };
 
     const [backgroundObj, setBackgroundObj] = useState<NsBackground.backgroundObj>({
@@ -95,8 +97,15 @@ const Background = () => {
             let tempAnimationCurrX = backgroundObj.animationCurrX;
             let tempSpeed = backgroundObj.speed;
 
+            // Factor to modify speed depending on height, keeping the same speed on every screen
+            // Limited to x1
+            const heightFactorSpeedModifier = Math.min(
+                windowDimensions.height / parameters.contentHeightSpeedModifier,
+                1
+            );
+
             for (let i = 0; i < tempXArray.length; i++) {
-                tempXArray[i] += Math.round((tempSpeed + i) * direction);
+                tempXArray[i] += Math.round((tempSpeed + i) * direction * Math.max(heightFactorSpeedModifier, parameters.minContentHeightSpeedFactor));
 
                 // X coordinate should be between 0 && backgroundObj.oneImageWidth
                 if (tempXArray[i] < 0 || tempXArray[i] > backgroundObj.oneImageWidth) {
@@ -146,6 +155,7 @@ const Background = () => {
                 animationCurrX: tempAnimationCurrX
             }));
         }, [
+            windowDimensions.width,
             backgroundObj.animationState,
             backgroundObj.animationCurrX,
             backgroundObj.width,
@@ -192,6 +202,10 @@ const Background = () => {
                     width: `${backgroundObj.width}px`
                 }}
             />
+
+            {/* <div className="absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                {windowDimensions.height / parameters.contentHeightSpeedModifier}
+            </div> */}
         </div>
     );
 };

@@ -23,49 +23,49 @@
     - Low-res: 720x405
  */
 
-@media (min-width: 1920px) {
+ @media (max-width: 1279px), (max-height: 719px) {
     .background__layer-1 {
-        background-image: url("@/assets/background/high-res/fallback/04.png");
+        background-image: url("@/assets/background/low-res/fallback/04.png");
 
-        @supports (background-image: url("@/assets/background/high-res/04.webp")) {
-            background-image: url("@/assets/background/high-res/04.webp");
+        @supports (background-image: url("@/assets/background/low-res/04.webp")) {
+            background-image: url("@/assets/background/low-res/04.webp");
         }
     }
 
     .background__layer-2 {
-        background-image: url("@/assets/background/high-res/fallback/03.png");
+        background-image: url("@/assets/background/low-res/fallback/03.png");
 
-        @supports (background-image: url("@/assets/background/high-res/03.webp")) {
-            background-image: url("@/assets/background/high-res/03.webp");
+        @supports (background-image: url("@/assets/background/low-res/03.webp")) {
+            background-image: url("@/assets/background/low-res/03.webp");
         }
     }
 
     .background__layer-3 {
-        background-image: url("@/assets/background/high-res/fallback/02.png");
+        background-image: url("@/assets/background/low-res/fallback/02.png");
 
-        @supports (background-image: url("@/assets/background/high-res/02.webp")) {
-            background-image: url("@/assets/background/high-res/02.webp");
+        @supports (background-image: url("@/assets/background/low-res/02.webp")) {
+            background-image: url("@/assets/background/low-res/02.webp");
         }
     }
 
     .background__layer-4 {
-        background-image: url("@/assets/background/high-res/fallback/01.png");
+        background-image: url("@/assets/background/low-res/fallback/01.png");
 
-        @supports (background-image: url("@/assets/background/high-res/01.webp")) {
-            background-image: url("@/assets/background/high-res/01.webp");
+        @supports (background-image: url("@/assets/background/low-res/01.webp")) {
+            background-image: url("@/assets/background/low-res/01.webp");
         }
     }
 
     .background__layer-5 {
-        background-image: url("@/assets/background/high-res/fallback/00.png");
+        background-image: url("@/assets/background/low-res/fallback/00.png");
 
-        @supports (background-image: url("@/assets/background/high-res/00.webp")) {
-            background-image: url("@/assets/background/high-res/00.webp");
+        @supports (background-image: url("@/assets/background/low-res/00.webp")) {
+            background-image: url("@/assets/background/low-res/00.webp");
         }
     }
 }
 
-@media (max-width: 1919px) and (min-width: 1280px) {
+@media ((max-width: 1919px) and (min-width: 1280px)), ((max-height: 979px) and (min-height: 720px)) {
     .background__layer-1 {
         background-image: url("@/assets/background/mid-res/fallback/04.png");
 
@@ -107,44 +107,44 @@
     }
 }
 
-@media (max-width: 1279px) {
+@media (min-width: 1920px), (min-height: 980px) {
     .background__layer-1 {
-        background-image: url("@/assets/background/low-res/fallback/04.png");
+        background-image: url("@/assets/background/high-res/fallback/04.png");
 
-        @supports (background-image: url("@/assets/background/low-res/04.webp")) {
-            background-image: url("@/assets/background/low-res/04.webp");
+        @supports (background-image: url("@/assets/background/high-res/04.webp")) {
+            background-image: url("@/assets/background/high-res/04.webp");
         }
     }
 
     .background__layer-2 {
-        background-image: url("@/assets/background/low-res/fallback/03.png");
+        background-image: url("@/assets/background/high-res/fallback/03.png");
 
-        @supports (background-image: url("@/assets/background/low-res/03.webp")) {
-            background-image: url("@/assets/background/low-res/03.webp");
+        @supports (background-image: url("@/assets/background/high-res/03.webp")) {
+            background-image: url("@/assets/background/high-res/03.webp");
         }
     }
 
     .background__layer-3 {
-        background-image: url("@/assets/background/low-res/fallback/02.png");
+        background-image: url("@/assets/background/high-res/fallback/02.png");
 
-        @supports (background-image: url("@/assets/background/low-res/02.webp")) {
-            background-image: url("@/assets/background/low-res/02.webp");
+        @supports (background-image: url("@/assets/background/high-res/02.webp")) {
+            background-image: url("@/assets/background/high-res/02.webp");
         }
     }
 
     .background__layer-4 {
-        background-image: url("@/assets/background/low-res/fallback/01.png");
+        background-image: url("@/assets/background/high-res/fallback/01.png");
 
-        @supports (background-image: url("@/assets/background/low-res/01.webp")) {
-            background-image: url("@/assets/background/low-res/01.webp");
+        @supports (background-image: url("@/assets/background/high-res/01.webp")) {
+            background-image: url("@/assets/background/high-res/01.webp");
         }
     }
 
     .background__layer-5 {
-        background-image: url("@/assets/background/low-res/fallback/00.png");
+        background-image: url("@/assets/background/high-res/fallback/00.png");
 
-        @supports (background-image: url("@/assets/background/low-res/00.webp")) {
-            background-image: url("@/assets/background/low-res/00.webp");
+        @supports (background-image: url("@/assets/background/high-res/00.webp")) {
+            background-image: url("@/assets/background/high-res/00.webp");
         }
     }
 }
