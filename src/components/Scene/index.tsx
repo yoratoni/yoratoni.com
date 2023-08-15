@@ -2,7 +2,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useState } from "react";
 import StatsImpl from "stats.js";
 
-import Mesh from "@/components/Mesh";
+// import Mesh from "@/components/Mesh";
 import config from "@/configs/main.config";
 
 
@@ -29,11 +29,11 @@ export default function Scene() {
                 <ambientLight intensity={0.1} />
                 <directionalLight color="white" position={[0, 0, 5]} />
 
-                <Mesh
+                {/* <Mesh
                     gltfPath="models/planet/scene.gltf"
                     scale={[1.5, 1.5, 1.5]}
                     rotation={[0.4, 0, 0]}
-                />
+                /> */}
 
                 {config.three.showStats && <Stats />}
             </Canvas>
