@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stylized Mushroom (4)
+* source:	https://sketchfab.com/3d-models/stylized-mushroom-4-7262b8835a114d36a8d7e170002479e1
+* author:	a_wilczek (https://sketchfab.com/a_wilczek)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stylized Mushroom (4)" (https://sketchfab.com/3d-models/stylized-mushroom-4-7262b8835a114d36a8d7e170002479e1) by a_wilczek (https://sketchfab.com/a_wilczek) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

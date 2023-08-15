@@ -14,21 +14,14 @@ const Background = () => {
     const backgroundWidthRef = useRef<HTMLDivElement | null>(null);
     const windowDimensions = useWindowDimensions();
 
-    const parameters = {
-        defaultSpeed: 1,
-        speedModifier: 8,
-        maxSpeed: 128,
-        xArray: Array(config.numberOfImagesForParallax).fill(0)
-    };
-
     const [backgroundObj, setBackgroundObj] = useState<NsBackground.backgroundObj>({
-        width: 0,                                   // The total width of the bck (dynamically calculated)
-        oneImageWidth: 0,                           // The width of only one bck image based on the height
-        imageRepeated: 0,                           // The number of times that the bck is repeated
-        animationState: "BCK_ANIM_STATE::STOP",     // Launch the scrolling animation
-        animationCurrX: 0,                          // Contains the current X of the animation
-        speed: parameters.defaultSpeed,             // Current speed of the bck (used during the animation)
-        xArray: parameters.xArray                   // Contains the x position of each layer (=translateX)
+        width: 0,                                               // The total width of the bck (dynamically calculated)
+        oneImageWidth: 0,                                       // The width of only one bck image based on the height
+        imageRepeated: 0,                                       // The number of times that the bck is repeated
+        animationState: "BCK_ANIM_STATE::STOP",                 // Launch the scrolling animation
+        animationCurrX: 0,                                      // Contains the current X of the animation
+        speed: config.parallax.defaultSpeed,                    // Current speed of the bck (used during the animation)
+        xArray: Array(config.parallax.numberOfLayers).fill(0)   // Contains the x position of each layer (=translateX)
     });
 
     const [prevPageNumber, setPrevPageNumber] = useState(-1);
@@ -95,8 +88,18 @@ const Background = () => {
             let tempAnimationCurrX = backgroundObj.animationCurrX;
             let tempSpeed = backgroundObj.speed;
 
+            // Factor to modify speed depending on height, keeping the same speed on every screen
+            // Limited to x1
+            const heightFactorSpeedModifier = Math.min(
+                windowDimensions.height / config.parallax.contentHeightWhereSpeedFactorIsOne,
+                1
+            );
+
             for (let i = 0; i < tempXArray.length; i++) {
-                tempXArray[i] += Math.round((tempSpeed + i) * direction);
+                tempXArray[i] += Math.round((tempSpeed + i) * direction * Math.max(
+                    heightFactorSpeedModifier,
+                    config.parallax.minContentHeightSpeedFactor
+                ));
 
                 // X coordinate should be between 0 && backgroundObj.oneImageWidth
                 if (tempXArray[i] < 0 || tempXArray[i] > backgroundObj.oneImageWidth) {
@@ -121,8 +124,8 @@ const Background = () => {
             // START: from default to max speed, then, wait for parallax to travel window width
             // STOP: decelerate from max to default speed
             if (backgroundObj.animationState === "BCK_ANIM_STATE::START") {
-                if (tempSpeed < parameters.maxSpeed) {
-                    tempSpeed += parameters.speedModifier;
+                if (tempSpeed < config.parallax.maxSpeed) {
+                    tempSpeed += config.parallax.speedModifier;
                 } else {
                     if (Math.abs(tempAnimationCurrX) > windowDimensions.width) {
                         setBackgroundObj(prevState => ({
@@ -132,10 +135,10 @@ const Background = () => {
                     }
                 }
             } else {
-                if (tempSpeed > parameters.defaultSpeed) {
-                    tempSpeed -= parameters.speedModifier;
+                if (tempSpeed > config.parallax.defaultSpeed) {
+                    tempSpeed -= config.parallax.speedModifier;
                 } else {
-                    tempSpeed = parameters.defaultSpeed;
+                    tempSpeed = config.parallax.defaultSpeed;
                 }
             }
 
@@ -146,6 +149,7 @@ const Background = () => {
                 animationCurrX: tempAnimationCurrX
             }));
         }, [
+            windowDimensions.width,
             backgroundObj.animationState,
             backgroundObj.animationCurrX,
             backgroundObj.width,
@@ -192,6 +196,10 @@ const Background = () => {
                     width: `${backgroundObj.width}px`
                 }}
             />
+
+            {/* <div className="absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                {windowDimensions.height / parameters.contentHeightSpeedModifier}
+            </div> */}
         </div>
     );
 };

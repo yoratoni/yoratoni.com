@@ -42,6 +42,7 @@ export default function App() {
             >
                 <Background />
 
+
                 <Layout>
                     {getCurrentPage()}
                 </Layout>

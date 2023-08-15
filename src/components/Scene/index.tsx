@@ -1,21 +1,27 @@
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useState } from "react";
+import StatsImpl from "stats.js";
+
+import Mesh from "@/components/Mesh";
+import config from "@/configs/main.config";
 
 
 export default function Scene() {
-    const [meshRotation, setMeshRotation] = useState<[number, number, number]>([0, 0, 0]);
+    const Stats = () => {
+        const [stats] = useState(() => new StatsImpl());
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setMeshRotation(meshRotation => [
-                meshRotation[0] + 0.01,
-                meshRotation[1] + 0.01,
-                meshRotation[2] + 0.01,
-            ]);
-        }, 10);
+        useEffect(() => {
+            stats.showPanel(0);
+            document.body.appendChild(stats.dom);
+            return () => document.body.removeChild(stats.dom) as unknown as void;
+        }, []);
 
-        return () => clearInterval(interval);
-    }, []);
+        return useFrame(state => {
+            stats.begin();
+            state.gl.render(state.scene, state.camera);
+            stats.end();
+        }, 1);
+    };
 
     return (
         <div className="w-full h-full max-h-full overflow-hidden">
@@ -23,10 +29,13 @@ export default function Scene() {
                 <ambientLight intensity={0.1} />
                 <directionalLight color="white" position={[0, 0, 5]} />
 
-                <mesh rotation={meshRotation}>
-                    <boxGeometry />
-                    <meshStandardMaterial />
-                </mesh>
+                <Mesh
+                    gltfPath="models/planet/scene.gltf"
+                    scale={[1.5, 1.5, 1.5]}
+                    rotation={[0.4, 0, 0]}
+                />
+
+                {config.three.showStats && <Stats />}
             </Canvas>
         </div>
     );
