@@ -15,8 +15,8 @@ const config = {
     // Three JS
     three: {
         showStats: true,
-        meshPath: "",
-        meshScale: 1.0,
+        meshName: "crystals",
+        meshScale: 1,
     }
 };
 

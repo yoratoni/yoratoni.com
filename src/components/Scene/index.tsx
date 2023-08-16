@@ -30,9 +30,11 @@ export default function Scene() {
                 <directionalLight color="white" position={[0, 0, 5]} />
 
                 <Mesh
-                    gltfPath="assets/models/planet/scene.gltf"
-                    scale={[1.5, 1.5, 1.5]}
-                    rotation={[0.4, 0, 0]}
+                    gltfPath={`assets/models/${config.three.meshName}/scene.gltf`}
+                    scale={
+                        Array(3).fill(config.three.meshScale) as [number, number, number]
+                    }
+                    rotation={[0, 0, 0]}
                 />
 
                 {config.three.showStats && <Stats />}
