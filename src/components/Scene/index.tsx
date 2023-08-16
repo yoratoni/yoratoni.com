@@ -25,16 +25,17 @@ export default function Scene() {
 
     return (
         <div className="w-full h-full max-h-full overflow-hidden">
-            <Canvas className="!h-[1px] !min-h-full">
-                <ambientLight intensity={0.1} />
-                <directionalLight color="white" position={[0, 0, 5]} />
+            <Canvas className="!h-[1px] !min-h-full" shadows>
+                <directionalLight color="white" position={[0, 0, 5]} castShadow />
 
                 <Mesh
-                    gltfPath={`assets/models/${config.three.meshName}/scene.gltf`}
-                    scale={
-                        Array(3).fill(config.three.meshScale) as [number, number, number]
-                    }
-                    rotation={[0, 0, 0]}
+                    gltfPath={`assets/models/${config.three.mesh}/scene.gltf`}
+                    position={[
+                        config.three.meshPosition.x,
+                        config.three.meshPosition.y,
+                        config.three.meshPosition.z
+                    ]}
+                    scale={Array(3).fill(config.three.meshScale) as [number, number, number]}
                 />
 
                 {config.three.showStats && <Stats />}

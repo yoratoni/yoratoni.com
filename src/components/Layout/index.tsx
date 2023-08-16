@@ -31,7 +31,7 @@ export default function Layout({ children }: { children: ReactNode; }) {
                 </h2>
             </header>
 
-            <main ref={contentRef} className="flex items-center justify-center flex-auto w-full px-4">
+            <main ref={contentRef} className="flex items-center justify-center flex-auto w-full">
                 {children}
             </main>
 

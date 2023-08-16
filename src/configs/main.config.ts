@@ -15,8 +15,10 @@ const config = {
     // Three JS
     three: {
         showStats: true,
-        meshName: "crystals",
-        meshScale: 1,
+        mesh: "phoenix",
+        meshPosition: { x: 0, y: -0.4, z: 0 },
+        meshScale: 0.004,
+        meshAnimationId: 0
     }
 };
 
