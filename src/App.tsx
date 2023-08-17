@@ -28,7 +28,7 @@ export default function App() {
     };
 
     return (
-        <main className="relative z-0 bg-[#0B111B]">
+        <div className="relative z-0 bg-[#0B111B]">
             <ReactScrollWheelHandler
                 upHandler={() => upHandler()}
                 rightHandler={() => upHandler()}
@@ -47,6 +47,6 @@ export default function App() {
                     {getCurrentPage()}
                 </Layout>
             </ReactScrollWheelHandler>
-        </main>
+        </div>
     );
 }

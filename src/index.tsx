@@ -6,7 +6,6 @@ import ContentDimensionsProvider from "@/components/Contexts/ContentDimensions";
 import PageNumberProvider from "@/components/Contexts/PageNumber";
 
 
-
 const rootElement = document.getElementById("root");
 
 if (!rootElement) {
