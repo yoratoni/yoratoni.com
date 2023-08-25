@@ -1,6 +1,12 @@
 const config = {
     // General
     numberOfPages: 4,
+    pageNames: [
+        "home",
+        "work",
+        "about",
+        "contact"
+    ],
 
     // Parallax
     parallax: {

@@ -15,7 +15,7 @@ export default function App() {
     const { pageNumber, setPageNumber } = useContext(PageNumberContext);
 
     // Scroll handlers
-    const upHandler = () => pageNumber > 0 && setPageNumber(prev => prev - 1);
+    const upHandler = () => (pageNumber > 0) && setPageNumber(prev => prev - 1);
     const downHandler = () => (pageNumber < config.numberOfPages - 1) && setPageNumber(prev => prev + 1);
 
     const getCurrentPage = () => {

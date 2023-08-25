@@ -32,3 +32,10 @@ body {
 h2 {
     text-shadow: 2px 2px 4px #000;
 }
+
+.navbar-button > svg {
+    margin-bottom: 0.3rem;
+    transform: rotate(45deg);
+    font-size: 1em;
+    color: inherit;
+}
