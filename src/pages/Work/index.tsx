@@ -25,8 +25,8 @@ export default function Work() {
                             <span key={index}>
                                 {line}
                                 {index < work.description.length - 1 && (
-                                    <div className="my-[0.8em]">
-                                    </div>
+                                    <p className="my-[0.8em]">
+                                    </p>
                                 )}
                             </span>
                         ))}
