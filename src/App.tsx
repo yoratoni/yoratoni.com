@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import "animate.css/animate.min.css";
 import "@/styles/globals.css";
 import "@/styles/fonts.css";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
@@ -9,6 +8,7 @@ import { PageNumberContext } from "@/components/Contexts/PageNumber";
 import Layout from "@/components/Layout";
 import config from "@/configs/main.config";
 import Home from "@/pages/Home";
+import Work from "@/pages/Work";
 
 
 export default function App() {
@@ -22,6 +22,8 @@ export default function App() {
         switch (pageNumber) {
             case 0:
                 return <Home />;
+            case 1:
+                return <Work />;
             default:
                 return <Home />;
         }

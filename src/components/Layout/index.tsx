@@ -26,15 +26,11 @@ export default function Layout({ children }: { children: ReactNode; }) {
 
     return (
         <div className="absolute top-0 left-0 z-10 flex flex-col w-full h-screen max-h-screen overflow-hidden">
-            <header className="flex items-center justify-center flex-initial w-full h-12 pb-1">
-
-            </header>
-
             <main ref={contentRef} className="flex items-center justify-center flex-auto w-full">
                 {children}
             </main>
 
-            <footer className="flex items-center justify-center flex-initial w-full h-28 max-sm:h-20">
+            <footer className="flex items-center justify-center flex-initial w-full h-20 mt-4 md:h-28">
                 <Navbar />
             </footer>
         </div>

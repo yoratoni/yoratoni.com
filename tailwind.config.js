@@ -26,6 +26,7 @@ module.exports = {
     },
     plugins: [
         require("tailwind-scrollbar"),
+        require("tailwindcss-animated"),
         plugin(function({ matchUtilities, theme }) {
             matchUtilities(
                 {

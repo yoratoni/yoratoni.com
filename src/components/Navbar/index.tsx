@@ -27,19 +27,19 @@ export default function Navbar() {
                 background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.24) 36%)"
             }}
         >
-            <div className="flex items-start justify-between w-full h-full max-w-md px-6">
+            <div className="flex items-start justify-between w-full h-full max-w-md px-6 md:max-w-lg">
                 {[...Array(config.numberOfPages)].map((_, i) => (
                     <button
                         key={i}
                         data-index={i}
                         onClick={getButtonIndex}
-                        className="flex flex-col items-center text-[46px] max-sm:text-[34px] text-gray-600 navbar-button hover:text-gray-500"
+                        className="flex flex-col min-w-0 flex-1 items-center text-[34px] md:text-[46px] text-gray-600 navbar-button hover:text-gray-500"
                         style={{
                             color: (i === pageNumber) ? "#fff" : undefined
                         }}
                     >
                         <SelectAllIcon />
-                        <p className="text-lg max-sm:text-base">
+                        <p className="text-base">
                             {config.pageNames[i]}
                         </p>
                     </button>
