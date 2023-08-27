@@ -95,7 +95,7 @@ export default function Navbar() {
                                         />
                                     )}
                                 </div>
-                                <p className="text-base">
+                                <p className="text-base font-medium">
                                     {getPageInfo(i, "isWorkPage") ? "work" : config.pageNames[i]}
                                 </p>
                             </button>

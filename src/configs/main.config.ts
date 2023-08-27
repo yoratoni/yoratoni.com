@@ -63,6 +63,36 @@ const config = {
             github: "https://github.com/yoratoni/Mdisk",
             website: null
         },
+    ],
+
+    // About
+    about: [
+        `I started programming in 2015, after doing a lot of DIY projects in my basement,
+        I wanted to create stuff without being limited by the physical world (aka. money).
+        <br /><br />
+        I discovered that it was possible to create anything I wanted with a computer,
+        no need for money or tools anymore, a lot of people were dedicating their time to
+        build open-source tools and libraries that anyone could use for free, and I wanted
+        to be part of this community.`,
+
+        `A few years later, after a lot of self-learning and finished / unfinished beginner projects
+        (eyes bigger than my stomach), I decided to learn web development.
+        <br /><br />
+        As I discovered that Javascript was more than just a scripting language for web pages, and that it
+        allowed me to create anything, CLI tools, desktop apps, mobile apps, and of course,
+        web apps.`,
+
+        `I&apos;m now working as a full-stack web developer, and I&apos;m always looking for
+        new challenges and new ways to improve my skills.
+        <br /><br />
+        On my free time, I&apos;m working
+        on personal projects, such as a trading bot, a tool allowing me
+        to extract data from a game that I love,
+        even a physics simulation engine.
+        <br /><br />
+        All of that in <b>Typescript</b>,
+        with <b>NodeJs</b>, <b>React</b>, <b>NextJS</b>,
+        <b>ThreeJS</b>, <b>WebAssembly</b>, and more...`
     ]
 };
 

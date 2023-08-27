@@ -7,6 +7,7 @@ import Background from "@/components/Background";
 import { PageNumberContext } from "@/components/Contexts/PageNumber";
 import Layout from "@/components/Layout";
 import config from "@/configs/main.config";
+import About from "@/pages/About";
 import Home from "@/pages/Home";
 import Work from "@/pages/Work";
 
@@ -26,6 +27,8 @@ export default function App() {
                 return <Work index={0} />;
             case "work_1":
                 return <Work index={1} />;
+            case "about":
+                return <About />;
             default:
                 return <Home />;
         }
