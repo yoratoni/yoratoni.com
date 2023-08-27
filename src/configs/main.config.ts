@@ -1,9 +1,9 @@
 const config = {
     // General
-    numberOfPages: 4,
     pageNames: [
         "home",
-        "work",
+        "work_0",
+        "work_1",
         "about",
         "contact"
     ],
@@ -44,9 +44,9 @@ const config = {
         },
         {
             name: "Mdisk",
-            short: "A tool that allows you to work with 'Beyond Good and Evil' files.",
+            short: "A tool for the game Beyond Good & Evil that allows you to work with the game's files.",
             description: [
-                "A tool for the game 'Beyond Good and Evil' that allows you to work with the game's files.",
+                "A tool for the game Beyond Good & Evil that allows you to work with the game's files.",
                 "It can extract and repack the game's archives, and I'm working on extracting/generating all types of files such as textures, etc...",
                 "The goal was to write it entirely in Typescript with ts-node, and almost no external dependencies."
             ],
@@ -57,7 +57,8 @@ const config = {
             name: "Web app parallax",
             short: "Similar to the parallax on this website, this repo allows you to create an horizontal parallax reacting to directions.",
             description: [
-                "TODO"
+                "A component that I made for this website, that allows you to create an horizontal parallax reacting to directions.",
+                "By using multiple background layers, with repeating images, and a bit of math, the layers reacts to directions and accelerates as an animation when the player goes to a new page."
             ],
             github: "https://github.com/yoratoni/Mdisk",
             website: null

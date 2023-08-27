@@ -16,14 +16,16 @@ export default function App() {
 
     // Scroll handlers
     const upHandler = () => (pageNumber > 0) && setPageNumber(prev => prev - 1);
-    const downHandler = () => (pageNumber < config.numberOfPages - 1) && setPageNumber(prev => prev + 1);
+    const downHandler = () => (pageNumber < config.pageNames.length - 1) && setPageNumber(prev => prev + 1);
 
     const getCurrentPage = () => {
-        switch (pageNumber) {
-            case 0:
+        switch (config.pageNames[pageNumber]) {
+            case "home":
                 return <Home />;
-            case 1:
-                return <Work />;
+            case "work_0":
+                return <Work index={0} />;
+            case "work_1":
+                return <Work index={1} />;
             default:
                 return <Home />;
         }

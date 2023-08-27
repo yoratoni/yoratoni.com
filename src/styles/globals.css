@@ -32,14 +32,10 @@ body {
 h1,
 h2,
 h3,
-p,
 span {
     text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.4);
 }
 
-.navbar-button > svg {
-    margin-bottom: 0.3rem;
-    transform: rotate(45deg);
-    font-size: 1em;
-    color: inherit;
+p {
+    text-shadow: 3px 4px 4px rgba(0, 0, 0, 1);
 }
