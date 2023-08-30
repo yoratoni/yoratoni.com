@@ -25,12 +25,12 @@ export default function Layout({ children }: { children: ReactNode; }) {
     }, []);
 
     return (
-        <div className="absolute top-0 left-0 z-10 flex flex-col w-full h-screen max-h-screen overflow-hidden">
+        <div className="absolute top-0 bottom-0 left-0 right-0 z-10 flex flex-col w-full h-0 min-h-full overflow-hidden">
             <main ref={contentRef} className="flex items-center justify-center flex-auto w-full">
                 {children}
             </main>
 
-            <footer className="flex items-center justify-center flex-initial w-full h-20 mt-4 md:h-28">
+            <footer className="flex items-center justify-center flex-initial w-full">
                 <Navbar />
             </footer>
         </div>

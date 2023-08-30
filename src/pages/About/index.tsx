@@ -1,6 +1,8 @@
 import { Interweave } from "interweave";
 import { useState } from "react";
 
+import Section from "@/components/base/Section";
+import Title from "@/components/base/Title";
 import config from "@/configs/main.config";
 
 
@@ -14,16 +16,15 @@ export default function About() {
     const isLast = index === config.about.length - 1;
 
     return (
-        <div className="relative flex flex-col items-center justify-center w-full h-full max-w-full max-h-full overflow-hidden text-center">
-            <div className="flex flex-col items-center justify-center mt-8 space-y-2">
-                <h2 className="self-start text-4xl font-semibold indent-6 md:text-6xl">A bit more</h2>
-                <h1 className="text-[38px] sm:text-6xl md:text-7xl">INFO&nbsp;ABOUT&nbsp;ME</h1>
-                <h3 className="text-xl font-semibold md:text-3xl">...</h3>
-            </div>
+        <Section>
+            <Title
+                top="A bit more"
+                title="INFO ABOUT ME"
+            />
 
-            <div className="flex items-center justify-between w-full h-auto px-4 mt-8">
+            <div className="flex items-center justify-between w-full px-4">
                 <button
-                    className="mr-4 text-4xl font-semibold text-gray-300 max-sm:text-3xl hover:text-gray-100"
+                    className="mr-4 text-5xl font-semibold text-gray-300 max-sm:text-3xl hover:text-gray-100"
                     onClick={() => upHandler()}
                     style={{
                         visibility: isFirst ? "hidden" : "visible"
@@ -40,7 +41,7 @@ export default function About() {
                 </div>
 
                 <button
-                    className="ml-4 text-4xl font-semibold text-gray-300 max-sm:text-3xl hover:text-gray-100"
+                    className="ml-4 text-5xl font-semibold text-gray-300 max-sm:text-3xl hover:text-gray-100"
                     onClick={() => downHandler()}
                     style={{
                         visibility: isLast ? "hidden" : "visible"
@@ -49,6 +50,6 @@ export default function About() {
                     &gt;
                 </button>
             </div>
-        </div>
+        </Section>
     );
 }

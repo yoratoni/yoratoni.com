@@ -176,7 +176,7 @@ const Background = () => {
                 </div>
             )}
 
-            <div className="w-full relative bg-[#DEFDFD] brightness-50 background overflow-x-hidden outline-none blur-md"
+            <div className="w-full relative bg-[#DEFDFD] brightness-50 background overflow-hidden outline-none blur-md"
                 style={{ height: windowDimensions.height - 1 }}
             >
                 <div className="background__layer background__layer-1" ref={backgroundWidthRef}

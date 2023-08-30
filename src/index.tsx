@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
 import App from "@/App";
 import ContentDimensionsProvider from "@/components/Contexts/ContentDimensions";
@@ -14,10 +15,12 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
     <StrictMode>
-        <ContentDimensionsProvider>
-            <PageNumberProvider>
-                <App />
-            </PageNumberProvider>
-        </ContentDimensionsProvider>
+        <BrowserRouter>
+            <ContentDimensionsProvider>
+                <PageNumberProvider>
+                    <App />
+                </PageNumberProvider>
+            </ContentDimensionsProvider>
+        </BrowserRouter>
     </StrictMode>
 );
