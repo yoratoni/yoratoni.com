@@ -12,7 +12,7 @@ export default function Home() {
             />
 
             <div className="flex items-center justify-center w-full">
-                <p className="w-full h-auto max-w-2xl px-6 text-base whitespace-pre-wrap md:text-xl">
+                <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl">
                     I&apos;m a self-taught French web developer with a passion for Web 3.0 and specialized in React, NextJS, Typescript
                     & Solidity.
                     <br />
@@ -41,7 +41,7 @@ export default function Home() {
                 </p>
             </div>
 
-            <div className="absolute bottom-0 w-full pb-4 text-base leading-7 text-center text-gray-500 max-sm:leading-4 max-sm:text-xs max-sm:pb-1">
+            <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-sm:pb-1">
                 <p className="font-[500] tracking-widest">&gt; Swipe on mobile &lt;</p>
                 <p className="font-[500] tracking-widest">&gt; Scroll on desktop &lt;</p>
                 <p className="font-[500] tracking-widest">&gt; Background by Digital Moons &lt;</p>

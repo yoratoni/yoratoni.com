@@ -22,7 +22,7 @@ export default function About() {
                 title="INFO ABOUT ME"
             />
 
-            <div className="flex items-center justify-between w-full px-4">
+            <div className="flex items-center justify-between w-full px-4 -mt-2">
                 <button
                     className="mr-4 text-5xl font-semibold text-gray-300 max-sm:text-3xl hover:text-gray-100"
                     onClick={() => upHandler()}

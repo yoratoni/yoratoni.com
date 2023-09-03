@@ -6,7 +6,7 @@ type Props = {
 
 export default function Title(props: Props) {
     return (
-        <div className="flex flex-col items-center justify-center pb-6 space-y-2">
+        <div className="flex flex-col items-center justify-center pb-8 space-y-2">
             <h2 className="self-start text-4xl font-semibold indent-6 md:text-6xl">
                 {props.top}
             </h2>
