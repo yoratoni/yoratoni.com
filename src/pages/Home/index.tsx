@@ -8,13 +8,13 @@ export default function Home() {
             <Title
                 top="Hello, I'm"
                 title="ADRIEN BIBOLLET"
-                bottom="Full-stack web developer"
+                bottom="Full stack web developer"
             />
 
             <div className="flex items-center justify-center w-full">
                 <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl">
-                    I&apos;m a self-taught French web developer with a passion for Web 3.0 and specialized in React, NextJS, Typescript
-                    & Solidity.
+                    I&apos;m a self-taught French web developer with a passion for Web 3.0 and specialized in
+                    React, Next.js, Node JS, Typescript and Solidity.
                     <br />
                     <br />
                     Currently working at&nbsp;
@@ -26,7 +26,7 @@ export default function Home() {
                     >
                         Alien
                     </a>
-                    &nbsp;as a full-stack / Web 3.0 developer, my goal is to create new projects from scratch, using the
+                    &nbsp;as a full stack / Web 3.0 developer, my goal is to create new projects from scratch, using the
                     latest technologies including&nbsp;
                     <a
                         className="font-medium hover:underline"

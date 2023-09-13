@@ -4,7 +4,8 @@ const config = {
         "home",
         "work_0",
         "work_1",
-        "about",
+        "about_0",
+        "about_1",
         "contact"
     ],
 
@@ -82,7 +83,7 @@ const config = {
         allowed me to create anything, CLI tools, desktop apps, mobile apps, and of course,
         web apps.`,
 
-        `I&apos;m now working as a full-stack web developer, and I&apos;m always looking for
+        `I&apos;m now working as a full stack web developer, and I&apos;m always looking for
         new challenges and new ways to improve my skills.
         <br /><br />
         On my free time, I&apos;m working

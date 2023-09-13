@@ -9,7 +9,7 @@ import config from "@/configs/main.config";
 export default function Navbar() {
     const { pageNumber, setPageNumber } = useContext(PageNumberContext);
 
-    const getButtonIndex = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const setCurrentPage = (e: React.MouseEvent<HTMLButtonElement>) => {
         let tempPageNumber = pageNumber;
 
         if (e.currentTarget.dataset.index !== undefined) {
@@ -22,22 +22,30 @@ export default function Navbar() {
     };
 
     /**
-     * Recovers info about the pages, to support multiple hidden work pages
+     * Recovers info about the pages, to support multiple hidden work/about pages
      * @param i The current page number.
      * @param wantedInfo The info to recover.
      * @returns The boolean info.
      */
     const getPageInfo = (
         i: number,
-        wantedInfo: "ignoreOtherWorkPages" | "isWorkPage" | "doApplyButtonColor"
-    ): boolean => {
+        wantedInfo: "ignoreOtherMultiPages" | "isMultiPage" | "doApplyButtonColor"
+    ): boolean | string => {
         switch (wantedInfo) {
-            case "ignoreOtherWorkPages":
-                return (config.pageNames[i] === "work_0" || !config.pageNames[i].includes("work"));
-            case "isWorkPage":
-                return config.pageNames[i].includes("work");
+            case "ignoreOtherMultiPages":
+                return (config.pageNames[i].includes("_") && config.pageNames[i].split("_")[1] === "0") ||
+                    !config.pageNames[i].includes("_");
+            case "isMultiPage":
+                if (config.pageNames[i].includes("work")) return "work";
+                if (config.pageNames[i].includes("about")) return "about";
+
+                return false;
             case "doApplyButtonColor":
                 if (config.pageNames[i] === "work_0" && config.pageNames[pageNumber].includes("work")) {
+                    return true;
+                }
+
+                if (config.pageNames[i] === "about_0" && config.pageNames[pageNumber].includes("about")) {
                     return true;
                 }
 
@@ -57,17 +65,17 @@ export default function Navbar() {
             <div className="flex items-start justify-between w-full h-full max-w-md px-6 md:max-w-lg">
                 {[...Array(config.pageNames.length)].map((_, i) => (
                     <Fragment key={i}>
-                        {getPageInfo(i, "ignoreOtherWorkPages") && (
+                        {getPageInfo(i, "ignoreOtherMultiPages") && (
                             <button
                                 data-index={i}
-                                onClick={getButtonIndex}
+                                onClick={setCurrentPage}
                                 className="flex flex-col items-center flex-1 min-w-0 text-gray-600 hover:text-gray-500"
                                 style={{
                                     color: getPageInfo(i, "doApplyButtonColor") ? "#fff" : undefined
                                 }}
                             >
                                 <div className="text-[34px] md:text-[46px]">
-                                    {getPageInfo(i, "isWorkPage") && (
+                                    {getPageInfo(i, "isMultiPage") && (
                                         <Circle
                                             style={{
                                                 marginRight: "0.4rem",
@@ -85,7 +93,7 @@ export default function Navbar() {
                                         }}
                                     />
 
-                                    {getPageInfo(i, "isWorkPage") && (
+                                    {getPageInfo(i, "isMultiPage") && (
                                         <Circle
                                             style={{
                                                 marginLeft: "0.4rem",
@@ -96,7 +104,7 @@ export default function Navbar() {
                                     )}
                                 </div>
                                 <p className="text-base font-medium">
-                                    {getPageInfo(i, "isWorkPage") ? "work" : config.pageNames[i]}
+                                    {getPageInfo(i, "isMultiPage") || config.pageNames[i]}
                                 </p>
                             </button>
                         )}
