@@ -57,7 +57,7 @@ export default function Navbar() {
 
     return (
         <div
-            className="flex flex-col items-center justify-start w-full h-full py-4 max-sm:py-1"
+            className="flex flex-col items-center justify-start w-full h-full py-4 max-sm:pt-1 max-sm:pb-3"
             style={{
                 background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.24) 36%)"
             }}
