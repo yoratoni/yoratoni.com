@@ -39,3 +39,14 @@ span {
 p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
+
+input {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    outline: none;
+    box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+textarea::-webkit-resizer {
+
+}
