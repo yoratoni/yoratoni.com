@@ -7,7 +7,6 @@ import FPSStats from "react-fps-stats";
 import { PageNumberContext } from "@/components/Contexts/PageNumber";
 import config from "@/configs/main.config";
 import useAnimationFrame from "@/hooks/useAnimationFrame";
-import useWindowDimensions from "@/hooks/useWindowDimensions";
 import NsBackground from "@/types/background";
 
 
@@ -15,7 +14,6 @@ const Background = () => {
     const { pageNumber } = useContext(PageNumberContext);
 
     const backgroundWidthRef = useRef<HTMLDivElement | null>(null);
-    const windowDimensions = useWindowDimensions();
 
     const [backgroundObj, setBackgroundObj] = useState<NsBackground.backgroundObj>({
         width: 0,                                               // The total width of the bck (dynamically calculated)
@@ -68,8 +66,8 @@ const Background = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            const tempOneImageWidth = Math.round(windowDimensions.height * (16 / 9));
-            const tempImageRepeated = Math.ceil((windowDimensions.width / tempOneImageWidth) + 1);
+            const tempOneImageWidth = Math.round(window.innerHeight * (16 / 9));
+            const tempImageRepeated = Math.ceil((window.innerWidth / tempOneImageWidth) + 1);
 
             setBackgroundObj(prevState => ({
                 ...prevState,
@@ -82,7 +80,7 @@ const Background = () => {
         window.addEventListener("resize", handleResize);
         handleResize();
         return () => window.removeEventListener("resize", handleResize);
-    }, [windowDimensions, backgroundWidthRef]);
+    }, [backgroundWidthRef]);
 
     // Main loop
     useAnimationFrame(
@@ -94,7 +92,7 @@ const Background = () => {
             // Factor to modify speed depending on height, keeping the same speed on every screen
             // Limited to x1
             const heightFactorSpeedModifier = Math.min(
-                windowDimensions.height / config.parallax.contentHeightWhereSpeedFactorIsOne,
+                window.innerHeight / config.parallax.contentHeightWhereSpeedFactorIsOne,
                 1
             );
 
@@ -130,7 +128,7 @@ const Background = () => {
                 if (tempSpeed < config.parallax.maxSpeed) {
                     tempSpeed += config.parallax.speedModifier;
                 } else {
-                    if (Math.abs(tempAnimationCurrX) > windowDimensions.width) {
+                    if (Math.abs(tempAnimationCurrX) > window.innerWidth) {
                         setBackgroundObj(prevState => ({
                             ...prevState,
                             animationState: "BCK_ANIM_STATE::STOP"
@@ -152,7 +150,6 @@ const Background = () => {
                 animationCurrX: tempAnimationCurrX
             }));
         }, [
-            windowDimensions.width,
             backgroundObj.animationState,
             backgroundObj.animationCurrX,
             backgroundObj.width,
@@ -177,7 +174,7 @@ const Background = () => {
             )}
 
             <div className="w-full relative bg-[#DEFDFD] brightness-50 background overflow-hidden outline-none blur-md"
-                style={{ height: windowDimensions.height - 1 }}
+                style={{ height: window.innerHeight - 1 }}
             >
                 <div className="background__layer background__layer-1" ref={backgroundWidthRef}
                     style={{
