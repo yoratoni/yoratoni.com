@@ -20,12 +20,12 @@ export default function Contact() {
 
             <div className="flex flex-col w-full max-w-sm px-8 space-y-6">
                 <Input
-                    placeholder="Name"
+                    placeholder="Full Name"
                     value={name}
                     onChange={setName}
                 />
                 <Input
-                    placeholder="Email"
+                    placeholder="E-mail"
                     value={email}
                     onChange={setEmail}
                     type="email"
@@ -33,8 +33,15 @@ export default function Contact() {
                 <TextArea
                     placeholder="Message"
                     value={message}
+                    maxLength={180}
                     onChange={setMessage}
                 />
+            </div>
+
+            <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-sm:pb-1">
+                <p className="font-[500] tracking-widest">&gt; Swipe on mobile &lt;</p>
+                <p className="font-[500] tracking-widest">&gt; Scroll on desktop &lt;</p>
+                <p className="font-[500] tracking-widest">&gt; yoratoni.dev@gmail.com &lt;</p>
             </div>
         </Section>
     );
