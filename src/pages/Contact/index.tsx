@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
+import Button from "@/components/base/Button";
 import Input from "@/components/base/Input";
 import Section from "@/components/base/Section";
 import TextArea from "@/components/base/TextArea";
@@ -18,7 +19,25 @@ export default function Contact() {
                 title="GET IN TOUCH"
             />
 
-            <div className="flex flex-col w-full max-w-sm px-8 space-y-6">
+            <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl pb-9">
+                <span className="max-sm:hidden">
+                    I&apos;m here to help and answer any question you might have. Any idea or project you want to discuss,
+                    I&apos;m open to it!
+                    <br />
+                    <br />
+                </span>
+                Feel free to contact me by filling the form below or by sending me an email at&nbsp;
+                <a
+                    className="font-medium hover:underline"
+                    href="https://alien.club/"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    yoratoni.dev@gmail.com
+                </a>.
+            </p>
+
+            <div className="relative flex flex-col w-full max-w-md px-8 space-y-4 border-l-2">
                 <Input
                     placeholder="Full Name"
                     value={name}
@@ -36,12 +55,12 @@ export default function Contact() {
                     maxLength={180}
                     onChange={setMessage}
                 />
-            </div>
 
-            <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-sm:pb-1">
-                <p className="font-[500] tracking-widest">&gt; Swipe on mobile &lt;</p>
-                <p className="font-[500] tracking-widest">&gt; Scroll on desktop &lt;</p>
-                <p className="font-[500] tracking-widest">&gt; yoratoni.dev@gmail.com &lt;</p>
+                <div className="w-full max-w-[200px] mx-auto pt-1">
+                    <Button
+                        label="Send"
+                    />
+                </div>
             </div>
         </Section>
     );

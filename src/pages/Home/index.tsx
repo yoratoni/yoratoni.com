@@ -30,11 +30,11 @@ export default function Home() {
                     latest technologies including&nbsp;
                     <a
                         className="font-medium hover:underline"
-                        href="https://eips.ethereum.org/EIPS/eip-2771"
+                        href="https://eips.ethereum.org/EIPS/eip-4337"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        ERC&#8209;2771
+                        ERC&#8209;4337
                     </a>
                     &nbsp;to facilitate user experience with the blockchain,
                     and to contribute to the development of the Web 3.0 ecosystem.
