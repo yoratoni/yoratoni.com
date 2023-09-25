@@ -22,6 +22,9 @@ module.exports = {
                 lg: "0 8px 16px var(--tw-shadow-color)",
                 p: "2px 2px 4px rgba(0, 0, 0, 1)"
             },
+            boxShadow: {
+                io: "-2px 4px 4px -1px rgba(0,0,0,0.30)"
+            }
         },
     },
     plugins: [

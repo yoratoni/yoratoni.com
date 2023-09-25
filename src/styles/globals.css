@@ -41,9 +41,19 @@ p {
 }
 
 input,
-textarea
-{
+textarea {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     outline: none;
     overflow: hidden;
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: rgba(31, 63, 122, 0.7);
+}
+
+::selection {
+    color: white;
+    background: rgba(31, 63, 122, 0.7);
 }

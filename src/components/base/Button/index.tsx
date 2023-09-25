@@ -1,6 +1,6 @@
 type ButtonProps = {
     label: string;
-    className?: string;
+    disabled?: boolean;
     onClick?: () => void;
 };
 
@@ -8,10 +8,14 @@ export default function Button(props: ButtonProps) {
     return (
         <button
             className={`
-                ${props.className}
-                border-2 border-gray-300 outline-none w-full h-12 hover:border-white
-                bg-black bg-opacity-5 shadow-2xl font-extralight md:text-lg text-[15px]
+                ${props.disabled && "opacity-60 cursor-not-allowed hover:border-gray-300 hover:text-gray-200"}
+                border outline-none w-full h-12 bg-transparent
+                font-extralight md:text-lg text-[15px]
                 max-sm:h-10
+                shadow-io
+                border-gray-300 hover:border-white
+                text-gray-200 hover:text-white
+                rounded-sm
             `}
         >
             {props.label}

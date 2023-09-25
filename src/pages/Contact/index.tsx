@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
 import Button from "@/components/base/Button";
 import Input from "@/components/base/Input";
@@ -19,7 +19,7 @@ export default function Contact() {
                 title="GET IN TOUCH"
             />
 
-            <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl pb-9">
+            <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl pb-12 max-sm:pb-8">
                 <span className="max-sm:hidden">
                     I&apos;m here to help and answer any question you might have. Any idea or project you want to discuss,
                     I&apos;m open to it!
@@ -37,7 +37,7 @@ export default function Contact() {
                 </a>.
             </p>
 
-            <div className="relative flex flex-col w-full max-w-md px-8 space-y-4 border-l-2">
+            <div className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:space-y-4">
                 <Input
                     placeholder="Full Name"
                     value={name}
@@ -56,7 +56,7 @@ export default function Contact() {
                     onChange={setMessage}
                 />
 
-                <div className="w-full max-w-[200px] mx-auto pt-1">
+                <div className="w-full max-w-[200px] mx-auto pt-5 max-sm:pt-4">
                     <Button
                         label="Send"
                     />

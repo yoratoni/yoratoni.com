@@ -80,7 +80,7 @@ export default function Navbar() {
                                             style={{
                                                 marginRight: "0.4rem",
                                                 marginBottom: "0.3rem",
-                                                fontSize: "10px"
+                                                fontSize: "8px"
                                             }}
                                         />
                                     )}
@@ -98,12 +98,12 @@ export default function Navbar() {
                                             style={{
                                                 marginLeft: "0.4rem",
                                                 marginBottom: "0.3rem",
-                                                fontSize: "10px"
+                                                fontSize: "8px"
                                             }}
                                         />
                                     )}
                                 </div>
-                                <p className="text-base font-medium">
+                                <p className="text-base font-normal">
                                     {getPageInfo(i, "isMultiPage") || config.pageNames[i]}
                                 </p>
                             </button>
