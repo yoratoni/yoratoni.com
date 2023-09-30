@@ -10,10 +10,11 @@ export default function Input(props: InputProps) {
     return (
         <input
             className={`
-                border-l border-b focus:outline-none px-4 py-2 w-full bg-transparent
+                backdrop-blur-md
+                border focus:outline-none px-4 py-2 w-full bg-black bg-opacity-5
                 placeholder:text-gray-200 font-extralight md:text-lg text-[15px]
                 shadow-io
-                border-gray-300 focus:border-white
+                border-gray-400 focus:border-gray-300
                 rounded-sm
             `}
             placeholder={props.placeholder}
