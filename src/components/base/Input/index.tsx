@@ -11,10 +11,11 @@ export default function Input(props: InputProps) {
         <input
             className={`
                 backdrop-blur-md
-                border focus:outline-none px-4 py-2 w-full bg-black bg-opacity-5
+                border focus:outline-none px-4 py-2 w-full bg-black
                 placeholder:text-gray-200 font-extralight md:text-lg text-[15px]
                 shadow-io
                 border-gray-400 focus:border-gray-300
+                bg-opacity-5 focus:bg-opacity-25
                 rounded-sm
             `}
             placeholder={props.placeholder}
