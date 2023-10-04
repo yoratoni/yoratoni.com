@@ -29,7 +29,7 @@ export default function TextArea(props: TextAreaProps) {
                 resize-y max-h-[12em]
                 shadow-io
                 border-gray-400 focus:border-gray-300
-                bg-opacity-5 focus:bg-opacity-25
+                bg-opacity-5 hover:bg-opacity-10 focus:bg-opacity-25
                 rounded-sm
             `}
             placeholder={props.placeholder}

@@ -29,11 +29,14 @@ export default function Navbar() {
      */
     const getPageInfo = (
         i: number,
-        wantedInfo: "ignoreOtherMultiPages" | "isMultiPage" | "doApplyButtonColor"
+        wantedInfo: "ignoreMultiPages" | "isMultiPage" | "doApplyButtonColor"
     ): boolean | string => {
         switch (wantedInfo) {
-            case "ignoreOtherMultiPages":
-                return (config.pageNames[i].includes("_") && config.pageNames[i].split("_")[1] === "0") ||
+            case "ignoreMultiPages":
+                return (
+                    config.pageNames[i].includes("_") &&
+                    config.pageNames[i].split("_")[1] === "0"
+                ) ||
                     !config.pageNames[i].includes("_");
             case "isMultiPage":
                 if (config.pageNames[i].includes("work")) return "work";
@@ -41,13 +44,8 @@ export default function Navbar() {
 
                 return false;
             case "doApplyButtonColor":
-                if (config.pageNames[i] === "work_0" && config.pageNames[pageNumber].includes("work")) {
-                    return true;
-                }
-
-                if (config.pageNames[i] === "about_0" && config.pageNames[pageNumber].includes("about")) {
-                    return true;
-                }
+                if (config.pageNames[i] === "work_0" && config.pageNames[pageNumber].includes("work")) return true;
+                if (config.pageNames[i] === "about_0" && config.pageNames[pageNumber].includes("about")) return true;
 
                 return (i === pageNumber);
             default:
@@ -65,7 +63,7 @@ export default function Navbar() {
             <div className="flex items-start justify-between w-full h-full max-w-md px-6 md:max-w-lg">
                 {[...Array(config.pageNames.length)].map((_, i) => (
                     <Fragment key={i}>
-                        {getPageInfo(i, "ignoreOtherMultiPages") && (
+                        {getPageInfo(i, "ignoreMultiPages") && (
                             <button
                                 data-index={i}
                                 onClick={setCurrentPage}

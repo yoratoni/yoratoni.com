@@ -15,7 +15,7 @@ export default function Input(props: InputProps) {
                 placeholder:text-gray-200 font-extralight md:text-lg text-[15px]
                 shadow-io
                 border-gray-400 focus:border-gray-300
-                bg-opacity-5 focus:bg-opacity-25
+                bg-opacity-5 hover:bg-opacity-10 focus:bg-opacity-25
                 rounded-sm
             `}
             placeholder={props.placeholder}
