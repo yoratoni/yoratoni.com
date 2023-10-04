@@ -33,11 +33,17 @@ export default function App() {
             case "work_1":
                 navigate("/work/1");
                 break;
+            case "work_2":
+                navigate("/work/2");
+                break;
             case "about_0":
                 navigate("/about/0");
                 break;
             case "about_1":
                 navigate("/about/1");
+                break;
+            case "about_2":
+                navigate("/about/2");
                 break;
             case "contact":
                 navigate("/contact");
@@ -68,8 +74,10 @@ export default function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/work/0" element={<Work pageIndex={0} />} />
                         <Route path="/work/1" element={<Work pageIndex={1} />} />
+                        <Route path="/work/2" element={<Work pageIndex={2} />} />
                         <Route path="/about/0" element={<About pageIndex={0} />} />
                         <Route path="/about/1" element={<About pageIndex={1} />} />
+                        <Route path="/about/2" element={<About pageIndex={2} />} />
                         <Route path="/contact" element={<Contact />} />
                     </Routes>
                 </Layout>

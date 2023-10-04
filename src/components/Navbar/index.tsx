@@ -1,7 +1,6 @@
-import Circle from "@mui/icons-material/Circle";
-import SelectAllIcon from "@mui/icons-material/SelectAll";
 import { Fragment, useContext } from "react";
 
+import NavButton from "@/components/base/Button/NavButton";
 import { PageNumberContext } from "@/components/Contexts/PageNumber";
 import config from "@/configs/main.config";
 
@@ -29,25 +28,33 @@ export default function Navbar() {
      */
     const getPageInfo = (
         i: number,
-        wantedInfo: "ignoreMultiPages" | "isMultiPage" | "doApplyButtonColor"
+        wantedInfo: "showButton" | "isMultiPage" | "getButtonState"
     ): boolean | string => {
         switch (wantedInfo) {
-            case "ignoreMultiPages":
+            // Allow to remove multi-pages from the navbar (only the first page is shown)
+            case "showButton":
                 return (
                     config.pageNames[i].includes("_") &&
                     config.pageNames[i].split("_")[1] === "0"
                 ) ||
                     !config.pageNames[i].includes("_");
+
+            // If the page is a multi-page, return the page name.
             case "isMultiPage":
                 if (config.pageNames[i].includes("work")) return "work";
                 if (config.pageNames[i].includes("about")) return "about";
 
                 return false;
-            case "doApplyButtonColor":
+
+            // In case of multi-pages, checks that one of the pages is the current page.
+            // If not, return i === pageNumber for normal pages.
+            case "getButtonState":
                 if (config.pageNames[i] === "work_0" && config.pageNames[pageNumber].includes("work")) return true;
                 if (config.pageNames[i] === "about_0" && config.pageNames[pageNumber].includes("about")) return true;
 
                 return (i === pageNumber);
+
+            // If the wanted info is not found, return false.
             default:
                 return false;
         }
@@ -60,51 +67,18 @@ export default function Navbar() {
                 background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.24) 36%)"
             }}
         >
-            <div className="flex items-start justify-between w-full h-full max-w-md px-6 md:max-w-lg">
+            <div className="flex items-start justify-between w-full h-full max-w-md px-6 max-sm:px-1 md:max-w-lg">
                 {[...Array(config.pageNames.length)].map((_, i) => (
                     <Fragment key={i}>
-                        {getPageInfo(i, "ignoreMultiPages") && (
-                            <button
-                                data-index={i}
+                        {getPageInfo(i, "showButton") && (
+                            <NavButton
+                                name={(getPageInfo(i, "isMultiPage") as string) || config.pageNames[i]}
+                                pageName={config.pageNames[pageNumber]}
+                                index={i}
                                 onClick={setCurrentPage}
-                                className="flex flex-col items-center flex-1 min-w-0 text-gray-600 hover:text-gray-500"
-                                style={{
-                                    color: getPageInfo(i, "doApplyButtonColor") ? "#fff" : undefined
-                                }}
-                            >
-                                <div className="text-[34px] md:text-[46px]">
-                                    {getPageInfo(i, "isMultiPage") && (
-                                        <Circle
-                                            style={{
-                                                marginRight: "0.4rem",
-                                                marginBottom: "0.3rem",
-                                                fontSize: "8px"
-                                            }}
-                                        />
-                                    )}
-
-                                    <SelectAllIcon
-                                        style={{
-                                            marginBottom: "0.3rem",
-                                            transform: "rotate(45deg)",
-                                            fontSize: "1em"
-                                        }}
-                                    />
-
-                                    {getPageInfo(i, "isMultiPage") && (
-                                        <Circle
-                                            style={{
-                                                marginLeft: "0.4rem",
-                                                marginBottom: "0.3rem",
-                                                fontSize: "8px"
-                                            }}
-                                        />
-                                    )}
-                                </div>
-                                <p className="text-base font-normal">
-                                    {getPageInfo(i, "isMultiPage") || config.pageNames[i]}
-                                </p>
-                            </button>
+                                isMultiPage={getPageInfo(i, "isMultiPage") !== false}
+                                activated={(getPageInfo(i, "getButtonState") as boolean)}
+                            />
                         )}
                     </Fragment>
                 ))}
