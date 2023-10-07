@@ -14,7 +14,7 @@ export default function Home() {
             <div className="flex items-center justify-center w-full pb-6">
                 <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl">
                     I&apos;m a self-taught French web developer with a passion for Web 3.0 and specialized in
-                    React, Next.js, Node JS, Typescript and Solidity.
+                    <b> React</b>, <b>Next.js</b>, <b>Node JS</b>, <b>Typescript</b> and <b>Solidity</b>.
                     <br />
                     <br />
                     Currently working at&nbsp;
@@ -26,15 +26,15 @@ export default function Home() {
                     >
                         Alien
                     </a>
-                    &nbsp;as a full stack / Web 3.0 developer, my goal is to create new projects from scratch, using the
+                    &nbsp;as a full stack developer, my goal is to create new projects from scratch, using the
                     latest technologies including&nbsp;
                     <a
                         className="font-medium hover:underline"
-                        href="https://eips.ethereum.org/EIPS/eip-4337"
+                        href="https://eips.ethereum.org/EIPS/eip-2771"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        ERC&#8209;4337
+                        ERC&#8209;2771
                     </a>
                     &nbsp;to facilitate user experience with the blockchain,
                     and to contribute to the development of the Web 3.0 ecosystem.

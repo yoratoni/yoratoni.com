@@ -9,7 +9,6 @@ export default function Button(props: ButtonProps) {
         <button
             className={`
                 ${props.disabled && "opacity-60 cursor-not-allowed hover:border-gray-300 hover:text-gray-200"}
-                backdrop-blur-md
                 border outline-none w-full h-12 bg-black
                 font-extralight md:text-lg text-[15px]
                 max-sm:h-10

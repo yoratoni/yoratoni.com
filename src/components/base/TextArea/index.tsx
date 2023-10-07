@@ -23,7 +23,6 @@ export default function TextArea(props: TextAreaProps) {
     return (
         <TextareaAutosize
             className={`
-                backdrop-blur-md
                 border focus:outline-none px-4 py-2 w-full bg-black
                 placeholder:text-gray-200 font-extralight md:text-lg text-[15px]
                 resize-y max-h-[12em]
