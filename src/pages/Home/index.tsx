@@ -41,7 +41,7 @@ export default function Home() {
                 </p>
             </div>
 
-            <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-sm:pb-1">
+            <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-sm:pb-3">
                 <p className="font-[500] tracking-widest">&gt; Swipe on mobile &lt;</p>
                 <p className="font-[500] tracking-widest">&gt; Scroll on desktop &lt;</p>
                 <p className="font-[500] tracking-widest">&gt; Background by Digital Moons &lt;</p>
