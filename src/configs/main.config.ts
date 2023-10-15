@@ -20,7 +20,7 @@ const config = {
         defaultSpeed: 2,
         maxSpeed: 128,
         speedModifier: 8,
-        contentHeightWhereSpeedFactorIsOne: 700,
+        contentHeightWhereSpeedFactorIsOne: 600,
         minContentHeightSpeedFactor: 0.2
     },
 
@@ -62,7 +62,16 @@ const config = {
         but to name a few: <b>NextJS</b>, <b>TypeScript</b>, <b>GraphQL</b>, <b>Prisma</b>, <b>Hardhat</b>,
         <b>Solidity</b>, <b>Viem/Wagmi</b>, <b>EthersJS</b>, <b>OZ Defender</b>,
         and many more..`,
-    ]
+    ],
+
+    // Contact
+    contact: {
+        emailJs: {
+            serviceId: "service_1gmqdxw",
+            templateId: "template_celk9nh",
+            publicKey: "8v2dHrocI060XFU92"
+        }
+    }
 };
 
 

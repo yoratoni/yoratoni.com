@@ -1,16 +1,39 @@
-import { useState } from "react";
+import { sendForm } from "@emailjs/browser";
+import { useRef, useState } from "react";
 
 import Button from "@/components/base/Button";
 import Input from "@/components/base/Input";
 import Section from "@/components/base/Section";
 import TextArea from "@/components/base/TextArea";
 import Title from "@/components/base/Title";
+import config from "@/configs/main.config";
 
 
 export default function Contact() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
+
+    const contactForm = useRef<HTMLFormElement>(null);
+
+    const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const res = await sendForm(
+            config.contact.emailJs.serviceId,
+            config.contact.emailJs.templateId,
+            contactForm.current as HTMLFormElement,
+            config.contact.emailJs.publicKey
+        );
+
+        if (res.status === 200) {
+            setName("");
+            setEmail("");
+            setMessage("");
+        }
+
+        console.log(res);
+    };
 
     return (
         <Section>
@@ -38,19 +61,26 @@ export default function Contact() {
                 </a>.
             </p>
 
-            <div className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:space-y-4">
+            <form
+                className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:space-y-4"
+                ref={contactForm}
+                onSubmit={sendEmail}
+            >
                 <Input
+                    name="from_name"
                     placeholder="Full Name"
                     value={name}
                     onChange={setName}
                 />
                 <Input
+                    name="from_email"
                     placeholder="E-mail"
                     value={email}
                     onChange={setEmail}
                     type="email"
                 />
                 <TextArea
+                    name="message"
                     placeholder="Message"
                     value={message}
                     maxLength={180}
@@ -59,10 +89,11 @@ export default function Contact() {
 
                 <div className="w-full max-w-[200px] mx-auto pt-5 max-sm:pt-4">
                     <Button
+                        type="submit"
                         label="Send"
                     />
                 </div>
-            </div>
+            </form>
         </Section>
     );
 }

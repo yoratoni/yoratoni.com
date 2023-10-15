@@ -29,6 +29,18 @@ export default function About({ pageIndex }: { pageIndex: number; }) {
                 />
             )}
 
+            {pageIndex === 1 && (
+                <h2 className="text-2xl font-semibold md:text-4xl leading-[1em] pb-8 max-sm:pb-7">
+                    How it's going..
+                </h2>
+            )}
+
+            {pageIndex === 2 && (
+                <h2 className="text-2xl font-semibold md:text-4xl leading-[1em] pb-8 max-sm:pb-7">
+                    What's next?
+                </h2>
+            )}
+
             <div className="flex items-center justify-center w-full">
                 <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-normal md:text-xl">
                     <Interweave

@@ -2,6 +2,7 @@ type InputProps = {
     placeholder?: string;
     value: string;
     type?: "text" | "password" | "email";
+    name?: string;
     onChange: (value: string) => void;
 };
 
@@ -19,6 +20,7 @@ export default function Input(props: InputProps) {
             `}
             placeholder={props.placeholder}
             type={props.type}
+            name={props.name}
             value={props.value}
             onChange={(e) => props.onChange(e.target.value)}
         />

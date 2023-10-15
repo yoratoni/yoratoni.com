@@ -5,6 +5,7 @@ import TextareaAutosize from "react-textarea-autosize";
 type TextAreaProps = {
     placeholder?: string;
     value: string;
+    name?: string;
     maxLength?: number;
     onChange: (value: string) => void;
 };
@@ -33,6 +34,7 @@ export default function TextArea(props: TextAreaProps) {
             `}
             placeholder={props.placeholder}
             value={props.value}
+            name={props.name}
             onChange={(e) => {
                 if (
                     props.maxLength &&

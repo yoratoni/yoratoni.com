@@ -1,5 +1,6 @@
 type ButtonProps = {
     label: string;
+    type?: "button" | "submit";
     disabled?: boolean;
     onClick?: () => void;
 };
@@ -7,6 +8,7 @@ type ButtonProps = {
 export default function Button(props: ButtonProps) {
     return (
         <button
+            type={props.type ?? "button"}
             className={`
                 ${props.disabled && "opacity-60 cursor-not-allowed hover:border-gray-300 hover:text-gray-200"}
                 border outline-none w-full h-12 bg-black
