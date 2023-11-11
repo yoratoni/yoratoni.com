@@ -31,18 +31,19 @@ body {
 
 h1,
 h2,
-h3,
-span {
-    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.4);
+h3 {
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 1);
 }
 
-p {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+p,
+input,
+textarea,
+span {
+    text-shadow: -1px -1px 3px rgba(2, 2, 2, 0.6), 2px 2px 4px rgb(27, 27, 27, 0.6);
 }
 
 input,
 textarea {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     outline: none;
     overflow: hidden;
 }

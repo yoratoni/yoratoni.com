@@ -24,11 +24,11 @@ export default function TextArea(props: TextAreaProps) {
     return (
         <TextareaAutosize
             className={`
-                border focus:outline-none px-4 py-2 w-full bg-black
-                placeholder:text-gray-200 font-extralight md:text-lg text-[15px]
+                border-2 focus:outline-none px-4 py-2 w-full bg-black
+                placeholder:text-gray-200 font-light md:text-lg text-[15px]
                 resize-y max-h-[12em]
                 shadow-io
-                border-gray-400 focus:border-gray-300
+                border-gray-300 focus:border-gray-100
                 bg-opacity-5 hover:bg-opacity-10 focus:bg-opacity-25
                 rounded-sm
             `}

@@ -8,7 +8,7 @@ import config from "@/configs/main.config";
 export default function Navbar() {
     const { pageNumber, setPageNumber } = useContext(PageNumberContext);
 
-    const setCurrentPage = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const setCurrentPage = (e: React.MouseEvent<HTMLDivElement>) => {
         let tempPageNumber = pageNumber;
 
         if (e.currentTarget.dataset.index !== undefined) {

@@ -6,9 +6,13 @@ type NavButtonProps = {
     name: string;
     pageName: string;
     index: number;
-    onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onClick: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     isMultiPage: boolean;
     activated: boolean;
+
+    // Optional click for left/right icons
+    onClickLeft?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+    onClickRight?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 };
 
 
@@ -70,41 +74,46 @@ export default function NavButton(props: NavButtonProps) {
     return (
         <button
             data-index={props.index}
-            onClick={props.onClick}
-            className="flex flex-col items-center flex-1 min-w-0 text-gray-600 hover:text-gray-500"
+            className="flex flex-col items-center flex-1 min-w-0"
         >
             <div className="relative flex items-center justify-between">
                 {props.isMultiPage && (
-                    <Circle
-                        className="mr-[0.4rem] max-sm:mr-[6px]"
-                        style={{
-                            width: "14px",
-                            marginBottom: "0.3rem",
-                            fontSize: getIconSize("left"),
-                            color: getIconColor("left")
-                        }}
-                    />
+                    <div onClick={props.onClickLeft} className="text-gray-600 hover:text-gray-500">
+                        <Circle
+                            className="mr-[0.4rem] max-sm:mr-[6px]"
+                            style={{
+                                width: "14px",
+                                marginBottom: "0.3rem",
+                                fontSize: getIconSize("left"),
+                                color: getIconColor("left")
+                            }}
+                        />
+                    </div>
                 )}
 
-                <SelectAll
-                    style={{
-                        marginBottom: "0.3rem",
-                        transform: "rotate(45deg)",
-                        fontSize: getIconSize("center"),
-                        color: getIconColor("center")
-                    }}
-                />
-
-                {props.isMultiPage && (
-                    <Circle
-                        className="ml-[0.4rem] max-sm:ml-[6px]"
+                <div onClick={props.onClick} className="text-gray-600 hover:text-gray-500">
+                    <SelectAll
                         style={{
-                            width: "14px",
                             marginBottom: "0.3rem",
-                            fontSize: getIconSize("right"),
-                            color: getIconColor("right")
+                            transform: "rotate(45deg)",
+                            fontSize: getIconSize("center"),
+                            color: getIconColor("center")
                         }}
                     />
+                </div>
+
+                {props.isMultiPage && (
+                    <div onClick={props.onClickLeft} className="text-gray-600 hover:text-gray-500">
+                        <Circle
+                            className="ml-[0.4rem] max-sm:ml-[6px]"
+                            style={{
+                                width: "14px",
+                                marginBottom: "0.3rem",
+                                fontSize: getIconSize("right"),
+                                color: getIconColor("right")
+                            }}
+                        />
+                    </div>
                 )}
             </div>
 
