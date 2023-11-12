@@ -1,9 +1,9 @@
 export interface IsWorkProject {
     title: string;
     description: string;
-    link: string;
-    image: string;
     technologies: string[];
+    gitLink?: string;
+    liveLink?: string;
 }
 
 /**

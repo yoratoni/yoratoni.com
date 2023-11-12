@@ -29,7 +29,16 @@ const config: IsMainConfig = {
 
     // Work
     work: [
-
+        {
+            title: "Test 1 title",
+            description: "Test 1 description",
+            technologies: ["Test 1 technology 1", "Test 1 technology 2"]
+        },
+        {
+            title: "Test 2 title",
+            description: "Test 2 description",
+            technologies: ["Test 2 technology 1", "Test 2 technology 2"]
+        }
     ],
 
     // About

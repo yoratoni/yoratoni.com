@@ -1,10 +1,18 @@
 import { IsWorkProject } from "@/types/general";
 
 
-export default function Project(project: IsWorkProject) {
+type ProjectProps = {
+    key: number;
+    project: IsWorkProject;
+};
+
+export default function Project({
+    key,
+    project
+}: ProjectProps) {
     return (
-        <div>
-            <h1>Project</h1>
-        </div>
+        <a>
+            
+        </a>
     );
 }

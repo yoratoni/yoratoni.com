@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-import Section from "@/components/base/Section";
+import Project from "@/components/Project";
+import config from "@/configs/main.config";
 import { IsWorkProject } from "@/types/general";
 
 
@@ -16,12 +17,22 @@ export default function Work({
     const [currProjects, setCurrProjects] = useState<IsWorkProject[]>([]);
 
     useEffect(() => {
-        // 
+        const projects = config.work.slice(
+            pageIndex * maxPages,
+            (pageIndex + 1) * maxPages
+        );
+
+        setCurrProjects(projects);
     }, [pageIndex]);
 
     return (
-        <Section>
-
-        </Section>
+        <div className="relative flex flex-col items-center justify-center w-full h-full max-w-6xl space-y-4 overflow-hidden text-center">
+            {currProjects.map((project, index) => (
+                <Project
+                    key={index}
+                    project={project}
+                />
+            ))}
+        </div>
     );
 }
