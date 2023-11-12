@@ -20,10 +20,10 @@ export default function App() {
 
     // Scroll handlers
     const upHandler = () => (pageNumber > 0) && setPageNumber(prev => prev - 1);
-    const downHandler = () => (pageNumber < config.pageNames.length - 1) && setPageNumber(prev => prev + 1);
+    const downHandler = () => (pageNumber < config.pagesNames.length - 1) && setPageNumber(prev => prev + 1);
 
     useEffect(() => {
-        switch (config.pageNames[pageNumber]) {
+        switch (config.pagesNames[pageNumber]) {
             case "home":
                 navigate("/");
                 break;
@@ -72,9 +72,9 @@ export default function App() {
                 <Layout>
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/work/0" element={<Work pageIndex={0} />} />
-                        <Route path="/work/1" element={<Work pageIndex={1} />} />
-                        <Route path="/work/2" element={<Work pageIndex={2} />} />
+                        <Route path="/work/0" element={<Work pageIndex={0} maxPages={3} />} />
+                        <Route path="/work/1" element={<Work pageIndex={1} maxPages={3} />} />
+                        <Route path="/work/2" element={<Work pageIndex={2} maxPages={3} />} />
                         <Route path="/about/0" element={<About pageIndex={0} />} />
                         <Route path="/about/1" element={<About pageIndex={1} />} />
                         <Route path="/about/2" element={<About pageIndex={2} />} />

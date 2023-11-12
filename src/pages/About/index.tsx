@@ -7,7 +7,11 @@ import Title from "@/components/base/Title";
 import config from "@/configs/main.config";
 
 
-export default function About({ pageIndex }: { pageIndex: number; }) {
+type AboutProps = {
+    pageIndex: number;
+};
+
+export default function About({ pageIndex }: AboutProps) {
     const [currContent, setCurrContent] = useState<string>("...");
 
     useEffect(() => {

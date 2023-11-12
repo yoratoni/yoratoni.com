@@ -1,6 +1,9 @@
-const config = {
+import { IsMainConfig } from "@/types/general";
+
+
+const config: IsMainConfig = {
     // General
-    pageNames: [
+    pagesNames: [
         "home",
         "work_0",
         "work_1",
@@ -23,6 +26,11 @@ const config = {
         contentHeightWhereSpeedFactorIsOne: 600,
         minContentHeightSpeedFactor: 0.2
     },
+
+    // Work
+    work: [
+
+    ],
 
     // About
     about: [
@@ -66,6 +74,7 @@ const config = {
 
     // Contact
     contact: {
+        email: "yoratoni.dev@gmail.com",
         emailJs: {
             serviceId: "service_1gmqdxw",
             templateId: "template_celk9nh",

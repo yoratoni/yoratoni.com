@@ -6,15 +6,10 @@ type NavButtonProps = {
     name: string;
     pageName: string;
     index: number;
-    onClick: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+    onClick: (e: React.MouseEvent<HTMLDivElement, MouseEvent>, variant: number) => void;
     isMultiPage: boolean;
     activated: boolean;
-
-    // Optional click for left/right icons
-    onClickLeft?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-    onClickRight?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 };
-
 
 export default function NavButton(props: NavButtonProps) {
 
@@ -73,12 +68,15 @@ export default function NavButton(props: NavButtonProps) {
 
     return (
         <button
-            data-index={props.index}
             className="flex flex-col items-center flex-1 min-w-0"
         >
             <div className="relative flex items-center justify-between">
                 {props.isMultiPage && (
-                    <div onClick={props.onClickLeft} className="text-gray-600 hover:text-gray-500">
+                    <div
+                        data-index={props.index}
+                        onClick={(event: React.MouseEvent<HTMLDivElement>) => props.onClick(event, -1)}
+                        className="text-gray-600 hover:text-gray-500"
+                    >
                         <Circle
                             className="mr-[0.4rem] max-sm:mr-[6px]"
                             style={{
@@ -91,7 +89,11 @@ export default function NavButton(props: NavButtonProps) {
                     </div>
                 )}
 
-                <div onClick={props.onClick} className="text-gray-600 hover:text-gray-500">
+                <div
+                    data-index={props.index}
+                    onClick={(event: React.MouseEvent<HTMLDivElement>) => props.onClick(event, 0)}
+                    className="text-gray-600 hover:text-gray-500"
+                >
                     <SelectAll
                         style={{
                             marginBottom: "0.3rem",
@@ -103,7 +105,11 @@ export default function NavButton(props: NavButtonProps) {
                 </div>
 
                 {props.isMultiPage && (
-                    <div onClick={props.onClickLeft} className="text-gray-600 hover:text-gray-500">
+                    <div
+                        data-index={props.index}
+                        onClick={(event: React.MouseEvent<HTMLDivElement>) => props.onClick(event, 1)}
+                        className="text-gray-600 hover:text-gray-500"
+                    >
                         <Circle
                             className="ml-[0.4rem] max-sm:ml-[6px]"
                             style={{
@@ -120,7 +126,7 @@ export default function NavButton(props: NavButtonProps) {
             <p
                 className="text-base font-normal"
                 style={{
-                    color: (props.activated) ? "#fff" : ""
+                    color: (props.activated) ? "#fff" : "#9CA3AF"
                 }}
             >
                 {props.name}

@@ -6,7 +6,6 @@ type InputProps = {
     onChange: (value: string) => void;
 };
 
-
 export default function Input(props: InputProps) {
     return (
         <input

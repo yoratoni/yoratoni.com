@@ -4,7 +4,11 @@ import { ContentDimensionsContext } from "@/components/Contexts/ContentDimension
 import Navbar from "@/components/Navbar";
 
 
-export default function Layout({ children }: { children: ReactNode; }) {
+type LayoutProps = {
+    children: ReactNode;
+};
+
+export default function Layout({ children }: LayoutProps) {
     const { setContentDimensions } = useContext(ContentDimensionsContext);
 
     const contentRef = useRef<HTMLDivElement>(null);
