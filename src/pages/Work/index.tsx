@@ -19,8 +19,15 @@ export default function Work({
     useEffect(() => {
         const nbProjects = Object.keys(config.work).length / maxPages;
 
-        // Slice equitably the projects for each page
-        const projects = config.work.slice(pageIndex * nbProjects, (pageIndex + 1) * nbProjects);
+        let projects : IsWorkProject[] = [];
+
+        if (pageIndex < maxPages - 1) {
+            // Slice equitably the projects for each page
+            projects = config.work.slice(pageIndex * nbProjects, (pageIndex + 1) * nbProjects);
+        } else {
+            // In the case of the last page, we take all the remaining projects
+            projects = config.work.slice(pageIndex * nbProjects);
+        }
 
         setCurrProjects(projects);
     }, [pageIndex]);

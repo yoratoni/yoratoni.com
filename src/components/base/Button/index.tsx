@@ -15,9 +15,9 @@ export default function Button(props: ButtonProps) {
                 font-light md:text-lg text-[15px]
                 max-sm:h-10
                 shadow-io
-                border-gray-300 hover:border-gray-100
-                text-gray-200 hover:text-white
-                bg-opacity-5 hover:bg-opacity-20
+                border-gray-400 active:border-gray-200
+                text-gray-200
+                bg-opacity-30 hover:bg-opacity-50
                 rounded-sm
             `}
         >

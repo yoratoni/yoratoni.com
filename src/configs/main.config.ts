@@ -44,6 +44,21 @@ const config: IsMainConfig = {
             description: "Test 3 description",
             technologies: ["Test 3 technology 1", "Test 3 technology 2"]
         },
+        {
+            title: "Test 4 title",
+            description: "Test 4 description",
+            technologies: ["Test 4 technology 1", "Test 3 technology 2"]
+        },
+        {
+            title: "Test 5 title",
+            description: "Test 5 description",
+            technologies: ["Test 5 technology 1", "Test 3 technology 2"]
+        },
+        {
+            title: "Test 6 title",
+            description: "Test 6 description",
+            technologies: ["Test 6 technology 1", "Test 3 technology 2"]
+        },
     ],
 
     // About

@@ -10,14 +10,46 @@ import config from "@/configs/main.config";
 
 
 export default function Contact() {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    const [name, setName] = useState({ value: "", isErrored: "" });
+    const [email, setEmail] = useState({ value: "", isErrored: "" });
+    const [message, setMessage] = useState({ value: "", isErrored: "" });
 
     const contactForm = useRef<HTMLFormElement>(null);
 
     const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        let areAllFieldsValid = true;
+
+        // Sanity check
+        if (name.value.length === 0) {
+            setName({
+                ...name,
+                isErrored: "Name is required."
+            });
+
+            areAllFieldsValid = false;
+        }
+
+        if (email.value.length === 0) {
+            setEmail({
+                ...email,
+                isErrored: "E-mail is required."
+            });
+
+            areAllFieldsValid = false;
+        }
+
+        if (message.value.length === 0) {
+            setMessage({
+                ...message,
+                isErrored: "Message is required."
+            });
+
+            areAllFieldsValid = false;
+        }
+
+        if (!areAllFieldsValid) return;
 
         const res = await sendForm(
             config.contact.emailJs.serviceId,
@@ -27,9 +59,9 @@ export default function Contact() {
         );
 
         if (res.status === 200) {
-            setName("");
-            setEmail("");
-            setMessage("");
+            setName({ value: "", isErrored: "" });
+            setEmail({ value: "", isErrored: "" });
+            setMessage({ value: "", isErrored: "" });
         }
     };
 
@@ -65,24 +97,61 @@ export default function Contact() {
                 onSubmit={sendEmail}
             >
                 <Input
-                    name="from_name"
+                    label="from_name"
                     placeholder="Full Name"
-                    value={name}
-                    onChange={setName}
+                    isErrored={name.isErrored}
+                    value={name.value}
+                    onFocus={() => {
+                        setName({
+                            ...name,
+                            isErrored: ""
+                        });
+                    }}
+                    onChange={(value: string) => {
+                        setName({
+                            ...name,
+                            value
+                        });
+                    }}
                 />
                 <Input
-                    name="from_email"
+                    label="from_email"
                     placeholder="E-mail"
-                    value={email}
-                    onChange={setEmail}
+                    isErrored={email.isErrored}
+                    value={email.value}
+                    onFocus={() => {
+                        setEmail({
+                            ...email,
+                            isErrored: ""
+                        });
+                    }}
+                    onChange={(value: string) => {
+                        setEmail({
+                            ...email,
+                            value
+                        });
+                    }}
                     type="email"
                 />
                 <TextArea
-                    name="message"
+                    label="message"
                     placeholder="Message"
-                    value={message}
-                    maxLength={10}
-                    onChange={setMessage}
+                    isErrored={message.isErrored}
+                    value={message.value}
+                    minRows={3}
+                    maxRows={3}
+                    onFocus={() => {
+                        setMessage({
+                            ...message,
+                            isErrored: ""
+                        });
+                    }}
+                    onChange={(value: string) => {
+                        setMessage({
+                            ...message,
+                            value
+                        });
+                    }}
                 />
 
                 <div className="w-full max-w-[200px] mx-auto pt-5 max-sm:pt-4">
