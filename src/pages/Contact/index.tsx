@@ -31,8 +31,6 @@ export default function Contact() {
             setEmail("");
             setMessage("");
         }
-
-        console.log(res);
     };
 
     return (
@@ -83,7 +81,7 @@ export default function Contact() {
                     name="message"
                     placeholder="Message"
                     value={message}
-                    maxLength={180}
+                    maxLength={10}
                     onChange={setMessage}
                 />
 

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 
 
@@ -12,21 +11,12 @@ type TextAreaProps = {
 
 
 export default function TextArea(props: TextAreaProps) {
-    const [lineBreaks, setLineBreaks] = useState(0);
-
-    useEffect(() => {
-        if (props.maxLength) {
-            const lineBreaks = Math.ceil(props.value.length / props.maxLength);
-            setLineBreaks(lineBreaks);
-        }
-    }, [props.value]);
-
     return (
         <TextareaAutosize
             className={`
                 border-2 focus:outline-none px-4 py-2 w-full bg-black
                 placeholder:text-gray-200 font-light md:text-lg text-[15px]
-                resize-y max-h-[12em]
+                resize-y max-h-[12em] min-h-[2.6em]
                 shadow-io
                 border-gray-300 focus:border-gray-100
                 bg-opacity-5 hover:bg-opacity-10 focus:bg-opacity-25
@@ -35,14 +25,8 @@ export default function TextArea(props: TextAreaProps) {
             placeholder={props.placeholder}
             value={props.value}
             name={props.name}
-            onChange={(e) => {
-                if (
-                    props.maxLength &&
-                    e.target.value.length > props.maxLength
-                ) return;
-
-                props.onChange(e.target.value);
-            }}
+            maxLength={props.maxLength}
+            onChange={(e) => props.onChange(e.target.value)}
             minRows={3}
             maxRows={6}
         />
