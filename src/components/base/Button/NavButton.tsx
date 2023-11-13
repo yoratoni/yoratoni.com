@@ -12,7 +12,6 @@ type NavButtonProps = {
 };
 
 export default function NavButton(props: NavButtonProps) {
-
     /**
      * Get the current icon font size, based on the current page.
      * @returns The font size.

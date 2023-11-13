@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 
 
@@ -16,15 +16,6 @@ type TextAreaProps = {
 
 export default function TextArea(props: TextAreaProps) {
     const textAreaRef = useRef<HTMLTextAreaElement>(null);
-
-    const [textAreaWidth, setTextAreaWidth] = useState(0);
-
-    useEffect(() => {
-        if (textAreaRef.current) {
-            setTextAreaWidth(textAreaRef.current.offsetWidth);
-            console.log("textAreaWidth", textAreaWidth);
-        }
-    }, []);
 
     const handleOnChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         const lineBreaks = (event.target.value.match(/\n/g) || []).length;

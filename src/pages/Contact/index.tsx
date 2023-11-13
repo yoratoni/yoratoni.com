@@ -1,4 +1,5 @@
 import { sendForm } from "@emailjs/browser";
+import * as EmailValidator from "email-validator";
 import { useRef, useState } from "react";
 
 import Button from "@/components/base/Button";
@@ -23,29 +24,23 @@ export default function Contact() {
 
         // Sanity check
         if (name.value.length === 0) {
-            setName({
-                ...name,
-                isErrored: "Name is required."
-            });
-
+            setName({ ...name, isErrored: "Name is required." });
             areAllFieldsValid = false;
         }
 
         if (email.value.length === 0) {
-            setEmail({
-                ...email,
-                isErrored: "E-mail is required."
-            });
-
+            setEmail({ ...email, isErrored: "E-mail is required." });
             areAllFieldsValid = false;
         }
 
         if (message.value.length === 0) {
-            setMessage({
-                ...message,
-                isErrored: "Message is required."
-            });
+            setMessage({ ...message, isErrored: "Message is required." });
+            areAllFieldsValid = false;
+        }
 
+        // Verify email
+        if (email.value.length > 0 && !EmailValidator.validate(email.value)) {
+            setEmail({ ...email, isErrored: "Invalid e-mail." });
             areAllFieldsValid = false;
         }
 
@@ -95,6 +90,7 @@ export default function Contact() {
                 className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:space-y-4"
                 ref={contactForm}
                 onSubmit={sendEmail}
+                noValidate
             >
                 <Input
                     label="from_name"
