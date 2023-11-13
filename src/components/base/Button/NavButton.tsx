@@ -16,25 +16,19 @@ export default function NavButton(props: NavButtonProps) {
      * Get the current icon font size, based on the current page.
      * @returns The font size.
      */
-    const getIconSize = (icon: "left" | "center" | "right"): string => {
+    const getIconSize = (icon: "left" | "right"): string => {
         // Internal page id recovered from page name
         const internalPageId = props.pageName.split("_")[1];
 
         // Active multi-page icons
         if (props.activated && props.isMultiPage) {
-            if (icon === "left" || icon === "right") {
-                // Icon index from page name (skip "1" as it is handled by the center icon)
-                const iconIndex = (icon === "left") ? 0 : 2;
-
-                return (internalPageId === `${iconIndex}`) ? "14px" : "9px";
-            } else {
-                return "48px";
-            }
+            // Icon index from page name (skip "1" as it is handled by the center icon)
+            const iconIndex = (icon === "left") ? 0 : 2;
+            return (internalPageId === `${iconIndex}`) ? "14px" : "10px";
         }
 
         // Active single-page icons
-        if (icon === "center") return "48px";
-        return "9px";
+        return "10px";
     };
 
     /**
@@ -67,14 +61,14 @@ export default function NavButton(props: NavButtonProps) {
 
     return (
         <button
-            className="flex flex-col items-center flex-1 min-w-0"
+            className="flex flex-col items-center flex-1 min-w-0 cursor-default"
         >
             <div className="relative flex items-center justify-between">
                 {props.isMultiPage && (
                     <div
                         data-index={props.index}
                         onClick={(event: React.MouseEvent<HTMLDivElement>) => props.onClick(event, -1)}
-                        className="text-gray-600 hover:text-gray-500"
+                        className="text-gray-600 cursor-pointer hover:text-gray-500"
                     >
                         <Circle
                             className="mr-[0.4rem] max-sm:mr-[6px]"
@@ -91,13 +85,13 @@ export default function NavButton(props: NavButtonProps) {
                 <div
                     data-index={props.index}
                     onClick={(event: React.MouseEvent<HTMLDivElement>) => props.onClick(event, 0)}
-                    className="text-gray-600 hover:text-gray-500"
+                    className="text-gray-600 cursor-pointer hover:text-gray-500"
                 >
                     <SelectAll
+                        className="!text-5xl max-sm:!text-4xl"
                         style={{
                             marginBottom: "0.3rem",
                             transform: "rotate(45deg)",
-                            fontSize: getIconSize("center"),
                             color: getIconColor("center")
                         }}
                     />
@@ -107,7 +101,7 @@ export default function NavButton(props: NavButtonProps) {
                     <div
                         data-index={props.index}
                         onClick={(event: React.MouseEvent<HTMLDivElement>) => props.onClick(event, 1)}
-                        className="text-gray-600 hover:text-gray-500"
+                        className="text-gray-600 cursor-pointer hover:text-gray-500"
                     >
                         <Circle
                             className="ml-[0.4rem] max-sm:ml-[6px]"

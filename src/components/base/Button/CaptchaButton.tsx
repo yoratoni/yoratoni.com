@@ -1,11 +1,11 @@
-type ButtonProps = {
+type CaptchaButtonProps = {
     label: string;
     type?: "button" | "submit";
     disabled?: boolean;
     onClick?: () => void;
 };
 
-export default function Button(props: ButtonProps) {
+export default function CaptchaButton(props: CaptchaButtonProps) {
     return (
         <button
             type={props.type ?? "button"}

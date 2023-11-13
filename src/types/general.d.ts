@@ -1,4 +1,6 @@
-export interface IsWorkProject {
+export interface IsWorkCard {
+    bgColor: string;
+    color: string;
     title: string;
     description: string;
     technologies: string[];
@@ -20,7 +22,7 @@ export interface IsMainConfig {
         contentHeightWhereSpeedFactorIsOne: number;
         minContentHeightSpeedFactor: number;
     };
-    work: IsWorkProject[];
+    workCards: IsWorkCard[];
     about: string[];
     contact: {
         email: string;
