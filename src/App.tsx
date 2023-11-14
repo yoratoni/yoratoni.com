@@ -72,9 +72,9 @@ export default function App() {
                 <Layout>
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/work/0" element={<Work pageIndex={0} maxPages={3} />} />
-                        <Route path="/work/1" element={<Work pageIndex={1} maxPages={3} />} />
-                        <Route path="/work/2" element={<Work pageIndex={2} maxPages={3} />} />
+                        <Route path="/work/0" element={<Work pageIndex={0} />} />
+                        <Route path="/work/1" element={<Work pageIndex={1} />} />
+                        <Route path="/work/2" element={<Work pageIndex={2} />} />
                         <Route path="/about/0" element={<About pageIndex={0} />} />
                         <Route path="/about/1" element={<About pageIndex={1} />} />
                         <Route path="/about/2" element={<About pageIndex={2} />} />

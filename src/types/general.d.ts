@@ -1,5 +1,6 @@
 export interface IsWorkCard {
     bgImage: string;
+    bgBrightness: number;
     title: string;
     description: string;
     technologies: string[];
@@ -21,7 +22,11 @@ export interface IsMainConfig {
         contentHeightWhereSpeedFactorIsOne: number;
         minContentHeightSpeedFactor: number;
     };
-    workCards: IsWorkCard[];
+    work: {
+        maxPages: number;
+        maxCardsPerPage: number;
+        cards: IsWorkCard[];
+    };
     about: string[];
     contact: {
         email: string;

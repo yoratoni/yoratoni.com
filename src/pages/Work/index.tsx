@@ -7,26 +7,24 @@ import { IsWorkCard } from "@/types/general";
 
 type WorkProps = {
     pageIndex: number;
-    maxPages: number;
 };
 
 export default function Work({
-    pageIndex,
-    maxPages
+    pageIndex
 }: WorkProps) {
     const [currWorkCards, setCurrWorkCards] = useState<IsWorkCard[]>([]);
 
     useEffect(() => {
-        const nbCards = Object.keys(config.workCards).length / maxPages;
+        const workCards : IsWorkCard[] = [];
 
-        let workCards : IsWorkCard[] = [];
-
-        if (pageIndex < maxPages - 1) {
-            // Slice equitably the work cards for each page
-            workCards = config.workCards.slice(pageIndex * nbCards, (pageIndex + 1) * nbCards);
+        if (pageIndex < config.work.maxPages - 1) {
+            for (let i = 0; i < config.work.maxCardsPerPage; i++) {
+                workCards.push(config.work.cards[pageIndex * config.work.maxCardsPerPage + i]);
+            }
         } else {
-            // In the case of the last page, we take all the remaining work cards
-            workCards = config.workCards.slice(pageIndex * nbCards);
+            for (let i = 0; i < config.work.cards.length - (pageIndex * config.work.maxCardsPerPage); i++) {
+                workCards.push(config.work.cards[pageIndex * config.work.maxCardsPerPage + i]);
+            }
         }
 
         setCurrWorkCards(workCards);

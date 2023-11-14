@@ -28,49 +28,83 @@ const config: IsMainConfig = {
     },
 
     // Work
-    workCards: [
-        {
-            bgImage: "/assets/images/work/background/01.png",
-            title: "Huawei SMS forwarding",
-            description: "A simple CLI program used to forward SMS to another number.",
-            technologies: ["Python", "Huawei LTE API", "PyYAML"],
-            image: "/assets/images/work/huawei_sms_forwarding.png",
-            link: "https://github.com/yoratoni/huawei-router-sms-forwarding"
-        },
-        {
-            bgImage: "/assets/images/work/background/01.png",
-            title: "Genesis",
-            description: "A crypto trading bot that uses the volatility of the market to make profits.",
-            technologies: ["EthersJS", "MongoDB", "Vega", "TypeScript"],
-            image: "/assets/images/work/genesis.png",
-            link: "https://github.com/cybearl/genesis"
-        },
-        {
-            bgImage: "/assets/images/work/background/01.png",
-            title: "Cefpython3 Wrapper",
-            description: "cef_wrapper.py allows auto-completing & syntax highlighting for the cefpython3 library.",
-            technologies: ["Python"],
-            image: "/assets/images/work/cefpython.png"
-        },
-        {
-            bgImage: "/assets/images/work/background/01.png",
-            title: "Test 4 title",
-            description: "Test 4 description",
-            technologies: ["Test 4 technology 1", "Test 3 technology 2"]
-        },
-        {
-            bgImage: "/assets/images/work/background/01.png",
-            title: "Test 5 title",
-            description: "Test 5 description",
-            technologies: ["Test 5 technology 1", "Test 3 technology 2"]
-        },
-        {
-            bgImage: "/assets/images/work/background/01.png",
-            title: "Test 6 title",
-            description: "Test 6 description",
-            technologies: ["Test 6 technology 1", "Test 3 technology 2"]
-        },
-    ],
+    work: {
+        maxPages: 3,
+        maxCardsPerPage: 3,
+        cards: [
+            {
+                bgImage: "/assets/images/work/01/bck.png",
+                bgBrightness: 0.5,
+                title: "Huawei SMS forwarding",
+                description: "A simple CLI program used to forward SMS to another number.",
+                technologies: ["Python", "Huawei LTE API", "PyYAML"],
+                image: "/assets/images/work/01/icon.png",
+                link: "https://github.com/yoratoni/huawei-router-sms-forwarding"
+            },
+            {
+                bgImage: "/assets/images/work/02/bck.png",
+                bgBrightness: 0.6,
+                title: "Genesis",
+                description: "A crypto trading bot that uses the volatility of the market to make profits.",
+                technologies: ["EthersJS", "MongoDB", "NodeJS", "TypeScript"],
+                image: "/assets/images/work/02/icon.png",
+                link: "https://github.com/cybearl/genesis"
+            },
+            {
+                bgImage: "/assets/images/work/03/bck.png",
+                bgBrightness: 0.6,
+                title: "Cefpython3 Wrapper",
+                description: "cef_wrapper.py allows auto-completing & syntax highlighting for the cefpython3 library.",
+                technologies: ["Python"],
+                image: "/assets/images/work/03/icon.png",
+                link: "https://github.com/yoratoni/cefpython-wrapper"
+            },
+            {
+                bgImage: "/assets/images/work/04/bck.png",
+                bgBrightness: 0.5,
+                title: "Mdisk",
+                description: "A tool for the game Beyond Good & Evil that allows you to work with the game's files.",
+                technologies: ["NodeJS", "TS-Node", "TypeScript"],
+                image: "/assets/images/work/04/icon.png",
+                link: "https://github.com/yoratoni/Mdisk"
+            },
+            {
+                bgImage: "/assets/images/work/coming_soon.png",
+                bgBrightness: 0.5,
+                title: "",
+                description: "",
+                technologies: []
+            },
+            {
+                bgImage: "/assets/images/work/coming_soon.png",
+                bgBrightness: 0.5,
+                title: "",
+                description: "",
+                technologies: []
+            },
+            {
+                bgImage: "/assets/images/work/coming_soon.png",
+                bgBrightness: 0.5,
+                title: "",
+                description: "",
+                technologies: []
+            },
+            {
+                bgImage: "/assets/images/work/coming_soon.png",
+                bgBrightness: 0.5,
+                title: "",
+                description: "",
+                technologies: []
+            },
+            {
+                bgImage: "/assets/images/work/coming_soon.png",
+                bgBrightness: 0.5,
+                title: "",
+                description: "",
+                technologies: []
+            }
+        ]
+    },
 
     // About
     about: [
