@@ -19,6 +19,7 @@ export default function Button(props: ButtonProps) {
                 text-gray-200
                 bg-opacity-30 hover:bg-opacity-50
                 rounded-lg
+                transition-colors duration-150
             `}
         >
             {props.label}

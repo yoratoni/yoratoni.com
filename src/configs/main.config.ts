@@ -30,43 +30,42 @@ const config: IsMainConfig = {
     // Work
     workCards: [
         {
-            bgColor: "#5104B2",
-            color: "#FFFFFF",
-            title: "Test 1 title",
-            description: "Test 1 description",
-            technologies: ["Test 1 technology 1", "Test 1 technology 2"]
-        },
-        {
-            bgColor: "#010101",
-            color: "#FFFFFF",
-            title: "Test 2 title",
-            description: "Test 2 description",
-            technologies: ["Test 2 technology 1", "Test 2 technology 2"]
-        },
-        {
-            bgColor: "#FBECD5CC",
-            color: "#000000",
+            bgImage: "/assets/images/work/background/01.png",
             title: "Huawei SMS forwarding",
             description: "A simple CLI program used to forward SMS to another number.",
-            technologies: ["Test 3 technology 1", "Test 3 technology 2"]
+            technologies: ["Python", "Huawei LTE API", "PyYAML"],
+            image: "/assets/images/work/huawei_sms_forwarding.png",
+            link: "https://github.com/yoratoni/huawei-router-sms-forwarding"
         },
         {
-            bgColor: "#FFFFFF",
-            color: "#000000",
+            bgImage: "/assets/images/work/background/01.png",
+            title: "Genesis",
+            description: "A crypto trading bot that uses the volatility of the market to make profits.",
+            technologies: ["EthersJS", "MongoDB", "Vega", "TypeScript"],
+            image: "/assets/images/work/genesis.png",
+            link: "https://github.com/cybearl/genesis"
+        },
+        {
+            bgImage: "/assets/images/work/background/01.png",
+            title: "Cefpython3 Wrapper",
+            description: "cef_wrapper.py allows auto-completing & syntax highlighting for the cefpython3 library.",
+            technologies: ["Python"],
+            image: "/assets/images/work/cefpython.png"
+        },
+        {
+            bgImage: "/assets/images/work/background/01.png",
             title: "Test 4 title",
             description: "Test 4 description",
             technologies: ["Test 4 technology 1", "Test 3 technology 2"]
         },
         {
-            bgColor: "#AD0606",
-            color: "#FFFFFF",
+            bgImage: "/assets/images/work/background/01.png",
             title: "Test 5 title",
             description: "Test 5 description",
             technologies: ["Test 5 technology 1", "Test 3 technology 2"]
         },
         {
-            bgColor: "#FBECD5",
-            color: "#000000",
+            bgImage: "/assets/images/work/background/01.png",
             title: "Test 6 title",
             description: "Test 6 description",
             technologies: ["Test 6 technology 1", "Test 3 technology 2"]

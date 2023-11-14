@@ -1,11 +1,10 @@
 export interface IsWorkCard {
-    bgColor: string;
-    color: string;
+    bgImage: string;
     title: string;
     description: string;
     technologies: string[];
-    gitLink?: string;
-    liveLink?: string;
+    image?: string;
+    link?: string;
 }
 
 /**

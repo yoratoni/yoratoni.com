@@ -68,7 +68,7 @@ export default function NavButton(props: NavButtonProps) {
                     <div
                         data-index={props.index}
                         onClick={(event: React.MouseEvent<HTMLDivElement>) => props.onClick(event, -1)}
-                        className="text-gray-600 cursor-pointer hover:text-gray-500"
+                        className="text-gray-600 transition-colors duration-150 cursor-pointer hover:text-gray-500"
                     >
                         <Circle
                             className="mr-[0.4rem] max-sm:mr-[6px]"
@@ -85,7 +85,7 @@ export default function NavButton(props: NavButtonProps) {
                 <div
                     data-index={props.index}
                     onClick={(event: React.MouseEvent<HTMLDivElement>) => props.onClick(event, 0)}
-                    className="text-gray-600 cursor-pointer hover:text-gray-500"
+                    className="text-gray-600 transition-colors duration-150 cursor-pointer hover:text-gray-500"
                 >
                     <SelectAll
                         className="!text-5xl max-sm:!text-4xl"
@@ -101,7 +101,7 @@ export default function NavButton(props: NavButtonProps) {
                     <div
                         data-index={props.index}
                         onClick={(event: React.MouseEvent<HTMLDivElement>) => props.onClick(event, 1)}
-                        className="text-gray-600 cursor-pointer hover:text-gray-500"
+                        className="text-gray-600 transition-colors duration-150 cursor-pointer hover:text-gray-500"
                     >
                         <Circle
                             className="ml-[0.4rem] max-sm:ml-[6px]"
