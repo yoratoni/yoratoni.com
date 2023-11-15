@@ -29,8 +29,12 @@ const config: IsMainConfig = {
 
     // Work
     work: {
-        maxPages: 3,
-        maxCardsPerPage: 3,
+        heightBreakpoints: [
+            { min: 0, max: 699, nbCards: 2 },
+            { min: 700, max: 879, nbCards: 3 },
+            { min: 880, max: 1059, nbCards: 4 },
+            { min: 1060, max: Infinity, nbCards: 5 }
+        ],
         cards: [
             {
                 bgImage: "/assets/images/work/01/bck.png",
@@ -67,41 +71,6 @@ const config: IsMainConfig = {
                 technologies: ["NodeJS", "TS-Node", "TypeScript"],
                 image: "/assets/images/work/04/icon.png",
                 link: "https://github.com/yoratoni/Mdisk"
-            },
-            {
-                bgImage: "/assets/images/work/coming_soon.png",
-                bgBrightness: 0.5,
-                title: "",
-                description: "",
-                technologies: []
-            },
-            {
-                bgImage: "/assets/images/work/coming_soon.png",
-                bgBrightness: 0.5,
-                title: "",
-                description: "",
-                technologies: []
-            },
-            {
-                bgImage: "/assets/images/work/coming_soon.png",
-                bgBrightness: 0.5,
-                title: "",
-                description: "",
-                technologies: []
-            },
-            {
-                bgImage: "/assets/images/work/coming_soon.png",
-                bgBrightness: 0.5,
-                title: "",
-                description: "",
-                technologies: []
-            },
-            {
-                bgImage: "/assets/images/work/coming_soon.png",
-                bgBrightness: 0.5,
-                title: "",
-                description: "",
-                technologies: []
             }
         ]
     },

@@ -23,8 +23,11 @@ export interface IsMainConfig {
         minContentHeightSpeedFactor: number;
     };
     work: {
-        maxPages: number;
-        maxCardsPerPage: number;
+        heightBreakpoints: {
+            min: number;
+            max: number;
+            nbCards: number;
+        }[];
         cards: IsWorkCard[];
     };
     about: string[];
@@ -34,6 +37,6 @@ export interface IsMainConfig {
             serviceId: string;
             templateId: string;
             publicKey: string;
-        }
+        };
     };
 }

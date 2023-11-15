@@ -1,6 +1,6 @@
 import { ReactNode, useContext, useEffect, useRef } from "react";
 
-import { ContentDimensionsContext } from "@/components/Contexts/ContentDimensions";
+import { LayoutDimensionsContext } from "@/components/Contexts/LayoutDimensions";
 import Navbar from "@/components/Navbar";
 
 
@@ -9,17 +9,15 @@ type LayoutProps = {
 };
 
 export default function Layout({ children }: LayoutProps) {
-    const { setContentDimensions } = useContext(ContentDimensionsContext);
+    const { setLayoutWidth, setLayoutHeight } = useContext(LayoutDimensionsContext);
 
     const contentRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleResize = () => {
             if (contentRef.current) {
-                setContentDimensions({
-                    width: contentRef.current?.clientWidth || 0,
-                    height: contentRef.current?.clientHeight || 0
-                });
+                setLayoutWidth(contentRef.current?.clientWidth || 0);
+                setLayoutHeight(contentRef.current?.clientHeight || 0);
             }
         };
 

@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "@/App";
-import ContentDimensionsProvider from "@/components/Contexts/ContentDimensions";
+import LayoutDimensionsProvider from "@/components/Contexts/LayoutDimensions";
 import PageNumberProvider from "@/components/Contexts/PageNumber";
 
 
@@ -16,11 +16,11 @@ if (!rootElement) {
 createRoot(rootElement).render(
     <StrictMode>
         <BrowserRouter>
-            <ContentDimensionsProvider>
+            <LayoutDimensionsProvider>
                 <PageNumberProvider>
                     <App />
                 </PageNumberProvider>
-            </ContentDimensionsProvider>
+            </LayoutDimensionsProvider>
         </BrowserRouter>
     </StrictMode>
 );

@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
+import { LayoutDimensionsContext } from "@/components/Contexts/LayoutDimensions";
 import WorkCard from "@/components/WorkCard";
 import config from "@/configs/main.config";
 import { IsWorkCard } from "@/types/general";
@@ -12,23 +13,49 @@ type WorkProps = {
 export default function Work({
     pageIndex
 }: WorkProps) {
+    const { layoutHeight } = useContext(LayoutDimensionsContext);
+
+    const [nbCards, setNbCards] = useState<number>(0);
     const [currWorkCards, setCurrWorkCards] = useState<IsWorkCard[]>([]);
 
     useEffect(() => {
-        const workCards : IsWorkCard[] = [];
+        for (const breakpoint of config.work.heightBreakpoints) {
+            if (layoutHeight >= breakpoint.min && layoutHeight <= breakpoint.max) {
+                setNbCards(breakpoint.nbCards);
+            }
+        }
+    }, [layoutHeight]);
 
-        if (pageIndex < config.work.maxPages - 1) {
-            for (let i = 0; i < config.work.maxCardsPerPage; i++) {
-                workCards.push(config.work.cards[pageIndex * config.work.maxCardsPerPage + i]);
+    useEffect(() => {
+        const workCards: IsWorkCard[] = [];
+        const lastWorkCardIndex = ((pageIndex + 1) * nbCards) - 1;
+
+        if (lastWorkCardIndex < config.work.cards.length) {
+            // Enough cards to fill the page
+            for (let i = lastWorkCardIndex - nbCards + 1; i <= lastWorkCardIndex; i++) {
+                workCards.push(config.work.cards[i]);
             }
         } else {
-            for (let i = 0; i < config.work.cards.length - (pageIndex * config.work.maxCardsPerPage); i++) {
-                workCards.push(config.work.cards[pageIndex * config.work.maxCardsPerPage + i]);
+            // Not enough cards to fill the page, fill with the last cards
+            for (let i = lastWorkCardIndex - nbCards + 1; i < config.work.cards.length; i++) {
+                workCards.push(config.work.cards[i]);
             }
         }
 
+        // if missing cards, fill with "coming soon" cards
+        while (workCards.length < nbCards) {
+            workCards.push({
+                bgImage: "/assets/images/work/coming_soon.png",
+                bgBrightness: 0.5,
+                title: "",
+                description: "",
+                technologies: []
+            });
+        }
+
         setCurrWorkCards(workCards);
-    }, [pageIndex]);
+
+    }, [pageIndex, nbCards]);
 
     return (
         <div className="relative flex flex-col items-center justify-center w-full h-full max-w-6xl px-8 space-y-4 overflow-hidden text-center">
