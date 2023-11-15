@@ -17,8 +17,8 @@ export default function Button(props: ButtonProps) {
                 shadow-io
                 border-gray-400 hover:border-gray-300 active:border-gray-200
                 text-gray-200
-                bg-opacity-30 hover:bg-opacity-50
-                rounded-lg
+                bg-opacity-30 hover:bg-opacity-40 active:bg-opacity-50
+                rounded-sm
                 transition-colors duration-150
             `}
         >

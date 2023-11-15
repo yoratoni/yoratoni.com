@@ -41,7 +41,7 @@ p,
 input,
 textarea,
 span {
-    text-shadow: -1px -1px 3px rgba(2, 2, 2, 0.6), 2px 2px 4px rgb(27, 27, 27, 0.6);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
 input,
@@ -52,6 +52,10 @@ textarea {
 
 b {
     font-weight: 500;
+}
+
+svg {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
 }
 
 ::-moz-selection {

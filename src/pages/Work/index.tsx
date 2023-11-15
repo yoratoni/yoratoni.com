@@ -1,70 +1,75 @@
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useContext, useEffect, useState } from "react";
 
+import IconButton from "@/components/base/IconButton";
 import { LayoutDimensionsContext } from "@/components/Contexts/LayoutDimensions";
 import WorkCard from "@/components/WorkCard";
 import config from "@/configs/main.config";
 import { IsWorkCard } from "@/types/general";
 
 
-type WorkProps = {
-    pageIndex: number;
-};
-
-export default function Work({
-    pageIndex
-}: WorkProps) {
+export default function Work() {
     const { layoutHeight } = useContext(LayoutDimensionsContext);
 
+    const [currPage, setCurrPage] = useState<number>(0);
     const [nbCards, setNbCards] = useState<number>(0);
     const [currWorkCards, setCurrWorkCards] = useState<IsWorkCard[]>([]);
 
     useEffect(() => {
-        for (const breakpoint of config.work.heightBreakpoints) {
+        for (const breakpoint of config.work.breakpoints) {
             if (layoutHeight >= breakpoint.min && layoutHeight <= breakpoint.max) {
                 setNbCards(breakpoint.nbCards);
             }
+
+            console.log(nbCards);
         }
     }, [layoutHeight]);
 
     useEffect(() => {
         const workCards: IsWorkCard[] = [];
-        const lastWorkCardIndex = ((pageIndex + 1) * nbCards) - 1;
 
-        if (lastWorkCardIndex < config.work.cards.length) {
-            // Enough cards to fill the page
-            for (let i = lastWorkCardIndex - nbCards + 1; i <= lastWorkCardIndex; i++) {
-                workCards.push(config.work.cards[i]);
+        for (let i = 0; i < nbCards; i++) {
+            let card = config.work.cards[i];
+
+            if (!card) {
+                card = {
+                    bgImage: "/assets/images/work/coming_soon.png",
+                    bgBrightness: 0.5,
+                    title: "",
+                    description: "",
+                    technologies: []
+                };
             }
-        } else {
-            // Not enough cards to fill the page, fill with the last cards
-            for (let i = lastWorkCardIndex - nbCards + 1; i < config.work.cards.length; i++) {
-                workCards.push(config.work.cards[i]);
-            }
+
+            workCards.push(card);
         }
 
-        // if missing cards, fill with "coming soon" cards
-        while (workCards.length < nbCards) {
-            workCards.push({
-                bgImage: "/assets/images/work/coming_soon.png",
-                bgBrightness: 0.5,
-                title: "",
-                description: "",
-                technologies: []
-            });
-        }
 
         setCurrWorkCards(workCards);
 
-    }, [pageIndex, nbCards]);
+    }, [nbCards]);
 
     return (
-        <div className="relative flex flex-col items-center justify-center w-full h-full max-w-6xl px-8 space-y-4 overflow-hidden text-center">
-            {currWorkCards.map((card, index) => (
-                <WorkCard
-                    key={index}
-                    card={card}
+        <div className="relative flex flex-col items-center justify-center w-full h-full">
+            <div className="relative flex flex-col items-center justify-center w-full h-0 min-h-full px-8 py-8 space-y-4">
+                <IconButton
+                    icon={<ExpandLessIcon className="text-5xl" />}
+                    onClick={() => setCurrPage(currPage - 1)}
                 />
-            ))}
+
+                {currWorkCards.map((card, index) => (
+                    <WorkCard
+                        key={index}
+                        card={card}
+                    />
+                ))}
+
+                <IconButton
+                    icon={<ExpandMoreIcon />}
+                    onClick={() => setCurrPage(currPage + 1)}
+                />
+            </div>
         </div>
     );
 }

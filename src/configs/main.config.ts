@@ -5,9 +5,7 @@ const config: IsMainConfig = {
     // General
     pagesNames: [
         "home",
-        "work_0",
-        "work_1",
-        "work_2",
+        "work",
         "about_0",
         "about_1",
         "about_2",
@@ -29,7 +27,7 @@ const config: IsMainConfig = {
 
     // Work
     work: {
-        heightBreakpoints: [
+        breakpoints: [
             { min: 0, max: 699, nbCards: 2 },
             { min: 700, max: 879, nbCards: 3 },
             { min: 880, max: 1059, nbCards: 4 },

@@ -31,7 +31,7 @@ export default function TextArea(props: TextAreaProps) {
                     ${props.isErrored ? "border-red-500 placeholder:text-red-400 text-red-400" : "border-gray-400 placeholder:text-gray-200 text-white"}
                     border-2 focus:outline-none px-4 py-2 w-full bg-black
                     font-light md:text-lg text-[15px] shadow-io
-                    focus:border-gray-200 rounded-lg resize-none
+                    focus:border-gray-200 rounded-sm resize-none
                     bg-opacity-30 hover:bg-opacity-40 focus:bg-opacity-50
                     transition-colors duration-150
                 `}

@@ -9,7 +9,7 @@ export default function Navbar() {
     const { pageNumber, setPageNumber } = useContext(PageNumberContext);
 
     /**
-     * Recovers info about the pages, to support multiple hidden work/about pages
+     * Recovers info about the pages, to support multiple hidden about pages
      * @param i The current page number.
      * @param wantedInfo The info to recover.
      * @returns The boolean info.
@@ -29,7 +29,6 @@ export default function Navbar() {
 
             // If the page is a multi-page, return the page name.
             case "isMultiPage":
-                if (config.pagesNames[i].includes("work")) return "work";
                 if (config.pagesNames[i].includes("about")) return "about";
 
                 return false;
@@ -37,7 +36,6 @@ export default function Navbar() {
             // In case of multi-pages, checks that one of the pages is the current page.
             // If not, return i === pageNumber for normal pages.
             case "getButtonState":
-                if (config.pagesNames[i] === "work_0" && config.pagesNames[pageNumber].includes("work")) return true;
                 if (config.pagesNames[i] === "about_0" && config.pagesNames[pageNumber].includes("about")) return true;
 
                 return (i === pageNumber);

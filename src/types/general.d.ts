@@ -23,7 +23,7 @@ export interface IsMainConfig {
         minContentHeightSpeedFactor: number;
     };
     work: {
-        heightBreakpoints: {
+        breakpoints: {
             min: number;
             max: number;
             nbCards: number;
