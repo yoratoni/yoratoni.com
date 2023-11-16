@@ -68,13 +68,13 @@ export default function NavButton(props: NavButtonProps) {
                     <div
                         data-index={props.index}
                         onClick={(event: React.MouseEvent<HTMLDivElement>) => props.onClick(event, -1)}
-                        className="text-gray-600 transition-colors duration-150 cursor-pointer hover:text-gray-500"
+                        className="py-2 text-gray-600 transition-colors duration-150 cursor-pointer hover:text-gray-500"
                     >
                         <Circle
-                            className="mr-[0.4rem] max-sm:mr-[6px]"
+                            className="mx-[0.4rem] max-sm:mx-[6px]"
                             style={{
                                 width: "14px",
-                                marginBottom: "0.3rem",
+                                marginBottom: "0.5rem",
                                 fontSize: getIconSize("left"),
                                 color: getIconColor("left")
                             }}
@@ -101,13 +101,13 @@ export default function NavButton(props: NavButtonProps) {
                     <div
                         data-index={props.index}
                         onClick={(event: React.MouseEvent<HTMLDivElement>) => props.onClick(event, 1)}
-                        className="text-gray-600 transition-colors duration-150 cursor-pointer hover:text-gray-500"
+                        className="py-2 text-gray-600 transition-colors duration-150 cursor-pointer hover:text-gray-500"
                     >
                         <Circle
-                            className="ml-[0.4rem] max-sm:ml-[6px]"
+                            className="mx-[0.4rem] max-sm:mx-[6px]"
                             style={{
                                 width: "14px",
-                                marginBottom: "0.3rem",
+                                marginBottom: "0.5rem",
                                 fontSize: getIconSize("right"),
                                 color: getIconColor("right")
                             }}

@@ -11,7 +11,7 @@ export default function Home() {
                 bottom="Full stack web developer"
             />
 
-            <div className="flex items-center justify-center w-full pb-6">
+            <div className="flex items-center justify-center w-full">
                 <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl">
                     I&apos;m a self-taught French web developer with a passion for Web 3.0 and specialized in
                     <b> React</b>, <b>Next.js</b>, <b>Node JS</b>, <b>Typescript</b> and <b>Solidity</b>.

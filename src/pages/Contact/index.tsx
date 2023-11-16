@@ -161,45 +161,6 @@ export default function Contact() {
                     />
                 </div>
             </form>
-
-            <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-sm:pb-3">
-                <p className="font-[500] tracking-widest">
-                    &gt; Here's my&nbsp;
-                    <a
-                        className="font-bold hover:underline"
-                        href="https://www.linkedin.com/in/yoratoni"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        LinkedIn
-                    </a>
-                    &nbsp;&lt;
-                </p>
-                <p className="font-[500] tracking-widest">
-                    &gt; And my&nbsp;
-                    <a
-                        className="font-bold hover:underline"
-                        href="https://www.instagram.com/yoratoni"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Instagram
-                    </a>
-                    &nbsp;&lt;
-                </p>
-                <p className="font-[500] tracking-widest">
-                    &gt; And my&nbsp;
-                    <a
-                        className="font-bold hover:underline"
-                        href="https://github.com/yoratoni"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Github
-                    </a>
-                    &nbsp;&lt;
-                </p>
-            </div>
         </Section>
     );
 }

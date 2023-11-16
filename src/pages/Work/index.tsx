@@ -13,6 +13,7 @@ export default function Work() {
     const { layoutHeight } = useContext(LayoutDimensionsContext);
 
     const [currPage, setCurrPage] = useState<number>(0);
+    const [maxPage, setMaxPage] = useState<number>(0);
     const [nbCards, setNbCards] = useState<number>(0);
     const [currWorkCards, setCurrWorkCards] = useState<IsWorkCard[]>([]);
 
@@ -27,14 +28,22 @@ export default function Work() {
     }, [layoutHeight]);
 
     useEffect(() => {
+        setMaxPage(Math.ceil(config.work.cards.length / nbCards) - 1);
+
+        const firstCardIndex = currPage * nbCards;
         const workCards: IsWorkCard[] = [];
 
-        for (let i = 0; i < nbCards; i++) {
-            let card = config.work.cards[i];
+        console.log(firstCardIndex, nbCards);
+
+        for (let i = firstCardIndex; i < firstCardIndex + nbCards; i++) {
+            let card: IsWorkCard = config.work.cards[i];
 
             if (!card) {
                 card = {
-                    bgImage: "/assets/images/work/coming_soon.png",
+                    bgImage: {
+                        png: "/assets/images/work/coming_soon.png",
+                        webp: "/assets/images/work/coming_soon.webp"
+                    },
                     bgBrightness: 0.5,
                     title: "",
                     description: "",
@@ -45,17 +54,35 @@ export default function Work() {
             workCards.push(card);
         }
 
-
         setCurrWorkCards(workCards);
+    }, [nbCards, currPage]);
 
-    }, [nbCards]);
+    const handleOnButtonClick = (mode: "up" | "down") => {
+        let tmpCurrPage = currPage;
+
+        switch (mode) {
+            case "up":
+                if (currPage > 0) {
+                    tmpCurrPage = currPage - 1;
+                }
+                break;
+            case "down":
+                if (currPage < maxPage) {
+                    tmpCurrPage = currPage + 1;
+                }
+                break;
+        }
+
+        setCurrPage(tmpCurrPage);
+    };
 
     return (
         <div className="relative flex flex-col items-center justify-center w-full h-full">
             <div className="relative flex flex-col items-center justify-center w-full h-0 min-h-full px-8 py-8 space-y-4">
                 <IconButton
                     icon={<ExpandLessIcon className="text-5xl" />}
-                    onClick={() => setCurrPage(currPage - 1)}
+                    isDisabled={currPage === 0}
+                    onClick={() => handleOnButtonClick("up")}
                 />
 
                 {currWorkCards.map((card, index) => (
@@ -67,7 +94,8 @@ export default function Work() {
 
                 <IconButton
                     icon={<ExpandMoreIcon />}
-                    onClick={() => setCurrPage(currPage + 1)}
+                    isDisabled={currPage === maxPage}
+                    onClick={() => handleOnButtonClick("down")}
                 />
             </div>
         </div>

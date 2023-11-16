@@ -35,39 +35,63 @@ const config: IsMainConfig = {
         ],
         cards: [
             {
-                bgImage: "/assets/images/work/01/bck.png",
+                bgImage: {
+                    png: "/assets/images/work/01/bck.png",
+                    webp: "/assets/images/work/01/bck.webp"
+                },
                 bgBrightness: 0.5,
                 title: "Huawei SMS forwarding",
                 description: "A simple CLI program used to forward SMS to another number.",
                 technologies: ["Python", "Huawei LTE API", "PyYAML"],
-                image: "/assets/images/work/01/icon.png",
+                image: {
+                    png: "/assets/images/work/01/icon.png",
+                    webp: "/assets/images/work/01/icon.webp"
+                },
                 link: "https://github.com/yoratoni/huawei-router-sms-forwarding"
             },
             {
-                bgImage: "/assets/images/work/02/bck.png",
+                bgImage: {
+                    png: "/assets/images/work/02/bck.png",
+                    webp: "/assets/images/work/02/bck.webp"
+                },
                 bgBrightness: 0.6,
                 title: "Genesis",
                 description: "A crypto trading bot that uses the volatility of the market to make profits.",
                 technologies: ["EthersJS", "MongoDB", "NodeJS", "TypeScript"],
-                image: "/assets/images/work/02/icon.png",
+                image: {
+                    png: "/assets/images/work/02/icon.png",
+                    webp: "/assets/images/work/02/icon.webp"
+                },
                 link: "https://github.com/cybearl/genesis"
             },
             {
-                bgImage: "/assets/images/work/03/bck.png",
+                bgImage: {
+                    png: "/assets/images/work/03/bck.png",
+                    webp: "/assets/images/work/03/bck.webp"
+                },
                 bgBrightness: 0.6,
                 title: "Cefpython3 Wrapper",
                 description: "cef_wrapper.py allows auto-completing & syntax highlighting for the cefpython3 library.",
                 technologies: ["Python"],
-                image: "/assets/images/work/03/icon.png",
+                image: {
+                    png: "/assets/images/work/03/icon.png",
+                    webp: "/assets/images/work/03/icon.webp"
+                },
                 link: "https://github.com/yoratoni/cefpython-wrapper"
             },
             {
-                bgImage: "/assets/images/work/04/bck.png",
-                bgBrightness: 0.5,
+                bgImage: {
+                    png: "/assets/images/work/04/bck.png",
+                    webp: "/assets/images/work/04/bck.webp"
+                },
+                bgBrightness: 0.6,
                 title: "Mdisk",
                 description: "A tool for the game Beyond Good & Evil that allows you to work with the game's files.",
                 technologies: ["NodeJS", "TS-Node", "TypeScript"],
-                image: "/assets/images/work/04/icon.png",
+                image: {
+                    png: "/assets/images/work/04/icon.png",
+                    webp: "/assets/images/work/04/icon.webp"
+                },
                 link: "https://github.com/yoratoni/Mdisk"
             }
         ]

@@ -1,10 +1,16 @@
 export interface IsWorkCard {
-    bgImage: string;
+    bgImage: {
+        png: string;
+        webp: string;
+    };
     bgBrightness: number;
     title: string;
     description: string;
     technologies: string[];
-    image?: string;
+    image?: {
+        png: string;
+        webp: string;
+    };
     link?: string;
 }
 

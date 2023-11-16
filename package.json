@@ -24,6 +24,7 @@
         "react-scroll": "^1.8.7",
         "react-scroll-wheel-handler": "^2.2.0",
         "react-textarea-autosize": "^8.5.3",
+        "react-use-webp-support-check": "^1.0.21",
         "stats.js": "^0.17.0",
         "tailwind-scrollbar": "^3.0.5",
         "tailwindcss": "^3.3.3",
