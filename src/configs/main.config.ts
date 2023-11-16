@@ -104,9 +104,8 @@ const config: IsMainConfig = {
         I wanted to create stuff without being limited by the physical world (aka. money).
         /#
         I discovered that it was possible to <b>create anything I wanted with a computer</b>,
-        no need for money or materials anymore, a lot of people were dedicating their time to
-        build open-source tools and libraries that anyone could use for free, and I wanted
-        to be part of this community.
+        no need for money anymore, a lot of people were dedicating their time to
+        build open-source tools and libraries, and I wanted to be part of this community.
         /#
         That's where I started to learn <b>GML</b>, a programming language for a game engine called <b>Game Maker 8</b>..`,
 
@@ -132,8 +131,8 @@ const config: IsMainConfig = {
         is a really great opportunity for me to learn a lot of things, and I'm really grateful for that.
         /#
         I'm currently working on so many technologies at the same time, that I can't even list them all here,
-        but to name a few: <b>NextJS</b>, <b>TypeScript</b>, <b>GraphQL</b>, <b>Prisma</b>, <b>Hardhat</b>,
-        <b>Solidity</b>, <b>Viem/Wagmi</b>, <b>EthersJS</b>, <b>OZ Defender</b>,
+        but to name a few: <b>NextJS</b>, <b>TypeScript</b>, <b>GraphQL</b>, <b>Prisma</b>,
+        <b>Solidity</b>, <b>Viem/Wagmi</b>, <b>EthersJS</b>, <b>OZ Defender</b>, <b>WebAssembly</b>,
         and many more..`,
     ],
 

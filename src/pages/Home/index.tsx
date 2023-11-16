@@ -26,18 +26,9 @@ export default function Home() {
                     >
                         Alien
                     </a>
-                    &nbsp;as a full stack developer, my goal is to create new projects from scratch, using the
-                    latest technologies including&nbsp;
-                    <a
-                        className="font-medium hover:underline"
-                        href="https://eips.ethereum.org/EIPS/eip-2771"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        ERC&#8209;2771
-                    </a>
-                    &nbsp;to facilitate user experience with the blockchain,
-                    and to contribute to the development of the Web 3.0 ecosystem.
+                    &nbsp;as a full stack developer, I&apos;m building an entire ecosystem & multiple products
+                    around the NFT / AI space. Mostly working on the smart contracts, backend and frontend using
+                    Hardhat, React and Next.js.
                 </p>
             </div>
 

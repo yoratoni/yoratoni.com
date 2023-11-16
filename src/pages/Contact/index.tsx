@@ -68,7 +68,7 @@ export default function Contact() {
                 bottom="Let's talk about it!"
             />
 
-            <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl pb-12 max-sm:pb-5">
+            <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl pb-8 max-sm:pb-5">
                 <span className="max-sm:hidden">
                     I&apos;m here to help and answer any question you might have. Any idea or project you want to discuss,
                     I&apos;m open to it!

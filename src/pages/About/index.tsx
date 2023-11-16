@@ -45,7 +45,7 @@ export default function About({ pageIndex }: AboutProps) {
                 </h2>
             )}
 
-            <div className="flex flex-col items-center justify-center w-full">
+            <div className="flex flex-col items-center justify-center w-full pb-4">
                 <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-normal md:text-xl">
                     <Interweave
                         content={
