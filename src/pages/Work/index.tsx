@@ -22,8 +22,6 @@ export default function Work() {
             if (layoutHeight >= breakpoint.min && layoutHeight <= breakpoint.max) {
                 setNbCards(breakpoint.nbCards);
             }
-
-            console.log(nbCards);
         }
     }, [layoutHeight]);
 
@@ -32,8 +30,6 @@ export default function Work() {
 
         const firstCardIndex = currPage * nbCards;
         const workCards: IsWorkCard[] = [];
-
-        console.log(firstCardIndex, nbCards);
 
         for (let i = firstCardIndex; i < firstCardIndex + nbCards; i++) {
             let card: IsWorkCard = config.work.cards[i];
