@@ -30,7 +30,7 @@ export default function WorkCard({
             <div
                 className="absolute w-full h-full rounded-lg"
                 style={{
-                    backgroundImage: `url(${supportsWebP ? card.bgImage.webp : card.bgImage.png})`,
+                    backgroundImage: `url(${supportsWebP ? card.bgImage.webp : card.bgImage.jpg})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
@@ -46,7 +46,7 @@ export default function WorkCard({
                             absolute top-0 left-0 w-full h-full object-contain rounded-l-lg
                             ${!card.image && "opacity-30"}
                         `}
-                        src={supportsWebP ? card.image.webp : card.image.png}
+                        src={supportsWebP ? card.image.webp : card.image.jpg}
                         style={{
                             backgroundColor: "rgba(0, 0, 0, 0.5)",
                             border: "none"

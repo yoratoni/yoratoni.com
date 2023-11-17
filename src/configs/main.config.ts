@@ -21,7 +21,7 @@ const config: IsMainConfig = {
         defaultSpeed: 2,
         maxSpeed: 128,
         speedModifier: 8,
-        contentHeightWhereSpeedFactorIsOne: 600,
+        contentHeightWhereSpeedFactorIsOne: 1536,
         minContentHeightSpeedFactor: 0.2
     },
 
@@ -36,37 +36,37 @@ const config: IsMainConfig = {
         cards: [
             {
                 bgImage: {
-                    png: "/assets/images/work/01/bck.png",
+                    jpg: "/assets/images/work/01/bck.jpg",
                     webp: "/assets/images/work/01/bck.webp"
                 },
-                bgBrightness: 0.5,
+                bgBrightness: 0.4,
                 title: "Huawei SMS forwarding",
                 description: "A simple CLI program used to forward SMS to another number.",
                 technologies: ["Python", "Huawei LTE API", "PyYAML"],
                 image: {
-                    png: "/assets/images/work/01/icon.png",
+                    jpg: "/assets/images/work/01/icon.jpg",
                     webp: "/assets/images/work/01/icon.webp"
                 },
                 link: "https://github.com/yoratoni/huawei-router-sms-forwarding"
             },
             {
                 bgImage: {
-                    png: "/assets/images/work/02/bck.png",
+                    jpg: "/assets/images/work/02/bck.jpg",
                     webp: "/assets/images/work/02/bck.webp"
                 },
-                bgBrightness: 0.6,
+                bgBrightness: 0.5,
                 title: "Genesis",
                 description: "A crypto trading bot that uses the volatility of the market to make profits.",
                 technologies: ["EthersJS", "MongoDB", "NodeJS", "TypeScript"],
                 image: {
-                    png: "/assets/images/work/02/icon.png",
+                    jpg: "/assets/images/work/02/icon.jpg",
                     webp: "/assets/images/work/02/icon.webp"
                 },
                 link: "https://github.com/cybearl/genesis"
             },
             {
                 bgImage: {
-                    png: "/assets/images/work/03/bck.png",
+                    jpg: "/assets/images/work/03/bck.jpg",
                     webp: "/assets/images/work/03/bck.webp"
                 },
                 bgBrightness: 0.6,
@@ -74,14 +74,14 @@ const config: IsMainConfig = {
                 description: "cef_wrapper.py allows auto-completing & syntax highlighting for the cefpython3 library.",
                 technologies: ["Python"],
                 image: {
-                    png: "/assets/images/work/03/icon.png",
+                    jpg: "/assets/images/work/03/icon.jpg",
                     webp: "/assets/images/work/03/icon.webp"
                 },
                 link: "https://github.com/yoratoni/cefpython-wrapper"
             },
             {
                 bgImage: {
-                    png: "/assets/images/work/04/bck.png",
+                    jpg: "/assets/images/work/04/bck.jpg",
                     webp: "/assets/images/work/04/bck.webp"
                 },
                 bgBrightness: 0.6,
@@ -89,7 +89,7 @@ const config: IsMainConfig = {
                 description: "A tool for the game Beyond Good & Evil that allows you to work with the game's files.",
                 technologies: ["NodeJS", "TS-Node", "TypeScript"],
                 image: {
-                    png: "/assets/images/work/04/icon.png",
+                    jpg: "/assets/images/work/04/icon.jpg",
                     webp: "/assets/images/work/04/icon.webp"
                 },
                 link: "https://github.com/yoratoni/Mdisk"

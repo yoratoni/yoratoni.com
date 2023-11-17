@@ -37,7 +37,7 @@ export default function Work() {
             if (!card) {
                 card = {
                     bgImage: {
-                        png: "/assets/images/work/coming_soon.png",
+                        jpg: "/assets/images/work/coming_soon.jpg",
                         webp: "/assets/images/work/coming_soon.webp"
                     },
                     bgBrightness: 0.5,
