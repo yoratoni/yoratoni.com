@@ -30,6 +30,7 @@ export default function WorkCard({
             <div
                 className="absolute w-full h-full rounded-lg"
                 style={{
+                    backgroundColor: "rgba(0, 0, 0, 0.5)",
                     backgroundImage: `url(${supportsWebP ? card.bgImage.webp : card.bgImage.jpg})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
