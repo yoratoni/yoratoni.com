@@ -2,6 +2,9 @@ import { IsMainConfig } from "@/types/general";
 
 
 const config: IsMainConfig = {
+    // ReCAPTCHA key
+    recaptchaKey: "6Ld2qBIpAAAAAOv78vaC9ckhYM8piFtGp8bZ-aTg",
+
     // General
     pagesNames: [
         "home",

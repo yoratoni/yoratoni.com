@@ -38,7 +38,7 @@ export default function Home() {
                 <p className="font-[500] tracking-widest">
                     &gt; Background by&nbsp;
                     <a
-                        className="font-medium hover:underline"
+                        className="font-semibold hover:underline"
                         href="https://digitalmoons.itch.io/"
                         target="_blank"
                         rel="noreferrer"

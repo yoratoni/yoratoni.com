@@ -58,6 +58,11 @@ svg {
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
 }
 
+/* Hide Google reCAPTCHA badge */
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
 ::-moz-selection {
     /* Code for Firefox */
     color: white;

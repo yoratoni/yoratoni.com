@@ -18,6 +18,7 @@
         "react-animation-on-scroll": "^5.1.0",
         "react-dom": "^18.2.0",
         "react-fps-stats": "^0.3.1",
+        "react-google-recaptcha-v3": "^1.10.1",
         "react-router": "^6.15.0",
         "react-router-dom": "^6.15.0",
         "react-scripts": "^5.0.1",

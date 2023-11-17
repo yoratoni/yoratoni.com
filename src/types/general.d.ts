@@ -18,6 +18,7 @@ export interface IsWorkCard {
  * Interface for the main configuration.
  */
 export interface IsMainConfig {
+    recaptchaKey: string;
     pagesNames: string[];
     developerMode: boolean;
     parallax: {

@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "@/App";
 import LayoutDimensionsProvider from "@/components/Contexts/LayoutDimensions";
 import PageNumberProvider from "@/components/Contexts/PageNumber";
+import ReCaptchaWrapper from "@/components/Contexts/ReCaptchaWrapper";
 
 
 const rootElement = document.getElementById("root");
@@ -16,11 +17,13 @@ if (!rootElement) {
 createRoot(rootElement).render(
     <StrictMode>
         <BrowserRouter>
-            <LayoutDimensionsProvider>
-                <PageNumberProvider>
-                    <App />
-                </PageNumberProvider>
-            </LayoutDimensionsProvider>
+            <ReCaptchaWrapper>
+                <LayoutDimensionsProvider>
+                    <PageNumberProvider>
+                        <App />
+                    </PageNumberProvider>
+                </LayoutDimensionsProvider>
+            </ReCaptchaWrapper>
         </BrowserRouter>
     </StrictMode>
 );

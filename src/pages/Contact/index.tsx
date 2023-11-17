@@ -1,8 +1,9 @@
 import { sendForm } from "@emailjs/browser";
 import * as EmailValidator from "email-validator";
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
-import CaptchaButton from "@/components/base/Button/CaptchaButton";
+import Button from "@/components/base/Button";
 import Input from "@/components/base/Input";
 import Section from "@/components/base/Section";
 import TextArea from "@/components/base/TextArea";
@@ -11,13 +12,19 @@ import config from "@/configs/main.config";
 
 
 export default function Contact() {
+    const { executeRecaptcha } = useGoogleReCaptcha();
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [token, setToken] = useState<string>("");
+
     const [name, setName] = useState({ value: "", isErrored: "" });
     const [email, setEmail] = useState({ value: "", isErrored: "" });
     const [message, setMessage] = useState({ value: "", isErrored: "" });
+    const [response, setResponse] = useState({ value: "", isAnError: false });
 
     const contactForm = useRef<HTMLFormElement>(null);
 
-    const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+    const sendEmail = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         let areAllFieldsValid = true;
@@ -45,20 +52,44 @@ export default function Contact() {
         }
 
         if (!areAllFieldsValid) return;
+        if (!executeRecaptcha) return;
 
-        const res = await sendForm(
-            config.contact.emailJs.serviceId,
-            config.contact.emailJs.templateId,
-            contactForm.current as HTMLFormElement,
-            config.contact.emailJs.publicKey
-        );
+        try {
+            const token = await executeRecaptcha("contact_submit");
+            setToken(token);
 
-        if (res.status === 200) {
-            setName({ value: "", isErrored: "" });
-            setEmail({ value: "", isErrored: "" });
-            setMessage({ value: "", isErrored: "" });
+            if (token) {
+                setResponse({
+                    value: "There was an error while trying to send your message. Please try again..",
+                    isAnError: true
+                });
+
+                return;
+            }
+
+            const res = await sendForm(
+                config.contact.emailJs.serviceId,
+                config.contact.emailJs.templateId,
+                contactForm.current as HTMLFormElement,
+                config.contact.emailJs.publicKey
+            );
+
+            if (res.status === 200) {
+                setName({ value: "", isErrored: "" });
+                setEmail({ value: "", isErrored: "" });
+                setMessage({ value: "", isErrored: "" });
+                setResponse({
+                    value: "Your message was sent successfully!",
+                    isAnError: false
+                });
+            }
+        } catch (err) {
+            setResponse({
+                value: "There was an error while trying to send your message. Please try again..",
+                isAnError: true
+            });
         }
-    };
+    }, [name, email, message]);
 
     return (
         <Section>
@@ -154,13 +185,47 @@ export default function Contact() {
                     }}
                 />
 
-                <div className="w-full max-w-[200px] mx-auto pt-3 sm:pt-5">
-                    <CaptchaButton
+                <div>
+                    <p className={`font-medium text-center max-sm:text-[13px] ${response.isAnError ? "text-red-500" : "text-gray-400"}`}>
+                        {response.value}
+                    </p>
+                </div>
+
+                <div className="w-full max-w-[200px] mx-auto pt-1">
+                    <Button
                         type="submit"
                         label="Send"
                     />
                 </div>
             </form>
+
+            <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-sm:pb-3">
+                <p className="font-[500] tracking-widest">&gt; This site is protected by reCAPTCHA &lt;</p>
+                <p className="font-[500] tracking-widest">
+                    &gt; and the Google&nbsp;
+                    <a
+                        className="font-semibold hover:underline"
+                        href="https://policies.google.com/privacy"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Privacy Policy
+                    </a>
+                    &nbsp;&lt;
+                </p>
+                <p className="font-[500] tracking-widest">
+                    &gt; and&nbsp;
+                    <a
+                        className="font-semibold hover:underline"
+                        href="https://policies.google.com/terms"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Terms of Service
+                    </a>
+                    &nbsp;apply &lt;
+                </p>
+            </div>
         </Section>
     );
 }

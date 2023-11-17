@@ -9,6 +9,7 @@ export default function Button(props: ButtonProps) {
     return (
         <button
             type={props.type ?? "button"}
+            onClick={props?.onClick}
             className={`
                 ${props.disabled && "opacity-60 cursor-not-allowed !border-gray-400"}
                 border-2 outline-none w-full h-12 bg-black
