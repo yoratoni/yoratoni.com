@@ -1,8 +1,7 @@
 import { send } from "@emailjs/browser";
 import * as EmailValidator from "email-validator";
 import { useCallback, useRef, useState } from "react";
-// eslint-disable-next-line import/no-named-as-default
-import ReCAPTCHA from "react-google-recaptcha";
+import Reaptcha from "reaptcha";
 
 import Button from "@/components/base/Button";
 import Input from "@/components/base/Input";
@@ -13,8 +12,7 @@ import config from "@/configs/main.config";
 
 
 export default function Contact() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [token, setToken] = useState<string | null | undefined>(undefined);
+    const [token, setToken] = useState<string>("");
 
     const [name, setName] = useState({ value: "", isErrored: "" });
     const [email, setEmail] = useState({ value: "", isErrored: "" });
@@ -22,7 +20,7 @@ export default function Contact() {
     const [response, setResponse] = useState({ value: "", isAnError: false });
 
     const contactForm = useRef<HTMLFormElement>(null);
-    const recaptchaRef = useRef<ReCAPTCHA>(null);
+    const recaptchaRef = useRef<Reaptcha>(null);
 
     const sendEmail = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -53,27 +51,12 @@ export default function Contact() {
 
         if (!areAllFieldsValid) return;
 
-        try {
-            const token = await recaptchaRef.current?.executeAsync();
-            setToken(token);
-        } catch (err) {
+        // Verify reCAPTCHA
+        if (token.length === 0) {
             setResponse({
-                value: "There was an error while trying to send your message. Please try again..",
+                value: "Invalid reCAPTCHA. Please try again..",
                 isAnError: true
             });
-
-            console.error(err);
-
-            return;
-        }
-
-        if (!token || token.length === 0) {
-            setResponse({
-                value: "There was an error while trying to send your message. Please try again..",
-                isAnError: true
-            });
-
-            console.error("Invalid reCAPTCHA token.", token);
 
             return;
         }
@@ -105,6 +88,7 @@ export default function Contact() {
         }
 
         // Reset reCAPTCHA
+        setToken("");
         recaptchaRef.current?.reset();
     }, [name, email, message]);
 
@@ -215,16 +199,16 @@ export default function Contact() {
                     />
                 </div>
 
-                <ReCAPTCHA
+                <Reaptcha
+                    id={`recaptcha-${config.contact.captchaKey}`}
                     ref={recaptchaRef}
-                    size="invisible"
-                    sitekey={config.contact.recaptcha}
-                    onChange={(token) => {
-                        setToken(token ?? "");
-                    }}
-                    onExpired={() => {
+                    sitekey={config.contact.captchaKey}
+                    onVerify={(token) => console.log(token)}
+                    onExpire={() => {
+                        setToken("");
                         recaptchaRef.current?.reset();
                     }}
+                    size="invisible"
                 />
             </form>
 

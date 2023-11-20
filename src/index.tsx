@@ -1,4 +1,3 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
@@ -15,15 +14,13 @@ if (!rootElement) {
 }
 
 createRoot(rootElement).render(
-    <StrictMode>
-        <BrowserRouter>
-            <ReCaptchaWrapper>
-                <LayoutDimensionsProvider>
-                    <PageNumberProvider>
-                        <App />
-                    </PageNumberProvider>
-                </LayoutDimensionsProvider>
-            </ReCaptchaWrapper>
-        </BrowserRouter>
-    </StrictMode>
+    <BrowserRouter>
+        <ReCaptchaWrapper>
+            <LayoutDimensionsProvider>
+                <PageNumberProvider>
+                    <App />
+                </PageNumberProvider>
+            </LayoutDimensionsProvider>
+        </ReCaptchaWrapper>
+    </BrowserRouter>
 );
