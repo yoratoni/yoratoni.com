@@ -1,7 +1,8 @@
-import { sendForm } from "@emailjs/browser";
+import { send } from "@emailjs/browser";
 import * as EmailValidator from "email-validator";
 import { useCallback, useRef, useState } from "react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+// eslint-disable-next-line import/no-named-as-default
+import ReCAPTCHA from "react-google-recaptcha";
 
 import Button from "@/components/base/Button";
 import Input from "@/components/base/Input";
@@ -12,10 +13,8 @@ import config from "@/configs/main.config";
 
 
 export default function Contact() {
-    const { executeRecaptcha } = useGoogleReCaptcha();
-
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [token, setToken] = useState<string>("");
+    const [token, setToken] = useState<string | null | undefined>(undefined);
 
     const [name, setName] = useState({ value: "", isErrored: "" });
     const [email, setEmail] = useState({ value: "", isErrored: "" });
@@ -23,6 +22,7 @@ export default function Contact() {
     const [response, setResponse] = useState({ value: "", isAnError: false });
 
     const contactForm = useRef<HTMLFormElement>(null);
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     const sendEmail = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -52,43 +52,60 @@ export default function Contact() {
         }
 
         if (!areAllFieldsValid) return;
-        if (!executeRecaptcha) return;
 
         try {
-            const token = await executeRecaptcha("contact_submit");
+            const token = await recaptchaRef.current?.executeAsync();
             setToken(token);
-
-            if (token) {
-                setResponse({
-                    value: "There was an error while trying to send your message. Please try again..",
-                    isAnError: true
-                });
-
-                return;
-            }
-
-            const res = await sendForm(
-                config.contact.emailJs.serviceId,
-                config.contact.emailJs.templateId,
-                contactForm.current as HTMLFormElement,
-                config.contact.emailJs.publicKey
-            );
-
-            if (res.status === 200) {
-                setName({ value: "", isErrored: "" });
-                setEmail({ value: "", isErrored: "" });
-                setMessage({ value: "", isErrored: "" });
-                setResponse({
-                    value: "Your message was sent successfully!",
-                    isAnError: false
-                });
-            }
         } catch (err) {
             setResponse({
                 value: "There was an error while trying to send your message. Please try again..",
                 isAnError: true
             });
+
+            console.error(err);
+
+            return;
         }
+
+        if (!token || token.length === 0) {
+            setResponse({
+                value: "There was an error while trying to send your message. Please try again..",
+                isAnError: true
+            });
+
+            console.error("Invalid reCAPTCHA token.", token);
+
+            return;
+        }
+
+        // Form params
+        const params = {
+            from_name: name.value,
+            from_email: `"${email.value}"`,
+            to_name: "Yoratoni",
+            message: message.value,
+            "g-recaptcha-response": token
+        };
+
+        const res = await send(
+            config.contact.emailJs.serviceId,
+            config.contact.emailJs.templateId,
+            params,
+            config.contact.emailJs.publicKey
+        );
+
+        if (res.status === 200) {
+            setName({ value: "", isErrored: "" });
+            setEmail({ value: "", isErrored: "" });
+            setMessage({ value: "", isErrored: "" });
+            setResponse({
+                value: "Your message was sent successfully!",
+                isAnError: false
+            });
+        }
+
+        // Reset reCAPTCHA
+        recaptchaRef.current?.reset();
     }, [name, email, message]);
 
     return (
@@ -122,7 +139,7 @@ export default function Contact() {
             </p>
 
             <form
-                className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:space-y-3"
+                className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:space-y-2"
                 ref={contactForm}
                 onSubmit={sendEmail}
                 noValidate
@@ -186,17 +203,29 @@ export default function Contact() {
                 />
 
                 <div>
-                    <p className={`font-medium text-center max-sm:text-[13px] ${response.isAnError ? "text-red-500" : "text-gray-400"}`}>
+                    <p className={`font-medium text-center leading-[16px] pb-1 max-sm:text-[13px] ${response.isAnError ? "text-red-500" : "text-gray-400"}`}>
                         {response.value}
                     </p>
                 </div>
 
-                <div className="w-full max-w-[200px] mx-auto pt-1">
+                <div className="w-full max-w-[200px] mx-auto sm:pt-1 max-sm:pb-16">
                     <Button
                         type="submit"
                         label="Send"
                     />
                 </div>
+
+                <ReCAPTCHA
+                    ref={recaptchaRef}
+                    size="invisible"
+                    sitekey={config.contact.recaptcha}
+                    onChange={(token) => {
+                        setToken(token ?? "");
+                    }}
+                    onExpired={() => {
+                        recaptchaRef.current?.reset();
+                    }}
+                />
             </form>
 
             <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-sm:pb-3">
@@ -223,7 +252,7 @@ export default function Contact() {
                     >
                         Terms of Service
                     </a>
-                    &nbsp;apply &lt;
+                    &nbsp;apply. &lt;
                 </p>
             </div>
         </Section>

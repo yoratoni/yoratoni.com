@@ -20,7 +20,7 @@ export default function Input(props: InputProps) {
                     bg-opacity-30 hover:bg-opacity-40 focus:bg-opacity-50
                     transition-colors duration-150
                 `}
-                placeholder={props.placeholder}
+                placeholder={props.isErrored ? props.isErrored : props.placeholder}
                 type={props.type}
                 name={props.label}
                 value={props.value}
@@ -28,12 +28,6 @@ export default function Input(props: InputProps) {
                 onChange={(e) => props.onChange(e.target.value)}
                 autoComplete="one-time-code"
             />
-
-            {props.isErrored && (
-                <p className="w-full px-2 pt-1.5 font-medium text-left text-red-500 max-sm:text-sm">
-                    {props.isErrored}
-                </p>
-            )}
         </div>
     );
 }

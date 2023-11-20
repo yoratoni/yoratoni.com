@@ -25,7 +25,7 @@ export default function TextArea(props: TextAreaProps) {
     };
 
     return (
-        <div className="">
+        <div className="relative">
             <TextareaAutosize
                 className={`
                     ${props.isErrored ? "border-red-500 placeholder:text-red-400 text-red-400" : "border-gray-400 placeholder:text-gray-200 text-white"}
@@ -36,7 +36,7 @@ export default function TextArea(props: TextAreaProps) {
                     transition-colors duration-150
                 `}
                 ref={textAreaRef}
-                placeholder={props.placeholder}
+                placeholder={props.isErrored ? props.isErrored : props.placeholder}
                 value={props.value}
                 name={props.label}
                 onFocus={props.onFocus}
@@ -45,12 +45,6 @@ export default function TextArea(props: TextAreaProps) {
                 minRows={props.minRows ?? 3}
                 maxRows={props.maxRows ?? 3}
             />
-
-            {props.isErrored && (
-                <p className="w-full px-2 font-medium text-left text-red-500 max-sm:text-sm">
-                    {props.isErrored}
-                </p>
-            )}
         </div>
     );
 }

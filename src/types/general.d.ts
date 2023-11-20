@@ -18,7 +18,6 @@ export interface IsWorkCard {
  * Interface for the main configuration.
  */
 export interface IsMainConfig {
-    recaptchaKey: string;
     pagesNames: string[];
     developerMode: boolean;
     parallax: {
@@ -45,5 +44,6 @@ export interface IsMainConfig {
             templateId: string;
             publicKey: string;
         };
+        recaptcha: string;
     };
 }

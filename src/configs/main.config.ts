@@ -2,9 +2,6 @@ import { IsMainConfig } from "@/types/general";
 
 
 const config: IsMainConfig = {
-    // ReCAPTCHA key
-    recaptchaKey: "6Ld2qBIpAAAAAOv78vaC9ckhYM8piFtGp8bZ-aTg",
-
     // General
     pagesNames: [
         "home",
@@ -146,7 +143,8 @@ const config: IsMainConfig = {
             serviceId: "service_1gmqdxw",
             templateId: "template_celk9nh",
             publicKey: "8v2dHrocI060XFU92"
-        }
+        },
+        recaptcha: "6LdtRBUpAAAAADuS5dt118UwZSwkEbXEKlUTxNS8"
     }
 };
 
