@@ -1,10 +1,11 @@
 import { send } from "@emailjs/browser";
 import * as EmailValidator from "email-validator";
 import { useCallback, useRef, useState } from "react";
-import Reaptcha from "reaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import Button from "@/components/base/Button";
 import Input from "@/components/base/Input";
+import Link from "@/components/base/Link";
 import Section from "@/components/base/Section";
 import TextArea from "@/components/base/TextArea";
 import Title from "@/components/base/Title";
@@ -20,7 +21,6 @@ export default function Contact() {
     const [response, setResponse] = useState({ value: "", isAnError: false });
 
     const contactForm = useRef<HTMLFormElement>(null);
-    const recaptchaRef = useRef<Reaptcha>(null);
 
     const sendEmail = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -89,7 +89,7 @@ export default function Contact() {
 
         // Reset reCAPTCHA
         setToken("");
-        recaptchaRef.current?.reset();
+
     }, [name, email, message]);
 
     return (
@@ -112,14 +112,11 @@ export default function Contact() {
                 <span className="sm:hidden">
                     You can also send me an email at&nbsp;
                 </span>
-                <a
-                    className="font-medium hover:underline"
+
+                <Link
+                    label="yoratoni.dev@gmail.com"
                     href="mailto:yoratoni.dev@gmail.com"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    yoratoni.dev@gmail.com
-                </a>.
+                />.
             </p>
 
             <form
@@ -198,44 +195,26 @@ export default function Contact() {
                         label="Send"
                     />
                 </div>
-
-                <Reaptcha
-                    id={`recaptcha-${config.contact.captchaKey}`}
-                    ref={recaptchaRef}
-                    sitekey={config.contact.captchaKey}
-                    onVerify={(token) => console.log(token)}
-                    onExpire={() => {
-                        setToken("");
-                        recaptchaRef.current?.reset();
-                    }}
-                    size="invisible"
-                />
             </form>
 
             <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-sm:pb-3">
                 <p className="font-[500] tracking-widest">&gt; This site is protected by reCAPTCHA &lt;</p>
                 <p className="font-[500] tracking-widest">
                     &gt; and the Google&nbsp;
-                    <a
-                        className="font-semibold hover:underline"
+                    <Link
+                        label="Privacy Policy"
                         href="https://policies.google.com/privacy"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Privacy Policy
-                    </a>
+                        fontWeight="semibold"
+                    />
                     &nbsp;&lt;
                 </p>
                 <p className="font-[500] tracking-widest">
                     &gt; and&nbsp;
-                    <a
-                        className="font-semibold hover:underline"
+                    <Link
+                        label="Terms of Service"
                         href="https://policies.google.com/terms"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Terms of Service
-                    </a>
+                        fontWeight="semibold"
+                    />
                     &nbsp;apply. &lt;
                 </p>
             </div>

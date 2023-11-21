@@ -1,3 +1,4 @@
+import Link from "@/components/base/Link";
 import Section from "@/components/base/Section";
 import Title from "@/components/base/Title";
 
@@ -18,14 +19,10 @@ export default function Home() {
                     <br />
                     <br />
                     Currently working at&nbsp;
-                    <a
-                        className="font-medium hover:underline"
+                    <Link
+                        label="Alien"
                         href="https://alien.club/"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Alien
-                    </a>
+                    />
                     &nbsp;as a full stack developer, I&apos;m building an entire ecosystem & multiple products
                     around the NFT / AI space. Mostly working on the smart contracts, backend and frontend using
                     Hardhat, React and Next.js.
@@ -37,14 +34,10 @@ export default function Home() {
                 <p className="font-[500] tracking-widest">&gt; Scroll on desktop &lt;</p>
                 <p className="font-[500] tracking-widest">
                     &gt; Background by&nbsp;
-                    <a
-                        className="font-semibold hover:underline"
+                    <Link
+                        label="Digital Moons"
                         href="https://digitalmoons.itch.io/"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Digital Moons
-                    </a>
+                    />
                     &nbsp;&lt;
                 </p>
             </div>
