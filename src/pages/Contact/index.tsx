@@ -1,7 +1,6 @@
 import { send } from "@emailjs/browser";
 import * as EmailValidator from "email-validator";
 import { useCallback, useRef, useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
 
 import Button from "@/components/base/Button";
 import Input from "@/components/base/Input";
@@ -89,7 +88,6 @@ export default function Contact() {
 
         // Reset reCAPTCHA
         setToken("");
-
     }, [name, email, message]);
 
     return (

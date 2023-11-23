@@ -144,7 +144,9 @@ const config: IsMainConfig = {
             templateId: "template_celk9nh",
             publicKey: "8v2dHrocI060XFU92"
         },
-        captchaKey: "6LdtRBUpAAAAADuS5dt118UwZSwkEbXEKlUTxNS8"
+        reCaptcha: {
+            siteKey: "6LdtRBUpAAAAADuS5dt118UwZSwkEbXEKlUTxNS8"
+        }
     }
 };
 

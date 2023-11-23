@@ -44,6 +44,8 @@ export interface IsMainConfig {
             templateId: string;
             publicKey: string;
         };
-        captchaKey: string;
+        reCaptcha: {
+            siteKey: string;
+        };
     };
 }
