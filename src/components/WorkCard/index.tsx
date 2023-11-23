@@ -1,7 +1,9 @@
 import { useRef } from "react";
 import { useWebPSupportCheck } from "react-use-webp-support-check";
 
+import MediaSkeleton from "@/components/base/MediaSkeleton";
 import config from "@/configs/main.config";
+import useProgressiveImage from "@/hooks/useProgressiveImage";
 import { IsWorkCard } from "@/types/general";
 
 
@@ -14,6 +16,8 @@ export default function WorkCard({
 }: WorkCardProps) {
     const supportsWebP = useWebPSupportCheck();
     const contentRef = useRef<HTMLAnchorElement>(null);
+    const bgImage = useProgressiveImage(supportsWebP ? card.bgImage.webp : card.bgImage.jpg);
+    const image = useProgressiveImage(supportsWebP ? card.image?.webp : card.image?.jpg);
 
     return (
         <a
@@ -31,14 +35,21 @@ export default function WorkCard({
                 className="absolute w-full h-full rounded-lg"
                 style={{
                     backgroundColor: "rgba(0, 0, 0, 0.5)",
-                    backgroundImage: `url(${supportsWebP ? card.bgImage.webp : card.bgImage.jpg})`,
+                    backgroundImage: `url(${bgImage})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                     filter: `brightness(${card.bgBrightness})`,
                     zIndex: -1
                 }}
-            />
+            >
+                <MediaSkeleton
+                    type="image"
+                    isVisible={bgImage === null}
+                    fillParent
+                    showIcon={false}
+                />
+            </div>
 
             {card.image && (
                 <div className="relative h-full rounded-l-lg shadow-black shadow-io aspect-square max-xsm:hidden">
@@ -52,6 +63,12 @@ export default function WorkCard({
                             backgroundColor: "rgba(0, 0, 0, 0.5)",
                             border: "none"
                         }}
+                    />
+
+                    <MediaSkeleton
+                        type="image"
+                        isVisible={image === null}
+                        fillParent
                     />
                 </div>
             )}
