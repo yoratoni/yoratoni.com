@@ -2,7 +2,7 @@ import { send } from "@emailjs/browser";
 import * as EmailValidator from "email-validator";
 import { useCallback, useRef, useState } from "react";
 
-import Button from "@/components/base/Button";
+import CaptchaButton from "@/components/base/Button/CaptchaButton";
 import Input from "@/components/base/Input";
 import Link from "@/components/base/Link";
 import Section from "@/components/base/Section";
@@ -187,9 +187,8 @@ export default function Contact() {
                     </p>
                 </div>
 
-                <div className="w-full max-w-[200px] mx-auto sm:pt-1 max-sm:pb-16">
-                    <Button
-                        type="submit"
+                <div className="sm:pt-1 max-sm:pb-16">
+                    <CaptchaButton
                         label="Send"
                     />
                 </div>

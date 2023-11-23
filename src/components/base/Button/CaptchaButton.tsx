@@ -1,18 +1,24 @@
-type ButtonProps = {
+// eslint-disable-next-line import/no-named-as-default
+import ReCAPTCHA from "react-google-recaptcha";
+
+import config from "@/configs/main.config";
+
+
+type CaptchaButtonProps = {
     label: string;
-    type?: "button" | "submit";
     disabled?: boolean;
     onClick?: () => void;
 };
 
-export default function Button(props: ButtonProps) {
+export default function CaptchaButton(props: CaptchaButtonProps) {
     return (
         <button
-            type={props.type ?? "button"}
+            type="submit"
             onClick={props?.onClick}
             className={`
                 ${props.disabled && "opacity-60 cursor-not-allowed !border-gray-400"}
-                border-2 w-full h-12 bg-black
+                relative
+                border-2 bg-black
                 font-light md:text-lg text-[15px]
                 max-sm:h-10
                 shadow-io
@@ -24,7 +30,9 @@ export default function Button(props: ButtonProps) {
                 focus-visible:border-gray-300
             `}
         >
-            {props.label}
+            <ReCAPTCHA
+                sitekey={config.contact.reCaptcha.siteKey}
+            />
         </button>
     );
 }
