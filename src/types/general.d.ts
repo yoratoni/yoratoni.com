@@ -45,6 +45,7 @@ export interface IsMainConfig {
             publicKey: string;
         };
         reCaptcha: {
+            containerId: string;
             siteKey: string;
         };
     };

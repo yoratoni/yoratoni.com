@@ -118,7 +118,7 @@ export default function Contact() {
             </p>
 
             <form
-                className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:space-y-2"
+                className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:space-y-3"
                 ref={contactForm}
                 onSubmit={sendEmail}
                 noValidate
@@ -187,7 +187,7 @@ export default function Contact() {
                     </p>
                 </div>
 
-                <div className="sm:pt-1 max-sm:pb-16">
+                <div className="sm:pt-1 max-sm:pb-16 w-[150px] mx-auto">
                     <CaptchaButton
                         label="Send"
                     />

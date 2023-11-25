@@ -145,6 +145,7 @@ const config: IsMainConfig = {
             publicKey: "8v2dHrocI060XFU92"
         },
         reCaptcha: {
+            containerId: "contact-recaptcha-container",
             siteKey: "6LdtRBUpAAAAADuS5dt118UwZSwkEbXEKlUTxNS8"
         }
     }
