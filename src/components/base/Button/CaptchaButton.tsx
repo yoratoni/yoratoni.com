@@ -7,21 +7,38 @@ import config from "@/configs/main.config";
 type CaptchaButtonProps = {
     label: string;
     disabled?: boolean;
-    onClick?: () => void;
+    onClick?: (token: string) => void;
 };
 
 export default function CaptchaButton(props: CaptchaButtonProps) {
+    const ref = useRef<HTMLButtonElement>(null);
+
+    const successCallback = (token: string) => {
+        if (props.onClick) {
+            props.onClick(token);
+        }
+    };
+
     const { recaptchaLoaded, execute, reset } = useRecaptcha({
         containerId: config.contact.reCaptcha.containerId,
         successCallback,
         sitekey: config.contact.reCaptcha.siteKey,
-        size: "invisible",
+        size: "invisible"
     });
+
+    const handleClick = () => {
+        if (ref.current !== null) {
+            reset();
+            execute();
+        }
+    };
 
     return (
         <button
             type="submit"
-            onClick={props?.onClick}
+            ref={ref}
+            onClick={handleClick}
+            disabled={props?.disabled || !recaptchaLoaded}
             className={`
                 ${props.disabled && "opacity-60 cursor-not-allowed !border-gray-400"}
                 relative
@@ -35,6 +52,7 @@ export default function CaptchaButton(props: CaptchaButtonProps) {
                 rounded-sm
                 transition-colors duration-150
                 focus-visible:border-gray-300
+                disabled:bg-gray-700
             `}
         >
             {props.label}

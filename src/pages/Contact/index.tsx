@@ -1,6 +1,6 @@
 import { send } from "@emailjs/browser";
 import * as EmailValidator from "email-validator";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import CaptchaButton from "@/components/base/Button/CaptchaButton";
 import Input from "@/components/base/Input";
@@ -11,46 +11,35 @@ import Title from "@/components/base/Title";
 import config from "@/configs/main.config";
 
 
+export type FieldObj = {
+    value: string;
+    error: string | null | undefined;
+};
+
 export default function Contact() {
     const [token, setToken] = useState<string>("");
 
-    const [name, setName] = useState({ value: "", isErrored: "" });
-    const [email, setEmail] = useState({ value: "", isErrored: "" });
-    const [message, setMessage] = useState({ value: "", isErrored: "" });
+    const [name, setName] = useState<FieldObj>({ value: "", error: null });
+    const [email, setEmail] = useState<FieldObj>({ value: "", error: null });
+    const [message, setMessage] = useState<FieldObj>({ value: "", error: null });
+
+    const [errorState, setErrorState] = useState(false);
     const [response, setResponse] = useState({ value: "", isAnError: false });
 
     const contactForm = useRef<HTMLFormElement>(null);
 
+    useEffect(() => {
+        if (name.error === undefined && email.error === undefined && message.error === undefined) {
+            setErrorState(false);
+        } else {
+            setErrorState(true);
+        }
+    }, [name, email, message]);
+
     const sendEmail = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        let areAllFieldsValid = true;
-
-        // Sanity check
-        if (name.value.length === 0) {
-            setName({ ...name, isErrored: "Name is required." });
-            areAllFieldsValid = false;
-        }
-
-        if (email.value.length === 0) {
-            setEmail({ ...email, isErrored: "E-mail is required." });
-            areAllFieldsValid = false;
-        }
-
-        if (message.value.length === 0) {
-            setMessage({ ...message, isErrored: "Message is required." });
-            areAllFieldsValid = false;
-        }
-
-        // Verify email
-        if (email.value.length > 0 && !EmailValidator.validate(email.value)) {
-            setEmail({ ...email, isErrored: "Invalid e-mail." });
-            areAllFieldsValid = false;
-        }
-
-        if (!areAllFieldsValid) return;
-
-        // Verify reCAPTCHA
+        // Verify reCAPTCHA token
         if (token.length === 0) {
             setResponse({
                 value: "Invalid reCAPTCHA. Please try again..",
@@ -77,16 +66,18 @@ export default function Contact() {
         );
 
         if (res.status === 200) {
-            setName({ value: "", isErrored: "" });
-            setEmail({ value: "", isErrored: "" });
-            setMessage({ value: "", isErrored: "" });
             setResponse({
                 value: "Your message was sent successfully!",
                 isAnError: false
             });
+        } else {
+            setResponse({
+                value: "An error occurred while sending your message. Please try again..",
+                isAnError: true
+            });
         }
 
-        // Reset reCAPTCHA
+        // Reset reCAPTCHA result token
         setToken("");
     }, [name, email, message]);
 
@@ -98,18 +89,13 @@ export default function Contact() {
                 bottom="Let's talk about it!"
             />
 
-            <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl pb-8 max-sm:pb-5">
-                <span className="max-sm:hidden">
-                    I&apos;m here to help and answer any question you might have. Any idea or project you want to discuss,
-                    I&apos;m open to it!
-                    <br />
-                    <br />
+            <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl pb-8 max-sm:hidden">
+                I&apos;m here to help and answer any question you might have. Any idea or project you want to discuss,
+                I&apos;m open to it!
+                <br />
+                <br />
 
-                    Feel free to contact me by filling the form below or by sending me an email at&nbsp;
-                </span>
-                <span className="sm:hidden">
-                    You can also send me an email at&nbsp;
-                </span>
+                Feel free to contact me by filling the form below or by sending me an email at&nbsp;
 
                 <Link
                     label="yoratoni.dev@gmail.com"
@@ -126,70 +112,62 @@ export default function Contact() {
                 <Input
                     label="from_name"
                     placeholder="Full Name"
-                    isErrored={name.isErrored}
+                    isErrored={name.error}
                     value={name.value}
-                    onFocus={() => {
-                        setName({
-                            ...name,
-                            isErrored: ""
-                        });
-                    }}
                     onChange={(value: string) => {
-                        setName({
-                            ...name,
-                            value
-                        });
+                        if (value.length === 0) {
+                            setName({ ...name, value, error: "Name cannot be empty." });
+                            setErrorState(true);
+                        } else {
+                            setName({ ...name, value, error: undefined });
+                        }
                     }}
                 />
                 <Input
                     label="from_email"
                     placeholder="E-mail"
-                    isErrored={email.isErrored}
+                    isErrored={email.error}
                     value={email.value}
-                    onFocus={() => {
-                        setEmail({
-                            ...email,
-                            isErrored: ""
-                        });
-                    }}
                     onChange={(value: string) => {
-                        setEmail({
-                            ...email,
-                            value
-                        });
+                        if (!EmailValidator.validate(value)) {
+                            setEmail({ ...email, value, error: "Invalid email address." });
+                            setErrorState(true);
+                        } else {
+                            setEmail({ ...email, value, error: undefined });
+                        }
                     }}
                     type="email"
                 />
                 <TextArea
                     label="message"
                     placeholder="Message"
-                    isErrored={message.isErrored}
+                    isErrored={message.error}
                     value={message.value}
                     minRows={3}
                     maxRows={3}
-                    onFocus={() => {
-                        setMessage({
-                            ...message,
-                            isErrored: ""
-                        });
-                    }}
                     onChange={(value: string) => {
-                        setMessage({
-                            ...message,
-                            value
-                        });
+                        if (value.length === 0) {
+                            setMessage({ ...message, value, error: "Message cannot be empty." });
+                            setErrorState(true);
+                        } else {
+                            setMessage({ ...message, value, error: undefined });
+                        }
                     }}
                 />
 
-                <div>
-                    <p className={`font-medium text-center leading-[16px] pb-1 max-sm:text-[13px] ${response.isAnError ? "text-red-500" : "text-gray-400"}`}>
+                {response.value.length > 0 && (
+                    <p className={`font-medium text-center leading-3 pt-1 max-sm:text-[13px] ${response.isAnError ? "text-red-500" : "text-gray-400"}`}>
                         {response.value}
                     </p>
-                </div>
+                )}
 
-                <div className="sm:pt-1 max-sm:pb-16 w-[150px] mx-auto">
+                <div className="pt-1 max-sm:pb-16 w-[150px] mx-auto">
                     <CaptchaButton
                         label="Send"
+                        disabled={errorState}
+                        onClick={(token: string) => {
+                            setToken(token);
+                        }}
                     />
                 </div>
             </form>
