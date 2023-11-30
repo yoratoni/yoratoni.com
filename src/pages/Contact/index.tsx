@@ -17,8 +17,6 @@ export type FieldObj = {
 };
 
 export default function Contact() {
-    const [token, setToken] = useState<string>("");
-
     const [name, setName] = useState<FieldObj>({ value: "", error: null });
     const [email, setEmail] = useState<FieldObj>({ value: "", error: null });
     const [message, setMessage] = useState<FieldObj>({ value: "", error: null });
@@ -36,9 +34,7 @@ export default function Contact() {
         }
     }, [name, email, message]);
 
-    const sendEmail = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
+    const sendEmail = useCallback(async (token: string) => {
         // Verify reCAPTCHA token
         if (token.length === 0) {
             setResponse({
@@ -70,15 +66,18 @@ export default function Contact() {
                 value: "Your message was sent successfully!",
                 isAnError: false
             });
+
+            // Reset form
+            setName({ value: "", error: null });
+            setEmail({ value: "", error: null });
+            setMessage({ value: "", error: null });
+            setErrorState(false);
         } else {
             setResponse({
                 value: "An error occurred while sending your message. Please try again..",
                 isAnError: true
             });
         }
-
-        // Reset reCAPTCHA result token
-        setToken("");
     }, [name, email, message]);
 
     return (
@@ -106,7 +105,7 @@ export default function Contact() {
             <form
                 className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:space-y-3"
                 ref={contactForm}
-                onSubmit={sendEmail}
+                onSubmit={(e) => e.preventDefault()}
                 noValidate
             >
                 <Input
@@ -114,6 +113,7 @@ export default function Contact() {
                     placeholder="Full Name"
                     isErrored={name.error}
                     value={name.value}
+                    
                     onChange={(value: string) => {
                         if (value.length === 0) {
                             setName({ ...name, value, error: "Name cannot be empty." });
@@ -156,17 +156,17 @@ export default function Contact() {
                 />
 
                 {response.value.length > 0 && (
-                    <p className={`font-medium text-center leading-3 pt-1 max-sm:text-[13px] ${response.isAnError ? "text-red-500" : "text-gray-400"}`}>
+                    <p className={`font-medium text-center leading-3 pt-2.5 max-sm:pt-1 max-sm:text-[13px] ${response.isAnError ? "text-red-500" : "text-gray-400"}`}>
                         {response.value}
                     </p>
                 )}
 
-                <div className="pt-1 max-sm:pb-16 w-[150px] mx-auto">
+                <div className="pt-2 max-sm:pt-1 max-sm:pb-16 w-[150px] mx-auto">
                     <CaptchaButton
                         label="Send"
                         disabled={errorState}
                         onClick={(token: string) => {
-                            setToken(token);
+                            sendEmail(token);
                         }}
                     />
                 </div>
