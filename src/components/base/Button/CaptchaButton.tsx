@@ -35,7 +35,6 @@ export default function CaptchaButton(props: CaptchaButtonProps) {
 
     return (
         <button
-            type="submit"
             ref={ref}
             onClick={handleClick}
             disabled={props?.disabled || !recaptchaLoaded}
