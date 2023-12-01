@@ -1,8 +1,9 @@
 import { send } from "@emailjs/browser";
 import * as EmailValidator from "email-validator";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useRecaptcha } from "react-hook-recaptcha";
 
-import CaptchaButton from "@/components/base/Button/CaptchaButton";
+import Button from "@/components/base/Button";
 import Input from "@/components/base/Input";
 import Link from "@/components/base/Link";
 import Section from "@/components/base/Section";
@@ -34,7 +35,16 @@ export default function Contact() {
         }
     }, [name, email, message]);
 
-    const sendEmail = useCallback(async (token: string) => {
+    const sendEmail = async (token: string) => {
+        if (errorState) {
+            return;
+        }
+
+        const fields = contactForm.current?.querySelectorAll("input, textarea");
+        const _name = fields?.item(0) as HTMLInputElement;
+        const _email = fields?.item(1) as HTMLInputElement;
+        const _message = fields?.item(2) as HTMLTextAreaElement;
+
         // Verify reCAPTCHA token
         if (token.length === 0) {
             setResponse({
@@ -47,10 +57,10 @@ export default function Contact() {
 
         // Form params
         const params = {
-            from_name: name.value,
-            from_email: `"${email.value}"`,
+            from_name: _name.value,
+            from_email: `"${_email.value}"`,
             to_name: "Yoratoni",
-            message: message.value,
+            message: _message.value,
             "g-recaptcha-response": token
         };
 
@@ -78,7 +88,19 @@ export default function Contact() {
                 isAnError: true
             });
         }
-    }, [name, email, message]);
+    };
+
+    const { recaptchaLoaded, execute, reset } = useRecaptcha({
+        containerId: config.contact.reCaptcha.containerId,
+        successCallback: sendEmail,
+        sitekey: config.contact.reCaptcha.siteKey,
+        size: "invisible"
+    });
+
+    const executeCaptcha = () => {
+        reset();
+        execute();
+    };
 
     return (
         <Section>
@@ -105,21 +127,28 @@ export default function Contact() {
             <form
                 className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:space-y-3"
                 ref={contactForm}
-                onSubmit={(e) => e.preventDefault()}
-                noValidate
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    executeCaptcha();
+                }}
             >
                 <Input
                     label="from_name"
                     placeholder="Full Name"
                     isErrored={name.error}
                     value={name.value}
-                    
                     onChange={(value: string) => {
                         if (value.length === 0) {
-                            setName({ ...name, value, error: "Name cannot be empty." });
+                            setName({
+                                value,
+                                error: "Name cannot be empty."
+                            });
                             setErrorState(true);
                         } else {
-                            setName({ ...name, value, error: undefined });
+                            setName({
+                                value,
+                                error: undefined
+                            });
                         }
                     }}
                 />
@@ -130,10 +159,10 @@ export default function Contact() {
                     value={email.value}
                     onChange={(value: string) => {
                         if (!EmailValidator.validate(value)) {
-                            setEmail({ ...email, value, error: "Invalid email address." });
+                            setEmail({ value, error: "Invalid email address." });
                             setErrorState(true);
                         } else {
-                            setEmail({ ...email, value, error: undefined });
+                            setEmail({ value, error: undefined });
                         }
                     }}
                     type="email"
@@ -147,10 +176,10 @@ export default function Contact() {
                     maxRows={3}
                     onChange={(value: string) => {
                         if (value.length === 0) {
-                            setMessage({ ...message, value, error: "Message cannot be empty." });
+                            setMessage({ value, error: "Message cannot be empty." });
                             setErrorState(true);
                         } else {
-                            setMessage({ ...message, value, error: undefined });
+                            setMessage({ value, error: undefined });
                         }
                     }}
                 />
@@ -162,14 +191,14 @@ export default function Contact() {
                 )}
 
                 <div className="pt-2 max-sm:pt-1 max-sm:pb-16 w-[150px] mx-auto">
-                    <CaptchaButton
+                    <Button
                         label="Send"
-                        disabled={errorState}
-                        onClick={(token: string) => {
-                            sendEmail(token);
-                        }}
+                        type="submit"
+                        disabled={!recaptchaLoaded || errorState}
                     />
                 </div>
+
+                <div id={config.contact.reCaptcha.containerId} />
             </form>
 
             <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-sm:pb-3">
