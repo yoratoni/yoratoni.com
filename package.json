@@ -52,7 +52,8 @@
     },
     "scripts": {
         "dev": "craco start",
-        "build": "craco build"
+        "build": "craco build",
+        "lint": "eslint --ext .js,.jsx,.ts,.tsx src"
     },
     "eslintConfig": {
         "extends": [
