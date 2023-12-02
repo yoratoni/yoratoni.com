@@ -1,10 +1,12 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import "@/styles/background.css";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import FPSStats from "react-fps-stats";
 
 import { PageNumberContext } from "@/components/Contexts/PageNumber";
 import config from "@/configs/main.config";
 import useAnimationFrame from "@/hooks/useAnimationFrame";
-import useWindowDimensions from "@/hooks/useWindowDimensions";
 import NsBackground from "@/types/background";
 
 
@@ -12,7 +14,6 @@ const Background = () => {
     const { pageNumber } = useContext(PageNumberContext);
 
     const backgroundWidthRef = useRef<HTMLDivElement | null>(null);
-    const windowDimensions = useWindowDimensions();
 
     const [backgroundObj, setBackgroundObj] = useState<NsBackground.backgroundObj>({
         width: 0,                                               // The total width of the bck (dynamically calculated)
@@ -65,8 +66,8 @@ const Background = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            const tempOneImageWidth = Math.round(windowDimensions.height * (16 / 9));
-            const tempImageRepeated = Math.ceil((windowDimensions.width / tempOneImageWidth) + 1);
+            const tempOneImageWidth = Math.round(window.innerHeight * (16 / 9));
+            const tempImageRepeated = Math.ceil((window.innerWidth / tempOneImageWidth) + 1);
 
             setBackgroundObj(prevState => ({
                 ...prevState,
@@ -79,7 +80,7 @@ const Background = () => {
         window.addEventListener("resize", handleResize);
         handleResize();
         return () => window.removeEventListener("resize", handleResize);
-    }, [windowDimensions, backgroundWidthRef]);
+    }, [backgroundWidthRef]);
 
     // Main loop
     useAnimationFrame(
@@ -91,7 +92,7 @@ const Background = () => {
             // Factor to modify speed depending on height, keeping the same speed on every screen
             // Limited to x1
             const heightFactorSpeedModifier = Math.min(
-                windowDimensions.height / config.parallax.contentHeightWhereSpeedFactorIsOne,
+                window.innerHeight / config.parallax.contentHeightWhereSpeedFactorIsOne,
                 1
             );
 
@@ -127,7 +128,7 @@ const Background = () => {
                 if (tempSpeed < config.parallax.maxSpeed) {
                     tempSpeed += config.parallax.speedModifier;
                 } else {
-                    if (Math.abs(tempAnimationCurrX) > windowDimensions.width) {
+                    if (Math.abs(tempAnimationCurrX) > window.innerWidth) {
                         setBackgroundObj(prevState => ({
                             ...prevState,
                             animationState: "BCK_ANIM_STATE::STOP"
@@ -149,7 +150,6 @@ const Background = () => {
                 animationCurrX: tempAnimationCurrX
             }));
         }, [
-            windowDimensions.width,
             backgroundObj.animationState,
             backgroundObj.animationCurrX,
             backgroundObj.width,
@@ -159,48 +159,52 @@ const Background = () => {
     );
 
     return (
-        <div className="w-full relative bg-[#DEFDFD] brightness-50 background overflow-x-hidden outline-none"
-            style={{ height: windowDimensions.height - 1 }}
-        >
-            <div className="background__layer background__layer-1" ref={backgroundWidthRef}
-                style={{
-                    transform: `translateX(-${backgroundObj.xArray[0]}px)`,
-                    width: `${backgroundObj.width}px`
-                }}
-            />
+        <>
+            {config.developerMode && (
+                <div className="absolute z-50 flex-col items-end justify-center w-full pt-2 pl-3 text-sm text-left">
+                    <FPSStats left="auto" right="0" />
+                    <p className="text-base underline underline-offset-2">DEV MODE:</p>
+                    <p>&gt; BG WIDTH: {backgroundObj.width}</p>
+                    <p>&gt; BG SPEED MOD: {backgroundObj.speed}</p>
 
-            <div className="background__layer background__layer-2"
-                style={{
-                    transform: `translateX(-${backgroundObj.xArray[1]}px)`,
-                    width: `${backgroundObj.width}px`
-                }}
-            />
+                    {backgroundObj.xArray.map((x, index) => (
+                        <p key={index}>&gt; LAYER {index + 1}: {x}</p>
+                    ))}
+                </div>
+            )}
 
-            <div className="background__layer background__layer-3"
-                style={{
-                    transform: `translateX(-${backgroundObj.xArray[2]}px)`,
-                    width: `${backgroundObj.width}px`
-                }}
-            />
+            <div className="w-full relative bg-[#DEFDFD] brightness-50 background overflow-hidden outline-none blur-md"
+                style={{ height: window.innerHeight - 1 }}
+            >
+                <div className="background__layer background__layer-1" ref={backgroundWidthRef}
+                    style={{
+                        transform: `translateX(-${backgroundObj.xArray[0]}px)`,
+                        width: `${backgroundObj.width}px`
+                    }}
+                />
 
-            <div className="background__layer background__layer-4"
-                style={{
-                    transform: `translateX(-${backgroundObj.xArray[3]}px)`,
-                    width: `${backgroundObj.width}px`
-                }}
-            />
+                <div className="background__layer background__layer-2"
+                    style={{
+                        transform: `translateX(-${backgroundObj.xArray[1]}px)`,
+                        width: `${backgroundObj.width}px`
+                    }}
+                />
 
-            <div className="background__layer background__layer-5"
-                style={{
-                    transform: `translateX(-${backgroundObj.xArray[4]}px)`,
-                    width: `${backgroundObj.width}px`
-                }}
-            />
+                <div className="background__layer background__layer-3"
+                    style={{
+                        transform: `translateX(-${backgroundObj.xArray[2]}px)`,
+                        width: `${backgroundObj.width}px`
+                    }}
+                />
 
-            {/* <div className="absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                {windowDimensions.height / parameters.contentHeightSpeedModifier}
-            </div> */}
-        </div>
+                <div className="background__layer background__layer-4"
+                    style={{
+                        transform: `translateX(-${backgroundObj.xArray[3]}px)`,
+                        width: `${backgroundObj.width}px`
+                    }}
+                />
+            </div>
+        </>
     );
 };
 

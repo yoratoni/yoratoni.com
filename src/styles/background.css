@@ -55,14 +55,6 @@
             background-image: url("@/assets/background/low-res/01.webp");
         }
     }
-
-    .background__layer-5 {
-        background-image: url("@/assets/background/low-res/fallback/00.png");
-
-        @supports (background-image: url("@/assets/background/low-res/00.webp")) {
-            background-image: url("@/assets/background/low-res/00.webp");
-        }
-    }
 }
 
 @media ((max-width: 1919px) and (min-width: 1280px)), ((max-height: 979px) and (min-height: 720px)) {
@@ -97,14 +89,6 @@
             background-image: url("@/assets/background/mid-res/01.webp");
         }
     }
-
-    .background__layer-5 {
-        background-image: url("@/assets/background/mid-res/fallback/00.png");
-
-        @supports (background-image: url("@/assets/background/mid-res/00.webp")) {
-            background-image: url("@/assets/background/mid-res/00.webp");
-        }
-    }
 }
 
 @media (min-width: 1920px), (min-height: 980px) {
@@ -137,14 +121,6 @@
 
         @supports (background-image: url("@/assets/background/high-res/01.webp")) {
             background-image: url("@/assets/background/high-res/01.webp");
-        }
-    }
-
-    .background__layer-5 {
-        background-image: url("@/assets/background/high-res/fallback/00.png");
-
-        @supports (background-image: url("@/assets/background/high-res/00.webp")) {
-            background-image: url("@/assets/background/high-res/00.webp");
         }
     }
 }
