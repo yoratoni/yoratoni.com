@@ -13,7 +13,7 @@ export default function Home() {
             />
 
             <div className="flex items-center justify-center w-full">
-                <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl">
+                <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl max-sm:pb-16">
                     I&apos;m a self-taught French web developer with a passion for Web 3.0 and specialized in
                     <b> React</b>, <b>Next.js</b>, <b>Node JS</b>, <b>Typescript</b> and <b>Solidity</b>.
                     <br />
@@ -30,9 +30,27 @@ export default function Home() {
             </div>
 
             <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-sm:pb-3">
-                <p className="font-[500] tracking-widest">&gt; Swipe on mobile &lt;</p>
-                <p className="font-[500] tracking-widest">&gt; Scroll on desktop &lt;</p>
+                <p className="font-[500] tracking-widest text-white">&gt; Scroll on desktop | Swipe on mobile &lt;</p>
+                <p className="font-[500] tracking-widest">&gt; This site is protected by reCAPTCHA &lt;</p>
                 <p className="font-[500] tracking-widest">
+                    &gt; and the Google&nbsp;
+                    <Link
+                        label="Privacy Policy"
+                        href="https://policies.google.com/privacy"
+                        fontWeight="semibold"
+                    />
+                    &nbsp;&lt;
+                </p>
+                <p className="font-[500] tracking-widest">
+                    &gt; and&nbsp;
+                    <Link
+                        label="Terms of Service"
+                        href="https://policies.google.com/terms"
+                        fontWeight="semibold"
+                    />
+                    &nbsp;apply &lt;
+                </p>
+                <p className="font-[500] tracking-widest text-white">
                     &gt; Background by&nbsp;
                     <Link
                         label="Digital Moons"

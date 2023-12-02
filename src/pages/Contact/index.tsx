@@ -9,6 +9,7 @@ import Link from "@/components/base/Link";
 import Section from "@/components/base/Section";
 import TextArea from "@/components/base/TextArea";
 import Title from "@/components/base/Title";
+import Socials from "@/components/Socials";
 import config from "@/configs/main.config";
 
 
@@ -22,7 +23,7 @@ export default function Contact() {
     const [email, setEmail] = useState<FieldObj>({ value: "", error: null });
     const [message, setMessage] = useState<FieldObj>({ value: "", error: null });
 
-    const [errorState, setErrorState] = useState(false);
+    const [errorState, setErrorState] = useState(true);
     const [response, setResponse] = useState({ value: "", isAnError: false });
 
     const contactForm = useRef<HTMLFormElement>(null);
@@ -98,6 +99,15 @@ export default function Contact() {
     });
 
     const executeCaptcha = () => {
+        if (errorState) {
+            return;
+        }
+
+        setResponse({
+            value: "Sending your message..",
+            isAnError: false
+        });
+
         reset();
         execute();
     };
@@ -125,7 +135,7 @@ export default function Contact() {
             </p>
 
             <form
-                className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:space-y-3"
+                className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:pt-1"
                 ref={contactForm}
                 onSubmit={(e) => {
                     e.preventDefault();
@@ -190,7 +200,7 @@ export default function Contact() {
                     </p>
                 )}
 
-                <div className="pt-2 max-sm:pt-1 max-sm:pb-16 w-[150px] mx-auto">
+                <div className="pt-2 max-sm:pt-1 w-[150px] mx-auto">
                     <Button
                         label="Send"
                         type="submit"
@@ -202,25 +212,7 @@ export default function Contact() {
             </form>
 
             <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-sm:pb-3">
-                <p className="font-[500] tracking-widest">&gt; This site is protected by reCAPTCHA &lt;</p>
-                <p className="font-[500] tracking-widest">
-                    &gt; and the Google&nbsp;
-                    <Link
-                        label="Privacy Policy"
-                        href="https://policies.google.com/privacy"
-                        fontWeight="semibold"
-                    />
-                    &nbsp;&lt;
-                </p>
-                <p className="font-[500] tracking-widest">
-                    &gt; and&nbsp;
-                    <Link
-                        label="Terms of Service"
-                        href="https://policies.google.com/terms"
-                        fontWeight="semibold"
-                    />
-                    &nbsp;apply. &lt;
-                </p>
+                <Socials />
             </div>
         </Section>
     );
