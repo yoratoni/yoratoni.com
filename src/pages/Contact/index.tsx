@@ -1,7 +1,7 @@
 import { send } from "@emailjs/browser";
 import * as EmailValidator from "email-validator";
 import { useEffect, useRef, useState } from "react";
-import { useRecaptcha } from "react-hook-recaptcha";
+// import { useRecaptcha } from "react-hook-recaptcha";
 
 import Button from "@/components/base/Button";
 import Input from "@/components/base/Input";
@@ -36,10 +36,15 @@ export default function Contact() {
         }
     }, [name, email, message]);
 
-    const sendEmail = async (token: string) => {
+    const sendEmail = async () => {
         if (errorState) {
             return;
         }
+
+        setResponse({
+            value: "Sending your message..",
+            isAnError: false
+        });
 
         const fields = contactForm.current?.querySelectorAll("input, textarea");
         const _name = fields?.item(0) as HTMLInputElement;
@@ -47,14 +52,14 @@ export default function Contact() {
         const _message = fields?.item(2) as HTMLTextAreaElement;
 
         // Verify reCAPTCHA token
-        if (token.length === 0) {
-            setResponse({
-                value: "Invalid reCAPTCHA. Please try again..",
-                isAnError: true
-            });
+        // if (token.length === 0) {
+        //     setResponse({
+        //         value: "Invalid reCAPTCHA. Please try again..",
+        //         isAnError: true
+        //     });
 
-            return;
-        }
+        //     return;
+        // }
 
         // Form params
         const params = {
@@ -62,7 +67,7 @@ export default function Contact() {
             from_email: `"${_email.value}"`,
             to_name: "Yoratoni",
             message: _message.value,
-            "g-recaptcha-response": token
+            // "g-recaptcha-response": token
         };
 
         const res = await send(
@@ -91,26 +96,26 @@ export default function Contact() {
         }
     };
 
-    const { recaptchaLoaded, execute, reset } = useRecaptcha({
-        containerId: config.contact.reCaptcha.containerId,
-        successCallback: sendEmail,
-        sitekey: config.contact.reCaptcha.siteKey,
-        size: "invisible"
-    });
+    // const { recaptchaLoaded, execute, reset } = useRecaptcha({
+    //     containerId: config.contact.reCaptcha.containerId,
+    //     successCallback: sendEmail,
+    //     sitekey: config.contact.reCaptcha.siteKey,
+    //     size: "invisible"
+    // });
 
-    const executeCaptcha = () => {
-        if (errorState) {
-            return;
-        }
+    // const executeCaptcha = () => {
+    //     if (errorState) {
+    //         return;
+    //     }
 
-        setResponse({
-            value: "Sending your message..",
-            isAnError: false
-        });
+    //     setResponse({
+    //         value: "Sending your message..",
+    //         isAnError: false
+    //     });
 
-        reset();
-        execute();
-    };
+    //     reset();
+    //     execute();
+    // };
 
     return (
         <Section>
@@ -120,12 +125,7 @@ export default function Contact() {
                 bottom="Let's talk about it!"
             />
 
-            <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl pb-8 max-sm:hidden">
-                I&apos;m here to help and answer any question you might have. Any idea or project you want to discuss,
-                I&apos;m open to it!
-                <br />
-                <br />
-
+            <p className="w-full h-auto max-w-2xl px-6 text-[15px] whitespace-pre-wrap md:text-xl pb-8 max-sm:hidden max-hlg:hidden">
                 Feel free to contact me by filling the form below or by sending me an email at&nbsp;
 
                 <Link
@@ -135,11 +135,11 @@ export default function Contact() {
             </p>
 
             <form
-                className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:pt-1"
+                className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:pt-1 max-hmd:pb-7"
                 ref={contactForm}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    executeCaptcha();
+                    sendEmail();
                 }}
             >
                 <Input
@@ -200,18 +200,18 @@ export default function Contact() {
                     </p>
                 )}
 
-                <div className="pt-2 max-sm:pt-1 w-[150px] mx-auto">
+                <div className="pt-2 max-sm:pt-1 w-[150px] mx-auto pb-4">
                     <Button
                         label="Send"
                         type="submit"
-                        disabled={!recaptchaLoaded || errorState}
+                        disabled={errorState}
                     />
                 </div>
 
                 <div id={config.contact.reCaptcha.containerId} />
             </form>
 
-            <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-sm:pb-3">
+            <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-md:pb-3 max-hmd:pb-3">
                 <Socials />
             </div>
         </Section>

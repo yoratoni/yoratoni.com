@@ -93,6 +93,21 @@ const config: IsMainConfig = {
                     webp: "/assets/images/work/04/icon.webp"
                 },
                 link: "https://github.com/yoratoni/Mdisk"
+            },
+            {
+                bgImage: {
+                    jpg: "/assets/images/work/05/bck.jpg",
+                    webp: "/assets/images/work/05/bck.webp"
+                },
+                bgBrightness: 0.6,
+                title: "Celk",
+                description: "A toolbox to work with Bitcoin addresses & private keys, in Typescript & WASM.",
+                technologies: ["NodeJS", "TS-Node", "TypeScript"],
+                image: {
+                    jpg: "/assets/images/work/05/icon.jpg",
+                    webp: "/assets/images/work/05/icon.webp"
+                },
+                link: "https://github.com/yoratoni/Mdisk"
             }
         ]
     },

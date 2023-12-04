@@ -9,8 +9,37 @@ module.exports = {
     theme: {
         extend: {
             screens: {
+                // Min width
                 "xs": "320px",
-                "xsm": "480px"
+                "xsm": "480px",
+                "sm": "640px",
+                "md": "768px",
+                "lg": "1024px",
+                "xl": "1280px",
+                "2xl": "1536px",
+
+                // Max width
+                "max-xs": { "raw": "(max-width: 320px)" },
+                "max-xsm": { "raw": "(max-width: 480px)" },
+                "max-sm": { "raw": "(max-width: 640px)" },
+                "max-md": { "raw": "(max-width: 768px)" },
+                "max-lg": { "raw": "(max-width: 1024px)" },
+                "max-xl": { "raw": "(max-width: 1280px)" },
+                "max-2xl": { "raw": "(max-width: 1536px)" },
+
+                // Min height
+                "hsm": { "raw": "(min-height: 640px)" },
+                "hmd": { "raw": "(min-height: 768px)" },
+                "hlg": { "raw": "(min-height: 1024px)" },
+                "hxl": { "raw": "(min-height: 1280px)" },
+                "h2xl": { "raw": "(min-height: 1536px)" },
+
+                // Max height
+                "max-hsm": { "raw": "(max-height: 640px)" },
+                "max-hmd": { "raw": "(max-height: 768px)" },
+                "max-hlg": { "raw": "(max-height: 1024px)" },
+                "max-hxl": { "raw": "(max-height: 1280px)" },
+                "max-h2xl": { "raw": "(max-height: 1536px)" }
             },
             height: {
                 screen: [

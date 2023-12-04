@@ -1,5 +1,8 @@
+import { ReactNode } from "react";
+
+
 type LinkProps = {
-    label: string;
+    label: string | ReactNode;
     href: string;
     target?: "_blank" | "_self";
 

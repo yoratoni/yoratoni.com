@@ -7,7 +7,7 @@ import Social from "@/components/Social";
 
 export default function Socials() {
     return (
-        <div className="flex justify-center w-full gap-4 mb-2">
+        <div className="flex justify-center w-full gap-4">
             <Social
                 name="GitHub"
                 link="https://github.com/yoratoni"

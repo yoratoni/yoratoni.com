@@ -22,11 +22,21 @@ export default function Social({
                 target="_blank"
                 rel="noreferrer"
             >
-                <IconButton
-                    icon={icon}
-                    size="md"
-                    disableHover
-                />
+                <div className="max-sm:hidden">
+                    <IconButton
+                        icon={icon}
+                        size="md"
+                        disableHover
+                    />
+                </div>
+
+                <div className="sm:hidden">
+                    <IconButton
+                        icon={icon}
+                        size="sm"
+                        disableHover
+                    />
+                </div>
 
                 <p className="text-sm font-normal text-white">
                     {name}
