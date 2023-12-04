@@ -107,7 +107,7 @@ const config: IsMainConfig = {
                     jpg: "/assets/images/work/05/icon.jpg",
                     webp: "/assets/images/work/05/icon.webp"
                 },
-                link: "https://github.com/yoratoni/Mdisk"
+                link: "https://github.com/yoratoni/celk"
             }
         ]
     },

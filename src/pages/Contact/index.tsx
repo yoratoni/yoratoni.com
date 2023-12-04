@@ -46,11 +46,6 @@ export default function Contact() {
             isAnError: false
         });
 
-        const fields = contactForm.current?.querySelectorAll("input, textarea");
-        const _name = fields?.item(0) as HTMLInputElement;
-        const _email = fields?.item(1) as HTMLInputElement;
-        const _message = fields?.item(2) as HTMLTextAreaElement;
-
         // Verify reCAPTCHA token
         // if (token.length === 0) {
         //     setResponse({
@@ -63,10 +58,10 @@ export default function Contact() {
 
         // Form params
         const params = {
-            from_name: _name.value,
-            from_email: `"${_email.value}"`,
+            from_name: name.value,
+            from_email: `"${email.value}"`,
             to_name: "Yoratoni",
-            message: _message.value,
+            message: message.value,
             // "g-recaptcha-response": token
         };
 

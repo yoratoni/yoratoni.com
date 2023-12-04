@@ -30,44 +30,9 @@ export default function Home() {
             </div>
 
             <div className="absolute bottom-0 w-full pb-4 text-base leading-8 text-center text-gray-500 max-sm:leading-5 max-sm:text-[13px] max-sm:pb-3 flex flex-col items-center justify-center max-hmd:pb-3">
-                <p className="font-[500] tracking-widest text-white max-hlg:hidden">&gt; Scroll on desktop | Swipe on mobile &lt;</p>
-                <p className="font-[500] tracking-widest max-hlg:hidden">&gt; This site is protected by reCAPTCHA &lt;</p>
-                <p className="font-[500] tracking-widest max-hlg:hidden">
-                    &gt; and the Google&nbsp;
-                    <Link
-                        label="Privacy Policy"
-                        href="https://policies.google.com/privacy"
-                        fontWeight="semibold"
-                    />
-                    &nbsp;&lt;
-                </p>
-                <p className="font-[500] tracking-widest max-hlg:hidden">
-                    &gt; and&nbsp;
-                    <Link
-                        label="Terms of Service"
-                        href="https://policies.google.com/terms"
-                        fontWeight="semibold"
-                    />
-                    &nbsp;apply &lt;
-                </p>
-
-                <p className="font-[500] tracking-widest hlg:hidden px-4 max-sm:pb-2 leading-7">
-                    This site is protected by reCAPTCHA<br />
-                    and the Google&nbsp;
-                    <Link
-                        label="Privacy Policy"
-                        href="https://policies.google.com/privacy"
-                        fontWeight="semibold"
-                    /> and&nbsp;
-                    <Link
-                        label={<>Terms of<br />Service</>}
-                        href="https://policies.google.com/terms"
-                        fontWeight="semibold"
-                    />
-                    &nbsp;apply.
-                </p>
-
-                <p className="font-[500] tracking-widest text-white">
+                <p className="font-[500] tracking-widest">&gt; Swipe on mobile &lt;</p>
+                <p className="font-[500] tracking-widest">&gt; Scroll on desktop &lt;</p>
+                <p className="font-[500] tracking-widest">
                     &gt; Background by&nbsp;
                     <Link
                         label="Digital Moons"
