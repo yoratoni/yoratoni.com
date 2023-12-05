@@ -97,6 +97,7 @@ export default function Contact() {
             </p>
 
             <form
+                id="contact-form"
                 className="relative flex flex-col w-full max-w-md px-8 space-y-5 max-sm:pt-1 max-hmd:pb-7"
                 ref={contactForm}
                 onSubmit={(e) => {
