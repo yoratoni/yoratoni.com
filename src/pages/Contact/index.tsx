@@ -1,7 +1,6 @@
 import { send } from "@emailjs/browser";
 import * as EmailValidator from "email-validator";
 import { useEffect, useRef, useState } from "react";
-// import { useRecaptcha } from "react-hook-recaptcha";
 
 import Button from "@/components/base/Button";
 import Input from "@/components/base/Input";
@@ -46,23 +45,12 @@ export default function Contact() {
             isAnError: false
         });
 
-        // Verify reCAPTCHA token
-        // if (token.length === 0) {
-        //     setResponse({
-        //         value: "Invalid reCAPTCHA. Please try again..",
-        //         isAnError: true
-        //     });
-
-        //     return;
-        // }
-
         // Form params
         const params = {
             from_name: name.value,
             from_email: `"${email.value}"`,
             to_name: "Yoratoni",
-            message: message.value,
-            // "g-recaptcha-response": token
+            message: message.value
         };
 
         const res = await send(
@@ -90,27 +78,6 @@ export default function Contact() {
             });
         }
     };
-
-    // const { recaptchaLoaded, execute, reset } = useRecaptcha({
-    //     containerId: config.contact.reCaptcha.containerId,
-    //     successCallback: sendEmail,
-    //     sitekey: config.contact.reCaptcha.siteKey,
-    //     size: "invisible"
-    // });
-
-    // const executeCaptcha = () => {
-    //     if (errorState) {
-    //         return;
-    //     }
-
-    //     setResponse({
-    //         value: "Sending your message..",
-    //         isAnError: false
-    //     });
-
-    //     reset();
-    //     execute();
-    // };
 
     return (
         <Section>
